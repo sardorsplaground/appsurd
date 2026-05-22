@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes — Appsurd</title>
+<meta name="description" content="Writing from the Appsurd team on building software, working with AI engineers, and shipping fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
+  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
+  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.serif { font-family: 'Fraunces', serif; font-style: italic; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+
+.grid-bg {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px; z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+}
+
+/* nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in oklab, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+}
+.logo-by {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px;
+  color: var(--fg-dim); letter-spacing: 0.18em; text-transform: uppercase;
+  transition: color 200ms; width: max-content;
+}
+.logo-by:hover { color: var(--fg); }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  background: var(--accent); color: var(--accent-ink);
+  transition: transform 200ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* hero */
+.hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-dim);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 12px var(--accent);
+}
+.hero h1 {
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 500; letter-spacing: -0.04em;
+  line-height: 0.92; margin: 20px 0 0;
+}
+.hero h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300; color: var(--fg);
+}
+.hero p {
+  margin: 28px 0 0; font-size: 19px;
+  color: var(--fg-dim); max-width: 540px; line-height: 1.5;
+}
+
+/* posts list */
+.posts { padding: 80px 0 140px; }
+.post-link {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  transition: padding 300ms ease;
+}
+.post-link:hover { padding-left: 8px; }
+.post-link:hover .post-title { color: var(--fg); }
+.post-link:hover .arrow { transform: translateX(6px); }
+@media (max-width: 760px) {
+  .post-link { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+}
+.post-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.post-meta .date { color: var(--fg-dim); }
+.post-title {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500; letter-spacing: -0.025em;
+  margin: 0 0 12px; color: var(--fg-dim);
+  transition: color 200ms;
+  line-height: 1.15;
+}
+.post-excerpt {
+  color: var(--fg-dim); font-size: 16px;
+  margin: 0 0 18px; max-width: 620px;
+  line-height: 1.5;
+}
+.post-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.arrow { display: inline-block; transition: transform 200ms ease; }
+
+.empty {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--fg-mute);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+/* footer */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  background: var(--bg-elev);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--fg-mute);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a:hover { color: var(--fg); }
+
+::selection { background: var(--fg); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
+      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/" class="on">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/#pricing" class="btn">Get Started <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Notes</span>
+    <h1>Writing on building<br>the <em>absurd</em>.</h1>
+    <p>Notes from the Appsurd team on AI-augmented engineering, fast shipping, and the messy reality of building software products in 2026.</p>
+  </div>
+</section>
+
+<section class="posts">
+  <div class="wrap">
+
+    <!-- POST LIST — newest first. Each entry follows this pattern: -->
+    <a href="/blog/welcome-to-the-absurd.html" class="post-link">
+      <div class="post-meta">
+        <span class="date">May 21, 2026</span>
+        <span>Sardor K.</span>
+      </div>
+      <div>
+        <h2 class="post-title">Welcome to the Absurd.</h2>
+        <p class="post-excerpt">A short note on why we built Appsurd, what "absurd" means to us, and what you can expect to find on this page over the coming months.</p>
+        <span class="post-cta">Read post <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Add new posts above this line. Newest post goes at the top. -->
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+    <span><a href="/">← Back to home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
