@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Training &amp; Workshops — Appsurd</title>
+<meta name="description" content="Hands-on AI training for engineering, product, and ops teams. We come in, work with your people, and leave them faster than we found them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root { --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d; --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a; --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+.grid-bg { position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px), linear-gradient(to bottom, var(--grid) 1px, transparent 1px); background-size: 80px 80px; z-index: 0; mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%); }
+
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in oklab, var(--bg) 75%, transparent); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase; }
+.logo-by { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--fg-dim); letter-spacing: 0.18em; text-transform: uppercase; transition: color 200ms; width: max-content; }
+.logo-by:hover { color: var(--fg); }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; background: var(--accent); color: var(--accent-ink); transition: transform 200ms ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-lg { padding: 14px 22px; font-size: 15px; }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--fg); }
+
+.hero { padding: 100px 0 80px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-dim); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+.eyebrow a { color: inherit; transition: color 200ms; }
+.eyebrow a:hover { color: var(--fg); }
+.hero h1 { font-size: clamp(48px, 8vw, 96px); font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; margin: 20px 0 0; }
+.hero h1 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.hero p { margin: 28px 0 0; font-size: 19px; color: var(--fg-dim); max-width: 640px; line-height: 1.55; }
+.hero-ctas { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.section { padding: 120px 0; border-top: 1px solid var(--line); }
+.section-head { margin-bottom: 48px; }
+.section-head h2 { font-size: clamp(36px, 5vw, 60px); font-weight: 500; letter-spacing: -0.03em; line-height: 1; margin: 16px 0 0; }
+.section-head h2 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.section-head p { font-size: 17px; color: var(--fg-dim); margin: 18px 0 0; max-width: 560px; line-height: 1.55; }
+
+.formats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+@media (max-width: 900px) { .formats { grid-template-columns: 1fr; } }
+.fmt { background: var(--bg); padding: 36px 28px; transition: background 300ms; display: flex; flex-direction: column; min-height: 280px; }
+.fmt:hover { background: var(--bg-elev); }
+.fmt-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); }
+.fmt h3 { font-size: 26px; font-weight: 500; letter-spacing: -0.025em; margin: 14px 0 10px; line-height: 1.15; }
+.fmt h3 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.fmt p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; margin: 0 0 18px; }
+.fmt-len { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); }
+
+.curriculum { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 48px 44px; }
+.curriculum-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; margin-top: 24px; }
+@media (max-width: 720px) { .curriculum-row { grid-template-columns: 1fr; } }
+.curriculum-row > div { display: flex; gap: 12px; align-items: flex-start; }
+.curriculum-row svg { flex: none; width: 16px; height: 16px; margin-top: 4px; color: var(--fg); }
+.curriculum-row span { color: var(--fg-dim); font-size: 15px; line-height: 1.5; }
+
+.foot-cta { text-align: center; padding: 140px 0; border-top: 1px solid var(--line); }
+.foot-cta h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 500; letter-spacing: -0.035em; line-height: 1; margin: 0 auto; max-width: 16ch; }
+.foot-cta h2 em { font-family: 'Fraunces', serif; font-weight: 300; color: var(--fg-dim); }
+.foot-cta p { color: var(--fg-dim); margin: 20px 0 32px; font-size: 17px; }
+
+.footer { border-top: 1px solid var(--line); padding: 40px 0; background: var(--bg-elev); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.12em; text-transform: uppercase; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a:hover { color: var(--fg); }
+
+::selection { background: var(--fg); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
+      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/services/" class="on">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="mailto:hello@appsurd.co?subject=AI%20Training%20interest" class="btn">Book a call →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><a href="/services/">Services</a> · Training &amp; Workshops</span>
+    <h1>Make your team<br><em>dangerous</em> with AI.</h1>
+    <p>Hands-on training for engineering, product, and ops teams. We come in, work with your people on their actual problems, and leave them faster than we found them. No slideware. No certificates. Skills they use on Monday.</p>
+    <div class="hero-ctas">
+      <a href="mailto:hello@appsurd.co?subject=AI%20Training%20-%20scope%20a%20cohort" class="btn btn-lg">Book a call →</a>
+      <a href="/services/advisory.html" class="btn btn-lg btn-ghost">Or talk strategy first</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Formats</span>
+      <h2>Three ways<br>to <em>run it</em>.</h2>
+      <p>Each is fully custom to your team's stack, codebase, and actual work. Pricing depends on cohort size and format — quoted after a 30-minute scoping call.</p>
+    </div>
+
+    <div class="formats">
+      <div class="fmt">
+        <span class="fmt-tag">FMT · 01</span>
+        <h3>Single-day <em>workshop</em></h3>
+        <p>One day, in-person or remote. Intro to AI-native engineering and agentic workflows, live coding with Claude / Cursor / Copilot, hands-on exercises in your repo. Best for kicking off team-wide adoption.</p>
+        <div class="fmt-len">1 DAY · UP TO 25 PEOPLE</div>
+      </div>
+      <div class="fmt">
+        <span class="fmt-tag">FMT · 02</span>
+        <h3>Two-week <em>cohort</em></h3>
+        <p>Eight 90-minute sessions over two weeks. Deeper dive: prompt engineering, agent design, evals, production patterns. Each session pairs theory with work-in-your-actual-codebase.</p>
+        <div class="fmt-len">2 WEEKS · UP TO 15 PEOPLE</div>
+      </div>
+      <div class="fmt">
+        <span class="fmt-tag">FMT · 03</span>
+        <h3>Quarterly <em>residency</em></h3>
+        <p>One of our senior engineers embeds with your team for a quarter — pair-programming, code reviews, weekly office hours. Best when you want the team to absorb AI practices by osmosis.</p>
+        <div class="fmt-len">12 WEEKS · FULL TEAM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-elev);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we cover</span>
+      <h2>Skills your team<br>will <em>actually use</em>.</h2>
+      <p>Every cohort is customized, but most cover some combination of:</p>
+    </div>
+
+    <div class="curriculum">
+      <div class="curriculum-row">
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">AI-native coding</strong>. Effective use of Claude, Cursor, Copilot, MCP — and where they break.</span></div>
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Prompt engineering that's not vibes</strong>. Patterns, anti-patterns, when to stop and switch tools.</span></div>
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Agent design</strong>. Building multi-step workflows that don't fall over on edge cases.</span></div>
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Evals &amp; observability</strong>. How to know if your AI is actually working in production.</span></div>
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Cost &amp; latency tradeoffs</strong>. Model selection, caching, batching, when to fine-tune.</span></div>
+        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Org patterns</strong>. How teams that ship AI well organize the work — RFCs, evals, on-call.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="foot-cta">
+  <div class="wrap">
+    <h2>Want your team<br>shipping AI by <em>next month?</em></h2>
+    <p>30-minute call. We scope the format, you get a fixed quote.</p>
+    <a href="mailto:hello@appsurd.co?subject=AI%20Training%20-%20scope%20a%20cohort" class="btn btn-lg">Book a call →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+    <span><a href="/services/">← All services</a></span>
+  </div>
+</footer>
+</body>
+</html>

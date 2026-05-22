@@ -3,199 +3,1076 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services — Appsurd</title>
-<meta name="description" content="Six ways to work with Appsurd: productized squad, AI implementation, forward-deployed engineers, AI advisory, custom GPTs, and training.">
+<title>Appsurd — Build the Absurd</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
 <style>
+/* ---------- theme ---------- */
 :root {
-  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
-  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
-  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+  --bg: #0a0a0a;
+  --bg-elev: #111111;
+  --bg-elev-2: #171717;
+  --line: #262626;
+  --line-strong: #3d3d3d;
+  --fg: #f4f4f4;
+  --fg-dim: #a0a0a0;
+  --fg-mute: #6a6a6a;
+  --accent: #ffffff;
+  --accent-ink: #0a0a0a;
+  --grid: rgba(255,255,255,0.035);
+  --card: #131313;
+  --shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 30px 60px -30px rgba(0,0,0,0.6);
 }
+html[data-theme="light"] {
+  --bg: #f6f6f4;
+  --bg-elev: #efefec;
+  --bg-elev-2: #e8e8e4;
+  --line: #dedcd6;
+  --line-strong: #bcbab3;
+  --fg: #0a0a0a;
+  --fg-dim: #5a5a5a;
+  --fg-mute: #8a8a8a;
+  --accent: #0a0a0a;
+  --accent-ink: #f6f6f4;
+  --grid: rgba(0,0,0,0.04);
+  --card: #efefec;
+  --shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 30px 60px -30px rgba(0,0,0,0.18);
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg); color: var(--fg);
+  background: var(--bg);
+  color: var(--fg);
   font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-  font-size: 17px; line-height: 1.5;
-  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background 400ms ease, color 400ms ease;
 }
 a { color: inherit; text-decoration: none; }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.serif { font-family: 'Fraunces', ui-serif, Georgia, serif; font-style: italic; }
+
+/* ---------- layout helpers ---------- */
+.wrap {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
 @media (max-width: 720px) { .wrap { padding: 0 22px; } }
 
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.section {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+@media (max-width: 720px) { .section { padding: 80px 0; } }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+}
+.section-head h2 {
+  font-size: clamp(44px, 7vw, 96px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  margin: 16px 0 0 0;
+}
+.section-head p {
+  font-size: clamp(17px, 1.4vw, 21px);
+  color: var(--fg-dim);
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ---------- background grid ---------- */
 .grid-bg {
-  position: fixed; inset: 0; pointer-events: none;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-  background-size: 80px 80px; z-index: 0;
+  background-size: 80px 80px;
+  z-index: 0;
   mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
 }
 
-/* nav */
+/* ---------- nav ---------- */
 .nav {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   background: color-mix(in oklab, var(--bg) 75%, transparent);
   border-bottom: 1px solid var(--line);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 20px;
+}
+.logo-icon-link { display: inline-flex; align-items: center; }
+.logo-mark {
+  width: 36px; height: 36px;
+  display: grid;
+  place-items: center;
+  transition: transform 300ms ease;
+}
 .logo-mark svg { width: 100%; height: 100%; display: block; }
 .logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
-.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 4px;
+}
 .logo-name {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-  letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 16px;
+  color: var(--fg);
+  text-transform: uppercase;
 }
 .logo-by {
-  font-family: 'JetBrains Mono', monospace; font-size: 9px;
-  color: var(--fg-dim); letter-spacing: 0.18em; text-transform: uppercase;
-  transition: color 200ms; width: max-content;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--fg-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 200ms;
+  width: max-content;
 }
 .logo-by:hover { color: var(--fg); }
-.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links {
+  display: flex;
+  gap: 36px;
+  font-size: 14px;
+  color: var(--fg-dim);
+}
 .nav-links a { transition: color 200ms; }
-.nav-links a:hover, .nav-links a.on { color: var(--fg); }
-.nav-cta { display: flex; align-items: center; gap: 14px; }
+.nav-links a:hover { color: var(--fg); }
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 @media (max-width: 780px) { .nav-links { display: none; } }
+
+/* ---------- buttons ---------- */
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 16px; border-radius: 999px;
-  font-size: 13px; font-weight: 500;
-  background: var(--accent); color: var(--accent-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease, border-color 200ms;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--fg);
+}
+.btn-ghost:hover { border-color: var(--fg); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+.btn .arrow {
+  display: inline-block;
   transition: transform 200ms ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover .arrow { transform: translateX(3px); }
 
-/* hero */
-.hero { padding: 100px 0 60px; border-bottom: 1px solid var(--line); }
-.eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  padding: 80px 0 60px;
+  overflow: hidden;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
   color: var(--fg-dim);
-  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--bg-elev);
 }
-.eyebrow::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 12px var(--accent);
+.hero-badge .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--fg);
+  position: relative;
 }
-.hero h1 {
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 500; letter-spacing: -0.04em;
-  line-height: 0.92; margin: 20px 0 0;
+.hero-badge .dot::after {
+  content: "";
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  background: var(--fg);
+  opacity: 0.3;
+  animation: pulse 2s ease-out infinite;
 }
-.hero h1 em {
-  font-family: 'Fraunces', serif; font-style: italic;
-  font-weight: 300; color: var(--fg);
-}
-.hero p {
-  margin: 28px 0 0; font-size: 19px;
-  color: var(--fg-dim); max-width: 620px; line-height: 1.5;
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.45; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
-/* service grid */
-.services { padding: 80px 0 140px; }
-.svc-grid {
+.hero-h1 {
+  margin: 28px 0 0;
+  font-weight: 500;
+  font-size: clamp(72px, 13vw, 220px);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+}
+.hero-h1 .absurd-wrap {
+  display: inline-block;
+  position: relative;
+}
+.hero-h1 .absurd {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--fg);
+  letter-spacing: -0.04em;
+  animation: absurdStretch 6s ease-in-out infinite;
+  transform-origin: left center;
+}
+@keyframes absurdStretch {
+  0%, 100% { font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400; letter-spacing: -0.04em; }
+  50%     { font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 700; letter-spacing: -0.08em; }
+}
+.hero-h1 .period {
+  color: var(--fg);
+  display: inline-block;
+}
+
+.hero-sub {
+  margin-top: 40px;
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: var(--fg-dim);
+  max-width: 580px;
+  line-height: 1.5;
+}
+.hero-ctas {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-proof {
+  margin-top: 72px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.hero-proof .stars {
+  color: var(--accent);
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+}
+.hero-proof .sep {
+  opacity: 0.4;
+}
+
+/* floating absurd element */
+.hero-float {
+  position: absolute;
+  right: -5%;
+  top: 18%;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.hero-float .ring {
+  position: absolute;
+  inset: 0;
+  border: 1px dashed var(--line-strong);
+  border-radius: 50%;
+  animation: spin 40s linear infinite;
+}
+.hero-float .ring span {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-dim);
+  letter-spacing: 0.2em;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  padding: 0 8px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 900px) {
+  .hero-float { display: none; }
+}
+
+/* ---------- marquee ---------- */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+  background: var(--bg-elev);
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  animation: marquee 38s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee-track span {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 56px;
+}
+.marquee-track span::after {
+  content: "✱";
+  color: var(--fg-dim);
+  font-size: 22px;
+  font-style: normal;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- problem grid ---------- */
+.problems {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
 }
-@media (max-width: 880px) { .svc-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .problems { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .problems { grid-template-columns: 1fr; } }
 
-.svc {
+.prob {
   background: var(--bg);
-  padding: 44px 36px 40px;
-  display: flex; flex-direction: column;
+  padding: 36px 32px 40px;
   position: relative;
   transition: background 300ms;
-  min-height: 340px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
 }
-.svc:hover { background: var(--bg-elev); }
-.svc:hover .svc-arrow { transform: translateX(8px); }
-.svc-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--fg-mute);
-}
-.svc-title {
-  font-size: 32px; font-weight: 500; letter-spacing: -0.025em;
-  margin: 18px 0 12px; line-height: 1.1;
-}
-.svc-title em {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-}
-.svc-desc {
-  font-size: 16px; color: var(--fg-dim); line-height: 1.55;
-  margin: 0 0 24px; max-width: 480px;
-}
-.svc-price {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--fg-dim);
-  margin-top: auto; padding-top: 24px;
-  border-top: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px;
-}
-.svc-cta {
+.prob:hover { background: var(--bg-elev); }
+.prob-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 140px;
+  line-height: 0.8;
   color: var(--fg);
-  display: inline-flex; align-items: center; gap: 8px;
+  letter-spacing: -0.06em;
+  margin: 0 0 auto 0;
+  transition: color 300ms;
 }
-.svc-arrow { display: inline-block; transition: transform 200ms ease; }
-
-.svc-tag {
-  position: absolute; top: 20px; right: 24px;
+.prob:hover .prob-num { color: var(--fg-dim); }
+.prob-title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 32px 0 10px;
+}
+.prob-desc {
+  font-size: 14px;
+  color: var(--fg-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+.prob-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   color: var(--fg-mute);
-  padding: 4px 10px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 20px; right: 24px;
+}
+
+/* ---------- solution ---------- */
+.solution-bg {
+  background: var(--bg-elev);
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.feat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 300ms, transform 400ms cubic-bezier(.2,.8,.2,1);
+}
+.feat:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.feat-1 { grid-column: span 7; min-height: 380px; }
+.feat-2 { grid-column: span 5; min-height: 380px; }
+.feat-3 { grid-column: span 5; min-height: 320px; }
+.feat-4 { grid-column: span 7; min-height: 320px; }
+@media (max-width: 900px) {
+  .feat-1, .feat-2, .feat-3, .feat-4 { grid-column: span 12; min-height: 280px; }
+}
+
+.feat-title {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+.feat-desc {
+  color: var(--fg-dim);
+  max-width: 380px;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+}
+.feat-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* typographic illustration bits */
+.feat-viz {
+  position: absolute;
+  pointer-events: none;
+}
+.viz-infinity {
+  bottom: -20px; right: 24px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 220px;
+  line-height: 1;
+  color: var(--fg);
+  opacity: 0.85;
+}
+.viz-top1 {
+  bottom: -40px; right: 20px;
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 260px;
+  line-height: 1;
+  color: var(--fg);
+  letter-spacing: -0.08em;
+}
+.viz-top1 em {
+  font-style: italic;
+  color: var(--fg-dim);
+}
+.viz-48 {
+  bottom: -20px; right: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 140px;
+  line-height: 1;
+  color: var(--fg);
+  letter-spacing: -0.04em;
+}
+.viz-48 sup {
+  font-size: 32px;
+  vertical-align: super;
+  color: var(--fg-dim);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.viz-dollar {
+  bottom: -50px; right: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 280px;
+  line-height: 1;
+  color: var(--fg);
+}
+.viz-dollar s {
+  text-decoration: line-through;
+  text-decoration-color: var(--fg);
+  text-decoration-thickness: 8px;
+}
+
+/* ---------- steps ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  counter-reset: step;
+}
+@media (max-width: 900px) { .steps { grid-template-columns: 1fr; } }
+.step {
+  padding: 40px 0 0;
+  border-top: 1px solid var(--line-strong);
+  position: relative;
+}
+.step::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0;
+  height: 1px; width: 0;
+  background: var(--accent);
+  transition: width 600ms cubic-bezier(.2,.8,.2,1);
+}
+.step.in::before { width: 60%; background: var(--fg); }
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--fg-mute);
+  letter-spacing: 0.18em;
+}
+.step-big {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(90px, 12vw, 180px);
+  line-height: 0.9;
+  margin: 12px 0 24px;
+  letter-spacing: -0.04em;
+}
+.step:nth-child(2) .step-big { color: var(--fg-dim); }
+.step-title {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.step-desc {
+  color: var(--fg-dim);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 360px;
+}
+
+/* ---------- pricing ---------- */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
   border: 1px solid var(--line);
   border-radius: 999px;
+  background: var(--bg-elev);
+  margin-bottom: 48px;
+}
+.toggle button {
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--fg-dim);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+.toggle button.on {
+  background: var(--fg);
+  color: var(--bg);
+}
+.toggle .save {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--fg);
+  font-size: 10px;
+  background: color-mix(in oklab, var(--fg) 12%, transparent);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.toggle button.on .save {
+  color: var(--bg);
+  background: color-mix(in oklab, var(--bg) 18%, transparent);
 }
 
-/* footer cta */
-.foot-cta {
-  text-align: center; padding: 120px 0;
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1000px) { .plans { grid-template-columns: 1fr; } }
+
+.plan {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 300ms;
+}
+.plan:hover { border-color: var(--line-strong); }
+.plan.featured {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+.plan.featured .plan-label,
+.plan.featured .plan-sub,
+.plan.featured .plan-feat {
+  color: color-mix(in oklab, var(--bg) 65%, var(--fg));
+}
+.plan.featured .plan-feat svg { color: var(--bg); }
+
+.plan-badge {
+  position: absolute;
+  top: -12px; left: 32px;
+  background: var(--fg);
+  color: var(--bg);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--fg);
+}
+.plan-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.plan-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 1;
+  margin: 14px 0 10px;
+  letter-spacing: -0.03em;
+}
+.plan-sub {
+  color: var(--fg-dim);
+  font-size: 14px;
+  margin: 0 0 32px;
+  min-height: 40px;
+}
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.plan-price .amt {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+.plan-price .per {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--fg-dim);
+}
+.plan-billing {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+.plan-feat {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  color: var(--fg-dim);
+  font-size: 14px;
+  flex: 1;
+}
+.plan-feat li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid color-mix(in oklab, var(--line) 80%, transparent);
+}
+.plan-feat li:first-child { border-top: 0; }
+.plan-feat svg {
+  flex: none;
+  width: 14px; height: 14px;
+  margin-top: 4px;
+  color: var(--fg);
+}
+.plan .btn-plan {
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line-strong);
+  transition: all 200ms;
+}
+.plan .btn-plan:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.plan.featured .btn-plan {
+  background: var(--bg);
+  color: var(--fg);
+  border-color: var(--bg);
+}
+.plan.featured .btn-plan:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+
+/* ---------- testimonials ---------- */
+.testis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1000px) { .testis { grid-template-columns: 1fr; } }
+.testi {
+  padding: 36px 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  transition: border-color 300ms, transform 400ms;
+}
+.testi:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.testi-quote-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 80px;
+  line-height: 0.5;
+  color: var(--fg);
+  height: 32px;
+}
+.testi q {
+  quotes: none;
+  font-size: 19px;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+.testi q::before, .testi q::after { content: ""; }
+.testi-foot {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
+}
+.testi-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  color: var(--bg);
+  font-size: 14px;
+}
+.testi-name { font-weight: 500; font-size: 15px; }
+.testi-role { font-size: 13px; color: var(--fg-dim); }
+.testi-stars { margin-left: auto; color: var(--fg); letter-spacing: -0.05em; font-size: 14px; }
+
+/* ---------- faq ---------- */
+.faqs {
+  border-top: 1px solid var(--line-strong);
+}
+.faq {
+  border-bottom: 1px solid var(--line);
+}
+.faq button {
+  width: 100%;
+  text-align: left;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  transition: color 200ms;
+}
+.faq button:hover { color: var(--fg-dim); }
+.faq-idx {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--fg-mute);
+  letter-spacing: 0.15em;
+  margin-right: 16px;
+}
+.faq-toggle {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  display: grid;
+  place-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--fg-dim);
+  transition: all 300ms;
+}
+.faq.open .faq-toggle { background: var(--fg); color: var(--bg); border-color: var(--fg); transform: rotate(45deg); }
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 400ms cubic-bezier(.2,.8,.2,1);
+}
+.faq.open .faq-body { grid-template-rows: 1fr; }
+.faq-body > div {
+  overflow: hidden;
+}
+.faq-body p {
+  max-width: 720px;
+  padding: 0 0 28px 48px;
+  color: var(--fg-dim);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- footer cta ---------- */
+.foot-cta {
+  text-align: center;
+  padding: 160px 0;
+  position: relative;
+  overflow: hidden;
 }
 .foot-cta h2 {
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 500; letter-spacing: -0.035em;
-  line-height: 1; margin: 0 auto; max-width: 16ch;
+  font-size: clamp(56px, 9vw, 140px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin: 0 auto;
+  max-width: 14ch;
 }
 .foot-cta h2 em {
-  font-family: 'Fraunces', serif; font-weight: 300; color: var(--fg-dim);
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  color: var(--fg-dim);
 }
-.foot-cta p { color: var(--fg-dim); margin: 20px 0 32px; font-size: 17px; }
+.foot-cta p {
+  margin-top: 28px;
+  color: var(--fg-dim);
+  font-size: 18px;
+}
+.foot-cta .ctas {
+  margin-top: 40px;
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.foot-cta .trust {
+  margin-top: 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 
-/* footer */
+/* ---------- footer ---------- */
 .footer {
   border-top: 1px solid var(--line);
-  padding: 40px 0;
+  padding: 72px 0 40px;
   background: var(--bg-elev);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; color: var(--fg-mute);
-  letter-spacing: 0.12em; text-transform: uppercase;
 }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-.footer a:hover { color: var(--fg); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 
+.footer h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin: 0 0 18px;
+  font-weight: 500;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer ul li { padding: 6px 0; font-size: 14px; color: var(--fg-dim); }
+.footer ul li a:hover { color: var(--fg); }
+.footer-brand p { font-size: 14px; color: var(--fg-dim); margin: 16px 0 0; max-width: 320px; line-height: 1.55; }
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.12em;
+}
+.footer-bottom .built {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-bottom .built .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--fg); box-shadow: 0 0 8px color-mix(in oklab, var(--fg) 60%, transparent);
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- tweaks panel ---------- */
+.tweaks {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  z-index: 100;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 16px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,0.5);
+}
+.tweaks.on { display: flex; }
+.tweaks h5 {
+  margin: 0 0 4px;
+  font-size: 10px;
+  color: var(--fg-mute);
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+.tweaks .row { display: flex; gap: 6px; }
+.tweaks .swatch {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg-dim);
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  transition: all 200ms;
+}
+.tweaks .swatch.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* selection */
 ::selection { background: var(--fg); color: var(--bg); }
+::-moz-selection { background: var(--fg); color: var(--bg); }
+
+/* scrollbar */
+html[data-theme="dark"] ::-webkit-scrollbar { width: 12px; }
+html[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--bg); }
+html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 6px; border: 3px solid var(--bg); }
 </style>
 </head>
 <body>
 <div class="grid-bg"></div>
 
+<!-- Reusable logo mark SVG -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="appsurd-mark" viewBox="0 0 36 36">
@@ -207,122 +1084,538 @@ a { color: inherit; text-decoration: none; }
   </defs>
 </svg>
 
+<!-- NAV -->
 <nav class="nav">
   <div class="wrap nav-inner">
     <div class="logo">
-      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+      <a href="#" class="logo-icon-link" aria-label="Appsurd home">
         <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
       </a>
       <div class="logo-text">
-        <a href="/" class="logo-name">APPSURD</a>
+        <a href="#" class="logo-name">APPSURD</a>
         <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
       </div>
     </div>
     <div class="nav-links">
-      <a href="/#features">Features</a>
-      <a href="/#how">How It Works</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/services/" class="on">Services</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/services/">Services</a>
       <a href="/blog/">Blog</a>
-      <a href="/#faq">FAQ</a>
+      <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="/#pricing" class="btn">Get Started →</a>
+      <a href="#" class="mono" style="font-size:12px;color:var(--fg-dim);letter-spacing:0.08em;text-transform:uppercase;">Sign In</a>
+      <a href="#pricing" class="btn btn-primary btn-sm">Get Started <span class="arrow">→</span></a>
     </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Services</span>
-    <h1>Six ways to<br>work with <em>us</em>.</h1>
-    <p>From a fully productized product team to a single forward-deployed engineer to a one-time AI audit. Pick the shape that matches the problem.</p>
-  </div>
-</section>
+  <div class="wrap" style="position:relative;">
+    <div class="hero-float" aria-hidden="true">
+      <div class="ring"><span>UNLIMITED · REQUESTS · 48HR · DELIVERY ·</span></div>
+      <div class="ring" style="inset: 30px; animation-duration: 60s; animation-direction: reverse;"><span>TOP 1% · TALENT · FIXED · RATE ·</span></div>
+    </div>
 
-<section class="services">
-  <div class="wrap">
-    <div class="svc-grid">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span class="mono" style="text-transform:uppercase;letter-spacing:0.14em;">Now accepting clients — limited spots</span>
+    </div>
 
-      <a href="/#pricing" class="svc">
-        <span class="svc-tag">Most Popular</span>
-        <span class="svc-num">SVC · 01</span>
-        <h2 class="svc-title">Productized <em>squad</em></h2>
-        <p class="svc-desc">An entire product team — engineers, designers, PM, QA — for a flat monthly fee. Unlimited requests, 48-hour turnaround, pause anytime. The original Appsurd offering.</p>
-        <div class="svc-price">
-          <span>From $4,995/mo</span>
-          <span class="svc-cta">See pricing <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
+    <h1 class="hero-h1">
+      Build the<br>
+      <span class="absurd-wrap"><span class="absurd">Absurd</span></span><span class="period">.</span>
+    </h1>
 
-      <a href="/services/ai-implementation.html" class="svc">
-        <span class="svc-num">SVC · 02</span>
-        <h2 class="svc-title">AI <em>implementation</em></h2>
-        <p class="svc-desc">We audit your business, find where AI saves the most time and money, and ship the implementation. Start with a $4,995 audit; bigger engagements quoted.</p>
-        <div class="svc-price">
-          <span>From $4,995</span>
-          <span class="svc-cta">Learn more <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
+    <p class="hero-sub">
+      One AI-native dev ships like five. Get a full squad — engineers, designers, PMs, and QA, all fluent in agentic workflows — for one flat monthly fee. Unlimited requests. Pause or cancel anytime.
+    </p>
 
-      <a href="/services/staff-aug.html" class="svc">
-        <span class="svc-num">SVC · 03</span>
-        <h2 class="svc-title">Forward-deployed <em>engineers</em></h2>
-        <p class="svc-desc">Embed a top 1% AI-augmented engineer with your team for as long as you need. Senior or staff/lead level. Monthly subscription, 3-month minimum.</p>
-        <div class="svc-price">
-          <span>From $18,000/mo</span>
-          <span class="svc-cta">Learn more <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn btn-primary">See Pricing <span class="arrow">→</span></a>
+      <a href="#" class="btn btn-ghost">Book a Demo</a>
+    </div>
 
-      <a href="/services/advisory.html" class="svc">
-        <span class="svc-num">SVC · 04</span>
-        <h2 class="svc-title">AI <em>advisory</em></h2>
-        <p class="svc-desc">Fractional CTO-level guidance on AI strategy, architecture, and team. Four hours a month of one-on-one time with a senior operator. Pause or cancel anytime.</p>
-        <div class="svc-price">
-          <span>$4,995/mo</span>
-          <span class="svc-cta">Learn more <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
-
-      <a href="/services/custom-gpts.html" class="svc">
-        <span class="svc-num">SVC · 05</span>
-        <h2 class="svc-title">Custom <em>GPTs &amp; agents</em></h2>
-        <p class="svc-desc">We build internal AI agents, chatbots, and workflows tailored to your team. Project-based engagements; scope and price quoted per build.</p>
-        <div class="svc-price">
-          <span>Quoted per build</span>
-          <span class="svc-cta">Book a call <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
-
-      <a href="/services/training.html" class="svc">
-        <span class="svc-num">SVC · 06</span>
-        <h2 class="svc-title">Training &amp; <em>workshops</em></h2>
-        <p class="svc-desc">Hands-on AI training for engineering, product, and ops teams. We come in, work with your people, and leave them faster than we found them.</p>
-        <div class="svc-price">
-          <span>Quoted per cohort</span>
-          <span class="svc-cta">Book a call <span class="svc-arrow">→</span></span>
-        </div>
-      </a>
-
+    <div class="hero-proof">
+      <span>200+ teams building</span>
+      <span class="sep">/</span>
+      <span class="stars">★★★★★</span>
+      <span>4.9 / 5 rating</span>
+      <span class="sep">/</span>
+      <span>ships in 48h</span>
     </div>
   </div>
 </section>
 
-<section class="foot-cta">
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
+    <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
   <div class="wrap">
-    <h2>Not sure which<br><em>shape</em> you need?</h2>
-    <p>Tell us the problem. We'll tell you the right service — even if it's not one of ours.</p>
-    <a href="mailto:hello@appsurd.co?subject=Help%20me%20pick%20a%20service" class="btn">Book a call →</a>
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">01 · The problem</span>
+        <h2>Hiring is<br><span class="serif">broken</span>.</h2>
+      </div>
+      <p>Building a software product shouldn't require months of recruiting, negotiating salaries, and managing overhead. The old playbook costs too much and moves too slow.</p>
+    </div>
+
+    <div class="problems reveal">
+      <div class="prob">
+        <span class="prob-tag">P·01</span>
+        <div class="prob-num">3–6<span style="font-family:'Space Grotesk';font-style:normal;font-size:28px;color:var(--fg-dim);vertical-align:super;">mo</span></div>
+        <h3 class="prob-title">Months of recruiting</h3>
+        <p class="prob-desc">Finding, interviewing, and onboarding a single senior engineer takes 3–6 months on average.</p>
+      </div>
+      <div class="prob">
+        <span class="prob-tag">P·02</span>
+        <div class="prob-num">$80k<span style="font-family:'Space Grotesk';font-style:normal;font-size:28px;color:var(--fg-dim);vertical-align:super;">+</span></div>
+        <h3 class="prob-title">Unpredictable costs</h3>
+        <p class="prob-desc">Salaries, benefits, equipment, and overhead can push a 5-person team to $80,000+ per month.</p>
+      </div>
+      <div class="prob">
+        <span class="prob-tag">P·03</span>
+        <div class="prob-num" style="letter-spacing:-0.08em;">↯</div>
+        <h3 class="prob-title">High turnover risk</h3>
+        <p class="prob-desc">Engineers leave. When they do, you lose momentum, institutional knowledge, and months of progress.</p>
+      </div>
+      <div class="prob">
+        <span class="prob-tag">P·04</span>
+        <div class="prob-num" style="font-family:'JetBrains Mono';font-size:120px;letter-spacing:0;">[ ]</div>
+        <h3 class="prob-title">Agency rigidity</h3>
+        <p class="prob-desc">Traditional agencies lock you into fixed-scope contracts with hourly billing and endless change orders.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- SOLUTION -->
+<section class="section solution-bg" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">02 · The solution</span>
+        <h2>Meet<br><span class="serif" style="color:var(--accent);">Appsurd</span>.</h2>
+      </div>
+      <p>We've productized software development with AI-native devs. Every team member is fluent in agentic workflows — so one engineer ships the output of a five-person squad from the old playbook.</p>
+    </div>
+
+    <div class="features reveal">
+      <div class="feat feat-1">
+        <div class="feat-tag"><span>F·01</span><span>REQUESTS</span></div>
+        <h3 class="feat-title">Unlimited requests.</h3>
+        <p class="feat-desc">Add as many tasks to your backlog as you want. No caps, no extra charges, no scope creep.</p>
+        <div class="feat-viz viz-infinity">∞</div>
+      </div>
+      <div class="feat feat-2">
+        <div class="feat-tag"><span>F·02</span><span>TALENT</span></div>
+        <h3 class="feat-title">AI-native devs.</h3>
+        <p class="feat-desc">Every engineer, designer, and PM is fluent in agentic workflows. One of ours ships like five devs from the old playbook.</p>
+        <div class="feat-viz viz-top1">5<em>×</em></div>
+      </div>
+      <div class="feat feat-3">
+        <div class="feat-tag"><span>F·03</span><span>SPEED</span></div>
+        <h3 class="feat-title">48-hour delivery.</h3>
+        <p class="feat-desc">Receive updates and completed tasks every 48–72 hours. No waiting weeks.</p>
+        <div class="feat-viz viz-48">48<sup>hr</sup></div>
+      </div>
+      <div class="feat feat-4">
+        <div class="feat-tag"><span>F·04</span><span>PRICING</span></div>
+        <h3 class="feat-title">Fixed monthly rate.</h3>
+        <p class="feat-desc">One predictable subscription. No hidden fees, no hourly billing, no scope creep.</p>
+        <div class="feat-viz viz-dollar"><s>$</s></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">03 · How it works</span>
+        <h2>From idea<br>to <span class="serif">execution</span>.</h2>
+      </div>
+      <p>Three steps from signup to shipped software. No hiring, no onboarding, no drawn-out sales cycle.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">STEP · 01</div>
+        <div class="step-big">01</div>
+        <h3 class="step-title">Subscribe & onboard</h3>
+        <p class="step-desc">Choose your plan and get instant access to your dedicated Slack channel and project board.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP · 02</div>
+        <div class="step-big">02</div>
+        <h3 class="step-title">Submit your requests</h3>
+        <p class="step-desc">Add design and development tasks to your queue. Provide briefs, wireframes, or just a rough idea.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP · 03</div>
+        <div class="step-big">03</div>
+        <h3 class="step-title">Receive & iterate</h3>
+        <p class="step-desc">We deliver high-quality work within 48–72 hours. Request unlimited revisions and approve when happy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="background: var(--bg-elev);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">04 · Pricing</span>
+        <h2>Simple pricing.<br>No <span class="serif">surprises</span>.</h2>
+      </div>
+      <p>A single senior dev costs $12,000–$15,000/mo and ships at 1×. Our AI-native devs ship at 5×, agentic-fluent — for less than the cost of one traditional hire.</p>
+    </div>
+
+    <div class="reveal" style="text-align:center;">
+      <div class="toggle" role="tablist">
+        <button id="billMonthly" class="on" role="tab">Monthly</button>
+        <button id="billAnnual" role="tab">Annual <span class="save">−17%</span></button>
+      </div>
+    </div>
+
+    <div class="plans reveal">
+      <div class="plan">
+        <div class="plan-label">Launch</div>
+        <div class="plan-name">Launch</div>
+        <p class="plan-sub">For startups building their MVP.</p>
+        <div class="plan-price"><span class="amt" data-price-m="4,995" data-price-a="4,163">$4,995</span><span class="per">/ mo</span></div>
+        <div class="plan-billing"><span data-bill-m="BILLED MONTHLY" data-bill-a="BILLED ANNUALLY">BILLED MONTHLY</span></div>
+        <ul class="plan-feat">
+          <li>${check} 1 active request at a time</li>
+          <li>${check} Dedicated product designer</li>
+          <li>${check} AI-native full-stack engineer (ships like 5)</li>
+          <li>${check} Dedicated project manager</li>
+          <li>${check} 48–72 hour turnaround</li>
+          <li>${check} Unlimited revisions</li>
+          <li>${check} Pause or cancel anytime</li>
+        </ul>
+        <a href="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-m="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-a="https://buy.stripe.com/5kQ6oI9Pm7QM2bCdxv8AE06" class="btn-plan">Get Started <span class="arrow">→</span></a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-badge">★ Most Popular</span>
+        <div class="plan-label">Build</div>
+        <div class="plan-name">Build</div>
+        <p class="plan-sub">For growing companies scaling fast.</p>
+        <div class="plan-price"><span class="amt" data-price-m="9,995" data-price-a="8,329">$9,995</span><span class="per">/ mo</span></div>
+        <div class="plan-billing"><span data-bill-m="BILLED MONTHLY" data-bill-a="BILLED ANNUALLY">BILLED MONTHLY</span></div>
+        <ul class="plan-feat">
+          <li>${check} 2 active requests at a time</li>
+          <li>${check} Senior product designer</li>
+          <li>${check} 2 AI-native engineers (FE + BE) — output of 10 traditional devs</li>
+          <li>${check} Dedicated PM + QA tester</li>
+          <li>${check} 24–48 hour turnaround</li>
+          <li>${check} Unlimited revisions</li>
+          <li>${check} Dedicated Slack channel</li>
+          <li>${check} Pause or cancel anytime</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-m="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-a="https://buy.stripe.com/4gM28se5C9YUg2salj8AE08" class="btn-plan">Get Started <span class="arrow">→</span></a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-label">Scale</div>
+        <div class="plan-name">Scale</div>
+        <p class="plan-sub">For funded teams moving at full velocity.</p>
+        <div class="plan-price"><span class="amt" data-price-m="19,995" data-price-a="16,663">$19,995</span><span class="per">/ mo</span></div>
+        <div class="plan-billing"><span data-bill-m="BILLED MONTHLY" data-bill-a="BILLED ANNUALLY">BILLED MONTHLY</span></div>
+        <ul class="plan-feat">
+          <li>${check} 4 active requests at a time</li>
+          <li>${check} Full product squad</li>
+          <li>${check} 3 AI-native engineers + designer + PM + QA + DevOps (≈15-dev output)</li>
+          <li>${check} Priority 24-hour turnaround</li>
+          <li>${check} Dedicated Slack channel</li>
+          <li>${check} Weekly strategy calls</li>
+          <li>${check} Custom integrations</li>
+          <li>${check} Pause or cancel anytime</li>
+        </ul>
+        <a href="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-m="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-a="https://buy.stripe.com/28EeVe7He1so03ugJH8AE0a" class="btn-plan">Get Started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">05 · Testimonials</span>
+        <h2>Don't take our<br>word for <span class="serif">it</span>.</h2>
+      </div>
+      <p>Hear from founders who've made the switch — from expensive hires and rigid agencies to shipping software every week.</p>
+    </div>
+
+    <div class="testis reveal">
+      <article class="testi">
+        <div class="testi-quote-mark">"</div>
+        <q>We went from idea to live product in 6 weeks. Appsurd's team is genuinely impressive — fast, communicative, and they actually care about the product.</q>
+        <div class="testi-foot">
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">SC</div>
+          <div>
+            <div class="testi-name">Sarah Chen</div>
+            <div class="testi-role">CEO, Launchpad AI</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </article>
+
+      <article class="testi">
+        <div class="testi-quote-mark">"</div>
+        <q>I was spending $45k/month on contractors with inconsistent results. Appsurd's Build plan cut that in half and doubled our output.</q>
+        <div class="testi-foot">
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">MW</div>
+          <div>
+            <div class="testi-name">Marcus Williams</div>
+            <div class="testi-role">CTO, Flowstate</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </article>
+
+      <article class="testi">
+        <div class="testi-quote-mark">"</div>
+        <q>The pause feature alone sold me. We had a slow quarter, paused for two months, and came back with a full backlog. No drama, no penalties.</q>
+        <div class="testi-foot">
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">PS</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-role">Founder, Stackr</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap" style="max-width: 1000px;">
+    <div class="section-head reveal" style="grid-template-columns: 1fr;">
+      <div>
+        <span class="eyebrow">06 · FAQ</span>
+        <h2>Frequently asked <span class="serif">questions</span>.</h2>
+      </div>
+    </div>
+
+    <div class="faqs reveal">
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·01</span>What does 'unlimited' really mean?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>You can add as many design and development requests to your queue as you'd like. We work through them one by one and deliver results continuously. No caps on the number of requests.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·02</span>Who will be working on my project?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>You'll be assigned a dedicated team of vetted AI-native engineers, a product designer, and a project manager — every member is fluent in agentic workflows, so a single dev on your project ships like a 5-person team did a year ago.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·03</span>How fast will I receive my work?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>Most requests are completed and delivered within 48 to 72 hours on the Launch plan, and 24–48 hours on Build and Scale.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·04</span>What if I don't like the work?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>We offer unlimited revisions. We'll keep refining the design or code until you are 100% satisfied.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·05</span>Can I pause my subscription?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>Absolutely. If you don't have enough work to fill a full month, you can pause your subscription and resume when you have more requests.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="foot-cta section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Ready to build<br>something <em>absurdly</em><br>good?</h2>
+      <p>Stop hiring. Start building. Join Appsurd today.</p>
+      <div class="ctas">
+        <a href="#pricing" class="btn btn-primary">Get Started Now <span class="arrow">→</span></a>
+        <a href="#" class="btn btn-ghost">Book a Demo</a>
+      </div>
+      <div class="trust">No contracts · No setup fees · Cancel anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="wrap footer-inner">
-    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
-    <span><a href="/">← Back to home</a></span>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+          <div class="logo-text">
+            <span class="logo-name">APPSURD</span>
+            <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+          </div>
+        </div>
+        <p>AI-native devs on tap, fluent in agentic flows. The output of a 5-dev squad for one flat monthly fee.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+      <span class="built"><span class="dot"></span>ALL SYSTEMS OPERATIONAL</span>
+    </div>
   </div>
 </footer>
 
+<!-- TWEAKS PANEL -->
+<div class="tweaks" id="tweaksPanel">
+  <h5>TWEAKS</h5>
+  <div>
+    <h5 style="margin-top:4px;">Theme</h5>
+    <div class="row">
+      <button class="swatch" data-theme-btn="dark">Dark</button>
+      <button class="swatch" data-theme-btn="light">Light</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- tweakable defaults ---------- */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "dark"
+}/*EDITMODE-END*/;
+
+/* apply theme */
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  document.querySelectorAll('[data-theme-btn]').forEach(b => {
+    b.classList.toggle('on', b.dataset.themeBtn === t);
+  });
+}
+applyTheme(TWEAK_DEFAULTS.theme);
+
+/* ---------- inject check icon into pricing lists ---------- */
+(function injectChecks() {
+  const check = `<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  document.querySelectorAll('.plan-feat li').forEach(li => {
+    li.innerHTML = li.innerHTML.replace('${check}', check);
+  });
+})();
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('.faq button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const parent = btn.parentElement;
+    const wasOpen = parent.classList.contains('open');
+    document.querySelectorAll('.faq.open').forEach(f => f.classList.remove('open'));
+    if (!wasOpen) parent.classList.add('open');
+  });
+});
+
+/* ---------- Billing toggle ---------- */
+const billM = document.getElementById('billMonthly');
+const billA = document.getElementById('billAnnual');
+function setBilling(mode) {
+  billM.classList.toggle('on', mode === 'm');
+  billA.classList.toggle('on', mode === 'a');
+  document.querySelectorAll('.amt').forEach(el => {
+    el.textContent = '$' + (mode === 'm' ? el.dataset.priceM : el.dataset.priceA);
+  });
+  document.querySelectorAll('[data-bill-m]').forEach(el => {
+    el.textContent = mode === 'm' ? el.dataset.billM : el.dataset.billA;
+  });
+  document.querySelectorAll('[data-link-m]').forEach(el => {
+    el.href = mode === 'm' ? el.dataset.linkM : el.dataset.linkA;
+  });
+}
+billM.addEventListener('click', () => setBilling('m'));
+billA.addEventListener('click', () => setBilling('a'));
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .step').forEach(el => io.observe(el));
+
+/* ---------- tweaks protocol ---------- */
+const tweaksPanel = document.getElementById('tweaksPanel');
+window.addEventListener('message', (e) => {
+  const d = e.data || {};
+  if (d.type === '__activate_edit_mode') tweaksPanel.classList.add('on');
+  if (d.type === '__deactivate_edit_mode') tweaksPanel.classList.remove('on');
+});
+try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch(_) {}
+
+document.querySelectorAll('[data-theme-btn]').forEach(b => {
+  b.addEventListener('click', () => {
+    const t = b.dataset.themeBtn;
+    applyTheme(t);
+    try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { theme: t } }, '*'); } catch(_) {}
+  });
+});
+
+/* ---------- subtle parallax on hero float ---------- */
+const heroFloat = document.querySelector('.hero-float');
+if (heroFloat) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < 1200) heroFloat.style.transform = `translateY(${y * 0.25}px)`;
+  }, { passive: true });
+}
+</script>
 </body>
 </html>

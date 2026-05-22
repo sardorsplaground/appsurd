@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Implementation — Appsurd</title>
+<meta name="description" content="We audit your business, find where AI saves the most time and money, and ship the implementation. Start with a $4,995 audit; bigger engagements quoted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
+  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
+  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.wrap-narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-narrow { padding: 0 22px; } }
+
+.grid-bg { position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px), linear-gradient(to bottom, var(--grid) 1px, transparent 1px); background-size: 80px 80px; z-index: 0; mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%); }
+
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in oklab, var(--bg) 75%, transparent); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase; }
+.logo-by { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--fg-dim); letter-spacing: 0.18em; text-transform: uppercase; transition: color 200ms; width: max-content; }
+.logo-by:hover { color: var(--fg); }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; background: var(--accent); color: var(--accent-ink); transition: transform 200ms ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-lg { padding: 14px 22px; font-size: 15px; }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--fg); }
+
+.hero { padding: 100px 0 80px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-dim); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+.eyebrow a { color: inherit; transition: color 200ms; }
+.eyebrow a:hover { color: var(--fg); }
+.hero h1 { font-size: clamp(56px, 9vw, 120px); font-weight: 500; letter-spacing: -0.04em; line-height: 0.92; margin: 20px 0 0; }
+.hero h1 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.hero p { margin: 28px 0 0; font-size: 19px; color: var(--fg-dim); max-width: 640px; line-height: 1.55; }
+.hero-ctas { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.section { padding: 120px 0; border-top: 1px solid var(--line); }
+.section-head { margin-bottom: 60px; }
+.section-head h2 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.035em; line-height: 1; margin: 16px 0 0; max-width: 18ch; }
+.section-head h2 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.section-head p { font-size: 18px; color: var(--fg-dim); margin: 20px 0 0; max-width: 560px; line-height: 1.5; }
+
+/* problem grid */
+.probs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+@media (max-width: 900px) { .probs { grid-template-columns: 1fr; } }
+.prob { background: var(--bg); padding: 36px 28px; min-height: 240px; display: flex; flex-direction: column; }
+.prob:hover { background: var(--bg-elev); }
+.prob-num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 80px; line-height: 0.8; color: var(--fg); letter-spacing: -0.04em; }
+.prob h3 { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin: 28px 0 10px; }
+.prob p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; margin: 0; }
+
+/* tiers */
+.tiers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+@media (max-width: 880px) { .tiers { grid-template-columns: 1fr; } }
+.tier { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px 36px; position: relative; display: flex; flex-direction: column; transition: border-color 300ms; }
+.tier:hover { border-color: var(--line-strong); }
+.tier.featured { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.tier.featured .tier-label, .tier.featured .tier-sub, .tier.featured .tier-feat { color: color-mix(in oklab, var(--bg) 65%, var(--fg)); }
+.tier.featured .tier-feat svg { color: var(--bg); }
+.tier-badge { position: absolute; top: -12px; left: 36px; background: var(--fg); color: var(--bg); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+.tier-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-dim); }
+.tier-name { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; margin: 14px 0 10px; letter-spacing: -0.03em; }
+.tier-sub { color: var(--fg-dim); font-size: 14px; margin: 0 0 32px; min-height: 40px; }
+.tier-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.tier-price .amt { font-size: 48px; font-weight: 500; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
+.tier-price .per { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--fg-dim); }
+.tier-billing { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.08em; margin-bottom: 28px; text-transform: uppercase; }
+.tier-feat { list-style: none; padding: 0; margin: 0 0 28px; color: var(--fg-dim); font-size: 14px; flex: 1; }
+.tier-feat li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-top: 1px solid color-mix(in oklab, var(--line) 80%, transparent); }
+.tier-feat li:first-child { border-top: 0; }
+.tier-feat svg { flex: none; width: 14px; height: 14px; margin-top: 4px; color: var(--fg); }
+.tier-cta { padding: 14px 20px; border-radius: 14px; font-size: 14px; font-weight: 500; width: 100%; justify-content: center; text-align: center; display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line-strong); transition: all 200ms; }
+.tier-cta:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.tier.featured .tier-cta { background: var(--bg); color: var(--fg); border-color: var(--bg); }
+.tier.featured .tier-cta:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+
+/* methodology */
+.method { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+@media (max-width: 1000px) { .method { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .method { grid-template-columns: 1fr; } }
+.mstep { padding: 28px 0 0; border-top: 1px solid var(--line-strong); }
+.mstep-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.18em; }
+.mstep h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin: 14px 0 10px; }
+.mstep p { color: var(--fg-dim); font-size: 14px; line-height: 1.55; margin: 0; }
+
+/* faq */
+.faqs { border-top: 1px solid var(--line-strong); }
+.faq { border-bottom: 1px solid var(--line); }
+.faq button { width: 100%; text-align: left; padding: 28px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: clamp(20px, 2vw, 24px); font-weight: 500; letter-spacing: -0.02em; color: var(--fg); border: 0; background: none; cursor: pointer; font-family: inherit; transition: color 200ms; }
+.faq button:hover { color: var(--fg-dim); }
+.faq-idx { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--fg-mute); letter-spacing: 0.15em; margin-right: 16px; }
+.faq-toggle { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--fg-dim); transition: all 300ms; }
+.faq.open .faq-toggle { background: var(--fg); color: var(--bg); border-color: var(--fg); transform: rotate(45deg); }
+.faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 400ms cubic-bezier(.2,.8,.2,1); }
+.faq.open .faq-body { grid-template-rows: 1fr; }
+.faq-body > div { overflow: hidden; }
+.faq-body p { max-width: 720px; padding: 0 0 28px 48px; color: var(--fg-dim); font-size: 16px; line-height: 1.6; margin: 0; }
+
+.foot-cta { text-align: center; padding: 140px 0; border-top: 1px solid var(--line); }
+.foot-cta h2 { font-size: clamp(48px, 7vw, 96px); font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; margin: 0 auto; max-width: 16ch; }
+.foot-cta h2 em { font-family: 'Fraunces', serif; font-weight: 300; color: var(--fg-dim); }
+.foot-cta p { color: var(--fg-dim); margin: 20px 0 32px; font-size: 17px; }
+
+.footer { border-top: 1px solid var(--line); padding: 40px 0; background: var(--bg-elev); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.12em; text-transform: uppercase; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a:hover { color: var(--fg); }
+
+::selection { background: var(--fg); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
+      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/services/" class="on">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#offer" class="btn">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><a href="/services/">Services</a> · AI Implementation</span>
+    <h1>Where AI<br>actually <em>pays off</em>.</h1>
+    <p>Most companies waste six months "exploring AI." We come in, find the two or three workflows where AI saves real money, and ship the implementation. Start with a $4,995 audit. Bigger engagements quoted from there.</p>
+    <div class="hero-ctas">
+      <a href="#offer" class="btn btn-lg">See the offer →</a>
+      <a href="mailto:hello@appsurd.co?subject=AI%20Implementation%20interest" class="btn btn-lg btn-ghost">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The problem</span>
+      <h2>AI projects fail<br>for <em>boring reasons</em>.</h2>
+      <p>It's almost never the model. It's the operational glue around the model — and most companies don't know what they don't know.</p>
+    </div>
+    <div class="probs">
+      <div class="prob">
+        <div class="prob-num">01</div>
+        <h3>Wrong workflow chosen</h3>
+        <p>Teams pick a flashy use case instead of the boring high-volume workflow where AI would actually save the most. Six months later, no ROI.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">02</div>
+        <h3>No evaluation discipline</h3>
+        <p>Without a baseline, you can't tell if the AI is helping or hurting. Most teams ship things they can't measure and then can't defend.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">03</div>
+        <h3>Pilot that won't scale</h3>
+        <p>The demo works in a Colab notebook. Six months of plumbing later, it still hasn't shipped to production because no one thought about ops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="offer" style="background: var(--bg-elev);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The offer</span>
+      <h2>Audit first.<br><em>Build</em> next.</h2>
+      <p>Start with an audit. If we agree there's a real opportunity, we scope and quote the build. No commitment to continue after the audit.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-label">Start here</div>
+        <div class="tier-name">AI Audit</div>
+        <p class="tier-sub">Two-week diagnostic. Find your top AI opportunities and rank them by ROI.</p>
+        <div class="tier-price"><span class="amt">$4,995</span><span class="per">one-time</span></div>
+        <div class="tier-billing">2 WEEKS · WRITTEN DELIVERABLE</div>
+        <ul class="tier-feat">
+          <li>${check} Workflow inventory across the business</li>
+          <li>${check} Top 5 AI opportunities scored by ROI &amp; difficulty</li>
+          <li>${check} Build vs. buy recommendation per opportunity</li>
+          <li>${check} Tooling + vendor shortlist</li>
+          <li>${check} 90-day implementation roadmap</li>
+          <li>${check} 60-minute readout call with your leadership</li>
+          <li>${check} Credit toward Implementation if you proceed</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cI9AUaTqgnicQg3WV8AE0d" class="tier-cta">Buy the audit <span>→</span></a>
+      </div>
+
+      <div class="tier featured">
+        <span class="tier-badge">★ Custom</span>
+        <div class="tier-label">Beyond the audit</div>
+        <div class="tier-name">Implementation</div>
+        <p class="tier-sub">We ship the highest-ROI opportunity from the audit. Scope and price quoted per engagement.</p>
+        <div class="tier-price"><span class="amt">$25k+</span><span class="per">quoted</span></div>
+        <div class="tier-billing">4–12 WEEKS · MILESTONE-BASED</div>
+        <ul class="tier-feat">
+          <li>${check} Build one production-ready AI workflow</li>
+          <li>${check} Full eval suite + monitoring dashboard</li>
+          <li>${check} Integration with your existing tools</li>
+          <li>${check} Documentation + runbook for your team</li>
+          <li>${check} 30 days of post-launch support</li>
+          <li>${check} Optional handoff training</li>
+          <li>${check} Milestone-based billing</li>
+        </ul>
+        <a href="mailto:hello@appsurd.co?subject=AI%20Implementation%20-%20scope%20a%20build" class="tier-cta">Book a call <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Methodology</span>
+      <h2>How the audit<br>actually <em>works</em>.</h2>
+    </div>
+    <div class="method">
+      <div class="mstep">
+        <div class="mstep-num">WEEK 1 · DAYS 1–3</div>
+        <h3>Listen</h3>
+        <p>Interviews with leadership, ops, and the people doing the work. We map the workflows that eat the most time and money.</p>
+      </div>
+      <div class="mstep">
+        <div class="mstep-num">WEEK 1 · DAYS 4–7</div>
+        <h3>Audit</h3>
+        <p>We score every workflow on AI feasibility, ROI, and implementation difficulty. Build vs. buy on each.</p>
+      </div>
+      <div class="mstep">
+        <div class="mstep-num">WEEK 2 · DAYS 8–11</div>
+        <h3>Synthesize</h3>
+        <p>Written deliverable: top 5 opportunities ranked, tooling shortlist, 90-day roadmap, anti-patterns to avoid.</p>
+      </div>
+      <div class="mstep">
+        <div class="mstep-num">WEEK 2 · DAYS 12–14</div>
+        <h3>Read out</h3>
+        <p>60-minute call with your leadership. Q&amp;A, push-back, decisions. You leave with a plan you can execute with or without us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common <em>questions</em>.</h2>
+    </div>
+    <div class="faqs">
+      <div class="faq"><button><span><span class="faq-idx">Q·01</span>Who is the audit for?</span><span class="faq-toggle">+</span></button><div class="faq-body"><div><p>Mid-market and growth-stage companies that know AI is important but don't know where to start. Usually $5M–$200M revenue. Smaller and you don't need an audit; bigger and you probably want a custom engagement from the start.</p></div></div></div>
+      <div class="faq"><button><span><span class="faq-idx">Q·02</span>Do I have to buy the Implementation after the Audit?</span><span class="faq-toggle">+</span></button><div class="faq-body"><div><p>No. The audit is a standalone deliverable. About half our audit clients take the report and execute internally; the other half hire us to build. Either is fine.</p></div></div></div>
+      <div class="faq"><button><span><span class="faq-idx">Q·03</span>What does "credit toward Implementation" mean?</span><span class="faq-toggle">+</span></button><div class="faq-body"><div><p>If you proceed to an Implementation engagement within 60 days of the audit, the full $4,995 is credited against the first invoice. Effectively the audit becomes free if you build with us.</p></div></div></div>
+      <div class="faq"><button><span><span class="faq-idx">Q·04</span>What stacks do you work with?</span><span class="faq-toggle">+</span></button><div class="faq-body"><div><p>Cloud-agnostic. We've shipped on AWS, GCP, Azure, Vercel, and self-hosted. Comfortable with the major LLM providers (Anthropic, OpenAI, Google), vector DBs (Pinecone, Weaviate, pgvector), and orchestration (LangChain, LlamaIndex, custom). If you've already standardized on a stack, we'll work in it.</p></div></div></div>
+      <div class="faq"><button><span><span class="faq-idx">Q·05</span>What about data privacy?</span><span class="faq-toggle">+</span></button><div class="faq-body"><div><p>We sign your NDA before the kickoff call. We can work with private inference (Bedrock, Vertex), on-prem models (Llama, Mistral via vLLM), or your existing OpenAI/Anthropic enterprise contracts. Specifics in the audit.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="foot-cta">
+  <div class="wrap">
+    <h2>Start with the<br><em>audit</em>.</h2>
+    <p>Two weeks. Written deliverable. Credited back if you build with us.</p>
+    <a href="https://buy.stripe.com/3cI9AUaTqgnicQg3WV8AE0d" class="btn btn-lg">Buy the audit — $4,995 →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+    <span><a href="/services/">← All services</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const check = '<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.querySelectorAll('.tier-feat li').forEach(li => { li.innerHTML = li.innerHTML.replace('${check}', check); });
+  document.querySelectorAll('.faq button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = btn.parentElement;
+      const wasOpen = p.classList.contains('open');
+      document.querySelectorAll('.faq.open').forEach(f => f.classList.remove('open'));
+      if (!wasOpen) p.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
