@@ -154,20 +154,39 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   letter-spacing: -0.02em;
   font-size: 20px;
 }
+.logo-icon-link { display: inline-flex; align-items: center; }
 .logo-mark {
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: var(--accent-ink);
+  width: 36px; height: 36px;
   display: grid;
   place-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  font-size: 14px;
-  transform: rotate(-8deg);
   transition: transform 300ms ease;
 }
-.logo:hover .logo-mark { transform: rotate(8deg) scale(1.08); }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 4px;
+}
+.logo-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 16px;
+  color: var(--fg);
+  text-transform: uppercase;
+}
+.logo-by {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--fg-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 200ms;
+  width: max-content;
+}
+.logo-by:hover { color: var(--fg); }
 .nav-links {
   display: flex;
   gap: 36px;
@@ -1053,17 +1072,35 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 <body>
 <div class="grid-bg"></div>
 
+<!-- Reusable logo mark SVG -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
+      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap nav-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark">A</span>
-      <span>Appsurd</span>
-    </a>
+    <div class="logo">
+      <a href="#" class="logo-icon-link" aria-label="Appsurd home">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="#" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+      </div>
+    </div>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#how">How It Works</a>
       <a href="#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
@@ -1267,7 +1304,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} Unlimited revisions</li>
           <li>${check} Pause or cancel anytime</li>
         </ul>
-        <a href="#" class="btn-plan">Get Started <span class="arrow">→</span></a>
+        <a href="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-m="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-a="https://buy.stripe.com/5kQ6oI9Pm7QM2bCdxv8AE06" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
 
       <div class="plan featured">
@@ -1287,7 +1324,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} Dedicated Slack channel</li>
           <li>${check} Pause or cancel anytime</li>
         </ul>
-        <a href="#" class="btn-plan">Get Started <span class="arrow">→</span></a>
+        <a href="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-m="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-a="https://buy.stripe.com/4gM28se5C9YUg2salj8AE08" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
 
       <div class="plan">
@@ -1306,7 +1343,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} Custom integrations</li>
           <li>${check} Pause or cancel anytime</li>
         </ul>
-        <a href="#" class="btn-plan">Get Started <span class="arrow">→</span></a>
+        <a href="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-m="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-a="https://buy.stripe.com/28EeVe7He1so03ugJH8AE0a" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -1423,7 +1460,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <h2>Ready to build<br>something <em>absurdly</em><br>good?</h2>
       <p>Stop hiring. Start building. Join Appsurd today.</p>
       <div class="ctas">
-        <a href="#" class="btn btn-primary">Get Started Now <span class="arrow">→</span></a>
+        <a href="#pricing" class="btn btn-primary">Get Started Now <span class="arrow">→</span></a>
         <a href="#" class="btn btn-ghost">Book a Demo</a>
       </div>
       <div class="trust">No contracts · No setup fees · Cancel anytime</div>
@@ -1436,7 +1473,13 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><span class="logo-mark">A</span><span>Appsurd</span></div>
+        <div class="logo">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+          <div class="logo-text">
+            <span class="logo-name">APPSURD</span>
+            <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+          </div>
+        </div>
         <p>Your entire product team on tap. Unlimited development and design for one flat monthly fee.</p>
       </div>
       <div>
@@ -1452,7 +1495,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <h4>Company</h4>
         <ul>
           <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="/blog/">Blog</a></li>
           <li><a href="#">Careers</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -1528,6 +1571,9 @@ function setBilling(mode) {
   });
   document.querySelectorAll('[data-bill-m]').forEach(el => {
     el.textContent = mode === 'm' ? el.dataset.billM : el.dataset.billA;
+  });
+  document.querySelectorAll('[data-link-m]').forEach(el => {
+    el.href = mode === 'm' ? el.dataset.linkM : el.dataset.linkA;
   });
 }
 billM.addEventListener('click', () => setBilling('m'));
