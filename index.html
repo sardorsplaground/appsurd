@@ -178,15 +178,20 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   text-transform: uppercase;
 }
 .logo-by {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
   font-size: 9px;
-  color: var(--fg-dim);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-ink);
+  padding: 2px 6px;
+  border-radius: 3px;
   text-transform: uppercase;
-  transition: color 200ms;
+  transition: opacity 200ms;
   width: max-content;
+  text-decoration: none;
 }
-.logo-by:hover { color: var(--fg); }
+.logo-by:hover { opacity: 0.75; }
 .nav-links {
   display: flex;
   gap: 36px;
@@ -1078,8 +1083,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
     <symbol id="appsurd-mark" viewBox="0 0 36 36">
       <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
       <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
-      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
-      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
     </symbol>
   </defs>
 </svg>
@@ -1093,7 +1098,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       </a>
       <div class="logo-text">
         <a href="#" class="logo-name">APPSURD</a>
-        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
       </div>
     </div>
     <div class="nav-links">
@@ -1478,7 +1483,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
           <div class="logo-text">
             <span class="logo-name">APPSURD</span>
-            <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">by Bolder</a>
+            <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
           </div>
         </div>
         <p>AI-native devs on tap, fluent in agentic flows. The output of a 5-dev squad for one flat monthly fee.</p>
