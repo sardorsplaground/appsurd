@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Training &amp; Workshops — Appsurd</title>
-<meta name="description" content="Hands-on AI training for engineering, product, and ops teams. We come in, work with your people, and leave them faster than we found them.">
+<title>Custom GPTs &amp; Agents — Appsurd</title>
+<meta name="description" content="We build internal AI agents, chatbots, and automated workflows tailored to your team. Project-based engagements quoted per build.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
@@ -69,22 +69,13 @@ a { color: inherit; text-decoration: none; }
 .section-head h2 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
 .section-head p { font-size: 17px; color: var(--fg-dim); margin: 18px 0 0; max-width: 560px; line-height: 1.55; }
 
-.formats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
-@media (max-width: 900px) { .formats { grid-template-columns: 1fr; } }
-.fmt { background: var(--bg); padding: 36px 28px; transition: background 300ms; display: flex; flex-direction: column; min-height: 280px; }
-.fmt:hover { background: var(--bg-elev); }
-.fmt-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); }
-.fmt h3 { font-size: 26px; font-weight: 500; letter-spacing: -0.025em; margin: 14px 0 10px; line-height: 1.15; }
-.fmt h3 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
-.fmt p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; margin: 0 0 18px; }
-.fmt-len { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); }
-
-.curriculum { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 48px 44px; }
-.curriculum-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; margin-top: 24px; }
-@media (max-width: 720px) { .curriculum-row { grid-template-columns: 1fr; } }
-.curriculum-row > div { display: flex; gap: 12px; align-items: flex-start; }
-.curriculum-row svg { flex: none; width: 16px; height: 16px; margin-top: 4px; color: var(--fg); }
-.curriculum-row span { color: var(--fg-dim); font-size: 15px; line-height: 1.5; }
+.examples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+@media (max-width: 820px) { .examples { grid-template-columns: 1fr; } }
+.ex { background: var(--bg); padding: 32px 28px; transition: background 300ms; }
+.ex:hover { background: var(--bg-elev); }
+.ex-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); }
+.ex h3 { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin: 12px 0 8px; }
+.ex p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; margin: 0; }
 
 .foot-cta { text-align: center; padding: 140px 0; border-top: 1px solid var(--line); }
 .foot-cta h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 500; letter-spacing: -0.035em; line-height: 1; margin: 0 auto; max-width: 16ch; }
@@ -132,19 +123,19 @@ a { color: inherit; text-decoration: none; }
       <a href="/#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="mailto:hello@appsurd.co?subject=AI%20Training%20interest" class="btn">Book a call →</a>
+      <a href="mailto:hello@appsurd.co?subject=Custom%20GPTs%20%26%20Agents%20interest" class="btn">Book a call →</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow"><a href="/services/">Services</a> · Training &amp; Workshops</span>
-    <h1>Make your team<br><em>dangerous</em> with AI.</h1>
-    <p>Hands-on training for engineering, product, and ops teams. We come in, work with your people on their actual problems, and leave them faster than we found them. No slideware. No certificates. Skills they use on Monday.</p>
+    <span class="eyebrow"><a href="/services/">Services</a> · Custom GPTs &amp; Agents</span>
+    <h1>Custom AI<br>for the work<br>only <em>you</em> do.</h1>
+    <p>Off-the-shelf AI is great until the work is yours. We build internal agents, GPTs, and automated workflows tailored to your team's actual job — not what the demo videos show.</p>
     <div class="hero-ctas">
-      <a href="mailto:hello@appsurd.co?subject=AI%20Training%20-%20scope%20a%20cohort" class="btn btn-lg">Book a call →</a>
-      <a href="/services/advisory.html" class="btn btn-lg btn-ghost">Or talk strategy first</a>
+      <a href="mailto:hello@appsurd.co?subject=Custom%20GPTs%20%26%20Agents%20-%20scope%20a%20build" class="btn btn-lg">Book a call →</a>
+      <a href="/services/ai-implementation.html" class="btn btn-lg btn-ghost">Or start with an audit</a>
     </div>
   </div>
 </section>
@@ -152,50 +143,41 @@ a { color: inherit; text-decoration: none; }
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Formats</span>
-      <h2>Three ways<br>to <em>run it</em>.</h2>
-      <p>Each is fully custom to your team's stack, codebase, and actual work. Pricing depends on cohort size and format — quoted after a 30-minute scoping call.</p>
+      <span class="eyebrow">What we build</span>
+      <h2>Patterns we've shipped<br>(or could ship for <em>you</em>).</h2>
+      <p>Project-based engagements, scoped after a 30-minute call. Most builds land between $15k and $80k depending on complexity, integrations, and eval needs.</p>
     </div>
 
-    <div class="formats">
-      <div class="fmt">
-        <span class="fmt-tag">FMT · 01</span>
-        <h3>Single-day <em>workshop</em></h3>
-        <p>One day, in-person or remote. Intro to AI-native engineering and agentic workflows, live coding with Claude / Cursor / Copilot, hands-on exercises in your repo. Best for kicking off team-wide adoption.</p>
-        <div class="fmt-len">1 DAY · UP TO 25 PEOPLE</div>
+    <div class="examples">
+      <div class="ex">
+        <span class="ex-tag">INTERNAL TOOLS</span>
+        <h3>Custom GPTs for your team</h3>
+        <p>Branded assistants trained on your playbooks, brand voice, or proprietary data. Lives in ChatGPT/Claude or embedded in your tools. Saves the same question being answered 50 times a day.</p>
       </div>
-      <div class="fmt">
-        <span class="fmt-tag">FMT · 02</span>
-        <h3>Two-week <em>cohort</em></h3>
-        <p>Eight 90-minute sessions over two weeks. Deeper dive: prompt engineering, agent design, evals, production patterns. Each session pairs theory with work-in-your-actual-codebase.</p>
-        <div class="fmt-len">2 WEEKS · UP TO 15 PEOPLE</div>
+      <div class="ex">
+        <span class="ex-tag">SUPPORT</span>
+        <h3>Customer support agents</h3>
+        <p>Tier-1 deflection that actually works. Trained on your help docs, ticket history, and product. Hands off to a human when it should — and tells you why.</p>
       </div>
-      <div class="fmt">
-        <span class="fmt-tag">FMT · 03</span>
-        <h3>Quarterly <em>residency</em></h3>
-        <p>One of our senior engineers embeds with your team for a quarter — pair-programming, code reviews, weekly office hours. Best when you want the team to absorb AI practices by osmosis.</p>
-        <div class="fmt-len">12 WEEKS · FULL TEAM</div>
+      <div class="ex">
+        <span class="ex-tag">SALES</span>
+        <h3>Sales / RFP assistants</h3>
+        <p>Drafts proposals, fills out vendor questionnaires, and pulls relevant case studies from your library. Sales teams stop dreading paperwork.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background: var(--bg-elev);">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">What we cover</span>
-      <h2>Skills your team<br>will <em>actually use</em>.</h2>
-      <p>Every cohort is customized, but most cover some combination of:</p>
-    </div>
-
-    <div class="curriculum">
-      <div class="curriculum-row">
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">AI-native coding</strong>. Effective use of Claude, Cursor, Copilot, MCP — and where they break.</span></div>
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Prompt engineering that's not vibes</strong>. Patterns, anti-patterns, when to stop and switch tools.</span></div>
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Agent design</strong>. Building multi-step workflows that don't fall over on edge cases.</span></div>
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Evals &amp; observability</strong>. How to know if your AI is actually working in production.</span></div>
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Cost &amp; latency tradeoffs</strong>. Model selection, caching, batching, when to fine-tune.</span></div>
-        <div><svg viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.2 3.2L12 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong style="color:var(--fg);">Org patterns</strong>. How teams that ship AI well organize the work — RFCs, evals, on-call.</span></div>
+      <div class="ex">
+        <span class="ex-tag">OPS</span>
+        <h3>Workflow automations</h3>
+        <p>Multi-step automations that read email, route to the right system, fill out forms, summarize meetings, follow up. The boring jobs no one wants to do twice.</p>
+      </div>
+      <div class="ex">
+        <span class="ex-tag">DATA</span>
+        <h3>Document &amp; data extraction</h3>
+        <p>Pulls structured fields from invoices, contracts, claims forms, lab reports — whatever shape your unstructured pile is in. Outputs to your DB or CSV.</p>
+      </div>
+      <div class="ex">
+        <span class="ex-tag">RESEARCH</span>
+        <h3>Research &amp; synthesis agents</h3>
+        <p>Long-running agents that gather, compare, and summarize sources — competitor intel, market research, scientific literature, news monitoring. Replaces "someone Googling for an hour."</p>
       </div>
     </div>
   </div>
@@ -203,9 +185,9 @@ a { color: inherit; text-decoration: none; }
 
 <section class="foot-cta">
   <div class="wrap">
-    <h2>Want your team<br>shipping AI by <em>next month?</em></h2>
-    <p>30-minute call. We scope the format, you get a fixed quote.</p>
-    <a href="mailto:hello@appsurd.co?subject=AI%20Training%20-%20scope%20a%20cohort" class="btn btn-lg">Book a call →</a>
+    <h2>Have a workflow<br>that <em>shouldn't be manual?</em></h2>
+    <p>30-minute call. We scope it together, you get a fixed quote.</p>
+    <a href="mailto:hello@appsurd.co?subject=Custom%20GPTs%20%26%20Agents%20-%20scope%20a%20build" class="btn btn-lg">Book a call →</a>
   </div>
 </section>
 
