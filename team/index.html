@@ -67,7 +67,7 @@ img { filter: grayscale(100%) contrast(1.02); }
 .nav-links a { transition: color 200ms; text-decoration: none; }
 .nav-links a:hover, .nav-links a.on { color: var(--fg); }
 .nav-cta { display: flex; align-items: center; gap: 14px; }
-@media (max-width: 780px) { .nav-links { display: none; } }
+@media (max-width: 880px) { .nav-links { display: none; } }
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500;
@@ -94,70 +94,76 @@ img { filter: grayscale(100%) contrast(1.02); }
 .footer a:hover { color: var(--fg); }
 ::selection { background: var(--fg); color: var(--bg); }
 
-/* profile */
 .profile { padding: 40px 0 80px; position: relative; z-index: 1; }
 .profile-head { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--line); }
-.profile-photo {
-  width: 200px; height: 200px; border-radius: 18px; overflow: hidden; flex: none;
-  border: 1px solid var(--line-strong); background: var(--card);
-}
+.profile-photo { width: 200px; height: 200px; border-radius: 18px; overflow: hidden; flex: none; border: 1px solid var(--line-strong); background: var(--card); }
 .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.profile-mono {
-  width: 200px; height: 200px; border-radius: 18px; flex: none;
-  border: 1px solid var(--line-strong); background: var(--card);
-  display: grid; place-items: center;
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 84px; letter-spacing: -0.03em; color: var(--fg-mute);
-}
 .profile-id { flex: 1; min-width: 260px; }
-.profile-eyebrow {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px;
-}
+.profile-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px; }
 .profile-id h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 10px; }
 .profile-role { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 24px; color: var(--fg-dim); margin: 0 0 22px; }
 .profile-socials { display: flex; gap: 12px; flex-wrap: wrap; }
-.social-chip {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--fg-dim); text-decoration: none;
-  border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 16px;
-  transition: color 200ms, border-color 200ms;
-}
+.social-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-dim); text-decoration: none; border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 16px; transition: color 200ms, border-color 200ms; }
 .social-chip:hover { color: var(--fg); border-color: var(--fg); }
 .profile-bio { font-size: 18px; line-height: 1.7; color: var(--fg); max-width: 680px; }
 .profile-bio > * + * { margin-top: 1.3em; }
 .profile-bio em { font-family: 'Fraunces', serif; font-style: italic; }
-.editable-note {
-  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--fg-mute); opacity: 0.55; margin-top: 40px;
-}
+.editable-note { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); opacity: 0.55; margin-top: 40px; }
 .posts-by { margin-top: 64px; }
-.posts-by h2 {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--fg-mute); margin: 0 0 20px;
-}
-.post-by-link {
-  display: block; text-decoration: none; border: 1px solid var(--line);
-  border-radius: 14px; padding: 22px 24px; background: var(--card); margin-bottom: 12px;
-  transition: border-color 200ms, transform 200ms;
-}
+.posts-by h2 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin: 0 0 20px; }
+.post-by-link { display: block; text-decoration: none; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; background: var(--card); margin-bottom: 12px; transition: border-color 200ms, transform 200ms; }
 .post-by-link:hover { border-color: var(--line-strong); transform: translateY(-2px); }
 .post-by-link .pdate { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
 .post-by-link .ptitle { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin: 8px 0 0; color: var(--fg); }
 .no-posts { color: var(--fg-mute); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
-
-/* team index + carousel */
 .team-hero { padding: 64px 0 8px; position: relative; z-index: 1; }
 .team-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 18px; }
 .team-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 18px; }
 .team-hero h1 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
 .team-hero p { font-size: 20px; color: var(--fg-dim); max-width: 620px; margin: 0; line-height: 1.5; }
-.team-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  padding: 56px 0 90px; position: relative; z-index: 1;
-}
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 56px 0 90px; position: relative; z-index: 1; }
 @media (max-width: 860px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
+
+.team-card {
+  position: relative; display: block; text-decoration: none;
+  border-radius: 18px; overflow: hidden; background: var(--card);
+  border: 1px solid var(--line-strong);
+  aspect-ratio: 3 / 4.1;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 18px 40px rgba(0,0,0,0.45);
+  transition: transform 380ms cubic-bezier(.2,.7,.2,1), border-color 380ms, box-shadow 380ms;
+  will-change: transform;
+}
+.team-card:hover { transform: translateY(-8px); border-color: var(--fg); box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 28px 60px rgba(0,0,0,0.6); }
+.tc-media { position: absolute; inset: 0; }
+.tc-media img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(100%) contrast(1.05) brightness(0.98); }
+.tc-media .card-mono { width: 100%; height: 100%; display: grid; place-items: center; font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 120px; color: var(--fg-mute); background: radial-gradient(120% 90% at 30% 10%, #1a1a1a, #0c0c0c); }
+.tc-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 24%, rgba(0,0,0,0.32) 44%, rgba(0,0,0,0) 66%); }
+.tc-foil { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; opacity: 0.0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.0) 60%); transform: translateX(-60%); transition: opacity 380ms; }
+.team-card:hover .tc-foil { opacity: 0.9; animation: foilSweep 900ms ease forwards; }
+@keyframes foilSweep { from { transform: translateX(-60%);} to { transform: translateX(60%);} }
+.tc-shine { position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0; background: radial-gradient(220px 220px at var(--mx,50%) var(--my,18%), rgba(255,255,255,0.16), transparent 60%); transition: opacity 300ms; }
+.team-card:hover .tc-shine { opacity: 1; }
+.tc-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 22px 20px; z-index: 2; }
+.tc-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-dim); margin-bottom: 8px; }
+.tc-name { font-size: 23px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; color: #fff; }
+.tc-tag { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 14px; color: var(--fg-dim); margin-top: 8px; line-height: 1.35; }
+.tc-corner { position: absolute; z-index: 4; width: 26px; height: 26px; border-radius: 6px; display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--accent-ink); background: var(--accent); opacity: 0.92; }
+.tc-tl { top: 14px; left: 14px; }
+.tc-br { bottom: 14px; right: 14px; transform: rotate(180deg); display: none; }
+
+/* ---- continuous marquee carousel (matches hero running-text motion) ---- */
+.tc-carousel { position: relative; z-index: 1; overflow: hidden; }
+/* edge fade so cards slide in/out cleanly */
+.tc-carousel { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%); }
+.tc-track {
+  display: flex; gap: 24px; width: max-content;
+  animation: teamMarquee 38s linear infinite;
+}
+.tc-carousel:hover .tc-track { animation-play-state: paused; }
+.tc-track .team-card { flex: 0 0 clamp(240px, 26vw, 300px); }
+@keyframes teamMarquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .tc-track { animation: none; } }
 </style>
 </head>
 <body>
@@ -175,80 +181,6 @@ img { filter: grayscale(100%) contrast(1.02); }
 </svg>
 
 
-<style>
-.team-card {
-  position: relative; display: block; text-decoration: none;
-  border-radius: 18px; overflow: hidden; background: var(--card);
-  border: 1px solid var(--line-strong);
-  aspect-ratio: 3 / 4.1;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 18px 40px rgba(0,0,0,0.45);
-  transition: transform 380ms cubic-bezier(.2,.7,.2,1), border-color 380ms, box-shadow 380ms;
-  will-change: transform;
-}
-.team-card:hover {
-  transform: translateY(-8px) rotateX(4deg);
-  border-color: var(--fg);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 28px 60px rgba(0,0,0,0.6);
-}
-.tc-media { position: absolute; inset: 0; }
-.tc-media img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(100%) contrast(1.05) brightness(0.98); }
-.tc-media .card-mono {
-  width: 100%; height: 100%; display: grid; place-items: center;
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 120px; color: var(--fg-mute);
-  background: radial-gradient(120% 90% at 30% 10%, #1a1a1a, #0c0c0c);
-}
-.tc-media::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 24%, rgba(0,0,0,0.32) 44%, rgba(0,0,0,0) 66%);
-}
-/* holographic foil sweep — kept monochrome */
-.tc-foil {
-  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; opacity: 0.0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.0) 60%);
-  transform: translateX(-60%); transition: opacity 380ms;
-}
-.team-card:hover .tc-foil { opacity: 0.9; animation: foilSweep 900ms ease forwards; }
-@keyframes foilSweep { from { transform: translateX(-60%);} to { transform: translateX(60%);} }
-.tc-shine {
-  position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0;
-  background: radial-gradient(220px 220px at var(--mx,50%) var(--my,18%), rgba(255,255,255,0.16), transparent 60%);
-  transition: opacity 300ms;
-}
-.team-card:hover .tc-shine { opacity: 1; }
-.tc-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 22px 20px; z-index: 2; }
-.tc-role {
-  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--fg-dim); margin-bottom: 8px;
-}
-.tc-name { font-size: 23px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; color: #fff; }
-.tc-tag { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 14px; color: var(--fg-dim); margin-top: 8px; line-height: 1.35; }
-.tc-corner {
-  position: absolute; z-index: 4; width: 26px; height: 26px; border-radius: 6px;
-  display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700; font-size: 13px; color: var(--accent-ink); background: var(--accent);
-  opacity: 0.92;
-}
-.tc-tl { top: 14px; left: 14px; }
-.tc-br { bottom: 14px; right: 14px; transform: rotate(180deg); display: none; }
-
-/* carousel track */
-.tc-carousel { position: relative; z-index: 1; }
-.tc-track-mask { overflow: hidden; }
-.tc-track {
-  display: flex; gap: 22px; padding: 6px 2px 24px;
-  transition: transform 600ms cubic-bezier(.2,.7,.2,1);
-}
-.tc-track .team-card { flex: 0 0 clamp(240px, 26vw, 300px); }
-.tc-controls { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
-.tc-btn {
-  width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line-strong);
-  background: var(--bg); color: var(--fg); cursor: pointer; font-size: 18px;
-  display: grid; place-items: center; transition: border-color 200ms, transform 200ms;
-}
-.tc-btn:hover { border-color: var(--fg); transform: translateY(-2px); }
-.tc-btn:disabled { opacity: 0.3; cursor: default; transform: none; }
-</style>
 
 <nav class="nav">
   <div class="wrap-wide nav-inner">
@@ -280,91 +212,6 @@ img { filter: grayscale(100%) contrast(1.02); }
     <div class="eyebrow">The team</div>
     <h1>The people behind<br>the <em>absurd</em>.</h1>
     <p>A small, senior team — founders, operators, and builders — backed by Bolder's seven-year engineering bench. Tap any card for the full profile.</p>
-  </div>
-</section>
-
-<section class="wrap-wide" style="position:relative;z-index:1;padding-top:40px;">
-  <div class="tc-carousel">
-    <div class="tc-track-mask">
-      <div class="tc-track">
-        <a class="team-card" href="/team/sardor-akhmedov.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><img src="/team/photos/sardor.jpg" alt="Sardor Akhmedov" loading="lazy"></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Founder &amp; CEO</div>
-      <div class="tc-name">Sardor Akhmedov</div>
-      <div class="tc-tag">Sets the vision, keeps the team shipping.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-<a class="team-card" href="/team/tulkin-erkin.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><img src="/team/photos/tulkin.jpg" alt="Tulkin Erkin" loading="lazy"></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">COO &amp; Co-founder</div>
-      <div class="tc-name">Tulkin Erkin</div>
-      <div class="tc-tag">Turns strategy into a system that runs.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-<a class="team-card" href="/team/andrew-abbey.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><img src="/team/photos/andrew.jpg" alt="Andrew Abbey" loading="lazy"></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Chief Marketing Officer</div>
-      <div class="tc-name">Andrew Abbey</div>
-      <div class="tc-tag">Owns the story and how the world hears it.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-<a class="team-card" href="/team/cj-obrien.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><img src="/team/photos/cj.jpg" alt="CJ O&#x27;Brien" loading="lazy"></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Chief Growth Officer</div>
-      <div class="tc-name">CJ O&#x27;Brien</div>
-      <div class="tc-tag">Builds the engine that brings the right clients in.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-<a class="team-card" href="/team/william-cramer.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><div class="card-mono">WC</div></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Product Manager</div>
-      <div class="tc-name">William Cramer</div>
-      <div class="tc-tag">Translates client goals into shipped product.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-<a class="team-card" href="/team/sean-weldon.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><img src="/team/photos/sean.jpg" alt="Sean Weldon" loading="lazy"></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Tech Lead</div>
-      <div class="tc-name">Sean Weldon</div>
-      <div class="tc-tag">Sets the technical bar and ships against it.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
-      </div>
-    </div>
-    <div class="tc-controls">
-      <button class="tc-btn tc-prev" aria-label="Previous">‹</button>
-      <button class="tc-btn tc-next" aria-label="Next">›</button>
-    </div>
   </div>
 </section>
 
@@ -418,18 +265,6 @@ img { filter: grayscale(100%) contrast(1.02); }
     <div class="tc-corner tc-tl">A</div>
     <div class="tc-corner tc-br">A</div>
 </a>
-<a class="team-card" href="/team/william-cramer.html">
-    <div class="tc-shine"></div>
-    <div class="tc-media"><div class="card-mono">WC</div></div>
-    <div class="tc-foil"></div>
-    <div class="tc-body">
-      <div class="tc-role">Product Manager</div>
-      <div class="tc-name">William Cramer</div>
-      <div class="tc-tag">Translates client goals into shipped product.</div>
-    </div>
-    <div class="tc-corner tc-tl">A</div>
-    <div class="tc-corner tc-br">A</div>
-</a>
 <a class="team-card" href="/team/sean-weldon.html">
     <div class="tc-shine"></div>
     <div class="tc-media"><img src="/team/photos/sean.jpg" alt="Sean Weldon" loading="lazy"></div>
@@ -455,56 +290,12 @@ img { filter: grayscale(100%) contrast(1.02); }
 
 <script>
 (function(){
-  // pointer shine on every card
   document.querySelectorAll('.team-card').forEach(function(c){
     c.addEventListener('pointermove', function(e){
       var r = c.getBoundingClientRect();
       c.style.setProperty('--mx', ((e.clientX - r.left)/r.width*100)+'%');
       c.style.setProperty('--my', ((e.clientY - r.top)/r.height*100)+'%');
     });
-  });
-  // carousel
-  document.querySelectorAll('.tc-carousel').forEach(function(car){
-    var track = car.querySelector('.tc-track');
-    var prev = car.querySelector('.tc-prev');
-    var next = car.querySelector('.tc-next');
-    if(!track) return;
-    var idx = 0;
-    function step(){
-      var card = track.querySelector('.team-card');
-      if(!card) return 0;
-      var gap = parseFloat(getComputedStyle(track).gap) || 22;
-      return card.getBoundingClientRect().width + gap;
-    }
-    function visible(){
-      var s = step(); if(!s) return 1;
-      return Math.max(1, Math.floor(track.parentElement.clientWidth / s));
-    }
-    function maxIdx(){
-      var total = track.querySelectorAll('.team-card').length;
-      return Math.max(0, total - visible());
-    }
-    function render(){
-      idx = Math.max(0, Math.min(idx, maxIdx()));
-      track.style.transform = 'translateX(' + (-idx*step()) + 'px)';
-      if(prev) prev.disabled = idx <= 0;
-      if(next) next.disabled = idx >= maxIdx();
-    }
-    if(next) next.addEventListener('click', function(){ idx++; render(); auto(); });
-    if(prev) prev.addEventListener('click', function(){ idx--; render(); auto(); });
-    window.addEventListener('resize', render);
-    // autoplay
-    var timer;
-    function auto(){
-      clearInterval(timer);
-      timer = setInterval(function(){
-        if(idx >= maxIdx()) idx = 0; else idx++;
-        render();
-      }, 3800);
-    }
-    car.addEventListener('mouseenter', function(){ clearInterval(timer); });
-    car.addEventListener('mouseleave', auto);
-    render(); auto();
   });
 })();
 </script>
