@@ -1010,6 +1010,14 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   background: var(--fg); box-shadow: 0 0 8px color-mix(in oklab, var(--fg) 60%, transparent);
 }
 
+/* ---------- bolder trust band responsive ---------- */
+@media (max-width: 900px) {
+  #bolder div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 520px) {
+  #bolder div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+}
+
 /* ---------- scroll reveal ---------- */
 .reveal {
   opacity: 0;
@@ -1093,11 +1101,11 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 <nav class="nav">
   <div class="wrap nav-inner">
     <div class="logo">
-      <a href="#" class="logo-icon-link" aria-label="Appsurd home">
+      <a href="/" class="logo-icon-link" aria-label="Appsurd home">
         <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
       </a>
       <div class="logo-text">
-        <a href="#" class="logo-name">APPSURD</a>
+        <a href="/" class="logo-name">APPSURD</a>
         <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
       </div>
     </div>
@@ -1110,7 +1118,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="#" class="mono" style="font-size:12px;color:var(--fg-dim);letter-spacing:0.08em;text-transform:uppercase;">Sign In</a>
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="mono" style="font-size:12px;color:var(--fg-dim);letter-spacing:0.08em;text-transform:uppercase;">Book a Demo</a>
       <a href="#pricing" class="btn btn-primary btn-sm">Get Started <span class="arrow">→</span></a>
     </div>
   </div>
@@ -1126,7 +1134,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 
     <div class="hero-badge">
       <span class="dot"></span>
-      <span class="mono" style="text-transform:uppercase;letter-spacing:0.14em;">Now accepting clients — limited spots</span>
+      <span class="mono" style="text-transform:uppercase;letter-spacing:0.14em;">By Bolder — building software since 2019</span>
     </div>
 
     <h1 class="hero-h1">
@@ -1135,21 +1143,22 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
     </h1>
 
     <p class="hero-sub">
-      One AI-native dev ships like five. Get a full squad — engineers, designers, PMs, and QA, all fluent in agentic workflows — for one flat monthly fee. Unlimited requests. Pause or cancel anytime.
+      One AI-native dev ships like five. Get a full squad — engineers, designers, PMs, and QA, all fluent in agentic workflows — for one flat monthly fee. Unlimited requests. Pause or cancel anytime. Backed by a <strong style="color:var(--fg);font-weight:600;">30-day money-back guarantee</strong>.
     </p>
 
     <div class="hero-ctas">
       <a href="#pricing" class="btn btn-primary">See Pricing <span class="arrow">→</span></a>
-      <a href="#" class="btn btn-ghost">Book a Demo</a>
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn btn-ghost">Book a Demo</a>
     </div>
 
     <div class="hero-proof">
-      <span>200+ teams building</span>
+      <span>Built by Bolder</span>
       <span class="sep">/</span>
-      <span class="stars">★★★★★</span>
-      <span>4.9 / 5 rating</span>
+      <span>7 years shipping software</span>
       <span class="sep">/</span>
-      <span>ships in 48h</span>
+      <span>Official OpenAI partner</span>
+      <span class="sep">/</span>
+      <span>30-day money-back</span>
     </div>
   </div>
 </section>
@@ -1161,6 +1170,43 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
     <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
   </div>
 </div>
+
+<!-- BOLDER TRUST -->
+<section class="section" id="bolder" style="padding: 90px 0;">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom: 48px;">
+      <div>
+        <span class="eyebrow">00 · Who's behind this</span>
+        <h2 style="font-size: clamp(36px, 5vw, 64px);">New brand.<br><span class="serif">Seven years</span> of receipts.</h2>
+      </div>
+      <p>Appsurd is a new name, but it isn't a new team. It's built and run by <a href="https://bolderapps.com" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--fg-mute);">Bolder</a> — a software studio that's been designing and shipping production apps for organizations and enterprise brands since 2019, led by experienced US-based executives.</p>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;">
+      <div style="background:var(--bg);padding:32px 28px;">
+        <div class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px;">Since 2019</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;letter-spacing:-0.03em;">7<span style="font-size:22px;">&nbsp;yrs</span></div>
+        <p style="color:var(--fg-dim);font-size:14px;line-height:1.5;margin:14px 0 0;">Building production software, not just a fresh logo.</p>
+      </div>
+      <div style="background:var(--bg);padding:32px 28px;">
+        <div class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px;">Trusted by</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;letter-spacing:-0.03em;">25<span style="font-size:22px;">+</span></div>
+        <p style="color:var(--fg-dim);font-size:14px;line-height:1.5;margin:14px 0 0;">Brands and organizations shipped, from startups to enterprise.</p>
+      </div>
+      <div style="background:var(--bg);padding:32px 28px;">
+        <div class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px;">Partner</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;letter-spacing:-0.03em;">OpenAI</div>
+        <p style="color:var(--fg-dim);font-size:14px;line-height:1.5;margin:14px 0 0;">Official OpenAI partner — agentic workflows are core to how we build.</p>
+      </div>
+      <div style="background:var(--bg);padding:32px 28px;">
+        <div class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px;">Leadership</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;letter-spacing:-0.03em;">US-based</div>
+        <p style="color:var(--fg-dim);font-size:14px;line-height:1.5;margin:14px 0 0;">Seasoned executive team with a distributed engineering bench.</p>
+      </div>
+    </div>
+    <p class="reveal mono" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);margin-top:24px;text-align:center;">Selected Bolder work · Clapper · Clearcover · Fanbase · Forbes Councils · Joe &amp; The Juice · Spendee</p>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="section" id="problem">
@@ -1292,6 +1338,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <button id="billMonthly" class="on" role="tab">Monthly</button>
         <button id="billAnnual" role="tab">Annual <span class="save">−17%</span></button>
       </div>
+      <div class="mono" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-dim);margin:-24px 0 40px;">◆ Every plan is backed by a 30-day money-back guarantee</div>
     </div>
 
     <div class="plans reveal">
@@ -1309,6 +1356,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} 48–72 hour turnaround</li>
           <li>${check} Unlimited revisions</li>
           <li>${check} Pause or cancel anytime</li>
+          <li>${check} 30-day money-back guarantee</li>
         </ul>
         <a href="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-m="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-link-a="https://buy.stripe.com/5kQ6oI9Pm7QM2bCdxv8AE06" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
@@ -1329,6 +1377,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} Unlimited revisions</li>
           <li>${check} Dedicated Slack channel</li>
           <li>${check} Pause or cancel anytime</li>
+          <li>${check} 30-day money-back guarantee</li>
         </ul>
         <a href="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-m="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-link-a="https://buy.stripe.com/4gM28se5C9YUg2salj8AE08" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
@@ -1348,6 +1397,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
           <li>${check} Weekly strategy calls</li>
           <li>${check} Custom integrations</li>
           <li>${check} Pause or cancel anytime</li>
+          <li>${check} 30-day money-back guarantee</li>
         </ul>
         <a href="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-m="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-link-a="https://buy.stripe.com/28EeVe7He1so03ugJH8AE0a" class="btn-plan">Get Started <span class="arrow">→</span></a>
       </div>
@@ -1360,49 +1410,49 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">05 · Testimonials</span>
-        <h2>Don't take our<br>word for <span class="serif">it</span>.</h2>
+        <span class="eyebrow">05 · Illustrative scenarios</span>
+        <h2>What this<br>looks like in <span class="serif">practice</span>.</h2>
       </div>
-      <p>Hear from founders who've made the switch — from expensive hires and rigid agencies to shipping software every week.</p>
+      <p>Appsurd is a new brand, so these are illustrative examples of the outcomes our model is built to deliver — not real client quotes. The track record behind them is Bolder's: seven years shipping production software for 25+ brands and organizations.</p>
     </div>
 
     <div class="testis reveal">
       <article class="testi">
+        <div style="position:absolute;top:18px;right:20px;" class="mono"><span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);border:1px solid var(--line-strong);border-radius:999px;padding:3px 8px;">Illustrative</span></div>
         <div class="testi-quote-mark">"</div>
-        <q>We went from idea to live product in 6 weeks. Appsurd's team is genuinely impressive — fast, communicative, and they actually care about the product.</q>
+        <q>Idea to live product in six weeks, with a team that's fast, communicative, and actually cares about the product.</q>
         <div class="testi-foot">
-          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">SC</div>
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">○</div>
           <div>
-            <div class="testi-name">Sarah Chen</div>
-            <div class="testi-role">CEO, Launchpad AI</div>
+            <div class="testi-name">Sample scenario</div>
+            <div class="testi-role">Seed-stage founder shipping an MVP</div>
           </div>
-          <div class="testi-stars">★★★★★</div>
         </div>
       </article>
 
       <article class="testi">
+        <div style="position:absolute;top:18px;right:20px;" class="mono"><span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);border:1px solid var(--line-strong);border-radius:999px;padding:3px 8px;">Illustrative</span></div>
         <div class="testi-quote-mark">"</div>
-        <q>I was spending $45k/month on contractors with inconsistent results. Appsurd's Build plan cut that in half and doubled our output.</q>
+        <q>Replace $45k/month of inconsistent contractors with the Build plan — roughly half the cost and double the output.</q>
         <div class="testi-foot">
-          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">MW</div>
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">○</div>
           <div>
-            <div class="testi-name">Marcus Williams</div>
-            <div class="testi-role">CTO, Flowstate</div>
+            <div class="testi-name">Sample scenario</div>
+            <div class="testi-role">CTO consolidating contractor spend</div>
           </div>
-          <div class="testi-stars">★★★★★</div>
         </div>
       </article>
 
       <article class="testi">
+        <div style="position:absolute;top:18px;right:20px;" class="mono"><span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);border:1px solid var(--line-strong);border-radius:999px;padding:3px 8px;">Illustrative</span></div>
         <div class="testi-quote-mark">"</div>
-        <q>The pause feature alone sold me. We had a slow quarter, paused for two months, and came back with a full backlog. No drama, no penalties.</q>
+        <q>Hit a slow quarter, pause for two months, then come back to a full backlog — no drama, no penalties.</q>
         <div class="testi-foot">
-          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">PS</div>
+          <div class="testi-avatar" style="background:var(--line-strong);color:var(--bg);">○</div>
           <div>
-            <div class="testi-name">Priya Sharma</div>
-            <div class="testi-role">Founder, Stackr</div>
+            <div class="testi-name">Sample scenario</div>
+            <div class="testi-role">Founder using pause between sprints</div>
           </div>
-          <div class="testi-stars">★★★★★</div>
         </div>
       </article>
     </div>
@@ -1455,6 +1505,27 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         </button>
         <div class="faq-body"><div><p>Absolutely. If you don't have enough work to fill a full month, you can pause your subscription and resume when you have more requests.</p></div></div>
       </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·06</span>How does the 30-day money-back guarantee work?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>Every plan is covered by a 30-day money-back guarantee. If you're not happy with the work in your first 30 days, email <a href="mailto:hello@appsurd.co" style="color:var(--fg);border-bottom:1px solid var(--fg-mute);">hello@appsurd.co</a> and we'll refund you — no hoops, no fine print. We'd rather earn your business than hold it.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·07</span>Appsurd is new — who's actually behind it?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>Appsurd is built and run by <a href="https://bolderapps.com" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--fg-mute);">Bolder</a>, a software studio that's been designing and shipping production apps since 2019 for 25+ brands and organizations, led by an experienced US-based executive team. Appsurd is the new, AI-native way we package that same engineering bench — and we're an official OpenAI partner. The brand is new; the team has seven years of receipts.</p></div></div>
+      </div>
+      <div class="faq">
+        <button>
+          <span><span class="faq-idx">Q·08</span>Who owns the code and IP?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-body"><div><p>You do — 100%. Everything we design and build for you is your property, delivered into your repositories and accounts. There's no lock-in: pause or cancel anytime and keep everything we've shipped.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1467,9 +1538,9 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <p>Stop hiring. Start building. Join Appsurd today.</p>
       <div class="ctas">
         <a href="#pricing" class="btn btn-primary">Get Started Now <span class="arrow">→</span></a>
-        <a href="#" class="btn btn-ghost">Book a Demo</a>
+        <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn btn-ghost">Book a Demo</a>
       </div>
-      <div class="trust">No contracts · No setup fees · Cancel anytime</div>
+      <div class="trust">30-day money-back · No contracts · No setup fees · Cancel anytime</div>
     </div>
   </div>
 </section>
@@ -1486,7 +1557,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
             <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
           </div>
         </div>
-        <p>AI-native devs on tap, fluent in agentic flows. The output of a 5-dev squad for one flat monthly fee.</p>
+        <p>AI-native devs on tap, fluent in agentic flows. The output of a 5-dev squad for one flat monthly fee. Built by Bolder — shipping software since 2019.</p>
       </div>
       <div>
         <h4>Product</h4>
@@ -1500,22 +1571,23 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
+          <li><a href="https://bolderapps.com" target="_blank" rel="noopener">About (Bolder)</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener">Book a Demo</a></li>
+          <li><a href="mailto:hello@appsurd.co">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h4>Get started</h4>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="#faq">Guarantee</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+      <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
       <span class="built"><span class="dot"></span>ALL SYSTEMS OPERATIONAL</span>
     </div>
   </div>
