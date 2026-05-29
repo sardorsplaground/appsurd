@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meet Viktor: The AR Agent Your Business Actually Needs — Appsurd</title>
+<meta name="description" content="About 10% of our revenue stays uncollected every year. Existing AR tools are dashboards nobody logs into. Here's what a real AI agent for accounts receivable should look like — and why nobody's built it yet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
+  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
+  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.serif { font-family: 'Fraunces', serif; font-style: italic; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
+
+.grid-bg {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px; z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+}
+
+/* nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in oklab, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo a { text-decoration: none; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+  text-decoration: none;
+}
+.logo-by {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-ink);
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: opacity 200ms;
+  width: max-content;
+  text-decoration: none;
+}
+.logo-by:hover { opacity: 0.75; }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; text-decoration: none; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  background: var(--accent); color: var(--accent-ink);
+  transition: transform 200ms ease; text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* back link */
+.back {
+  padding: 36px 0 0;
+}
+.back a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute); text-decoration: none;
+  transition: color 200ms;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.back a:hover { color: var(--fg); }
+.back .arrow { transition: transform 200ms ease; display: inline-block; }
+.back a:hover .arrow { transform: translateX(-4px); }
+
+/* article */
+article {
+  padding: 32px 0 80px;
+}
+.post-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute);
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.post-meta .sep { opacity: 0.4; }
+article h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500; letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 24px;
+}
+article h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300;
+}
+.lede {
+  font-size: 22px; line-height: 1.5;
+  color: var(--fg-dim);
+  margin: 0 0 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
+}
+
+/* prose */
+.prose { font-size: 18px; line-height: 1.7; color: var(--fg); }
+.prose > * + * { margin-top: 1.3em; }
+.prose h2 {
+  font-size: 32px; font-weight: 500; letter-spacing: -0.02em;
+  margin-top: 64px; margin-bottom: 16px; line-height: 1.15;
+}
+.prose h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.015em;
+  margin-top: 40px; margin-bottom: 12px;
+}
+.prose p { color: var(--fg); }
+.prose a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--fg-mute);
+  text-decoration: none;
+  transition: border-color 200ms;
+}
+.prose a:hover { border-bottom-color: var(--fg); }
+.prose strong { font-weight: 600; }
+.prose em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.prose blockquote {
+  margin: 32px 0; padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--fg);
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-size: 24px; line-height: 1.4; color: var(--fg);
+}
+.prose ul, .prose ol { padding-left: 24px; color: var(--fg-dim); }
+.prose li { margin: 8px 0; }
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bg-elev); padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+
+/* comparison table */
+.comp-table {
+  width: 100%; border-collapse: collapse;
+  margin: 32px 0; font-size: 15px;
+}
+.comp-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute); font-weight: 500;
+  padding: 12px 16px; border-bottom: 1px solid var(--line-strong);
+  text-align: left;
+}
+.comp-table td {
+  padding: 14px 16px; border-bottom: 1px solid var(--line);
+  vertical-align: top; color: var(--fg-dim); line-height: 1.5;
+}
+.comp-table td:first-child { color: var(--fg); font-weight: 500; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table .x { color: #666; }
+.comp-table .check { color: var(--fg); }
+
+/* end-of-post cta */
+.endcap {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.endcap h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+.endcap p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0;
+}
+
+/* footer */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  background: var(--bg-elev);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--fg-mute);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--fg); }
+
+::selection { background: var(--fg); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap-wide nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/" class="on">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/#pricing" class="btn">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="back wrap">
+  <a href="/blog/"><span class="arrow">←</span> All posts</a>
+</div>
+
+<article>
+  <div class="wrap">
+    <div class="post-meta">
+      <span>May 29, 2026</span>
+      <span class="sep">/</span>
+      <span>Sardor K.</span>
+      <span class="sep">/</span>
+      <span>7 min read</span>
+    </div>
+
+    <h1>The free business idea nobody's building: <em>Viktor</em>.</h1>
+
+    <p class="lede">About 10% of our revenue stays uncollected every year. That's hundreds of thousands of dollars. Every AR tool I've tried is a dashboard I forget to check. Here's what a real AI agent for accounts receivable should look like — and why it would print money.</p>
+
+    <div class="prose">
+      <p>I'm going to give this one away for free.</p>
+
+      <p>Every business with invoices has an accounts receivable problem. Someone owes you money. They're late. Maybe they forgot, maybe they're stalling, maybe they've gone dark. You have an employee whose entire job is to chase people — sending follow-up emails, making calls, escalating to a collections agency when things get really bad. It's uncomfortable, it's repetitive, and it never fully works.</p>
+
+      <p>At our company, roughly 10% of revenue goes uncollected in any given year. On a business doing a few million dollars, that's real money — not a rounding error, not a line item to shrug at. That's a salary. That's a product investment. That's gone.</p>
+
+      <p>I've tried fixing it with software. It didn't work. Here's why.</p>
+
+      <h2>The existing tools are all dashboards</h2>
+
+      <p>The AR automation space isn't empty. There are plenty of well-funded products out there. They just don't solve the actual problem.</p>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>What it does</th>
+            <th>Why it fails</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tesorio</td>
+            <td>Cash flow forecasting + AR analytics</td>
+            <td class="x">Great charts. Still requires a human to act on them.</td>
+          </tr>
+          <tr>
+            <td>Billtrust</td>
+            <td>Invoice delivery + payment portal</td>
+            <td class="x">Automates sending invoices, not collecting them.</td>
+          </tr>
+          <tr>
+            <td>YayPay / Quadient</td>
+            <td>AR workflow automation + dunning emails</td>
+            <td class="x">Templated email sequences that clients learn to ignore.</td>
+          </tr>
+          <tr>
+            <td>Versapay</td>
+            <td>Collaborative AR with client portal</td>
+            <td class="x">Requires the client to log into yet another portal.</td>
+          </tr>
+          <tr>
+            <td>Chaser</td>
+            <td>Invoice chasing via email + SMS</td>
+            <td class="x">Automates the nudges but can't handle replies or disputes.</td>
+          </tr>
+          <tr>
+            <td>Gaviti</td>
+            <td>Collections workflow management</td>
+            <td class="x">Another place for your AR team to manage — doesn't replace them.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>See the pattern? Every one of these tools is built around the assumption that a human is in the loop — logging in, reviewing queues, deciding what to do next. They optimize the workflow. They don't replace the need for a person to execute it.</p>
+
+      <p>That's the gap. And in 2026, with the agents we have available, it's an embarrassing one.</p>
+
+      <blockquote>I don't want another dashboard. I want an employee.</blockquote>
+
+      <h2>What a real AR agent looks like</h2>
+
+      <p>Let's call it Viktor. Viktor is not a SaaS product you log into. Viktor is a member of your team — he just happens to be an AI.</p>
+
+      <p>Viktor has his own email address. Clients get emails from <code>viktor@yourcompany.com</code>, not from some generic <code>noreply@billingplatform.io</code>. He can read replies, understand context, handle disputes, answer questions about invoices, and escalate when something is beyond his scope. He doesn't send the same template six times and give up.</p>
+
+      <p>Viktor has his own phone number. He can call clients. Not robocall them — actually call them, leave a coherent voicemail, and follow up based on whether they picked up. He knows which clients respond better to a call versus an email, and he adjusts.</p>
+
+      <p>Viktor is in your Slack. When a client sends a concerning reply, Viktor pings the account manager. When an invoice hits 60 days overdue, Viktor asks you whether to escalate to collections or give it another week. He doesn't make unilateral decisions on the big stuff, but he handles everything below that threshold without involving you.</p>
+
+      <p>Viktor integrates natively with Stripe and QuickBooks. He knows which invoices are open, which are partially paid, which clients have a history of late payment, and what the original contract terms were. He doesn't need you to copy-paste invoice numbers into a spreadsheet. He already has the data.</p>
+
+      <h2>The business model writes itself</h2>
+
+      <p>Here's the other reason this is such an obvious opportunity: the pricing model is trivially easy to justify.</p>
+
+      <p>Charge a percentage of collected invoices. Something like 2–5% of whatever Viktor actually recovers. Businesses pay collection agencies 20–35% for the uglier end of collections — the delinquent clients who've stopped responding entirely. Viktor handles the earlier, softer stages of that funnel at a fraction of the cost, and captures collections that would otherwise just be written off.</p>
+
+      <p>Every business you pitch this to immediately understands the ROI. There's no "how do I measure the value of this tool" conversation. Viktor either collected the money or he didn't.</p>
+
+      <p>The market is every business that sends invoices. That's not a niche — that's most of the economy.</p>
+
+      <h2>Why nobody's built it yet</h2>
+
+      <p>It's not a technical problem. The agents capable of doing this work exist today. You'd need:</p>
+
+      <ul>
+        <li>An email inbox the agent can read and write (trivial — this is just Gmail or Outlook with an API)</li>
+        <li>A phone number with voice AI (Twilio + a voice model)</li>
+        <li>A Slack integration for escalations</li>
+        <li>Stripe and QuickBooks connectors for invoice data</li>
+        <li>A reasoning layer that decides what to do based on invoice age, client history, and communication tone</li>
+      </ul>
+
+      <p>None of these are hard in isolation. The hard part is the product judgment: knowing when Viktor should push harder and when he should back off. Knowing that a client who's 15 days late and responsive is very different from one who's 90 days late and silent. Knowing that the tone of a collections message to a $500 client is different from a $50,000 one.</p>
+
+      <p>The existing tools failed because they were built by people who thought the problem was workflow automation. The real problem is judgment at scale — and that's what large language models are actually good at.</p>
+
+      <h2>We're building Viktor internally</h2>
+
+      <p>We started scoping Viktor for our own AR process because nothing on the market came close to what we needed. But the more we've talked about it, the more obvious it is that this should be a standalone product.</p>
+
+      <p>If you're building something like this — or if you've already built it and I just haven't found you yet — I want to talk. I'll be your first paying customer. I'll tell you exactly what edge cases you'll hit. And I'll give you honest feedback that most early customers won't.</p>
+
+      <p>If nobody builds it, we will. Either way, Viktor is coming.</p>
+
+      <hr>
+
+      <p style="color: var(--fg-dim); font-size: 16px;">Building something like Viktor? Reach out at <a href="mailto:sardor@bolderapps.com">sardor@bolderapps.com</a>. Serious offers only — I've already talked to three people who said they were building this and weren't.</p>
+    </div>
+
+    <div class="endcap">
+      <div>
+        <h3>Want us to build Viktor for your business?</h3>
+        <p>AI-native agents · Stripe & QB integration · ships in weeks</p>
+      </div>
+      <a href="/#pricing" class="btn">Let's Talk →</a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="wrap-wide footer-inner">
+    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+    <span><a href="/blog/">← All posts</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
