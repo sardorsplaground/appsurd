@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers — Appsurd</title>
+<meta name="description" content="Join Appsurd as a Forward Deployed Engineer. Embed with clients, ship specialized AI agents, and build software the way it should be built — fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
+  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
+  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.serif { font-family: 'Fraunces', serif; font-style: italic; }
+img { filter: grayscale(100%) contrast(1.02); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
+.grid-bg {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px; z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+}
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in oklab, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo a { text-decoration: none; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+  text-decoration: none;
+}
+.logo-by {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 9px;
+  letter-spacing: 0.08em; color: var(--accent); background: var(--accent-ink);
+  padding: 2px 6px; border-radius: 3px; transition: opacity 200ms;
+  width: max-content; text-decoration: none;
+}
+.logo-by:hover { opacity: 0.75; }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; text-decoration: none; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 880px) { .nav-links { display: none; } }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500;
+  background: var(--accent); color: var(--accent-ink);
+  transition: transform 200ms ease; text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); }
+.footer {
+  border-top: 1px solid var(--line); padding: 40px 0; background: var(--bg-elev);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute);
+  letter-spacing: 0.12em; text-transform: uppercase; position: relative; z-index: 1;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--fg); }
+::selection { background: var(--fg); color: var(--bg); }
+
+/* ---- careers hero ---- */
+.careers-hero { padding: 72px 0 8px; position: relative; z-index: 1; }
+.careers-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 18px; }
+.careers-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 18px; }
+.careers-hero h1 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.careers-hero p { font-size: 20px; color: var(--fg-dim); max-width: 640px; margin: 0; line-height: 1.5; }
+
+/* ---- value props ---- */
+.why { padding: 64px 0 24px; position: relative; z-index: 1; }
+.why-head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 28px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) { .why-grid { grid-template-columns: 1fr; } }
+.why-card { border: 1px solid var(--line); border-radius: 16px; padding: 26px 26px 28px; background: var(--card); transition: border-color 260ms, transform 260ms; }
+.why-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.why-card .wc-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--fg-mute); margin-bottom: 14px; }
+.why-card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px; }
+.why-card p { font-size: 15px; color: var(--fg-dim); margin: 0; line-height: 1.55; }
+
+/* ---- open roles ---- */
+.roles { padding: 56px 0 90px; position: relative; z-index: 1; }
+.roles-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.roles-head h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 500; letter-spacing: -0.03em; margin: 0; }
+.roles-head .count { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+.job {
+  border: 1px solid var(--line-strong); border-radius: 18px; background: var(--card);
+  padding: 34px 34px 36px; margin-bottom: 22px; position: relative; overflow: hidden;
+  transition: border-color 300ms, transform 300ms, box-shadow 300ms;
+}
+.job:hover { border-color: var(--fg); transform: translateY(-4px); box-shadow: 0 26px 56px rgba(0,0,0,0.5); }
+.job-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.job-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 12px; }
+.job h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 600; letter-spacing: -0.025em; margin: 0 0 6px; line-height: 1.06; }
+.job-sub { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 18px; color: var(--fg-dim); margin: 0; }
+.job-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 24px; }
+.tagpill { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-dim); border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; }
+.job p.job-desc { font-size: 16px; color: var(--fg); line-height: 1.65; margin: 0 0 22px; max-width: 720px; }
+.job-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 30px; }
+@media (max-width: 720px) { .job-cols { grid-template-columns: 1fr; gap: 22px; } }
+.job-cols h4 { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin: 0 0 14px; }
+.job-cols ul { margin: 0; padding: 0; list-style: none; }
+.job-cols li { position: relative; padding-left: 22px; font-size: 15px; color: var(--fg-dim); line-height: 1.5; margin-bottom: 12px; }
+.job-cols li::before { content: "›"; position: absolute; left: 0; top: -1px; color: var(--fg); font-weight: 600; }
+.job-apply { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; font-size: 14px; font-weight: 500; background: var(--accent); color: var(--accent-ink); text-decoration: none; transition: transform 200ms ease; }
+.job-apply:hover { transform: translateY(-2px); }
+.job-apply .arrow { transition: transform 200ms ease; }
+.job-apply:hover .arrow { transform: translateX(4px); }
+
+/* ---- closing cta ---- */
+.careers-cta { border-top: 1px solid var(--line); padding: 72px 0; position: relative; z-index: 1; background: var(--bg-elev); }
+.careers-cta .wrap { text-align: center; }
+.careers-cta h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 500; letter-spacing: -0.03em; margin: 0 0 14px; }
+.careers-cta h2 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.careers-cta p { font-size: 18px; color: var(--fg-dim); margin: 0 auto 28px; max-width: 540px; }
+.editable-note { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); opacity: 0.55; margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap-wide nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">By Bolder</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/team/">Team</a>
+      <a href="/careers/" class="on">Careers</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/#pricing" class="btn">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="careers-hero">
+  <div class="wrap-wide">
+    <div class="eyebrow">Careers</div>
+    <h1>Build software the<br>way it <em>should</em> be built.</h1>
+    <p>We're a small, senior team shipping specialized AI agents for real companies — fast. If you'd rather embed with a client and ship than sit in a backlog, you'll fit right in.</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap-wide">
+    <div class="why-head">Why Appsurd</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="wc-num">01</div>
+        <h3>Ship, don't wait</h3>
+        <p>We move in 48–72 hour cycles. You'll see your work in production in days, not quarters — with real users on the other end.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-num">02</div>
+        <h3>Agent-native by default</h3>
+        <p>Every engineer here builds with AI agents as teammates. The output of one of our engineers rivals a traditional team several times the size.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-num">03</div>
+        <h3>Close to the customer</h3>
+        <p>You'll sit with clients, understand the problem first-hand, and own the solution end to end. No telephone game, no spec hand-offs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roles">
+  <div class="wrap-wide">
+    <div class="roles-head">
+      <h2>Open roles</h2>
+      <span class="count">Forward Deployed Engineering</span>
+    </div>
+
+    <!-- Role 1 -->
+    <div class="job">
+      <div class="job-top">
+        <div>
+          <div class="job-eyebrow">Engineering · Full-time</div>
+          <h3>Forward Deployed Engineer</h3>
+          <p class="job-sub">Embed with clients. Ship agentic software that runs the business.</p>
+        </div>
+      </div>
+      <div class="job-meta">
+        <span class="tagpill">Remote / Hybrid</span>
+        <span class="tagpill">Full-time</span>
+        <span class="tagpill">Mid–Senior</span>
+        <span class="tagpill">TypeScript · Python</span>
+      </div>
+      <p class="job-desc">As a Forward Deployed Engineer, you sit at the intersection of our clients and our codebase. You'll scope the real problem alongside a customer, design the agentic workflow, and ship a working solution — often within a single delivery cycle. This is a builder's role for someone who is equally comfortable writing production code and explaining a system to a non-technical stakeholder.</p>
+      <div class="job-cols">
+        <div>
+          <h4>What you'll do</h4>
+          <ul>
+            <li>Embed directly with client teams to understand workflows and pain points</li>
+            <li>Design and build specialized AI agents that operate real software</li>
+            <li>Ship full-stack features end to end on tight, iterative cycles</li>
+            <li>Own delivery from kickoff to production and hand-off</li>
+            <li>Turn fuzzy requirements into a clear, working system</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What we look for</h4>
+          <ul>
+            <li>Strong full-stack engineering (TypeScript/Node and/or Python)</li>
+            <li>Hands-on experience building with LLMs and agent frameworks</li>
+            <li>Comfort talking directly to customers and translating needs</li>
+            <li>A bias toward shipping and iterating over planning</li>
+            <li>Ownership mindset — you finish what you start</li>
+          </ul>
+        </div>
+      </div>
+      <a class="job-apply" href="mailto:hello@appsurd.co?subject=Application%20%E2%80%94%20Forward%20Deployed%20Engineer">Apply now <span class="arrow">→</span></a>
+    </div>
+
+    <!-- Role 2 -->
+    <div class="job">
+      <div class="job-top">
+        <div>
+          <div class="job-eyebrow">Engineering · Full-time</div>
+          <h3>Senior Forward Deployed Engineer</h3>
+          <p class="job-sub">Lead delivery on our most complex client engagements.</p>
+        </div>
+      </div>
+      <div class="job-meta">
+        <span class="tagpill">Remote / Hybrid</span>
+        <span class="tagpill">Full-time</span>
+        <span class="tagpill">Senior · Lead</span>
+        <span class="tagpill">AI / Agents</span>
+      </div>
+      <p class="job-desc">A senior version of the role above — you'll take point on our most ambiguous, highest-stakes engagements. You set the technical direction for a client engagement, mentor other forward-deployed engineers, and make the architectural calls that let an agent operate safely inside a customer's stack. You enjoy being the person a client trusts to get it right.</p>
+      <div class="job-cols">
+        <div>
+          <h4>What you'll do</h4>
+          <ul>
+            <li>Lead end-to-end delivery on flagship client engagements</li>
+            <li>Set architecture for agent systems operating in production</li>
+            <li>Mentor engineers and raise the technical bar across the team</li>
+            <li>Partner with client leadership on scope and roadmap</li>
+            <li>Define patterns we reuse across future engagements</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What we look for</h4>
+          <ul>
+            <li>5+ years shipping production software, recent AI/agent work</li>
+            <li>Track record owning delivery for external customers</li>
+            <li>Deep judgment on reliability, evals, and safe automation</li>
+            <li>Clear communicator who earns client trust quickly</li>
+            <li>Comfortable leading without a heavy process</li>
+          </ul>
+        </div>
+      </div>
+      <a class="job-apply" href="mailto:hello@appsurd.co?subject=Application%20%E2%80%94%20Senior%20Forward%20Deployed%20Engineer">Apply now <span class="arrow">→</span></a>
+    </div>
+
+    <p class="editable-note">// Editable placeholder roles — update titles, requirements, and apply links as needed.</p>
+  </div>
+</section>
+
+<section class="careers-cta">
+  <div class="wrap">
+    <h2>Don't see your <em>exact</em> role?</h2>
+    <p>We're always looking for sharp engineers who love to ship. Tell us what you'd want to build and we'll talk.</p>
+    <a class="btn" href="mailto:hello@appsurd.co?subject=Open%20application%20%E2%80%94%20Appsurd">Get in touch →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap-wide footer-inner">
+    <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
+    <span><a href="/team/">← Meet the team</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
