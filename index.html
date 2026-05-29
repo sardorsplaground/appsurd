@@ -42,7 +42,86 @@ html[data-theme="light"] {
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
+
+/* ============================================================
+   STACKED-COVER SLIDE SYSTEM (CSS position:sticky stacking)
+   Each .slide sticks to top:0 with an OPAQUE background, so the
+   next slide scrolls UP and COVERS the previous one. Only one
+   block is visible at a time. Backgrounds alternate dark/light
+   via scoped token redefinitions, independent of data-theme.
+   ============================================================ */
+:root { --nav-h: 74px; }
+@media (max-width: 880px) { :root { --nav-h: 66px; } }
+
+.slides { position: relative; z-index: 1; }
+
+.slide {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-margin-top: var(--nav-h);
+  /* OPAQUE bg + top shadow so the covering edge reads as it slides up */
+  isolation: isolate;
+}
+.slide > * { position: relative; z-index: 1; }
+
+/* The slide content sits clear of the fixed nav at the top */
+.slide { padding-top: var(--nav-h); }
+
+/* Forced DARK slide — redefines tokens locally */
+.slide--dark {
+  --bg:#0a0a0a; --bg-elev:#111111; --bg-elev-2:#171717;
+  --line:#262626; --line-strong:#3d3d3d;
+  --fg:#f4f4f4; --fg-dim:#a0a0a0; --fg-mute:#6a6a6a;
+  --accent:#ffffff; --accent-ink:#0a0a0a;
+  --grid:rgba(255,255,255,0.035); --card:#131313;
+  background:#0a0a0a; color:#f4f4f4;
+  box-shadow: 0 -28px 60px -20px rgba(0,0,0,0.65);
+}
+/* Forced LIGHT slide — redefines tokens locally */
+.slide--light {
+  --bg:#f6f6f4; --bg-elev:#efefec; --bg-elev-2:#e8e8e4;
+  --line:#dedcd6; --line-strong:#bcbab3;
+  --fg:#0a0a0a; --fg-dim:#5a5a5a; --fg-mute:#8a8a8a;
+  --accent:#0a0a0a; --accent-ink:#f6f6f4;
+  --grid:rgba(0,0,0,0.04); --card:#efefec;
+  background:#f6f6f4; color:#0a0a0a;
+  box-shadow: 0 -28px 60px -22px rgba(0,0,0,0.22);
+}
+
+/* Neutralize per-section borders/padding now that slides own layout */
+.slide.section { border-top: 0; }
+.slide .section { border-top: 0; }
+/* Neutralize conflicting section/footer backgrounds so the slide bg wins */
+.slide.footer { background: #0a0a0a; }
+.slide.solution-bg { background: inherit; }
+.slide[style*="background"] { /* inline bg neutralized below per-element */ }
+
+/* Footer is the final, non-sticky stacked layer; sits naturally at bottom */
+.slide--footer {
+  position: relative;
+  top: auto;
+  min-height: auto;
+  justify-content: flex-start;
+  scroll-snap-align: none;
+}
+
+/* Within sticky slides, reveal must never stay invisible.
+   Make reveal fall back to visible; the .in transition still enhances. */
+.slides .reveal { opacity: 1; transform: none; }
+.slides .reveal:not(.in) { opacity: 1; }
+
+/* Allow inner wrappers to take full width inside the centered slide */
+.slide > .wrap, .slide > .wrap-wide { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-snap-type: none; }
+}
 body {
   background: var(--bg);
   color: var(--fg);
@@ -132,14 +211,27 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 
 /* ---------- nav ---------- */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: color-mix(in oklab, var(--bg) 75%, transparent);
-  border-bottom: 1px solid var(--line);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  /* Pinned over both black and white slides: keep dark-theme look,
+     semi-opaque so it stays readable regardless of slide beneath. */
+  background: rgba(10,10,10,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
+/* Force nav internals to readable light-on-dark regardless of slide tokens */
+.nav .logo-name { color: #f4f4f4; }
+.nav .logo-by { color: #0a0a0a; background: #f4f4f4; }
+.nav .nav-links { color: #a0a0a0; }
+.nav .nav-links a:hover { color: #ffffff; }
+.nav .nav-cta .mono { color: #a0a0a0 !important; }
+.nav .btn-primary { background: #ffffff; color: #0a0a0a; }
+.nav .btn-ghost { border-color: #3d3d3d; color: #f4f4f4; }
+.nav .logo-mark svg rect[fill="var(--accent)"] { fill: #f4f4f4; }
 .nav-inner {
   display: flex;
   align-items: center;
@@ -1167,8 +1259,11 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ===== STACKED-COVER SLIDES ===== -->
+<div class="slides">
+
+<!-- SLIDE 1 — HERO + MARQUEE (DARK) -->
+<section class="hero slide slide--dark">
   <div class="wrap" style="position:relative;">
     <div class="hero-float" aria-hidden="true">
       <div class="ring"><span>UNLIMITED · REQUESTS · 48HR · DELIVERY ·</span></div>
@@ -1204,18 +1299,18 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <span>30-day money-back</span>
     </div>
   </div>
+
+  <!-- marquee band folded into the hero slide bottom -->
+  <div class="marquee" aria-hidden="true" style="margin-top:56px;">
+    <div class="marquee-track">
+      <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
+      <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
+    </div>
+  </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
-    <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
-  </div>
-</div>
-
-<!-- BOLDER TRUST -->
-<section class="section" id="bolder" style="padding: 90px 0;">
+<!-- SLIDE 2 — BOLDER TRUST (LIGHT) -->
+<section class="section slide slide--light" id="bolder" style="padding: 90px 0;">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom: 48px;">
       <div>
@@ -1251,8 +1346,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
-<!-- TEAM CAROUSEL (auto-generated) -->
-<section class="section" id="team" style="padding: 90px 0;">
+<!-- SLIDE 3 — TEAM CAROUSEL (DARK) -->
+<section class="section slide slide--dark" id="team" style="padding: 90px 0;">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom: 40px;">
       <div>
@@ -1729,7 +1824,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 
 
 <!-- PROBLEM -->
-<section class="section" id="problem">
+<!-- SLIDE 4 — PROBLEM (LIGHT) -->
+<section class="section slide slide--light" id="problem">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1769,7 +1865,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- SOLUTION -->
-<section class="section solution-bg" id="features">
+<!-- SLIDE 5 — SOLUTION / FEATURES (DARK) -->
+<section class="section slide slide--dark" id="features">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1809,7 +1906,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- HOW -->
-<section class="section" id="how">
+<!-- SLIDE 6 — HOW IT WORKS (LIGHT) -->
+<section class="section slide slide--light" id="how">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1843,7 +1941,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- PRICING -->
-<section class="section" id="pricing" style="background: var(--bg-elev);">
+<!-- SLIDE 7 — PRICING (DARK) -->
+<section class="section slide slide--dark" id="pricing">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1926,7 +2025,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section" id="testimonials">
+<!-- SLIDE 8 — TESTIMONIALS (LIGHT) -->
+<section class="section slide slide--light" id="testimonials">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1980,7 +2080,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- FAQ -->
-<section class="section" id="faq">
+<!-- SLIDE 9 — FAQ (DARK) -->
+<section class="section slide slide--dark" id="faq">
   <div class="wrap" style="max-width: 1000px;">
     <div class="section-head reveal" style="grid-template-columns: 1fr;">
       <div>
@@ -2050,8 +2151,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
-<!-- FOOTER CTA -->
-<section class="foot-cta section">
+<!-- SLIDE 10 — FOOTER CTA (LIGHT) -->
+<section class="foot-cta section slide slide--light">
   <div class="wrap">
     <div class="reveal">
       <h2>Ready to build<br>something <em>absurdly</em><br>good?</h2>
@@ -2065,8 +2166,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
+<!-- SLIDE 11 — FOOTER (DARK, final non-sticky layer) -->
+<footer class="footer slide slide--dark slide--footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -2114,6 +2215,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
     </div>
   </div>
 </footer>
+</div><!-- /.slides -->
 
 <!-- TWEAKS PANEL -->
 <div class="tweaks" id="tweaksPanel">
