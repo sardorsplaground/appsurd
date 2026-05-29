@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Build Your Own Specialized Agent Like Viktor — Appsurd</title>
+<meta name="description" content="A build playbook for shipping a specialized AI agent — one with its own inbox, phone number, and Slack seat — modeled on Viktor but going deeper into a single money-making function: accounts receivable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-elev: #111111; --line: #262626; --line-strong: #3d3d3d;
+  --fg: #f4f4f4; --fg-dim: #a0a0a0; --fg-mute: #6a6a6a;
+  --accent: #ffffff; --accent-ink: #0a0a0a; --grid: rgba(255,255,255,0.035); --card: #131313;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.serif { font-family: 'Fraunces', serif; font-style: italic; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
+
+.grid-bg {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px; z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+}
+
+/* nav (same as blog index) */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in oklab, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo a { text-decoration: none; }
+.logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo-text { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+.logo-name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+  text-decoration: none;
+}
+.logo-by {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-ink);
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: opacity 200ms;
+  width: max-content;
+  text-decoration: none;
+}
+.logo-by:hover { opacity: 0.75; }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color 200ms; text-decoration: none; }
+.nav-links a:hover, .nav-links a.on { color: var(--fg); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  background: var(--accent); color: var(--accent-ink);
+  transition: transform 200ms ease; text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* back link */
+.back {
+  padding: 36px 0 0;
+}
+.back a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute); text-decoration: none;
+  transition: color 200ms;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.back a:hover { color: var(--fg); }
+.back .arrow { transition: transform 200ms ease; display: inline-block; }
+.back a:hover .arrow { transform: translateX(-4px); }
+
+/* article */
+article {
+  padding: 32px 0 80px;
+}
+.post-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute);
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.post-meta .sep { opacity: 0.4; }
+article h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500; letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 24px;
+}
+article h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300;
+}
+.lede {
+  font-size: 22px; line-height: 1.5;
+  color: var(--fg-dim);
+  margin: 0 0 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
+}
+
+/* prose */
+.prose { font-size: 18px; line-height: 1.7; color: var(--fg); }
+.prose > * + * { margin-top: 1.3em; }
+.prose h2 {
+  font-size: 32px; font-weight: 500; letter-spacing: -0.02em;
+  margin-top: 64px; margin-bottom: 16px; line-height: 1.15;
+}
+.prose h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.015em;
+  margin-top: 40px; margin-bottom: 12px;
+}
+.prose p { color: var(--fg); }
+.prose a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--fg-mute);
+  text-decoration: none;
+  transition: border-color 200ms;
+}
+.prose a:hover { border-bottom-color: var(--fg); }
+.prose strong { font-weight: 600; }
+.prose em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.prose blockquote {
+  margin: 32px 0; padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--fg);
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-size: 24px; line-height: 1.4; color: var(--fg);
+}
+.prose ul, .prose ol { padding-left: 24px; color: var(--fg-dim); }
+.prose li { margin: 8px 0; }
+.prose li strong { color: var(--fg); }
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bg-elev); padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.prose pre {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 24px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; border: 0; font-size: inherit; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+
+/* end-of-post cta */
+.endcap {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.endcap h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+.endcap p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0;
+}
+
+/* footer */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  background: var(--bg-elev);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--fg-mute);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--fg); }
+
+::selection { background: var(--fg); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav class="nav">
+  <div class="wrap-wide nav-inner">
+    <div class="logo">
+      <a href="/" aria-label="Appsurd home" style="display:inline-flex;align-items:center;">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div class="logo-text">
+        <a href="/" class="logo-name">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="logo-by">BOLDER</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/" class="on">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/#pricing" class="btn">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="back wrap">
+  <a href="/blog/"><span class="arrow">←</span> All posts</a>
+</div>
+
+<article>
+  <div class="wrap">
+    <div class="post-meta">
+      <span>May 29, 2026</span>
+      <span class="sep">/</span>
+      <span>The Appsurd Team</span>
+      <span class="sep">/</span>
+      <span>8 min read</span>
+    </div>
+
+    <h1>How to Build Your Own Specialized Agent Like <em>Viktor</em>.</h1>
+
+    <p class="lede">The biggest leverage in your business right now isn't another SaaS dashboard — it's a specialized AI agent built like an employee, with its own inbox, phone number, and Slack seat, operating the software you already use. We recommend building one, starting with accounts receivable. This is our playbook for how.</p>
+
+    <div class="prose">
+      <p><strong>Short version:</strong> The biggest leverage in your business right now isn't another SaaS dashboard — it's a specialized AI agent built like an employee, with its own inbox, phone number, and Slack seat, that operates the software you already use. We recommend building one, and we recommend starting with accounts receivable, because it's the function where the ROI is most obvious: it literally collects cash. This guide is our playbook for how to do it. We're drawing direct inspiration from <a href="https://viktor.com" target="_blank" rel="noopener">Viktor</a> — a general-purpose AI coworker that "lives in Slack, connects to 3,000+ tools, and does the work" — and narrowing that same philosophy into a single, deep, money-making specialization.</p>
+
+      <p>Now let's get into the how.</p>
+
+      <h2>Why we're recommending this</h2>
+
+      <p>About 10% of revenue tends to stay uncollected across our operations at any given point — that's hundreds of thousands of dollars a year. Today we fight it with a human whose entire job is follow-up calls and emails, plus a collection agency that takes a hefty cut of whatever it recovers from clients who bail. None of that is strategic work. It's relentless, repetitive chasing — exactly the kind of work a well-designed agent should own end to end.</p>
+
+      <p>We've evaluated the market and the existing tools don't get us there (more on why below). So our recommendation is to build it ourselves, the way Viktor is built: not as a tool you log into, but as a colleague you delegate to. The difference between those two things is the entire point of this guide.</p>
+
+      <h2>The design principle: build an employee, not an interface</h2>
+
+      <p>Viktor's tagline is <em>"Not a tool. A hire."</em> That's the whole thesis. The reason this is now buildable — and wasn't two years ago — is that you can give an agent its own identity and let it operate inside the same systems your team already uses. The unit of software shifts from "an app" to "a coworker you onboard."</p>
+
+      <p>Everything below follows from that principle. When you're making a design decision, the test is always: <em>would a great human employee do it this way?</em> If the answer involves a human logging into a dashboard, you've built a tool. If it involves the agent acting, conversing, and reporting back, you've built a hire.</p>
+
+      <h2>Step 1 — Pick a specialization with undeniable ROI</h2>
+
+      <p>Don't build a general agent. Viktor is general because it's a platform; your advantage is depth in one function. Choose a workflow where:</p>
+
+      <ul>
+        <li>The work is repetitive and follow-up heavy.</li>
+        <li>The outcome is measurable in dollars.</li>
+        <li>A human currently does it, so the cost comparison is obvious.</li>
+      </ul>
+
+      <p>Accounts receivable checks every box, which is why we recommend it as the first build. The output is collected cash, the baseline cost (a salaried collector plus agency fees) is known, and you can even price the agent on performance — a percentage of what it collects — so it pays for itself by definition.</p>
+
+      <h2>Step 2 — Give it its own identity</h2>
+
+      <p>This is the step most teams skip, and it's what separates an employee from a feature.</p>
+
+      <ul>
+        <li><strong>Its own inbox.</strong> Provision a dedicated email identity (e.g. <code>ar@yourcompany.com</code>), not a plugin sitting inside someone's personal inbox. Clients reply to the agent directly. It reads the full thread, understands context like "we're disputing the late fee" or "send this to accounts payable," pulls the relevant invoice and PO, and responds. The conversation lives with the agent, so context is never lost in a handoff.</li>
+        <li><strong>Its own phone number.</strong> This is the single biggest gap in every existing tool. Email-only collectors stall fast, because the clients who matter most are the ones who ignore email. Give the agent a real number so it can place outbound calls, leave voicemails, take inbound calls from clients sorting out a balance, negotiate a payment date, and log the whole conversation. The voice layer is technically mature now — use it.</li>
+        <li><strong>Its own Slack seat.</strong> This is what makes it feel like a hire. Your team should @-mention it: "Don't chase Acme this week, they're closing a round." It should proactively post: "Heads up — Delta Corp is 45 days overdue and went quiet after two calls. Escalate to the agency, or do you want to step in?" Viktor's core behavior is living in Slack and talking to the whole team; replicate that exactly.</li>
+      </ul>
+
+      <h2>Step 3 — Connect it to the software you already run</h2>
+
+      <p>Viktor's strength is that it "connects to 3,000+ tools" and operates them rather than asking you to migrate. Copy that approach. The agent should sit on top of your existing stack as an operator, using the same systems a human employee would log into:</p>
+
+      <ul>
+        <li><strong>Stripe</strong> — read invoice and payment status in real time.</li>
+        <li><strong>QuickBooks</strong> — reconcile payments and update records when a client pays.</li>
+        <li><strong>Your CRM (e.g. HubSpot)</strong> — pull relationship context so it knows which accounts are sensitive.</li>
+      </ul>
+
+      <p>No rip-and-replace, no "unified suite" lock-in. The agent reads and writes to what you already pay for. Build these as tool integrations the agent can call, the same way Viktor queries <a href="https://stripe.com/resources/more/how-finance-automation-tools-can-simplify-your-accounts-receivable" target="_blank" rel="noopener">Stripe</a>, HubSpot, and the rest in a single run.</p>
+
+      <h2>Step 4 — Encode the judgment, not just the cadence</h2>
+
+      <p>A reminder scheduler fires templated emails on a timer. An employee uses judgment. To cross that line, give the agent:</p>
+
+      <ul>
+        <li><strong>Per-account strategy.</strong> It runs the optimal follow-up cadence on every account simultaneously, personalized to each client's history and payment behavior — something no human collector can do at scale.</li>
+        <li><strong>Real conversation handling.</strong> When a client replies with a question or dispute, the agent resolves it (find the PO, re-send the invoice, explain the charge) instead of bouncing to a human for the easy 80%.</li>
+        <li><strong>Escalation logic.</strong> It knows when to loop in a human for relationship-sensitive accounts, and when to automatically hand the truly delinquent ones to the collection agency — so you stop paying agency percentages on accounts that persistence could have recovered earlier.</li>
+        <li><strong>Memory.</strong> Like Viktor, "every conversation makes it smarter about your business." It remembers what worked on which client and how your team likes things handled.</li>
+      </ul>
+
+      <h2>Step 5 — Make it run on its own schedule</h2>
+
+      <p>The agent shouldn't wait to be asked. It should wake up daily, scan aging receivables, decide what needs chasing, do it across email and phone, and report a summary into Slack. This is the recurring-task behavior that turns an assistant into an operator — Viktor "schedules recurring tasks and proposes automations you didn't think to ask for." Your AR agent should do the same: close the reporting loop without anyone being the bottleneck.</p>
+
+      <h2>Why the existing tools won't do this for you</h2>
+
+      <p>We looked hard before recommending a build. The market is crowded, but it's crowded with the wrong paradigm.</p>
+
+      <ul>
+        <li><strong>Enterprise suites</strong> — <a href="https://www.highradius.com/resources/Blog/top-accounts-receivable-tools/" target="_blank" rel="noopener">HighRadius</a>, <a href="https://www.trevipay.com/resource-center/blog/best-accounts-receivable-automation-software/" target="_blank" rel="noopener">Versapay, Quadient/YayPay</a>. End-to-end AR platforms, increasingly branded "agentic." But they're enterprise cockpits: weeks-to-months implementations, Fortune-1000 pricing, and at the end you get more reports and rules to configure. A better cockpit, not a pilot.</li>
+        <li><strong>SMB invoicing tools</strong> — <a href="https://www.bill.com/product/accounts-receivable" target="_blank" rel="noopener">BILL</a>, Zoho Books, FreshBooks. Cheap and fast, but they're glorified reminder schedulers. They fire dunning emails on a timer and stall the moment a client actually replies. They front-load the easy 20% of the work and leave the hard part to a human.</li>
+        <li><strong>Collections add-ons</strong> — <a href="https://www.tesorio.com/tesorio-versus-upflow" target="_blank" rel="noopener">Tesorio</a>, <a href="https://www.g2.com/compare/tesorio-vs-upflow-upflow" target="_blank" rel="noopener">Upflow</a>, Gaviti. The closest in intent, but they optimize the human's to-do list instead of replacing it — Tesorio literally "prioritizes work for your team." Users on <a href="https://www.g2.com/compare/tesorio-vs-upflow-upflow" target="_blank" rel="noopener">G2</a> also flag dashboard-era friction: data lag between invoice creation and sync, no partial-payment support, single-bank-account limits.</li>
+        <li><strong>AI-native players</strong> — <a href="https://www.ycombinator.com/companies/fazeshift" target="_blank" rel="noopener">Fazeshift</a>, <a href="https://www.paraglide.ai/blog/how-ai-agents-automate-accounts-receivable" target="_blank" rel="noopener">Paraglide</a>, <a href="https://www.shylock.ai" target="_blank" rel="noopener">Shylock</a>. Closest to the right idea. Paraglide works "inside the finance inbox"; Shylock runs voice, WhatsApp, SMS, and email across 40+ countries. But they're still packaged as software features rather than a named coworker your team delegates to in Slack — and <a href="https://www.ledgerup.ai/resources/ar-automation-software-2026" target="_blank" rel="noopener">reviews note</a> thin track records and no public pricing. None of them is something an account manager would @-mention by name to ask whether an invoice cleared.</li>
+      </ul>
+
+      <p>That gap — between a tool you operate and a colleague you delegate to — is exactly the gap an employee-style build closes.</p>
+
+      <h2>Why this is worth building now</h2>
+
+      <p>The economics are unusually clean. Today the same problem costs us a full salary for a human follow-up role, a hefty agency percentage on accounts that fully bail, and the 10% that never gets collected at all. An agent built the way Viktor is built — own inbox, own phone, a Slack seat, driving Stripe and QuickBooks, with the judgment to chase, negotiate, and escalate — replaces most of that cost and recovers more, 24/7.</p>
+
+      <p>And the model generalizes. Once the AR agent proves out, the same blueprint applies to any repetitive, follow-up-heavy, dollar-measurable function. AR is simply the best place to start because the ROI is impossible to argue with.</p>
+
+      <p>We're not theorizing here. At <a href="https://bolderapps.com" target="_blank" rel="noopener">Bolder</a>, our parent company, we've already built specialized agents this way — like <strong>Sheldon</strong>, our full-stack developer, and <strong>Vellum</strong>, the agent that replaced the business analyst who used to put together our scopes of work. Each one is built as a colleague with its own identity and tools, not a dashboard. The AR agent is the same pattern pointed at receivables.</p>
+
+      <blockquote>If you ship one specialized agent this year, make it the one that collects cash. It's the only software that pays for itself the day it goes live.</blockquote>
+
+      <h2>Our recommendation</h2>
+
+      <p>Build it. Start with accounts receivable. Follow the five steps above: pick the high-ROI specialization, give the agent a real identity (inbox, phone, Slack), connect it to Stripe/QuickBooks/HubSpot rather than replacing them, encode judgment and escalation rather than just a reminder cadence, and let it run on its own schedule. Treat Viktor as the architectural model — "not a tool, a hire" — and go one layer deeper than any general agent can, because depth in one money-making function is where a specialized agent wins.</p>
+
+      <p>If you'd rather not staff this build internally, this is precisely the kind of work our <a href="/services/staff-aug.html">forward-deployed engineers</a> do: a top 1% AI-native engineer, fluent in agentic workflows, embedded directly in your codebase and Slack to ship an agent like this with you.</p>
+
+      <hr>
+
+      <p style="color: var(--fg-dim); font-size: 14px;">Sources: <a href="https://viktor.com" target="_blank" rel="noopener">Viktor</a>, <a href="https://www.trevipay.com/resource-center/blog/best-accounts-receivable-automation-software/" target="_blank" rel="noopener">TreviPay</a>, <a href="https://www.highradius.com/resources/Blog/top-accounts-receivable-tools/" target="_blank" rel="noopener">HighRadius</a>, <a href="https://www.bill.com/product/accounts-receivable" target="_blank" rel="noopener">BILL</a>, <a href="https://www.tesorio.com/tesorio-versus-upflow" target="_blank" rel="noopener">Tesorio</a>, <a href="https://www.g2.com/compare/tesorio-vs-upflow-upflow" target="_blank" rel="noopener">G2</a>, <a href="https://www.ycombinator.com/companies/fazeshift" target="_blank" rel="noopener">Fazeshift (Y Combinator)</a>, <a href="https://www.ledgerup.ai/resources/ar-automation-software-2026" target="_blank" rel="noopener">LedgerUp</a>, <a href="https://www.paraglide.ai/blog/how-ai-agents-automate-accounts-receivable" target="_blank" rel="noopener">Paraglide</a>, <a href="https://www.shylock.ai" target="_blank" rel="noopener">Shylock</a>.</p>
+    </div>
+
+    <div class="endcap">
+      <div>
+        <h3>Want help building an agent like this?</h3>
+        <p>Forward-deployed engineer · embedded with your team · ships in week one</p>
+      </div>
+      <a href="/services/staff-aug.html" class="btn">Hire a Forward-Deployed Engineer →</a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="wrap-wide footer-inner">
+    <span>© 2025 APPSURD · ALL RIGHTS RESERVED</span>
+    <span><a href="/blog/">← All posts</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
