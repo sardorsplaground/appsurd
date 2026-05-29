@@ -178,6 +178,37 @@ article h1 em {
 .prose pre code { background: none; padding: 0; border: 0; font-size: inherit; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
 
+/* author block */
+.author-block {
+  margin-top: 56px;
+  padding: 28px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; align-items: center; gap: 22px;
+}
+.author-block img {
+  width: 72px; height: 72px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+}
+.author-block .ab-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0 0 6px;
+}
+.author-block .ab-name {
+  font-size: 20px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0; line-height: 1.2;
+}
+.author-block .ab-name a {
+  color: var(--fg); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.author-block .ab-name a:hover { border-bottom-color: var(--fg); }
+.author-block .ab-title {
+  font-size: 14px; color: var(--fg-dim); margin: 4px 0 0;
+}
+
 /* end-of-post cta */
 .endcap {
   margin-top: 80px;
@@ -368,6 +399,15 @@ article h1 em {
       <hr>
 
       <p style="color: var(--fg-dim); font-size: 14px;">Sources: <a href="https://viktor.com" target="_blank" rel="noopener">Viktor</a>, <a href="https://www.trevipay.com/resource-center/blog/best-accounts-receivable-automation-software/" target="_blank" rel="noopener">TreviPay</a>, <a href="https://www.highradius.com/resources/Blog/top-accounts-receivable-tools/" target="_blank" rel="noopener">HighRadius</a>, <a href="https://www.bill.com/product/accounts-receivable" target="_blank" rel="noopener">BILL</a>, <a href="https://www.tesorio.com/tesorio-versus-upflow" target="_blank" rel="noopener">Tesorio</a>, <a href="https://www.g2.com/compare/tesorio-vs-upflow-upflow" target="_blank" rel="noopener">G2</a>, <a href="https://www.ycombinator.com/companies/fazeshift" target="_blank" rel="noopener">Fazeshift (Y Combinator)</a>, <a href="https://www.ledgerup.ai/resources/ar-automation-software-2026" target="_blank" rel="noopener">LedgerUp</a>, <a href="https://www.paraglide.ai/blog/how-ai-agents-automate-accounts-receivable" target="_blank" rel="noopener">Paraglide</a>, <a href="https://www.shylock.ai" target="_blank" rel="noopener">Shylock</a>.</p>
+    </div>
+
+    <div class="author-block">
+      <img src="/team/photos/sean.jpg" alt="Sean Weldon">
+      <div>
+        <p class="ab-eyebrow">Written by</p>
+        <p class="ab-name"><a href="/team/sean-weldon.html">Sean Weldon</a></p>
+        <p class="ab-title">Tech Lead</p>
+      </div>
     </div>
 
     <div class="endcap">

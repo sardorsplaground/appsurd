@@ -177,6 +177,37 @@ article h1 em {
 .prose pre code { background: none; padding: 0; border: 0; font-size: inherit; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
 
+/* author block */
+.author-block {
+  margin-top: 56px;
+  padding: 28px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; align-items: center; gap: 22px;
+}
+.author-block img {
+  width: 72px; height: 72px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+}
+.author-block .ab-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0 0 6px;
+}
+.author-block .ab-name {
+  font-size: 20px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0; line-height: 1.2;
+}
+.author-block .ab-name a {
+  color: var(--fg); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.author-block .ab-name a:hover { border-bottom-color: var(--fg); }
+.author-block .ab-title {
+  font-size: 14px; color: var(--fg-dim); margin: 4px 0 0;
+}
+
 /* end-of-post cta */
 .endcap {
   margin-top: 80px;
@@ -303,6 +334,15 @@ article h1 em {
       <hr>
 
       <p style="color: var(--fg-dim); font-size: 16px;">Subscribe to the newsletter (coming soon), or just bookmark this page. New posts roughly every two weeks. No spam, no growth-hack tactics.</p>
+    </div>
+
+    <div class="author-block">
+      <img src="/team/photos/sardor.jpg" alt="Sardor Akhmedov">
+      <div>
+        <p class="ab-eyebrow">Written by</p>
+        <p class="ab-name"><a href="/team/sardor-akhmedov.html">Sardor Akhmedov</a></p>
+        <p class="ab-title">Founder &amp; CEO</p>
+      </div>
     </div>
 
     <div class="endcap">
