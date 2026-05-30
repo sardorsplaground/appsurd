@@ -1282,7 +1282,12 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   display: flex; gap: clamp(14px, 1.6vw, 24px); width: max-content;
   animation: teamMarquee 38s linear infinite;
 }
-.tc-carousel:hover .tc-track { animation-play-state: paused; }
+/* Pause on hover ONLY on hover-capable (desktop) pointers. On touch devices,
+   a tap registers as a sticky :hover and would freeze the marquee, so we guard
+   it behind @media (hover: hover) to keep mobile auto-scrolling. */
+@media (hover: hover) and (pointer: fine) {
+  .tc-carousel:hover .tc-track { animation-play-state: paused; }
+}
 /* card height is driven by viewport so the whole row fits one screen;
    width follows the 3:4.1 aspect ratio. */
 .tc-track .team-card {
