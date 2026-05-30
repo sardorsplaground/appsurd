@@ -1077,12 +1077,34 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   #pricing .plan-feat li { padding: 3px 0; font-size: 12px; }
   #pricing .plan { padding: 14px 16px 14px; }
 }
-/* On narrow mobile the 3 tiers stack vertically and can exceed one phone
-   screen. Allow the pricing slide's inner content to scroll internally
-   (like the FAQ) so no tier is ever clipped by the slide's overflow:hidden. */
+/* On narrow mobile the 3 tiers do NOT stack vertically. Instead they become a
+   horizontal swipe carousel (scroll side-to-side), so the section still fits
+   one phone screen and each card is reachable with a swipe. */
 @media (max-width: 1000px) {
-  #pricing > .wrap { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding-top: clamp(14px, 3vh, 28px); padding-bottom: clamp(14px, 3vh, 28px); }
-  #pricing .plans { gap: 14px; }
+  #pricing > .wrap { justify-content: center; padding-top: clamp(12px, 2.4vh, 24px); padding-bottom: clamp(12px, 2.4vh, 24px); }
+  /* the negative top-margin that tucks the guarantee under the toggle on
+     desktop overlaps the toggle on mobile — reset it to clear spacing. */
+  #pricing .pricing-guarantee { margin: 14px 0 18px !important; line-height: 1.4; }
+  #pricing .plans {
+    display: flex;
+    grid-template-columns: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    /* let cards bleed to the screen edges with a little inset */
+    margin: 0 -4vw;
+    padding: 4px 4vw 12px;
+    scrollbar-width: none;
+  }
+  #pricing .plans::-webkit-scrollbar { display: none; }
+  #pricing .plan {
+    flex: 0 0 86%;
+    max-width: 86%;
+    scroll-snap-align: center;
+  }
 }
 
 .foot-cta {
@@ -1281,6 +1303,10 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 .tc-track {
   display: flex; gap: clamp(14px, 1.6vw, 24px); width: max-content;
   animation: teamMarquee 38s linear infinite;
+  /* Force GPU compositing so the marquee paints reliably on mobile Safari. */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 /* Pause on hover ONLY on hover-capable (desktop) pointers. On touch devices,
    a tap registers as a sticky :hover and would freeze the marquee, so we guard
@@ -1296,8 +1322,30 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   width: auto;
   aspect-ratio: 3 / 4.1;
 }
-@keyframes teamMarquee { to { transform: translateX(-50%); } }
+@keyframes teamMarquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 @media (prefers-reduced-motion: reduce) { .tc-track { animation: none; } }
+
+/* On touch devices the CSS marquee can stall on iOS Safari (long max-content
+   track + mask-image compositing bug). Switch to a native horizontal swipe
+   carousel that we also auto-advance via JS (see script). The mask is removed
+   so the swipe affordance and scroll painting stay reliable. */
+@media (hover: none), (pointer: coarse) {
+  .tc-carousel {
+    -webkit-mask-image: none; mask-image: none;
+    overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* No scroll-snap here: this is a continuous auto-drifting marquee driven
+       by JS (scrollLeft). Snap would fight the per-frame increments and reset
+       scrollLeft to 0 every frame, freezing the carousel. */
+    scrollbar-width: none;
+  }
+  .tc-carousel::-webkit-scrollbar { display: none; }
+  .tc-track {
+    animation: none;
+    width: max-content;
+    transform: none; will-change: scroll-position;
+  }
+}
 
 </style>
 </head>
@@ -2041,7 +2089,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <button id="billMonthly" class="on" role="tab">Monthly</button>
         <button id="billAnnual" role="tab">Annual <span class="save">−17%</span></button>
       </div>
-      <div class="mono" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-dim);margin:-24px 0 40px;">◆ Every plan is backed by a 30-day money-back guarantee</div>
+      <div class="mono pricing-guarantee" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-dim);margin:-24px 0 40px;">◆ Every plan is backed by a 30-day money-back guarantee</div>
     </div>
 
     <div class="plans reveal">
@@ -2412,6 +2460,46 @@ if (heroFloat) {
       c.style.setProperty('--my', ((e.clientY - r.top)/r.height*100)+'%');
     });
   });
+})();
+
+/* Touch-device team carousel auto-advance.
+   On touch devices the CSS marquee is disabled (see stylesheet) and the
+   carousel becomes a native horizontal scroller. We auto-advance it smoothly
+   with requestAnimationFrame so it still moves on its own, while remaining
+   fully swipeable. The track is duplicated, so we wrap scrollLeft at the
+   halfway point for a seamless infinite loop. Respects reduced-motion and
+   pauses briefly whenever the user touches/scrolls it. */
+(function(){
+  var coarse = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!coarse || reduce) return;
+  var car = document.querySelector('.tc-carousel');
+  if (!car) return;
+  var SPEED = 28;            // px per second — gentle drift
+  var pausedUntil = 0;
+  // Track position in a float; reading scrollLeft returns a rounded integer,
+  // so sub-pixel per-frame increments would never accumulate. We keep our own
+  // accumulator and re-sync to the user's scroll position after they swipe.
+  var pos = 0;
+  function pause(ms){ pausedUntil = Date.now() + ms; pos = car.scrollLeft; }
+  ['touchstart','pointerdown','wheel'].forEach(function(ev){
+    car.addEventListener(ev, function(){ pause(2600); }, {passive:true});
+  });
+  var last = null;
+  function tick(ts){
+    if (last == null) last = ts;
+    var dt = (ts - last) / 1000; last = ts;
+    if (Date.now() >= pausedUntil) {
+      var half = car.scrollWidth / 2;
+      if (half > 0) {
+        pos += SPEED * dt;
+        if (pos >= half) pos -= half;  // seamless wrap (track is duplicated)
+        car.scrollLeft = pos;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 })();
 </script>
 
