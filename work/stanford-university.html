@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanford University — Appsurd Case Study</title>
+  <meta name="description" content="How Appsurd built an accessibility-first learning platform for Stanford University — WCAG 2.1 AA compliant, integrated with existing SSO, loved by students and faculty." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --elevated: #111; --card: #131313;
+      --fg: #f4f4f4; --dim: #a0a0a0; --muted: #6a6a6a;
+      --line: #262626; --strong: #3d3d3d;
+      --accent: #ffffff; --accent-ink: #0a0a0a;
+    }
+    html { background: var(--bg); color: var(--fg); font-family: 'Space Grotesk', sans-serif; }
+    body { min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+
+    .cs-hero { padding: 148px 40px 72px; max-width: 1360px; margin: 0 auto; border-bottom: 1px solid var(--line); }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .cs-hero h1 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; letter-spacing: -.03em; line-height: 1.0; color: var(--fg); margin-bottom: 20px; }
+    .cs-hero .sub { font-size: 20px; color: var(--dim); line-height: 1.55; max-width: 640px; }
+
+    .stats-bar { border-bottom: 1px solid var(--line); }
+    .stats-inner { max-width: 1360px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat-cell { padding: 40px 0; border-right: 1px solid var(--line); }
+    .stat-cell:last-child { border-right: none; padding-left: 40px; }
+    .stat-cell:not(:first-child) { padding-left: 40px; }
+    .stat-n { font-size: 44px; font-weight: 700; letter-spacing: -.03em; color: var(--fg); line-height: 1; margin-bottom: 8px; }
+    .stat-l { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+    .cs-body { max-width: 1360px; margin: 0 auto; padding: 80px 40px 0; display: grid; grid-template-columns: 1fr 320px; gap: 80px; }
+    .cs-main section { margin-bottom: 64px; }
+    .cs-main h2 { font-size: 13px; font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .cs-main p { font-size: 16px; line-height: 1.75; color: var(--dim); margin-bottom: 16px; }
+    .cs-main p:last-child { margin-bottom: 0; }
+    .cs-main strong { color: var(--fg); font-weight: 600; }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .feature-list li { display: flex; gap: 16px; align-items: flex-start; font-size: 15px; color: var(--dim); line-height: 1.55; }
+    .feature-list li::before { content: '→'; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); flex-shrink: 0; margin-top: 2px; }
+
+    .results-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); }
+    .result-row { display: flex; align-items: baseline; gap: 20px; padding: 20px 24px; border-bottom: 1px solid var(--line); }
+    .result-row:last-child { border-bottom: none; }
+    .result-n { font-size: 28px; font-weight: 700; letter-spacing: -.02em; color: var(--fg); min-width: 80px; }
+    .result-l { font-size: 14px; color: var(--dim); line-height: 1.4; }
+
+    .cs-sidebar { display: flex; flex-direction: column; gap: 32px; }
+    .sidebar-card { background: var(--card); border: 1px solid var(--line); padding: 28px; }
+    .sidebar-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); background: var(--elevated); border: 1px solid var(--strong); padding: 5px 10px; border-radius: 3px; }
+    .sidebar-info { display: flex; flex-direction: column; gap: 14px; }
+    .info-row { display: flex; flex-direction: column; gap: 3px; }
+    .info-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .info-val { font-size: 14px; color: var(--fg); font-weight: 500; }
+
+    .cs-cta { border-top: 1px solid var(--line); margin-top: 80px; padding: 80px 40px; max-width: 1360px; margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .cs-cta h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 700; letter-spacing: -.02em; color: var(--fg); margin-bottom: 8px; }
+    .cs-cta p { font-size: 15px; color: var(--dim); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 600; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .88; }
+    footer { border-top: 1px solid var(--line); padding: 32px 40px; max-width: 1360px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
+
+    @media (max-width: 960px) {
+      .cs-body { grid-template-columns: 1fr; }
+      .cs-sidebar { order: -1; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 28px 0; }
+      .stat-cell:not(:first-child) { padding-left: 0; }
+    }
+    @media (max-width: 640px) {
+      .cs-hero { padding: 120px 24px 56px; }
+      .cs-body { padding: 48px 24px 0; }
+      .cs-cta { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="/" style="display:inline-flex;align-items:center;">
+        <span style="width:36px;height:36px;display:grid;place-items:center;"><svg viewBox="0 0 36 36" width="36" height="36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div style="display:flex;flex-direction:column;line-height:1;gap:4px;">
+        <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.08em;font-size:16px;color:#f4f4f4;text-transform:uppercase;text-decoration:none;">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:9px;letter-spacing:.08em;color:#0a0a0a;background:#f4f4f4;padding:2px 6px;border-radius:3px;text-decoration:none;">By Bolder</a>
+      </div>
+    </div>
+    <div style="display:flex;gap:32px;font-size:14px;color:#a0a0a0;">
+      <a href="/work/" style="color:#f4f4f4;text-decoration:none;">Work</a>
+      <a href="/#pricing" style="color:#a0a0a0;text-decoration:none;">Pricing</a>
+      <a href="/services/" style="color:#a0a0a0;text-decoration:none;">Services</a>
+      <a href="/stack/" style="color:#a0a0a0;text-decoration:none;">Stack</a>
+      <a href="/compare/" style="color:#a0a0a0;text-decoration:none;">Compare</a>
+      <a href="/blog/" style="color:#a0a0a0;text-decoration:none;">Blog</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#a0a0a0;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Book a Demo</a>
+      <a href="/#pricing" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#fff;color:#0a0a0a;font-size:14px;font-weight:600;text-decoration:none;">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="cs-hero">
+  <p class="eyebrow">Higher Education · Case Study</p>
+  <h1>Stanford University</h1>
+  <p class="sub">A modern learning management platform built accessibility-first — fully WCAG 2.1 AA compliant, seamlessly integrated with Stanford's existing SSO and SIS infrastructure, and designed to replace the interface nobody wanted to log into.</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-cell">
+      <p class="stat-n">WCAG 2.1 AA</p>
+      <p class="stat-l">Full compliance on first external audit</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-n">10 wks</p>
+      <p class="stat-l">Discovery through pilot launch</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-n">4.7 / 5</p>
+      <p class="stat-l">Student satisfaction score post-launch</p>
+    </div>
+  </div>
+</div>
+
+<div class="cs-body">
+  <div class="cs-main">
+
+    <section>
+      <h2>The Challenge</h2>
+      <p>Stanford's existing course management portal had been extended and patched for over a decade. Navigation was non-linear, screen-reader support was inconsistent, and mobile usage — which represented 41% of student logins — was an afterthought. Accessibility complaints under Section 508 were escalating.</p>
+      <p>Meanwhile, the faculty experience for building and publishing course content had calcified around a workflow that pre-dated modern rich-text editing. Uploading a video lecture required four separate steps across two different admin interfaces. Assignment rubrics lived in Word documents that were manually uploaded and version-tracked in email threads.</p>
+      <p>Stanford's IT team had the infrastructure expertise but not the product velocity to redesign this at the speed the administration demanded. They needed an <strong>external squad that could build and ship fast without compromising on compliance or integration depth</strong>.</p>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>We began with an intensive two-week discovery: accessibility audits of the existing system, interviews with 14 faculty members across 6 departments, and usability sessions with students representing different accessibility needs — including users relying on screen readers, keyboard-only navigation, and high-contrast display settings.</p>
+      <p>The platform we designed operates as a companion to Stanford's existing SIS (Banner), not a replacement. Every piece of student data — enrollment, grades, course history — flows in via secure API. Faculty manage content inside the new platform; grades sync back to Banner automatically.</p>
+      <p>Accessibility wasn't a final checklist — it was baked into every component. We built a shared component library with accessibility built into the primitives: focus management, ARIA labeling, keyboard navigation, and color-contrast ratios were spec'd before the first screen was designed.</p>
+    </section>
+
+    <section>
+      <h2>What We Built</h2>
+      <ul class="feature-list">
+        <li><strong>Accessible Course Shell</strong> — a WCAG 2.1 AA compliant course homepage with semantic HTML, skip navigation links, landmark regions, and full keyboard operability. Tested with NVDA, JAWS, and VoiceOver at every iteration.</li>
+        <li><strong>Faculty Content Studio</strong> — a rich-text and block-based course builder where faculty drag in video lectures (hosted on Stanford's Panopto instance), readings, assignments, and discussion prompts. No file upload queues, no mode-switching.</li>
+        <li><strong>Assignment & Rubric Builder</strong> — in-platform rubric creation with weighted criteria, peer review workflow, and automatic grade passback to Banner via LTI 1.3. Replaces the Word-doc-in-email system entirely.</li>
+        <li><strong>Stanford SSO Integration</strong> — SAML 2.0 integration with Stanford's Shibboleth identity provider — single sign-on for students and faculty, with role-based access enforced at the data layer, not just the UI.</li>
+        <li><strong>Adaptive Video Player</strong> — accessible media player with closed caption support, transcript view, speed controls, and Panopto embed via API. Captions auto-generated with accuracy review workflow for faculty.</li>
+        <li><strong>Discussion Boards</strong> — threaded, screen-reader-navigable discussion forums with instructor pinning, anonymous post option, and notification preferences. No third-party forum tool — built natively for full accessibility control.</li>
+        <li><strong>Analytics for Instructors</strong> — engagement data per student: video watch time, assignment submission timing, discussion participation, and at-risk flags for students showing disengagement patterns.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="results-list">
+        <div class="result-row">
+          <span class="result-n">WCAG 2.1 AA</span>
+          <span class="result-l">Full compliance confirmed on first external accessibility audit — zero critical or serious violations found.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">4.7 / 5</span>
+          <span class="result-l">Average student satisfaction score in post-launch survey across the pilot cohort of 2,400 students.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">68%</span>
+          <span class="result-l">Reduction in faculty support tickets related to course setup and content upload — measured in the first quarter post-launch.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">10 wks</span>
+          <span class="result-l">Total timeline from discovery kickoff to pilot launch with live student data and SIS integration active.</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <aside class="cs-sidebar">
+    <div class="sidebar-card">
+      <p class="sidebar-title">Services Delivered</p>
+      <div class="tag-list">
+        <span class="tag">Accessibility Audit</span>
+        <span class="tag">Product Design</span>
+        <span class="tag">Full-Stack Dev</span>
+        <span class="tag">LTI Integration</span>
+        <span class="tag">SSO / SAML</span>
+        <span class="tag">QA & Testing</span>
+        <span class="tag">Product Management</span>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-title">Project Details</p>
+      <div class="sidebar-info">
+        <div class="info-row">
+          <span class="info-label">Client</span>
+          <span class="info-val">Stanford University</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Industry</span>
+          <span class="info-val">Higher Education</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Timeline</span>
+          <span class="info-val">10 weeks to pilot launch</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Squad Size</span>
+          <span class="info-val">5 (Designer, 2× Eng, QA, PM)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Compliance</span>
+          <span class="info-val">WCAG 2.1 AA · Section 508 · FERPA</span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card" style="background:var(--elevated);border-color:var(--strong);">
+      <p class="sidebar-title">Key Technologies</p>
+      <div class="tag-list">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Radix UI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Shibboleth / SAML</span>
+        <span class="tag">LTI 1.3</span>
+        <span class="tag">Panopto API</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div style="border-top:1px solid var(--line);margin-top:80px;">
+  <div class="cs-cta">
+    <div>
+      <h2>Ready to build something like this?</h2>
+      <p>One flat monthly fee. Full AI-native squad. First delivery in 48 hours.</p>
+    </div>
+    <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn-primary">Book a Demo →</a>
+  </div>
+</div>
+
+<div style="max-width:1360px;margin:0 auto;padding:20px 40px 0;">
+  <a href="/work/" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">← Back to All Work</a>
+</div>
+
+<footer>
+  <p>© 2025 Appsurd — by Bolder Apps</p>
+  <p style="color:var(--line);">AI-native product squad · bolderapps.com</p>
+</footer>
+
+</body>
+</html>

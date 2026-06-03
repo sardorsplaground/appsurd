@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Cancer Society — Appsurd Case Study</title>
+  <meta name="description" content="How Appsurd's AI-native squad built a donor engagement platform for the American Cancer Society that increased donor retention by 34%." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --elevated: #111; --card: #131313;
+      --fg: #f4f4f4; --dim: #a0a0a0; --muted: #6a6a6a;
+      --line: #262626; --strong: #3d3d3d;
+      --accent: #ffffff; --accent-ink: #0a0a0a;
+    }
+    html { background: var(--bg); color: var(--fg); font-family: 'Space Grotesk', sans-serif; }
+    body { min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+
+    /* HERO */
+    .cs-hero { padding: 148px 40px 72px; max-width: 1360px; margin: 0 auto; border-bottom: 1px solid var(--line); }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .cs-hero h1 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; letter-spacing: -.03em; line-height: 1.0; color: var(--fg); margin-bottom: 20px; }
+    .cs-hero .sub { font-size: 20px; color: var(--dim); line-height: 1.55; max-width: 640px; }
+
+    /* STATS BAR */
+    .stats-bar { border-bottom: 1px solid var(--line); }
+    .stats-inner { max-width: 1360px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat-cell { padding: 40px 0; border-right: 1px solid var(--line); }
+    .stat-cell:last-child { border-right: none; padding-left: 40px; }
+    .stat-cell:not(:first-child) { padding-left: 40px; }
+    .stat-n { font-size: 44px; font-weight: 700; letter-spacing: -.03em; color: var(--fg); line-height: 1; margin-bottom: 8px; }
+    .stat-l { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+    /* CONTENT */
+    .cs-body { max-width: 1360px; margin: 0 auto; padding: 80px 40px 0; display: grid; grid-template-columns: 1fr 320px; gap: 80px; }
+    .cs-main section { margin-bottom: 64px; }
+    .cs-main h2 { font-size: 13px; font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .cs-main p { font-size: 16px; line-height: 1.75; color: var(--dim); margin-bottom: 16px; }
+    .cs-main p:last-child { margin-bottom: 0; }
+    .cs-main strong { color: var(--fg); font-weight: 600; }
+
+    /* FEATURE LIST */
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .feature-list li { display: flex; gap: 16px; align-items: flex-start; font-size: 15px; color: var(--dim); line-height: 1.55; }
+    .feature-list li::before { content: '→'; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); flex-shrink: 0; margin-top: 2px; }
+
+    /* RESULTS LIST */
+    .results-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); }
+    .result-row { display: flex; align-items: baseline; gap: 20px; padding: 20px 24px; border-bottom: 1px solid var(--line); }
+    .result-row:last-child { border-bottom: none; }
+    .result-n { font-size: 28px; font-weight: 700; letter-spacing: -.02em; color: var(--fg); min-width: 80px; }
+    .result-l { font-size: 14px; color: var(--dim); line-height: 1.4; }
+
+    /* SIDEBAR */
+    .cs-sidebar { display: flex; flex-direction: column; gap: 32px; }
+    .sidebar-card { background: var(--card); border: 1px solid var(--line); padding: 28px; }
+    .sidebar-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); background: var(--elevated); border: 1px solid var(--strong); padding: 5px 10px; border-radius: 3px; }
+    .sidebar-info { display: flex; flex-direction: column; gap: 14px; }
+    .info-row { display: flex; flex-direction: column; gap: 3px; }
+    .info-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .info-val { font-size: 14px; color: var(--fg); font-weight: 500; }
+
+    /* CTA */
+    .cs-cta { border-top: 1px solid var(--line); margin-top: 80px; padding: 80px 40px; max-width: 1360px; margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .cs-cta h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 700; letter-spacing: -.02em; color: var(--fg); margin-bottom: 8px; }
+    .cs-cta p { font-size: 15px; color: var(--dim); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 600; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .88; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 40px 40px 0; max-width: 1360px; margin: 0 auto; display: block; }
+    footer { border-top: 1px solid var(--line); padding: 32px 40px; max-width: 1360px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
+
+    @media (max-width: 960px) {
+      .cs-body { grid-template-columns: 1fr; }
+      .cs-sidebar { order: -1; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 28px 0; }
+      .stat-cell:not(:first-child) { padding-left: 0; }
+    }
+    @media (max-width: 640px) {
+      .cs-hero { padding: 120px 24px 56px; }
+      .cs-body { padding: 48px 24px 0; }
+      .cs-cta { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="/" style="display:inline-flex;align-items:center;">
+        <span style="width:36px;height:36px;display:grid;place-items:center;"><svg viewBox="0 0 36 36" width="36" height="36"><use href="#appsurd-mark"/></svg></span>
+      </a>
+      <div style="display:flex;flex-direction:column;line-height:1;gap:4px;">
+        <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.08em;font-size:16px;color:#f4f4f4;text-transform:uppercase;text-decoration:none;">APPSURD</a>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:9px;letter-spacing:.08em;color:#0a0a0a;background:#f4f4f4;padding:2px 6px;border-radius:3px;text-decoration:none;">By Bolder</a>
+      </div>
+    </div>
+    <div style="display:flex;gap:32px;font-size:14px;color:#a0a0a0;">
+      <a href="/work/" style="color:#f4f4f4;text-decoration:none;">Work</a>
+      <a href="/#pricing" style="color:#a0a0a0;text-decoration:none;">Pricing</a>
+      <a href="/services/" style="color:#a0a0a0;text-decoration:none;">Services</a>
+      <a href="/stack/" style="color:#a0a0a0;text-decoration:none;">Stack</a>
+      <a href="/compare/" style="color:#a0a0a0;text-decoration:none;">Compare</a>
+      <a href="/blog/" style="color:#a0a0a0;text-decoration:none;">Blog</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#a0a0a0;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Book a Demo</a>
+      <a href="/#pricing" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#fff;color:#0a0a0a;font-size:14px;font-weight:600;text-decoration:none;">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <p class="eyebrow">Nonprofit / Healthcare · Case Study</p>
+  <h1>American Cancer Society</h1>
+  <p class="sub">A donor engagement platform and companion mobile app that transformed episodic giving into a habit — and made fundraiser campaign launches a 24-hour operation instead of a 6-week ordeal.</p>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-cell">
+      <p class="stat-n">34%</p>
+      <p class="stat-l">Increase in donor retention YoY</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-n">6 wks</p>
+      <p class="stat-l">End-to-end delivery timeline</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-n">48 hrs</p>
+      <p class="stat-l">First working prototype delivered</p>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+  <div class="cs-main">
+
+    <section>
+      <h2>The Challenge</h2>
+      <p>The American Cancer Society's digital fundraising operation was held together by three disconnected systems: a legacy CRM, a third-party donation widget, and a hand-maintained email segmentation list. Fundraiser coordinators spent more time copy-pasting data between tools than actually building campaigns.</p>
+      <p>Worse, the donor experience was fractured. Someone who donated via the mobile walkathon app had a completely separate profile from their online giving history. Lapsed donors received identical re-engagement emails to first-timers. The data existed — the infrastructure to act on it didn't.</p>
+      <p>ACS needed a unified platform that could <strong>orchestrate the full donor lifecycle</strong>: acquisition, activation, recurring giving, lapse recovery, and long-term stewardship — all from a single interface, built to handle the scale of their national campaigns.</p>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>Appsurd embedded a 4-person AI-native squad — one product designer, one AI engineer, one full-stack engineer, and a dedicated QA — within the first week. By day two, we had a functional data model and the first screens in front of ACS stakeholders for feedback.</p>
+      <p>We designed the platform around three core workflows: the <strong>Fundraiser Command Center</strong> (campaign builder + launch dashboard), the <strong>Donor Intelligence Layer</strong> (AI-driven segmentation and propensity scoring), and the <strong>Companion Mobile App</strong> (for event-based fundraising like Relay for Life).</p>
+      <p>Every 48 hours, a new build shipped to the ACS staging environment. Stakeholders could test, react, and redirect in real time — without scheduling a formal requirements review. Six weeks in, the platform was live in production.</p>
+    </section>
+
+    <section>
+      <h2>What We Built</h2>
+      <ul class="feature-list">
+        <li><strong>Unified Donor Profiles</strong> — merged giving history, event participation, email engagement, and demographic data into a single 360° view per donor.</li>
+        <li><strong>AI Propensity Scoring</strong> — a model trained on historical giving patterns that ranks donors by likelihood to upgrade, lapse, or respond to specific campaign types. Updated nightly.</li>
+        <li><strong>Campaign Builder</strong> — a drag-and-drop interface for building multi-channel fundraising campaigns (email, push, SMS) with conditional branching based on donor behavior. Reduced campaign launch time from 3 weeks to under 24 hours.</li>
+        <li><strong>Fundraiser Portal</strong> — personal fundraising pages for individual supporters, with real-time donation feeds, goal tracking, and one-click social sharing.</li>
+        <li><strong>iOS + Android Companion App</strong> — event check-in, team leaderboards, in-app giving, and push notifications for Relay for Life and other in-person campaigns.</li>
+        <li><strong>Lapse Recovery Automation</strong> — triggered re-engagement sequences with dynamic content personalized by donor segment, giving history, and last interaction type.</li>
+        <li><strong>Real-time Analytics Dashboard</strong> — campaign-level KPIs, cohort retention curves, and a live donation ticker for national campaigns — all exportable to PDF for board reporting.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="results-list">
+        <div class="result-row">
+          <span class="result-n">34%</span>
+          <span class="result-l">Increase in year-over-year donor retention, measured across the first full campaign cycle post-launch.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">24 hrs</span>
+          <span class="result-l">Time to launch a new fundraising campaign — down from 3 weeks using the legacy system.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">2.1×</span>
+          <span class="result-l">Improvement in re-engagement rate for lapsed donors using AI-personalized outreach vs. generic email blasts.</span>
+        </div>
+        <div class="result-row">
+          <span class="result-n">60%</span>
+          <span class="result-l">Reduction in time fundraiser coordinators spend on manual data entry and cross-system reconciliation.</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="cs-sidebar">
+    <div class="sidebar-card">
+      <p class="sidebar-title">Services Delivered</p>
+      <div class="tag-list">
+        <span class="tag">Product Design</span>
+        <span class="tag">AI Engineering</span>
+        <span class="tag">Full-Stack Dev</span>
+        <span class="tag">Mobile (iOS/Android)</span>
+        <span class="tag">QA & Testing</span>
+        <span class="tag">Product Management</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-title">Project Details</p>
+      <div class="sidebar-info">
+        <div class="info-row">
+          <span class="info-label">Client</span>
+          <span class="info-val">American Cancer Society</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Industry</span>
+          <span class="info-val">Nonprofit / Healthcare</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Timeline</span>
+          <span class="info-val">6 weeks to production</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Squad Size</span>
+          <span class="info-val">4 (Designer, AI Eng, FE/BE, QA)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Platforms</span>
+          <span class="info-val">Web platform + iOS + Android</span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card" style="background:var(--elevated);border-color:var(--strong);">
+      <p class="sidebar-title">Key Technologies</p>
+      <div class="tag-list">
+        <span class="tag">React Native</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Python / FastAPI</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Stripe</span>
+        <span class="tag">OpenAI API</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- CTA -->
+<div style="border-top:1px solid var(--line);margin-top:80px;">
+  <div class="cs-cta">
+    <div>
+      <h2>Ready to build something like this?</h2>
+      <p>One flat monthly fee. Full AI-native squad. First delivery in 48 hours.</p>
+    </div>
+    <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn-primary">Book a Demo →</a>
+  </div>
+</div>
+
+<div style="max-width:1360px;margin:0 auto;padding:20px 40px 0;">
+  <a href="/work/" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">← Back to All Work</a>
+</div>
+
+<footer>
+  <p>© 2025 Appsurd — by Bolder Apps</p>
+  <p style="color:var(--line);">AI-native product squad · bolderapps.com</p>
+</footer>
+
+</body>
+</html>

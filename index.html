@@ -1377,13 +1377,12 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       </div>
     </div>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#pricing">Pricing</a>
+      <a href="/work/">Work</a>
+      <a href="/#pricing">Pricing</a>
       <a href="/services/">Services</a>
+      <a href="/stack/">Stack</a>
+      <a href="/compare/">Compare</a>
       <a href="/blog/">Blog</a>
-      <a href="/team/">Team</a>
-      <a href="/careers/">Careers</a>
     </div>
     <div class="nav-cta">
       <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="mono" style="font-size:12px;color:var(--fg-dim);letter-spacing:0.08em;text-transform:uppercase;">Book a Demo</a>
@@ -1436,6 +1435,206 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
       <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
     </div>
   </div>
+</section>
+
+<!-- CLIENT LOGOS -->
+<style>
+.logo-carousel-track {
+  display: flex;
+  gap: 72px;
+  white-space: nowrap;
+  width: max-content;
+  align-items: center;
+}
+.logo-carousel-track--left {
+  animation: logo-scroll-left 40s linear infinite;
+}
+.logo-carousel-track--right {
+  animation: logo-scroll-right 44s linear infinite;
+}
+@keyframes logo-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes logo-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.logo-carousel-item {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+  flex-shrink: 0;
+}
+.logo-carousel-item:hover {
+  opacity: 1;
+}
+.logo-carousel-row {
+  overflow: hidden;
+  width: 100%;
+}
+.logo-carousel-row + .logo-carousel-row {
+  margin-top: 28px;
+}
+</style>
+<section style="padding:56px 0;background:#0a0a0a;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;overflow:hidden;">
+  <div style="text-align:center;margin-bottom:36px;">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#444;">Trusted by leading organizations</span>
+  </div>
+
+  <!-- Row 1 — scrolls left -->
+  <div class="logo-carousel-row">
+    <div class="logo-carousel-track logo-carousel-track--left">
+
+      <!-- American Cancer Society -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">AMERICAN CANCER SOCIETY</text>
+        </svg>
+      </span>
+
+      <!-- Value Tament -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 220 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.5" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">VALUE TAMENT</text>
+        </svg>
+      </span>
+
+      <!-- Kia -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 80 36" fill="none">
+          <text x="0" y="28" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="4" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">KIA</text>
+        </svg>
+      </span>
+
+      <!-- Stanford University -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 240 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">STANFORD UNIVERSITY</text>
+        </svg>
+      </span>
+
+      <!-- Supreme Court of Ohio -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 280 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">SUPREME COURT OF OHIO</text>
+        </svg>
+      </span>
+
+      <!-- New York Police Department -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">NEW YORK POLICE DEPARTMENT</text>
+        </svg>
+      </span>
+
+      <!-- Duplicate set for seamless loop -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">AMERICAN CANCER SOCIETY</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 220 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.5" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">VALUE TAMENT</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 80 36" fill="none">
+          <text x="0" y="28" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="4" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">KIA</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 240 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">STANFORD UNIVERSITY</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 280 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">SUPREME COURT OF OHIO</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">NEW YORK POLICE DEPARTMENT</text>
+        </svg>
+      </span>
+
+    </div>
+  </div>
+
+  <!-- Row 2 — scrolls right -->
+  <div class="logo-carousel-row">
+    <div class="logo-carousel-track logo-carousel-track--right">
+
+      <!-- Reverse order for visual variety -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">NEW YORK POLICE DEPARTMENT</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 280 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">SUPREME COURT OF OHIO</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 240 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">STANFORD UNIVERSITY</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 80 36" fill="none">
+          <text x="0" y="28" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="4" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">KIA</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 220 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.5" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">VALUE TAMENT</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">AMERICAN CANCER SOCIETY</text>
+        </svg>
+      </span>
+
+      <!-- Duplicate set for seamless loop -->
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">NEW YORK POLICE DEPARTMENT</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 280 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">SUPREME COURT OF OHIO</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 240 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">STANFORD UNIVERSITY</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 80 36" fill="none">
+          <text x="0" y="28" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="4" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">KIA</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 220 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.5" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">VALUE TAMENT</text>
+        </svg>
+      </span>
+      <span class="logo-carousel-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 320 28" fill="none">
+          <text x="0" y="21" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#f4f4f4" text-anchor="start" dominant-baseline="auto">AMERICAN CANCER SOCIETY</text>
+        </svg>
+      </span>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- SLIDE 2 — BOLDER TRUST (LIGHT) -->
