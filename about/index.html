@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Appsurd</title>
+<meta name="description" content="Appsurd is a productized AI-native development squad by Bolder Apps. Founded in 2019, we've shipped software for 25+ brands. One squad, one price, 48-hour delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
+<style>
+
+/* ── Design tokens ─────────────────────────────────────── */
+:root {
+  --bg:         #0a0a0a;
+  --bg-elev:    #111111;
+  --card:       #131313;
+  --line:       #262626;
+  --line-strong:#3d3d3d;
+  --fg:         #f4f4f4;
+  --fg-dim:     #a0a0a0;
+  --fg-mute:    #6a6a6a;
+  --accent:     #ffffff;
+  --accent-ink: #0a0a0a;
+  --grid:       rgba(255,255,255,0.035);
+
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-body:    'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: var(--space-20);
+}
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  padding-top: 72px;
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+h1,h2,h3,h4,h5,h6 { text-wrap: balance; line-height: 1.15; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+::selection { background: var(--fg); color: var(--bg); }
+
+/* ── Grid background ────────────────────────────────────── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right,  var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+}
+
+/* ── Layout ─────────────────────────────────────────────── */
+.wrap      { max-width: 760px;  margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) {
+  .wrap, .wrap-wide { padding: 0 22px; }
+}
+
+/* ── Section rhythm ─────────────────────────────────────── */
+.section {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  padding: 80px 0;
+}
+.section:first-of-type { border-top: none; }
+
+/* ── Utility ─────────────────────────────────────────────── */
+.mono    { font-family: var(--font-mono); }
+.serif   { font-family: var(--font-display); font-style: italic; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  background: var(--bg-elev);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer a:hover { color: var(--fg); transition: color var(--transition); }
+
+/* ═══════════════════════════════════════════════════════════
+   § 1 — HERO
+═══════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 120px 0 100px;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: var(--space-8);
+}
+.hero h1 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  color: var(--fg);
+  margin-bottom: var(--space-8);
+  letter-spacing: -0.02em;
+}
+.hero h1 .serif {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: var(--text-lg);
+  color: var(--fg-dim);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 2 — TIMELINE
+═══════════════════════════════════════════════════════════ */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-8);
+  padding: var(--space-10) 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--fg-mute);
+  line-height: 1;
+  padding-top: 4px;
+}
+.timeline-content h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: var(--space-2);
+}
+.timeline-content p {
+  font-size: var(--text-sm);
+  color: var(--fg-dim);
+  line-height: 1.65;
+  max-width: 560px;
+}
+@media (max-width: 560px) {
+  .timeline-item { grid-template-columns: 1fr; gap: var(--space-3); }
+  .timeline-year { font-size: var(--text-lg); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 3 — STATS
+═══════════════════════════════════════════════════════════ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.stat-cell {
+  padding: var(--space-10) var(--space-8);
+  border-right: 1px solid var(--line);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.03em;
+}
+.stat-label {
+  font-size: var(--text-xs);
+  color: var(--fg-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+}
+@media (max-width: 720px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-cell:nth-child(2) { border-right: none; }
+  .stat-cell:nth-child(1),
+  .stat-cell:nth-child(2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 440px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 4 — WHAT MAKES US DIFFERENT
+═══════════════════════════════════════════════════════════ */
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+.diff-left h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+  line-height: 1.2;
+}
+.diff-left p {
+  font-size: var(--text-base);
+  color: var(--fg-dim);
+  line-height: 1.7;
+}
+.diff-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.diff-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--transition);
+}
+.diff-card:hover { border-color: var(--line-strong); }
+.diff-card h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: var(--space-2);
+}
+.diff-card p {
+  font-size: var(--text-xs);
+  color: var(--fg-dim);
+  line-height: 1.6;
+  max-width: none;
+}
+@media (max-width: 880px) {
+  .diff-grid { grid-template-columns: 1fr; gap: var(--space-12); }
+}
+@media (max-width: 560px) {
+  .diff-cards { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 5 — LEADERSHIP
+═══════════════════════════════════════════════════════════ */
+.section-header {
+  margin-bottom: var(--space-12);
+}
+.section-header h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.leader-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.leader-card:hover { border-color: var(--line-strong); }
+.leader-monogram {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.leader-name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--fg);
+}
+.leader-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-mute);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+.leader-desc {
+  font-size: var(--text-sm);
+  color: var(--fg-dim);
+  line-height: 1.6;
+  max-width: none;
+}
+@media (max-width: 720px) {
+  .leadership-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .leadership-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 6 — VALUES
+═══════════════════════════════════════════════════════════ */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.value-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: border-color var(--transition);
+}
+.value-card:hover { border-color: var(--line-strong); }
+.value-icon {
+  font-size: 28px;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+.value-card h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: var(--space-3);
+}
+.value-card p {
+  font-size: var(--text-sm);
+  color: var(--fg-dim);
+  line-height: 1.65;
+  max-width: none;
+}
+@media (max-width: 720px) {
+  .values-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   § 7 — CTA
+═══════════════════════════════════════════════════════════ */
+.cta-section {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-inner {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(48px, 8vw, 96px) var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255,255,255,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+.cta-buttons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--accent);
+  text-decoration: none;
+  transition: opacity var(--transition), transform var(--transition);
+  letter-spacing: -0.01em;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--line-strong);
+  text-decoration: none;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+  letter-spacing: -0.01em;
+}
+.btn-secondary:hover { border-color: var(--fg-dim); color: var(--fg); transform: translateY(-1px); }
+.cta-micro {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-mute);
+  letter-spacing: 0.08em;
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink,#0a0a0a)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent,#f4f4f4)" stroke="var(--accent-ink,#0a0a0a)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink,#0a0a0a)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink,#0a0a0a)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== UNIFIED NAV ===== -->
+<nav class="unav" role="navigation" aria-label="Main navigation">
+  <div class="unav-inner">
+
+    <!-- Logo -->
+    <a href="/" class="unav-logo" aria-label="Appsurd home">
+      <span class="unav-logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36"><use href="#appsurd-mark"/></svg>
+      </span>
+      <div class="unav-logo-text">
+        <span class="unav-logo-name">APPSURD</span>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="unav-logo-by">By Bolder</a>
+      </div>
+    </a>
+
+    <!-- Links -->
+    <div class="unav-links" role="menubar">
+
+      <!-- Work (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Work
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/work/" role="menuitem">
+            <span class="unav-dd-icon">💼</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">All Case Studies</span>
+              <span class="unav-dd-desc">See what we've shipped</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/american-cancer-society.html" role="menuitem">
+            <span class="unav-dd-icon">🎗️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">American Cancer Society</span>
+              <span class="unav-dd-desc">Donor engagement platform</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/kia.html" role="menuitem">
+            <span class="unav-dd-icon">🚗</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Kia</span>
+              <span class="unav-dd-desc">Dealer operations portal</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/stanford-university.html" role="menuitem">
+            <span class="unav-dd-icon">🎓</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Stanford University</span>
+              <span class="unav-dd-desc">AI-native learning platform</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/supreme-court-ohio.html" role="menuitem">
+            <span class="unav-dd-icon">⚖️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Supreme Court of Ohio</span>
+              <span class="unav-dd-desc">Public legal portal</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/nypd.html" role="menuitem">
+            <span class="unav-dd-icon">🔵</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">NYPD</span>
+              <span class="unav-dd-desc">Operations dashboard</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Services
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/services/" role="menuitem">
+            <span class="unav-dd-icon">🧩</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">All Services</span>
+              <span class="unav-dd-desc">Six ways to work with us</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/ai-implementation.html" role="menuitem">
+            <span class="unav-dd-icon">🤖</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">AI Implementation</span>
+              <span class="unav-dd-desc">Ship AI-native products fast</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/staff-aug.html" role="menuitem">
+            <span class="unav-dd-icon">👥</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Staff Augmentation</span>
+              <span class="unav-dd-desc">Embed our engineers in your team</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/advisory.html" role="menuitem">
+            <span class="unav-dd-icon">📋</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Advisory</span>
+              <span class="unav-dd-desc">Technical strategy & audits</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Company (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/about/" role="menuitem">
+            <span class="unav-dd-icon">⭐</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">About</span>
+              <span class="unav-dd-desc">Our story, mission, and values</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/team/" role="menuitem">
+            <span class="unav-dd-icon">🧑‍💻</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Team</span>
+              <span class="unav-dd-desc">19 builders behind Appsurd</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/careers/" role="menuitem">
+            <span class="unav-dd-icon">🚀</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Careers</span>
+              <span class="unav-dd-desc">Join the squad</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/blog/" role="menuitem">
+            <span class="unav-dd-icon">✍️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Blog</span>
+              <span class="unav-dd-desc">Notes on AI-native engineering</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/security/" role="menuitem">
+            <span class="unav-dd-icon">🔒</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Security</span>
+              <span class="unav-dd-desc">How we handle your data</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="unav-item"><a href="/#pricing">Pricing</a></div>
+      <div class="unav-item"><a href="/stack/">Stack</a></div>
+      <div class="unav-item"><a href="/compare/">Compare</a></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="unav-cta">
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="unav-book">Book a Demo</a>
+      <a href="/#pricing" class="unav-btn">Get Started →</a>
+    </div>
+
+  </div>
+</nav>
+<!-- ===== /UNIFIED NAV ===== -->
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink,#0a0a0a)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent,#f4f4f4)" stroke="var(--accent-ink,#0a0a0a)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink,#0a0a0a)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink,#0a0a0a)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- NAV INJECTED BY SCRIPT -->
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- ═══════════════ § 1 HERO ═══════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="wrap">
+    <p class="hero-eyebrow">Our Story</p>
+    <h1 id="hero-heading">We built the <span class="serif">team</span> we always wanted to hire.</h1>
+    <p class="hero-sub">Appsurd started as a question: why does assembling a great product squad take 3–6 months and $500k+ a year? We'd been building software since 2019 — 25+ brands, hundreds of features shipped. We knew the answer was AI. So we built it.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ § 2 TIMELINE ═══════════════ -->
+<section class="section" aria-labelledby="timeline-heading">
+  <div class="wrap">
+    <p class="eyebrow">Origin</p>
+    <h2 id="timeline-heading" class="sr-only">Our timeline</h2>
+    <div class="timeline" role="list">
+
+      <article class="timeline-item" role="listitem">
+        <div class="timeline-year" aria-label="Year 2019">2019</div>
+        <div class="timeline-content">
+          <h3>Bolder Apps is founded.</h3>
+          <p>We start shipping software for startups and enterprise brands — learning what it takes to build production-grade products fast, and what slows most teams down.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item" role="listitem">
+        <div class="timeline-year" aria-label="Year 2023">2023</div>
+        <div class="timeline-content">
+          <h3>AI changes everything.</h3>
+          <p>We rebuild our entire workflow around agentic tools, LLMs, and AI-native engineers. Output per engineer climbs 3–5×. We don't just adopt AI — we redesign every process around it.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item" role="listitem">
+        <div class="timeline-year" aria-label="Year 2026">2026</div>
+        <div class="timeline-content">
+          <h3>Appsurd launches.</h3>
+          <p>We package everything we learned into one product: a full squad, one price, 48-hour delivery. No bloated retainers. No contractor roulette. Just a team that ships.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ § 3 STATS ═══════════════ -->
+<section class="section" aria-labelledby="stats-heading">
+  <div class="wrap-wide">
+    <h2 id="stats-heading" class="sr-only">By the numbers</h2>
+    <div class="stats-grid" role="list">
+      <div class="stat-cell" role="listitem">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Years shipping software</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Brands served</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-number">19</div>
+        <div class="stat-label">Builders on the squad</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-number">48h</div>
+        <div class="stat-label">To first delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ § 4 WHAT MAKES US DIFFERENT ═══════════════ -->
+<section class="section" aria-labelledby="diff-heading">
+  <div class="wrap-wide">
+    <div class="diff-grid">
+      <div class="diff-left">
+        <p class="eyebrow">What makes us different</p>
+        <h2 id="diff-heading">AI-native from the ground up</h2>
+        <p>We don't bolt AI onto a legacy workflow. Every engineer on our squad was hired for their ability to work with and alongside AI agents. That means 3–5× the output at a fraction of the cost.</p>
+      </div>
+      <div class="diff-cards" role="list">
+
+        <article class="diff-card" role="listitem">
+          <h4>Obsessively async</h4>
+          <p>No 3-hour kickoff calls. We work in 48-hr sprints with async standups and a shared Linear board.</p>
+        </article>
+
+        <article class="diff-card" role="listitem">
+          <h4>Full squad, one price</h4>
+          <p>Engineers, designers, a PM, and QA. Not a freelancer. A team.</p>
+        </article>
+
+        <article class="diff-card" role="listitem">
+          <h4>Built on Bolder's bench</h4>
+          <p>7 years of production-grade software behind every sprint. We've seen the edge cases.</p>
+        </article>
+
+        <article class="diff-card" role="listitem">
+          <h4>No lock-in</h4>
+          <p>Pause, scale, or cancel with one message. No contracts, no severance, no drama.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ § 5 LEADERSHIP ═══════════════ -->
+<section class="section" aria-labelledby="leadership-heading">
+  <div class="wrap-wide">
+    <header class="section-header">
+      <p class="eyebrow">Leadership</p>
+      <h2 id="leadership-heading">The people behind it</h2>
+    </header>
+    <div class="leadership-grid" role="list">
+
+      <article class="leader-card" role="listitem">
+        <div class="leader-monogram" aria-hidden="true">SA</div>
+        <div>
+          <div class="leader-name">Sardor Akhmedov</div>
+          <div class="leader-title">Founder &amp; CEO</div>
+          <p class="leader-desc">Menlo Park, CA. Building software products since 2018. Obsessed with the intersection of AI and product velocity — and proving that a world-class squad doesn't require a world-class hiring budget.</p>
+        </div>
+      </article>
+
+      <article class="leader-card" role="listitem">
+        <div class="leader-monogram" aria-hidden="true">AA</div>
+        <div>
+          <div class="leader-name">Andrew Abbey</div>
+          <div class="leader-title">Chief Marketing Officer</div>
+          <p class="leader-desc">Shapes how the world sees Appsurd and Bolder. Turns a deeply technical product into a story that resonates with founders, PMs, and the teams who need us most.</p>
+        </div>
+      </article>
+
+      <article class="leader-card" role="listitem">
+        <div class="leader-monogram" aria-hidden="true">CJ</div>
+        <div>
+          <div class="leader-name">CJ O'Brien</div>
+          <div class="leader-title">Chief Growth Officer</div>
+          <p class="leader-desc">Turns conversations into partnerships. The connective tissue between what Appsurd builds and the funded teams who need a squad that can actually ship.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ § 6 VALUES ═══════════════ -->
+<section class="section" aria-labelledby="values-heading">
+  <div class="wrap-wide">
+    <header class="section-header">
+      <p class="eyebrow">Values</p>
+      <h2 id="values-heading">What we believe</h2>
+    </header>
+    <div class="values-grid" role="list">
+
+      <article class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">⚡</div>
+        <h3>Ship, don't theorize</h3>
+        <p>We bias toward working software over perfect plans. 48-hour delivery cycles enforce this — there's no room for analysis paralysis when the next sprint starts tomorrow.</p>
+      </article>
+
+      <article class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">◎</div>
+        <h3>Radical transparency</h3>
+        <p>You see the board, the PRs, the blockers — everything. No agency black box, no weekly status theater. You're treated like a collaborator, not a client to be managed.</p>
+      </article>
+
+      <article class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">∞</div>
+        <h3>AI as leverage, not replacement</h3>
+        <p>Our engineers use AI to multiply their output. Every human on the squad is exceptional; AI makes them faster. We don't offshore judgment — we amplify it.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ § 7 CTA ═══════════════ -->
+<section class="section cta-section" aria-labelledby="cta-heading">
+  <div class="wrap-wide">
+    <div class="cta-inner">
+      <h2 id="cta-heading">Ready to meet the squad?</h2>
+      <div class="cta-buttons">
+        <a href="/book/" class="btn-primary">Book a Demo →</a>
+        <a href="/team/" class="btn-secondary">See the Team →</a>
+      </div>
+      <p class="cta-micro">No commitment. 30-min call. We'll show you exactly how we work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="wrap-wide footer-inner">
+    <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
+    <span><a href="/">← Back to home</a></span>
+  </div>
+</footer>
+
+<style>
+/* sr-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================
+   UNIFIED NAV  (injected by update_appsurd.py)
+   ============================================================ */
+.unav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(10,10,10,0.82);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+.unav-inner {
+  max-width: 1360px; margin: 0 auto; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+@media (max-width:720px){ .unav-inner { padding: 0 20px; } }
+
+/* logo */
+.unav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.unav-logo-mark {
+  width:36px; height:36px; display:grid; place-items:center;
+  transition: transform 300ms ease;
+}
+.unav-logo:hover .unav-logo-mark { transform: scale(1.08) rotate(-4deg); }
+.unav-logo-text { display:flex; flex-direction:column; line-height:1; gap:4px; }
+.unav-logo-name {
+  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  letter-spacing:.08em; font-size:16px; color:#f4f4f4;
+  text-transform:uppercase; text-decoration:none;
+}
+.unav-logo-by {
+  font-family:'Space Grotesk',sans-serif; font-weight:800;
+  font-size:9px; letter-spacing:.08em; color:#0a0a0a;
+  background:#f4f4f4; padding:2px 6px; border-radius:3px;
+  text-decoration:none; width:max-content;
+}
+.unav-logo-by:hover { opacity:.75; }
+
+/* links area */
+.unav-links {
+  display:flex; align-items:center; gap:4px;
+  font-size:14px;
+}
+@media (max-width:920px) { .unav-links { display:none; } }
+
+/* individual link / dropdown trigger */
+.unav-item { position:relative; }
+.unav-item > a, .unav-trigger {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:6px 12px; border-radius:8px;
+  color:#a0a0a0; text-decoration:none;
+  transition: color .15s, background .15s;
+  cursor:pointer; background:none; border:none;
+  font-family:inherit; font-size:14px; white-space:nowrap;
+}
+.unav-item > a:hover, .unav-trigger:hover,
+.unav-item.active > a, .unav-item.active > .unav-trigger {
+  color:#f4f4f4; background:rgba(255,255,255,.06);
+}
+.unav-trigger svg { transition: transform .2s; }
+.unav-item:hover .unav-trigger svg,
+.unav-item:focus-within .unav-trigger svg { transform: rotate(180deg); }
+
+/* dropdown panel */
+.unav-dropdown {
+  display:none;
+  position:absolute; top:calc(100% + 8px); left:50%;
+  transform: translateX(-50%);
+  background:#111; border:1px solid #262626; border-radius:12px;
+  padding:8px; min-width:220px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.7);
+  z-index:300;
+}
+.unav-item:hover .unav-dropdown,
+.unav-item:focus-within .unav-dropdown { display:block; }
+
+.unav-dd-link {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:10px 12px; border-radius:8px;
+  color:#a0a0a0; text-decoration:none;
+  transition: background .15s, color .15s;
+}
+.unav-dd-link:hover { background:rgba(255,255,255,.06); color:#f4f4f4; }
+.unav-dd-icon {
+  width:32px; height:32px; border-radius:6px;
+  background:#1a1a1a; display:grid; place-items:center;
+  flex-shrink:0; font-size:14px;
+}
+.unav-dd-body { display:flex; flex-direction:column; gap:2px; }
+.unav-dd-title { font-size:14px; font-weight:600; color:#f4f4f4; }
+.unav-dd-desc { font-size:12px; color:#6a6a6a; }
+
+/* cta */
+.unav-cta { display:flex; align-items:center; gap:12px; }
+.unav-book {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:#6a6a6a; text-decoration:none;
+  transition: color .15s;
+}
+.unav-book:hover { color:#f4f4f4; }
+.unav-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:9px 18px; border-radius:999px;
+  background:#fff; color:#0a0a0a;
+  font-size:13px; font-weight:600; text-decoration:none;
+  transition: transform .15s, opacity .15s;
+}
+.unav-btn:hover { transform:translateY(-1px); opacity:.9; }
+</style>
+
+</body>
+</html>

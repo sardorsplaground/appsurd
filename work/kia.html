@@ -81,9 +81,316 @@
       .cs-cta { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
       footer { padding: 24px; }
     }
-  </style>
+  
+/* ============================================================
+   UNIFIED NAV  (injected by update_appsurd.py)
+   ============================================================ */
+.unav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(10,10,10,0.82);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+.unav-inner {
+  max-width: 1360px; margin: 0 auto; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+@media (max-width:720px){ .unav-inner { padding: 0 20px; } }
+
+/* logo */
+.unav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.unav-logo-mark {
+  width:36px; height:36px; display:grid; place-items:center;
+  transition: transform 300ms ease;
+}
+.unav-logo:hover .unav-logo-mark { transform: scale(1.08) rotate(-4deg); }
+.unav-logo-text { display:flex; flex-direction:column; line-height:1; gap:4px; }
+.unav-logo-name {
+  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  letter-spacing:.08em; font-size:16px; color:#f4f4f4;
+  text-transform:uppercase; text-decoration:none;
+}
+.unav-logo-by {
+  font-family:'Space Grotesk',sans-serif; font-weight:800;
+  font-size:9px; letter-spacing:.08em; color:#0a0a0a;
+  background:#f4f4f4; padding:2px 6px; border-radius:3px;
+  text-decoration:none; width:max-content;
+}
+.unav-logo-by:hover { opacity:.75; }
+
+/* links area */
+.unav-links {
+  display:flex; align-items:center; gap:4px;
+  font-size:14px;
+}
+@media (max-width:920px) { .unav-links { display:none; } }
+
+/* individual link / dropdown trigger */
+.unav-item { position:relative; }
+.unav-item > a, .unav-trigger {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:6px 12px; border-radius:8px;
+  color:#a0a0a0; text-decoration:none;
+  transition: color .15s, background .15s;
+  cursor:pointer; background:none; border:none;
+  font-family:inherit; font-size:14px; white-space:nowrap;
+}
+.unav-item > a:hover, .unav-trigger:hover,
+.unav-item.active > a, .unav-item.active > .unav-trigger {
+  color:#f4f4f4; background:rgba(255,255,255,.06);
+}
+.unav-trigger svg { transition: transform .2s; }
+.unav-item:hover .unav-trigger svg,
+.unav-item:focus-within .unav-trigger svg { transform: rotate(180deg); }
+
+/* dropdown panel */
+.unav-dropdown {
+  display:none;
+  position:absolute; top:calc(100% + 8px); left:50%;
+  transform: translateX(-50%);
+  background:#111; border:1px solid #262626; border-radius:12px;
+  padding:8px; min-width:220px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.7);
+  z-index:300;
+}
+.unav-item:hover .unav-dropdown,
+.unav-item:focus-within .unav-dropdown { display:block; }
+
+.unav-dd-link {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:10px 12px; border-radius:8px;
+  color:#a0a0a0; text-decoration:none;
+  transition: background .15s, color .15s;
+}
+.unav-dd-link:hover { background:rgba(255,255,255,.06); color:#f4f4f4; }
+.unav-dd-icon {
+  width:32px; height:32px; border-radius:6px;
+  background:#1a1a1a; display:grid; place-items:center;
+  flex-shrink:0; font-size:14px;
+}
+.unav-dd-body { display:flex; flex-direction:column; gap:2px; }
+.unav-dd-title { font-size:14px; font-weight:600; color:#f4f4f4; }
+.unav-dd-desc { font-size:12px; color:#6a6a6a; }
+
+/* cta */
+.unav-cta { display:flex; align-items:center; gap:12px; }
+.unav-book {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:#6a6a6a; text-decoration:none;
+  transition: color .15s;
+}
+.unav-book:hover { color:#f4f4f4; }
+.unav-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:9px 18px; border-radius:999px;
+  background:#fff; color:#0a0a0a;
+  font-size:13px; font-weight:600; text-decoration:none;
+  transition: transform .15s, opacity .15s;
+}
+.unav-btn:hover { transform:translateY(-1px); opacity:.9; }
+
+body { padding-top: 72px; }
+</style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink,#0a0a0a)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent,#f4f4f4)" stroke="var(--accent-ink,#0a0a0a)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink,#0a0a0a)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink,#0a0a0a)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== UNIFIED NAV ===== -->
+<nav class="unav" role="navigation" aria-label="Main navigation">
+  <div class="unav-inner">
+
+    <!-- Logo -->
+    <a href="/" class="unav-logo" aria-label="Appsurd home">
+      <span class="unav-logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36"><use href="#appsurd-mark"/></svg>
+      </span>
+      <div class="unav-logo-text">
+        <span class="unav-logo-name">APPSURD</span>
+        <a href="https://bolderapps.com" target="_blank" rel="noopener" class="unav-logo-by">By Bolder</a>
+      </div>
+    </a>
+
+    <!-- Links -->
+    <div class="unav-links" role="menubar">
+
+      <!-- Work (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Work
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/work/" role="menuitem">
+            <span class="unav-dd-icon">💼</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">All Case Studies</span>
+              <span class="unav-dd-desc">See what we've shipped</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/american-cancer-society.html" role="menuitem">
+            <span class="unav-dd-icon">🎗️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">American Cancer Society</span>
+              <span class="unav-dd-desc">Donor engagement platform</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/kia.html" role="menuitem">
+            <span class="unav-dd-icon">🚗</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Kia</span>
+              <span class="unav-dd-desc">Dealer operations portal</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/stanford-university.html" role="menuitem">
+            <span class="unav-dd-icon">🎓</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Stanford University</span>
+              <span class="unav-dd-desc">AI-native learning platform</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/supreme-court-ohio.html" role="menuitem">
+            <span class="unav-dd-icon">⚖️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Supreme Court of Ohio</span>
+              <span class="unav-dd-desc">Public legal portal</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/work/nypd.html" role="menuitem">
+            <span class="unav-dd-icon">🔵</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">NYPD</span>
+              <span class="unav-dd-desc">Operations dashboard</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Services
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/services/" role="menuitem">
+            <span class="unav-dd-icon">🧩</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">All Services</span>
+              <span class="unav-dd-desc">Six ways to work with us</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/ai-implementation.html" role="menuitem">
+            <span class="unav-dd-icon">🤖</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">AI Implementation</span>
+              <span class="unav-dd-desc">Ship AI-native products fast</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/staff-aug.html" role="menuitem">
+            <span class="unav-dd-icon">👥</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Staff Augmentation</span>
+              <span class="unav-dd-desc">Embed our engineers in your team</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/advisory.html" role="menuitem">
+            <span class="unav-dd-icon">📋</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Advisory</span>
+              <span class="unav-dd-desc">Technical strategy & audits</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Company (dropdown) -->
+      <div class="unav-item">
+        <button class="unav-trigger" aria-haspopup="true" aria-expanded="false">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="unav-dropdown" role="menu">
+          <a class="unav-dd-link" href="/about/" role="menuitem">
+            <span class="unav-dd-icon">⭐</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">About</span>
+              <span class="unav-dd-desc">Our story, mission, and values</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/team/" role="menuitem">
+            <span class="unav-dd-icon">🧑‍💻</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Team</span>
+              <span class="unav-dd-desc">19 builders behind Appsurd</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/careers/" role="menuitem">
+            <span class="unav-dd-icon">🚀</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Careers</span>
+              <span class="unav-dd-desc">Join the squad</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/blog/" role="menuitem">
+            <span class="unav-dd-icon">✍️</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Blog</span>
+              <span class="unav-dd-desc">Notes on AI-native engineering</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/security/" role="menuitem">
+            <span class="unav-dd-icon">🔒</span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">Security</span>
+              <span class="unav-dd-desc">How we handle your data</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="unav-item"><a href="/#pricing">Pricing</a></div>
+      <div class="unav-item"><a href="/stack/">Stack</a></div>
+      <div class="unav-item"><a href="/compare/">Compare</a></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="unav-cta">
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="unav-book">Book a Demo</a>
+      <a href="/#pricing" class="unav-btn">Get Started →</a>
+    </div>
+
+  </div>
+</nav>
+<!-- ===== /UNIFIED NAV ===== -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="appsurd-mark" viewBox="0 0 36 36">
+      <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink,#0a0a0a)"/>
+      <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent,#f4f4f4)" stroke="var(--accent-ink,#0a0a0a)" stroke-width="1.5"/>
+      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink,#0a0a0a)" fill-rule="evenodd"/>
+      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink,#0a0a0a)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== UNIFIED NAV ===== -->
+
+<!-- ===== /UNIFIED NAV ===== -->
+
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -96,35 +403,23 @@
   </defs>
 </svg>
 
-<nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.1);">
-  <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <a href="/" style="display:inline-flex;align-items:center;">
-        <span style="width:36px;height:36px;display:grid;place-items:center;"><svg viewBox="0 0 36 36" width="36" height="36"><use href="#appsurd-mark"/></svg></span>
-      </a>
-      <div style="display:flex;flex-direction:column;line-height:1;gap:4px;">
-        <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.08em;font-size:16px;color:#f4f4f4;text-transform:uppercase;text-decoration:none;">APPSURD</a>
-        <a href="https://bolderapps.com" target="_blank" rel="noopener" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:9px;letter-spacing:.08em;color:#0a0a0a;background:#f4f4f4;padding:2px 6px;border-radius:3px;text-decoration:none;">By Bolder</a>
-      </div>
-    </div>
-    <div style="display:flex;gap:32px;font-size:14px;color:#a0a0a0;">
-      <a href="/work/" style="color:#f4f4f4;text-decoration:none;">Work</a>
-      <a href="/#pricing" style="color:#a0a0a0;text-decoration:none;">Pricing</a>
-      <a href="/services/" style="color:#a0a0a0;text-decoration:none;">Services</a>
-      <a href="/stack/" style="color:#a0a0a0;text-decoration:none;">Stack</a>
-      <a href="/compare/" style="color:#a0a0a0;text-decoration:none;">Compare</a>
-      <a href="/blog/" style="color:#a0a0a0;text-decoration:none;">Blog</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:14px;">
-      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#a0a0a0;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Book a Demo</a>
-      <a href="/#pricing" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#fff;color:#0a0a0a;font-size:14px;font-weight:600;text-decoration:none;">Get Started →</a>
-    </div>
-  </div>
-</nav>
+
 
 <div class="cs-hero">
   <p class="eyebrow">Automotive · Case Study</p>
-  <h1>Kia</h1>
+  <!-- logo-injected -->
+
+<div style="margin-bottom:28px;display:flex;align-items:center;justify-content:center;opacity:0.85;">
+  <svg viewBox="0 0 200 80" width="200" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="Kia">
+  <!-- Kia oval badge outline -->
+  <ellipse cx="100" cy="40" rx="96" ry="34" fill="none" stroke="#f4f4f4" stroke-width="3" opacity="0.8"/>
+  <!-- KIA lettering — faithful to brand geometry -->
+  <g transform="translate(28, 16) scale(6.2)" fill="#f4f4f4">
+    <path d="M13.923 14.175c0 .046.015.072.041.072a.123.123 0 0 0 .058-.024l7.48-4.854a.72.72 0 0 1 .432-.13h1.644c.252 0 .422.168.422.42v3.139c0 .38-.084.6-.42.801l-1.994 1.2a.137.137 0 0 1-.067.024c-.024 0-.048-.019-.048-.088v-3.663c0-.043-.012-.071-.041-.071a.113.113 0 0 0-.058.024l-5.466 3.551a.733.733 0 0 1-.42.127h-3.624c-.254 0-.422-.168-.422-.422V9.757c0-.033-.015-.064-.044-.064a.118.118 0 0 0-.057.024L7.732 11.88c-.036.024-.046.041-.046.058 0 .014.008.029.032.055l2.577 2.575c.034.034.058.06.058.089 0 .024-.039.043-.084.043H7.94c-.183 0-.324-.026-.423-.125l-1.562-1.56a.067.067 0 0 0-.048-.024.103.103 0 0 0-.048.015l-2.61 1.57a.72.72 0 0 1-.423.122H.425C.168 14.7 0 14.53 0 14.279v-3.08c0-.38.084-.6.422-.8L2.43 9.192a.103.103 0 0 1 .052-.016c.032 0 .048.03.048.1V13.4c0 .043.01.063.041.063a.144.144 0 0 0 .06-.024L9.407 9.36a.733.733 0 0 1 .446-.124h3.648c.252 0 .422.168.422.42l-.002 4.518z"/>
+  </g>
+</svg>
+</div>
+<h1>Kia</h1>
   <p class="sub">A dealer operations portal that gave Kia's North American dealer network a real-time command center for inventory, service scheduling, and regional performance — built to match the brand's precision and shipped faster than any internal team could have staffed.</p>
 </div>
 
