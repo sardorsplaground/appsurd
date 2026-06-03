@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appsurd — A full product squad for less than one senior hire</title>
+<meta name="description" content="Funded teams: get an AI-native product squad — engineers, designers, PM, QA — shipping every 48 hours for one flat monthly fee. Book a demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --bg-elev:#111; --bg-elev-2:#171717;
+    --line:#262626; --line-strong:#3d3d3d;
+    --fg:#f4f4f4; --fg-dim:#a0a0a0; --fg-mute:#6a6a6a;
+    --accent:#fff; --accent-ink:#0a0a0a;
+    --card:#131313;
+    --grid:rgba(255,255,255,0.035);
+    --radius:16px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:80px 80px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 40%,transparent 100%);
+            mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 40%,transparent 100%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .serif{font-family:'Fraunces',serif;font-style:italic;font-variation-settings:"SOFT" 100,"opsz" 144;font-weight:500}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--fg-mute);display:inline-flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px 1px rgba(255,255,255,.5)}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;border-radius:999px;
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;
+    padding:14px 24px;cursor:pointer;text-decoration:none;border:1px solid transparent;
+    transition:transform .15s ease,background .15s ease,border-color .15s ease;white-space:nowrap;
+  }
+  .btn .arw{transition:transform .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:hover .arw{transform:translateX(3px)}
+  .btn--primary{background:var(--accent);color:var(--accent-ink)}
+  .btn--ghost{background:transparent;color:var(--fg);border-color:var(--line-strong)}
+  .btn--ghost:hover{border-color:var(--fg)}
+  .btn--sm{padding:10px 18px;font-size:14px}
+  .btn--block{width:100%;justify-content:center}
+
+  /* Nav — minimal for ad LP */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,10,10,.72);backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:18px;color:var(--fg);text-decoration:none}
+  .logo .dot{width:11px;height:11px;border-radius:3px;background:var(--accent)}
+  .logo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:var(--fg-mute);text-transform:none;border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+
+  /* Hero */
+  .hero{padding:84px 0 64px;text-align:center}
+  .hero h1{
+    font-weight:500;letter-spacing:-.035em;line-height:.98;
+    font-size:clamp(40px,7vw,80px);margin:22px auto 0;max-width:14ch;
+  }
+  .hero p.sub{
+    color:var(--fg-dim);font-size:clamp(17px,2.2vw,21px);
+    max-width:60ch;margin:22px auto 0;
+  }
+  .hero p.sub b{color:var(--fg);font-weight:600}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .microcopy{margin-top:14px;color:var(--fg-mute);font-size:13px;font-family:'JetBrains Mono',monospace}
+
+  /* Proof bar */
+  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+  .proof .wrap{display:flex;flex-wrap:wrap;gap:8px 36px;justify-content:center;padding:18px 24px}
+  .proof span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-dim);letter-spacing:.04em}
+  .proof b{color:var(--fg)}
+
+  /* Sections */
+  section{padding:88px 0;position:relative}
+  .sec-head{max-width:62ch;margin-bottom:48px}
+  .sec-head h2{font-weight:500;letter-spacing:-.03em;line-height:1.02;font-size:clamp(30px,4.5vw,50px);margin-top:14px}
+  .sec-head h2 .serif{font-weight:400}
+  .sec-head p{color:var(--fg-dim);margin-top:16px;font-size:18px;max-width:54ch}
+
+  /* Comparison */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .compare .col{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--card)}
+  .compare .col.bad{opacity:.92}
+  .compare .col.good{border-color:var(--line-strong);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+  .compare h3{font-size:14px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:18px}
+  .compare .col.good h3{color:var(--fg)}
+  .compare ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .compare li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--fg-dim)}
+  .compare .col.good li{color:var(--fg)}
+  .ic{flex:0 0 20px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;margin-top:1px}
+  .ic.x{background:rgba(255,255,255,.06);color:var(--fg-mute)}
+  .ic.c{background:var(--accent);color:var(--accent-ink);font-weight:700}
+
+  /* Features */
+  .feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .feat .f{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--card)}
+  .feat .big{font-family:'Fraunces',serif;font-style:italic;font-size:40px;line-height:1;margin-bottom:14px;color:var(--fg)}
+  .feat h4{font-size:16px;margin-bottom:8px}
+  .feat p{font-size:14px;color:var(--fg-dim)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--card)}
+  .step .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-mute);letter-spacing:.1em}
+  .step h4{font-size:18px;margin:14px 0 8px}
+  .step p{font-size:14.5px;color:var(--fg-dim)}
+
+  /* Pricing */
+  .toggle{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:999px;padding:6px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:13px}
+  .toggle button{background:transparent;border:none;color:var(--fg-dim);font-family:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;transition:.15s}
+  .toggle button.on{background:var(--accent);color:var(--accent-ink);font-weight:600}
+  .toggle .save{color:var(--fg-mute);padding-right:8px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  .plan{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--card);display:flex;flex-direction:column}
+  .plan.pop{border-color:var(--fg);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);position:relative}
+  .plan .badge{position:absolute;top:-11px;left:28px;background:var(--accent);color:var(--accent-ink);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;font-weight:600}
+  .plan .name{font-size:14px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--fg-mute)}
+  .plan .price{font-size:40px;font-weight:500;letter-spacing:-.03em;margin-top:14px}
+  .plan .price small{font-size:15px;color:var(--fg-mute);font-weight:400}
+  .plan .for{color:var(--fg-dim);font-size:14px;margin:6px 0 20px}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:24px;flex:1}
+  .plan li{display:flex;gap:10px;font-size:14px;color:var(--fg-dim)}
+  .plan li .ic{flex:0 0 18px;width:18px;height:18px;font-size:11px}
+  .plan .cta{margin-top:auto}
+
+  /* FAQ */
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px}
+  .faq .q{border-top:1px solid var(--line);padding:22px 0}
+  .faq h4{font-size:16px;margin-bottom:8px}
+  .faq p{font-size:14.5px;color:var(--fg-dim)}
+
+  /* Final CTA */
+  .final{text-align:center;border:1px solid var(--line-strong);border-radius:24px;background:linear-gradient(180deg,var(--bg-elev),var(--bg));padding:64px 28px}
+  .final h2{font-weight:500;letter-spacing:-.03em;font-size:clamp(30px,4.5vw,52px);line-height:1.02}
+  .final p{color:var(--fg-dim);margin:18px auto 0;max-width:48ch;font-size:18px}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;margin-top:24px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer .mono{font-size:12px;color:var(--fg-mute)}
+  footer a{color:var(--fg-dim);text-decoration:none}
+  footer a:hover{color:var(--fg)}
+
+  @media (max-width:900px){
+    .compare,.feat,.steps,.plans,.faq{grid-template-columns:1fr}
+    .feat{grid-template-columns:1fr 1fr}
+    .plan.pop{order:-1}
+  }
+  @media (max-width:560px){
+    .feat{grid-template-columns:1fr}
+    section{padding:64px 0}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="dot"></span>Appsurd <span class="tag">By Bolder</span></a>
+    <a class="btn btn--primary btn--sm" href="https://tidycal.com/sardor/30" target="_blank" rel="noopener">Book a demo <span class="arw">→</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">For funded teams scaling fast</span>
+    <h1>A full product squad for less than <span class="serif">one</span> senior hire.</h1>
+    <p class="sub">Stop spending 3–6 months and $80k+/mo assembling a team. Get AI-native <b>engineers, designers, a PM, and QA</b> shipping production work every 48 hours — one flat monthly fee, unlimited requests, pause anytime.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="https://tidycal.com/sardor/30" target="_blank" rel="noopener">Book a demo <span class="arw">→</span></a>
+      <a class="btn btn--ghost" href="#pricing">See pricing</a>
+    </div>
+    <div class="microcopy">30-day money-back guarantee · No contracts · Cancel anytime</div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <span><b>7 years</b> shipping software</span>
+    <span><b>25+</b> brands &amp; orgs</span>
+    <span>Official <b>OpenAI</b> partner</span>
+    <span><b>5×</b> output per engineer</span>
+    <span><b>48-hour</b> delivery</span>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">01 · The math</span>
+      <h2>One senior dev costs <span class="serif">$12–15k/mo</span> and ships at 1×.</h2>
+      <p>Our AI-native devs are fluent in agentic workflows — each ships like five engineers from the old playbook. You get a whole squad's output for less than the cost of a single traditional hire.</p>
+    </div>
+    <div class="compare">
+      <div class="col bad reveal">
+        <h3>Building it yourself</h3>
+        <ul>
+          <li><span class="ic x">–</span> 3–6 months to recruit, interview, and onboard each engineer</li>
+          <li><span class="ic x">–</span> $80,000+/mo for a 5-person team with overhead</li>
+          <li><span class="ic x">–</span> Turnover wipes out momentum and institutional knowledge</li>
+          <li><span class="ic x">–</span> Agencies lock you into fixed scope and endless change orders</li>
+        </ul>
+      </div>
+      <div class="col good reveal">
+        <h3>With Appsurd</h3>
+        <ul>
+          <li><span class="ic c">✓</span> Onboard today — dedicated Slack channel and board in hours</li>
+          <li><span class="ic c">✓</span> One predictable flat fee, no hourly billing, no surprises</li>
+          <li><span class="ic c">✓</span> A full squad: engineers, designer, PM, QA — already in sync</li>
+          <li><span class="ic c">✓</span> Unlimited requests and revisions, paused or cancelled anytime</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">02 · What you get</span>
+      <h2>Built for <span class="serif">velocity</span>.</h2>
+    </div>
+    <div class="feat">
+      <div class="f reveal"><div class="big">∞</div><h4>Unlimited requests</h4><p>Stack your backlog as high as you want. No caps, no scope creep, no change orders.</p></div>
+      <div class="f reveal"><div class="big">5×</div><h4>AI-native devs</h4><p>Every engineer, designer, and PM is fluent in agentic workflows — one ships like five.</p></div>
+      <div class="f reveal"><div class="big">48h</div><h4>48-hour delivery</h4><p>Completed tasks and updates land every 48–72 hours. No waiting weeks.</p></div>
+      <div class="f reveal"><div class="big">$</div><h4>Fixed monthly rate</h4><p>One predictable subscription. No hidden fees, no hourly billing, ever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">03 · How it works</span>
+      <h2>From idea to <span class="serif">execution</span> in three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">STEP 01</div><h4>Subscribe &amp; onboard</h4><p>Pick a plan and get instant access to your dedicated Slack channel and project board.</p></div>
+      <div class="step reveal"><div class="n">STEP 02</div><h4>Submit your requests</h4><p>Drop tasks into your queue — briefs, wireframes, or a rough idea. We take it from there.</p></div>
+      <div class="step reveal"><div class="n">STEP 03</div><h4>Receive &amp; iterate</h4><p>High-quality work back in 48–72 hours. Request unlimited revisions, approve when happy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">04 · Pricing</span>
+      <h2>Simple pricing. No <span class="serif">surprises</span>.</h2>
+      <p>Every plan includes unlimited requests &amp; revisions, pause/cancel anytime, and a 30-day money-back guarantee.</p>
+      <div class="toggle" role="group" aria-label="Billing period">
+        <button id="m" class="on" onclick="setBill('m')">Monthly</button>
+        <button id="a" onclick="setBill('a')">Annual</button>
+        <span class="save">save 17%</span>
+      </div>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <div class="name">Launch</div>
+        <div class="price"><span class="amt" data-m="$4,995" data-a="$4,163">$4,995</span><small>/mo</small></div>
+        <div class="for">For startups building their MVP.</div>
+        <ul>
+          <li><span class="ic c">✓</span> 1 active request at a time</li>
+          <li><span class="ic c">✓</span> Dedicated product designer</li>
+          <li><span class="ic c">✓</span> AI-native full-stack engineer (ships like 5)</li>
+          <li><span class="ic c">✓</span> Dedicated project manager</li>
+          <li><span class="ic c">✓</span> 48–72 hour turnaround</li>
+          <li><span class="ic c">✓</span> Unlimited revisions · cancel anytime</li>
+        </ul>
+        <div class="cta"><a class="btn btn--ghost btn--block plan-cta" data-m="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" data-a="https://buy.stripe.com/5kQ6oI9Pm7QM2bCdxv8AE06" href="https://buy.stripe.com/5kQ7sM0eM0ok8A0fFD8AE05" target="_blank" rel="noopener">Get started</a></div>
+      </div>
+
+      <div class="plan pop reveal">
+        <div class="badge">Most popular</div>
+        <div class="name">Build</div>
+        <div class="price"><span class="amt" data-m="$9,995" data-a="$8,329">$9,995</span><small>/mo</small></div>
+        <div class="for">For growing companies scaling fast.</div>
+        <ul>
+          <li><span class="ic c">✓</span> 2 active requests at a time</li>
+          <li><span class="ic c">✓</span> Senior product designer</li>
+          <li><span class="ic c">✓</span> 2 AI-native engineers (FE + BE) — output of 10 devs</li>
+          <li><span class="ic c">✓</span> Dedicated PM + QA tester</li>
+          <li><span class="ic c">✓</span> 24–48 hour turnaround</li>
+          <li><span class="ic c">✓</span> Dedicated Slack channel</li>
+        </ul>
+        <div class="cta"><a class="btn btn--primary btn--block plan-cta" data-m="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" data-a="https://buy.stripe.com/4gM28se5C9YUg2salj8AE08" href="https://buy.stripe.com/3cIdRa0eMdb63fGdxv8AE07" target="_blank" rel="noopener">Get started <span class="arw">→</span></a></div>
+      </div>
+
+      <div class="plan reveal">
+        <div class="name">Scale</div>
+        <div class="price"><span class="amt" data-m="$19,995" data-a="$16,663">$19,995</span><small>/mo</small></div>
+        <div class="for">For funded teams moving at full velocity.</div>
+        <ul>
+          <li><span class="ic c">✓</span> 4 active requests at a time</li>
+          <li><span class="ic c">✓</span> Full product squad (3 engineers + designer + PM + QA + DevOps)</li>
+          <li><span class="ic c">✓</span> ≈15-dev output</li>
+          <li><span class="ic c">✓</span> Priority 24-hour turnaround</li>
+          <li><span class="ic c">✓</span> Weekly strategy calls</li>
+          <li><span class="ic c">✓</span> Custom integrations</li>
+        </ul>
+        <div class="cta"><a class="btn btn--ghost btn--block plan-cta" data-m="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" data-a="https://buy.stripe.com/28EeVe7He1so03ugJH8AE0a" href="https://buy.stripe.com/5kQ7sM0eM8UQg2s8db8AE09" target="_blank" rel="noopener">Get started</a></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+      <span class="microcopy">Not sure which plan? </span>
+      <a class="btn btn--ghost btn--sm" href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" style="margin-left:6px">Book a demo <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">05 · Questions</span>
+      <h2>The things funded teams <span class="serif">ask</span>.</h2>
+    </div>
+    <div class="faq">
+      <div class="q reveal"><h4>How is this cheaper than hiring?</h4><p>A single senior engineer runs $12–15k/mo and ships at 1×. An AI-native squad ships at 5–15× for one flat fee — no benefits, equipment, or recruiting overhead.</p></div>
+      <div class="q reveal"><h4>What does "unlimited requests" mean?</h4><p>Add as many tasks to your queue as you like. We work through them based on your plan's active-request slots, delivering every 48–72 hours.</p></div>
+      <div class="q reveal"><h4>Who actually does the work?</h4><p>Bolder's vetted engineering bench — 7 years and 25+ shipped products — working AI-native. US-based leadership, distributed builders, official OpenAI partner.</p></div>
+      <div class="q reveal"><h4>What if it's not a fit?</h4><p>Every plan carries a 30-day money-back guarantee. Pause or cancel anytime — no contracts, no penalties.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final reveal">
+      <span class="eyebrow" style="justify-content:center">Ready when you are</span>
+      <h2>See what a squad ships in <span class="serif">48 hours</span>.</h2>
+      <p>Book a 30-minute demo. We'll map your roadmap to a plan and show you exactly what your first sprint looks like.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="https://tidycal.com/sardor/30" target="_blank" rel="noopener">Book a demo <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="#pricing">View plans</a>
+      </div>
+      <div class="microcopy">30-day money-back guarantee · No contracts</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="dot"></span>Appsurd</a>
+    <span class="mono">A <a href="https://bolderapps.com" target="_blank" rel="noopener">Bolder</a> company · Building software since 2019</span>
+  </div>
+</footer>
+
+<script>
+  function setBill(p){
+    document.getElementById('m').classList.toggle('on',p==='m');
+    document.getElementById('a').classList.toggle('on',p==='a');
+    document.querySelectorAll('.amt').forEach(function(el){el.textContent=el.dataset[p];});
+    document.querySelectorAll('.plan-cta').forEach(function(el){el.href=el.dataset[p];});
+  }
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+</body>
+</html>
