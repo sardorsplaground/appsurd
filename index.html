@@ -1396,44 +1396,41 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 <div class="slides">
 
 <!-- SLIDE 1 — HERO + MARQUEE (DARK) -->
-<section class="hero slide slide--dark">
-  <div class="wrap" style="position:relative;">
-    <div class="hero-float" aria-hidden="true">
-      <div class="ring"><span>UNLIMITED · REQUESTS · 48HR · DELIVERY ·</span></div>
-      <div class="ring" style="inset: 30px; animation-duration: 60s; animation-direction: reverse;"><span>TOP 1% · TALENT · FIXED · RATE ·</span></div>
-    </div>
+<section class="hero slide slide--dark" style="padding:84px 0 0;text-align:center;">
+  <div class="wrap">
+    <span class="hero-badge" style="justify-content:center;display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:0;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px 1px rgba(255,255,255,.5);display:inline-block;"></span>
+      For funded teams scaling fast
+    </span>
 
-    <div class="hero-badge">
-      <span class="dot"></span>
-      <span class="mono" style="text-transform:uppercase;letter-spacing:0.14em;">By Bolder — building software since 2019</span>
-    </div>
-
-    <h1 class="hero-h1" style="font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;">
-      A full product squad for less than one senior hire.
+    <h1 class="hero-h1" style="font-weight:500;letter-spacing:-.035em;line-height:.98;font-size:clamp(40px,7vw,80px);margin:22px auto 0;max-width:14ch;">
+      A full product squad for less than <em style="font-family:'Fraunces',serif;font-style:italic;font-variation-settings:'SOFT' 100,'opsz' 144;font-weight:400;">one</em> senior hire.
     </h1>
 
-    <p class="hero-sub">
-      Stop spending 3–6 months and $80k+/mo assembling a team. Get AI-native engineers, designers, a PM, and QA shipping production work every 48 hours — one flat monthly fee, unlimited requests, pause anytime.
+    <p class="hero-sub" style="color:var(--fg-dim);font-size:clamp(17px,2.2vw,21px);max-width:60ch;margin:22px auto 0;">
+      Stop spending 3–6 months and $80k+/mo assembling a team. Get AI-native <strong style="color:var(--fg);font-weight:600;">engineers, designers, a PM, and QA</strong> shipping production work every 48 hours — one flat monthly fee, unlimited requests, pause anytime.
     </p>
 
-    <div class="hero-ctas">
+    <div class="hero-ctas" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
       <a href="#pricing" class="btn btn-primary">See Pricing <span class="arrow">→</span></a>
       <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn btn-ghost">Book a Demo</a>
     </div>
 
-    <div class="hero-proof">
-      <span>Built by Bolder</span>
-      <span class="sep">/</span>
-      <span>7 years shipping software</span>
-      <span class="sep">/</span>
-      <span>Official OpenAI partner</span>
-      <span class="sep">/</span>
-      <span>30-day money-back</span>
+    <p style="margin-top:14px;color:var(--fg-mute);font-size:13px;font-family:'JetBrains Mono',monospace;">No contracts · pause or cancel anytime</p>
+  </div>
+
+  <!-- proof bar -->
+  <div style="border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-top:56px;">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px 36px;justify-content:center;padding:18px 24px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-dim);letter-spacing:.04em;">Built by <strong style="color:var(--fg);">Bolder</strong></span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-dim);letter-spacing:.04em;"><strong style="color:var(--fg);">7 years</strong> shipping software</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-dim);letter-spacing:.04em;">Official <strong style="color:var(--fg);">OpenAI</strong> partner</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-dim);letter-spacing:.04em;"><strong style="color:var(--fg);">30-day</strong> money-back</span>
     </div>
   </div>
 
-  <!-- marquee band folded into the hero slide bottom -->
-  <div class="marquee" aria-hidden="true" style="margin-top:clamp(20px,3.5vh,48px);">
+  <!-- marquee band -->
+  <div class="marquee" aria-hidden="true" style="margin-top:0;">
     <div class="marquee-track">
       <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
       <span>Unlimited requests</span><span>Top 1% talent</span><span>48-hour delivery</span><span>Fixed monthly rate</span><span>Pause anytime</span><span>No contracts</span>
