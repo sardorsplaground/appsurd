@@ -806,6 +806,9 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 }
 @media (max-width: 1000px) { .plans { grid-template-columns: 1fr; } }
 
+.plans--two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 1000px) { .plans--two { grid-template-columns: 1fr; } }
+
 .plan {
   background: var(--card);
   border: 1px solid var(--line);
@@ -1101,6 +1104,43 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   }
   #pricing .plans::-webkit-scrollbar { display: none; }
   #pricing .plan {
+    flex: 0 0 86%;
+    max-width: 86%;
+    scroll-snap-align: center;
+  }
+}
+
+/* GTM slide borrows the pricing rhythm so its two cards fit one screen. */
+#gtm .section-head { margin-bottom: clamp(12px, 2.2vh, 28px); }
+#gtm .plan { padding: clamp(18px, 2.2vh, 26px) clamp(18px, 1.8vw, 26px) clamp(16px, 2vh, 22px); }
+#gtm .plan-name { font-size: clamp(28px, 3vw, 40px); margin: 6px 0 4px; }
+#gtm .plan-sub { margin-bottom: clamp(8px, 1.4vh, 14px); }
+#gtm .plan-billing { margin-bottom: clamp(8px, 1.4vh, 14px); }
+#gtm .plan-feat { margin-bottom: clamp(10px, 1.6vh, 18px); }
+#gtm .plan-feat li { padding: clamp(4px, 0.7vh, 8px) 0; line-height: 1.35; }
+@media (max-height: 760px) {
+  #gtm .section-head { margin-bottom: 8px; }
+  #gtm .plan-feat li { padding: 3px 0; font-size: 13px; }
+  #gtm .plan { padding: 14px 16px 14px; }
+}
+/* Same swipe carousel as pricing so the cards stay on one phone screen. */
+@media (max-width: 1000px) {
+  #gtm > .wrap { justify-content: center; padding-top: clamp(12px, 2.4vh, 24px); padding-bottom: clamp(12px, 2.4vh, 24px); }
+  #gtm .plans--two {
+    display: flex;
+    grid-template-columns: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin: 0 -4vw;
+    padding: 4px 4vw 12px;
+    scrollbar-width: none;
+  }
+  #gtm .plans--two::-webkit-scrollbar { display: none; }
+  #gtm .plan {
     flex: 0 0 86%;
     max-width: 86%;
     scroll-snap-align: center;
@@ -2500,13 +2540,59 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
+<!-- GO-TO-MARKET -->
+<!-- SLIDE 8 — GTM OFFERINGS (LIGHT) -->
+<section class="section slide slide--light" id="gtm">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">05 · Go-to-market</span>
+        <h2>Now for the<br><span class="serif">other</span> half.</h2>
+      </div>
+      <p>Shipping the product is one job. Selling it is another. Both run on the same subscription — flat monthly fee, unlimited requests, no contracts, pause or cancel anytime.</p>
+    </div>
+
+    <div class="plans plans--two reveal">
+      <div class="plan">
+        <div class="plan-label">Staffing</div>
+        <div class="plan-name">GTM Engineers</div>
+        <p class="plan-sub">Your product squad, pointed at the revenue stack.</p>
+        <div class="plan-billing">FLAT MONTHLY · UNLIMITED REQUESTS</div>
+        <ul class="plan-feat">
+          <li>${check} Dedicated AI-native GTM engineers</li>
+          <li>${check} CRM, billing, and product-data integrations</li>
+          <li>${check} Lead routing, enrichment, and outbound tooling</li>
+          <li>${check} Growth engineering — pages, flows, experiments</li>
+          <li>${check} Pause or cancel anytime</li>
+        </ul>
+        <a href="/services/gtm-engineers.html" class="btn-plan">Learn more <span class="arrow">→</span></a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-label">Full team</div>
+        <div class="plan-name">GTM Team</div>
+        <p class="plan-sub">Paid ads, SEO, and email outreach — run end-to-end.</p>
+        <div class="plan-billing">FLAT MONTHLY · NO CUT OF AD SPEND</div>
+        <ul class="plan-feat">
+          <li>${check} Growth lead, strategist, and creative</li>
+          <li>${check} Paid ads across Google, Meta, and LinkedIn</li>
+          <li>${check} SEO strategy and a monthly content cadence</li>
+          <li>${check} Email outreach and lifecycle campaigns</li>
+          <li>${check} You own every account and asset</li>
+        </ul>
+        <a href="/services/gtm-team.html" class="btn-plan">Learn more <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
-<!-- SLIDE 8 — TESTIMONIALS (LIGHT) -->
+<!-- SLIDE 9 — TESTIMONIALS (LIGHT) -->
 <section class="section slide slide--light" id="testimonials">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">05 · Illustrative scenarios</span>
+        <span class="eyebrow">06 · Illustrative scenarios</span>
         <h2>What this<br>looks like in <span class="serif">practice</span>.</h2>
       </div>
       <p>Appsurd is a new brand, so these are illustrative examples of the outcomes our model is built to deliver — not real client quotes. The track record behind them is Bolder's: seven years shipping production software for 25+ brands and organizations.</p>
@@ -2556,12 +2642,12 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
 </section>
 
 <!-- FAQ -->
-<!-- SLIDE 9 — FAQ (DARK) -->
+<!-- SLIDE 10 — FAQ (DARK) -->
 <section class="section slide slide--dark" id="faq">
   <div class="wrap" style="max-width: 1000px;">
     <div class="section-head reveal" style="grid-template-columns: 1fr;">
       <div>
-        <span class="eyebrow">06 · FAQ</span>
+        <span class="eyebrow">07 · FAQ</span>
         <h2>Frequently asked <span class="serif">questions</span>.</h2>
       </div>
     </div>
@@ -2627,7 +2713,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
-<!-- SLIDE 10 — FOOTER CTA (LIGHT) -->
+<!-- SLIDE 11 — FOOTER CTA (LIGHT) -->
 <section class="foot-cta section slide slide--light">
   <div class="wrap">
     <div class="reveal">
@@ -2642,7 +2728,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
-<!-- SLIDE 11 — FOOTER (DARK, final non-sticky layer) -->
+<!-- SLIDE 12 — FOOTER (DARK, final non-sticky layer) -->
 <footer class="footer slide slide--dark slide--footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -2681,6 +2767,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <ul>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="/services/">Services</a></li>
+          <li><a href="/services/gtm-engineers.html">GTM Engineers</a></li>
+          <li><a href="/services/gtm-team.html">GTM Team</a></li>
           <li><a href="#faq">Guarantee</a></li>
         </ul>
       </div>
