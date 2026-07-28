@@ -23,6 +23,8 @@
   --grid: rgba(255,255,255,0.035);
   --card: #131313;
   --shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 30px 60px -30px rgba(0,0,0,0.6);
+  /* oversized decorative numerals in feature cards read as a watermark */
+  --viz-opacity: 0.09;
 }
 html[data-theme="light"] {
   --bg: #f6f6f4;
@@ -38,6 +40,7 @@ html[data-theme="light"] {
   --grid: rgba(0,0,0,0.04);
   --card: #efefec;
   --shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 30px 60px -30px rgba(0,0,0,0.18);
+  --viz-opacity: 0.08;
 }
 
 * { box-sizing: border-box; }
@@ -100,6 +103,7 @@ html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
   --fg:#f4f4f4; --fg-dim:#a0a0a0; --fg-mute:#6a6a6a;
   --accent:#ffffff; --accent-ink:#0a0a0a;
   --grid:rgba(255,255,255,0.035); --card:#131313;
+  --viz-opacity:0.09;
   background:#0a0a0a; color:#f4f4f4;
   box-shadow: 0 -28px 60px -20px rgba(0,0,0,0.65);
 }
@@ -110,6 +114,7 @@ html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
   --fg:#0a0a0a; --fg-dim:#5a5a5a; --fg-mute:#8a8a8a;
   --accent:#0a0a0a; --accent-ink:#f6f6f4;
   --grid:rgba(0,0,0,0.04); --card:#efefec;
+  --viz-opacity:0.08;
   background:#f6f6f4; color:#0a0a0a;
   box-shadow: 0 -28px 60px -22px rgba(0,0,0,0.22);
 }
@@ -640,6 +645,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   line-height: 1.5;
   margin: 0;
 }
+.feat-tag, .feat-title, .feat-desc {
+  position: relative;
+  z-index: 1;
+}
 .feat-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -651,10 +660,15 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   justify-content: space-between;
 }
 
-/* typographic illustration bits */
+/* typographic illustration bits — decorative watermarks that must always sit
+   BEHIND the card copy (see .feat-tag/.feat-title/.feat-desc z-index below). */
 .feat-viz {
   position: absolute;
   pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: var(--viz-opacity);
+  max-width: 100%;
 }
 .viz-infinity {
   bottom: -20px; right: 24px;
@@ -664,7 +678,6 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   font-size: clamp(120px, 16vw, 200px);
   line-height: 1;
   color: var(--fg);
-  opacity: 0.85;
 }
 .viz-top1 {
   bottom: -40px; right: 20px;
@@ -707,6 +720,63 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   text-decoration: line-through;
   text-decoration-color: var(--fg);
   text-decoration-thickness: 8px;
+}
+
+/* ---------- gtm offerings ---------- */
+/* These slides reuse the feature-card grid and add a CTA row, so the cards give
+   back a little height to keep each slide inside one viewport. */
+.gtm .feat-1, .gtm .feat-2, .gtm .feat-3, .gtm .feat-4 { min-height: clamp(132px, 16vh, 176px); }
+.gtm .section-head { margin-bottom: clamp(20px, 3vh, 34px); }
+.gtm-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: clamp(16px, 2.4vh, 26px);
+}
+.gtm-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+@media (max-height: 760px) {
+  .gtm .feat-1, .gtm .feat-2, .gtm .feat-3, .gtm .feat-4 { min-height: 112px; }
+  .gtm .feat-tag { margin-bottom: 16px; }
+  .gtm .section-head { margin-bottom: 16px; }
+  .gtm-cta { margin-top: 14px; }
+}
+@media (max-width: 900px) {
+  /* 2×2 instead of a 4-high stack, so the slide still fits a tablet screen */
+  .gtm .feat-1, .gtm .feat-2, .gtm .feat-3, .gtm .feat-4 { grid-column: span 6; min-height: clamp(120px, 16vh, 150px); }
+  .gtm .feat-tag { margin-bottom: clamp(18px, 3vh, 28px); }
+}
+@media (max-width: 640px) {
+  /* on phones the cards become a horizontal swipe carousel — same pattern the
+     pricing tiers use — so the slide still fits one screen. */
+  .gtm .features {
+    display: flex;
+    grid-template-columns: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin: 0 -4vw;
+    padding: 4px 4vw 12px;
+    scrollbar-width: none;
+  }
+  .gtm .features::-webkit-scrollbar { display: none; }
+  .gtm .feat-1, .gtm .feat-2, .gtm .feat-3, .gtm .feat-4 {
+    flex: 0 0 82%;
+    max-width: 82%;
+    min-height: clamp(150px, 22vh, 200px);
+    scroll-snap-align: center;
+  }
+  .gtm-cta { flex-direction: column; gap: 12px; }
 }
 
 /* ---------- steps ---------- */
@@ -797,6 +867,14 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .toggle button.on .save {
   color: var(--bg);
   background: color-mix(in oklab, var(--bg) 18%, transparent);
+}
+.pricing-guarantee {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  line-height: 1.4;
+  margin: 0 0 clamp(22px, 3.2vh, 32px);
 }
 
 .plans {
@@ -1057,24 +1135,34 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 #faq .faqs { max-height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 /* Pricing gets a tighter rhythm so the three dense cards fit one screen. */
-#pricing .section-head { margin-bottom: clamp(12px, 1.8vh, 22px); }
+/* The toggle + guarantee block needs real breathing room, so the slide's own
+   outer padding gives some back — otherwise the plan cards clip at 100vh. */
+#pricing > .wrap { padding-top: clamp(10px, 1.4vh, 16px); padding-bottom: clamp(10px, 1.4vh, 16px); }
+#pricing .section-head { margin-bottom: clamp(16px, 2.4vh, 28px); }
 #pricing .section-head h2 { font-size: clamp(28px, 4vw, 52px); }
-#pricing .toggle { margin-bottom: clamp(10px, 1.6vh, 16px); }
-#pricing .toggle button { padding: 8px 16px; }
-#pricing .plan { padding: clamp(16px, 2vh, 22px) clamp(18px, 1.8vw, 24px) clamp(14px, 1.8vh, 20px); }
+#pricing .toggle { margin-bottom: clamp(16px, 2.4vh, 26px); }
+#pricing .toggle button { padding: 9px 18px; }
+#pricing .plan { padding: clamp(16px, 2vh, 22px) clamp(18px, 1.8vw, 24px) clamp(12px, 1.5vh, 16px); }
 #pricing .plan-name { font-size: clamp(28px, 3vw, 40px); margin: 6px 0 4px; }
 #pricing .plan-sub { margin-bottom: clamp(8px, 1.4vh, 14px); }
 #pricing .plan-billing { margin-bottom: clamp(8px, 1.4vh, 14px); }
-#pricing .plan-feat { margin-bottom: clamp(10px, 1.6vh, 16px); }
+#pricing .plan-feat { margin-bottom: clamp(8px, 1.2vh, 12px); }
 #pricing .plan-feat li { padding: clamp(3px, 0.55vh, 5px) 0; line-height: 1.3; }
 #pricing .plan-price .amt { font-size: clamp(28px, 2.8vw, 38px); }
 #pricing .plan-price { margin-bottom: 2px; }
 #pricing .plan .btn-plan { padding: 10px 18px; }
 /* On short viewports, tighten further. */
 @media (max-height: 760px) {
-  #pricing .section-head { margin-bottom: 8px; }
+  #pricing > .wrap { padding-top: 8px; padding-bottom: 8px; }
+  #pricing .section-head { margin-bottom: 12px; }
   #pricing .section-head h2 { font-size: clamp(24px, 3.4vw, 36px); }
-  #pricing .plan-feat li { padding: 3px 0; font-size: 12px; }
+  #pricing .toggle { margin-bottom: 12px; }
+  #pricing .pricing-guarantee { margin-bottom: 16px; }
+  #pricing .plan-feat li { padding: 2px 0; font-size: 12px; }
+  #pricing .plan-name { font-size: clamp(24px, 2.6vw, 32px); margin: 4px 0 2px; }
+  #pricing .plan-price .amt { font-size: clamp(26px, 2.4vw, 32px); }
+  #pricing .plan-sub { margin-bottom: 8px; }
+  #pricing .plan-billing { margin-bottom: 8px; }
   #pricing .plan { padding: 14px 16px 14px; }
 }
 /* On narrow mobile the 3 tiers do NOT stack vertically. Instead they become a
@@ -1082,9 +1170,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
    one phone screen and each card is reachable with a swipe. */
 @media (max-width: 1000px) {
   #pricing > .wrap { justify-content: center; padding-top: clamp(12px, 2.4vh, 24px); padding-bottom: clamp(12px, 2.4vh, 24px); }
-  /* the negative top-margin that tucks the guarantee under the toggle on
-     desktop overlaps the toggle on mobile — reset it to clear spacing. */
-  #pricing .pricing-guarantee { margin: 14px 0 18px !important; line-height: 1.4; }
+  #pricing .pricing-guarantee { margin-bottom: 20px; }
   #pricing .plans {
     display: flex;
     grid-template-columns: none;
@@ -1515,7 +1601,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
             <span class="unav-dd-icon" style="display:grid;place-items:center;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4" cy="4" r="2" stroke="#f4f4f4" stroke-width="1.4"/><circle cx="12" cy="4" r="2" stroke="#f4f4f4" stroke-width="1.4"/><circle cx="4" cy="12" r="2" stroke="#f4f4f4" stroke-width="1.4"/><circle cx="12" cy="12" r="2" stroke="#f4f4f4" stroke-width="1.4"/></svg></span>
             <div class="unav-dd-body">
               <span class="unav-dd-title">All Services</span>
-              <span class="unav-dd-desc">Six ways to work with us</span>
+              <span class="unav-dd-desc">Eight ways to work with us</span>
             </div>
           </a>
           <a class="unav-dd-link" href="/services/ai-implementation.html" role="menuitem">
@@ -1537,6 +1623,20 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
             <div class="unav-dd-body">
               <span class="unav-dd-title">Advisory</span>
               <span class="unav-dd-desc">Technical strategy & audits</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/gtm-engineers.html" role="menuitem">
+            <span class="unav-dd-icon" style="display:grid;place-items:center;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 2.5h13L9.5 8.5V14L6.5 12V8.5L1.5 2.5Z" stroke="#f4f4f4" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">GTM Engineers</span>
+              <span class="unav-dd-desc">Automate and wire your revenue stack</span>
+            </div>
+          </a>
+          <a class="unav-dd-link" href="/services/gtm-team.html" role="menuitem">
+            <span class="unav-dd-icon" style="display:grid;place-items:center;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l3.5-4 3 2.5L14 4" stroke="#f4f4f4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 4H14v3.5" stroke="#f4f4f4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="unav-dd-body">
+              <span class="unav-dd-title">GTM Team</span>
+              <span class="unav-dd-desc">Paid ads, SEO, and outreach, run for you</span>
             </div>
           </a>
         </div>
@@ -2357,25 +2457,25 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <div class="feat-tag"><span>F·01</span><span>REQUESTS</span></div>
         <h3 class="feat-title">Unlimited requests.</h3>
         <p class="feat-desc">Add as many tasks to your backlog as you want. No caps, no extra charges, no scope creep.</p>
-        <div class="feat-viz viz-infinity">∞</div>
+        <div class="feat-viz viz-infinity" aria-hidden="true">∞</div>
       </div>
       <div class="feat feat-2">
         <div class="feat-tag"><span>F·02</span><span>TALENT</span></div>
         <h3 class="feat-title">AI-native devs.</h3>
         <p class="feat-desc">Every engineer, designer, and PM is fluent in agentic workflows. One of ours ships like five devs from the old playbook.</p>
-        <div class="feat-viz viz-top1">5<em>×</em></div>
+        <div class="feat-viz viz-top1" aria-hidden="true">5<em>×</em></div>
       </div>
       <div class="feat feat-3">
         <div class="feat-tag"><span>F·03</span><span>SPEED</span></div>
         <h3 class="feat-title">48-hour delivery.</h3>
         <p class="feat-desc">Receive updates and completed tasks every 48–72 hours. No waiting weeks.</p>
-        <div class="feat-viz viz-48">48<sup>hr</sup></div>
+        <div class="feat-viz viz-48" aria-hidden="true">48<sup>hr</sup></div>
       </div>
       <div class="feat feat-4">
         <div class="feat-tag"><span>F·04</span><span>PRICING</span></div>
         <h3 class="feat-title">Fixed monthly rate.</h3>
         <p class="feat-desc">One predictable subscription. No hidden fees, no hourly billing, no scope creep.</p>
-        <div class="feat-viz viz-dollar"><s>$</s></div>
+        <div class="feat-viz viz-dollar" aria-hidden="true"><s>$</s></div>
       </div>
     </div>
   </div>
@@ -2433,7 +2533,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <button id="billMonthly" class="on" role="tab">Monthly</button>
         <button id="billAnnual" role="tab">Annual <span class="save">−17%</span></button>
       </div>
-      <div class="mono pricing-guarantee" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-dim);margin:-24px 0 40px;">◆ Every plan is backed by a 30-day money-back guarantee</div>
+      <div class="mono pricing-guarantee">◆ Every plan is backed by a 30-day money-back guarantee</div>
     </div>
 
     <div class="plans reveal">
@@ -2500,13 +2600,99 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   </div>
 </section>
 
+<!-- GTM ENGINEERS -->
+<!-- SLIDE 8 — GTM ENGINEERS STAFFING AS A SERVICE (LIGHT) -->
+<section class="section slide slide--light gtm" id="gtm-engineers">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">05 · GTM engineering</span>
+        <h2>GTM engineers,<br>on <span class="serif">tap</span>.</h2>
+      </div>
+      <p>Your revenue stack needs builders, not more seats. Staff dedicated go-to-market engineers exactly the way you staff your product squad — one flat monthly fee, unlimited requests, no contracts, pause or cancel anytime.</p>
+    </div>
+
+    <div class="features reveal">
+      <div class="feat feat-1">
+        <div class="feat-tag"><span>G·01</span><span>AUTOMATION</span></div>
+        <h3 class="feat-title">Workflows that run themselves.</h3>
+        <p class="feat-desc">Lead routing, enrichment, handoffs, and follow-up wired end-to-end so your team stops doing it by hand.</p>
+      </div>
+      <div class="feat feat-2">
+        <div class="feat-tag"><span>G·02</span><span>TOOLING</span></div>
+        <h3 class="feat-title">Internal tools on demand.</h3>
+        <p class="feat-desc">Dashboards, scoring models, and outbound tooling built around how your team actually sells.</p>
+      </div>
+      <div class="feat feat-3">
+        <div class="feat-tag"><span>G·03</span><span>INTEGRATIONS</span></div>
+        <h3 class="feat-title">Your stack, connected.</h3>
+        <p class="feat-desc">CRM, billing, product analytics, and warehouse talking to each other — no brittle patchwork holding it together.</p>
+      </div>
+      <div class="feat feat-4">
+        <div class="feat-tag"><span>G·04</span><span>DATA</span></div>
+        <h3 class="feat-title">CRM plumbing you can trust.</h3>
+        <p class="feat-desc">Pipelines, dedupes, attribution, and reporting that hold up when the forecast is on the line.</p>
+      </div>
+    </div>
+
+    <div class="gtm-cta reveal">
+      <span class="gtm-note">Flat monthly fee · unlimited requests · pause anytime</span>
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn btn-primary">Staff GTM Engineers <span class="arrow">→</span></a>
+      <a href="/services/gtm-engineers.html" class="btn btn-ghost">Learn more <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GTM TEAM -->
+<!-- SLIDE 9 — GTM TEAM (DARK) -->
+<section class="section slide slide--dark gtm" id="gtm-team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">06 · GTM team</span>
+        <h2>Ship it.<br>Then <span class="serif">sell</span> it.</h2>
+      </div>
+      <p>A dedicated go-to-market team — not just engineers — that launches and runs your paid ads, SEO, and email outreach end to end. Same model: flat monthly fee, unlimited requests, cancel whenever.</p>
+    </div>
+
+    <div class="features reveal">
+      <div class="feat feat-1">
+        <div class="feat-tag"><span>M·01</span><span>PAID ADS</span></div>
+        <h3 class="feat-title">Ads that pay back.</h3>
+        <p class="feat-desc">Creative, landing pages, and campaigns across Google, Meta, and LinkedIn — measured on pipeline, not impressions.</p>
+      </div>
+      <div class="feat feat-2">
+        <div class="feat-tag"><span>M·02</span><span>SEO</span></div>
+        <h3 class="feat-title">Organic that compounds.</h3>
+        <p class="feat-desc">Technical fixes, programmatic pages, and content built to rank for what your buyers actually search.</p>
+      </div>
+      <div class="feat feat-3">
+        <div class="feat-tag"><span>M·03</span><span>OUTREACH</span></div>
+        <h3 class="feat-title">Email that lands.</h3>
+        <p class="feat-desc">List building, deliverability, sequences, and replies handled — your calendar fills without another SDR hire.</p>
+      </div>
+      <div class="feat feat-4">
+        <div class="feat-tag"><span>M·04</span><span>OPERATING</span></div>
+        <h3 class="feat-title">One team, end to end.</h3>
+        <p class="feat-desc">Strategy, execution, and weekly reporting from a squad that plugs into your GTM motion instead of auditing it.</p>
+      </div>
+    </div>
+
+    <div class="gtm-cta reveal">
+      <span class="gtm-note">Flat monthly fee · unlimited requests · pause anytime</span>
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn btn-primary">Build My GTM Team <span class="arrow">→</span></a>
+      <a href="/services/gtm-team.html" class="btn btn-ghost">Learn more <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <!-- SLIDE 8 — TESTIMONIALS (LIGHT) -->
 <section class="section slide slide--light" id="testimonials">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">05 · Illustrative scenarios</span>
+        <span class="eyebrow">07 · Illustrative scenarios</span>
         <h2>What this<br>looks like in <span class="serif">practice</span>.</h2>
       </div>
       <p>Appsurd is a new brand, so these are illustrative examples of the outcomes our model is built to deliver — not real client quotes. The track record behind them is Bolder's: seven years shipping production software for 25+ brands and organizations.</p>
@@ -2561,7 +2747,7 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
   <div class="wrap" style="max-width: 1000px;">
     <div class="section-head reveal" style="grid-template-columns: 1fr;">
       <div>
-        <span class="eyebrow">06 · FAQ</span>
+        <span class="eyebrow">08 · FAQ</span>
         <h2>Frequently asked <span class="serif">questions</span>.</h2>
       </div>
     </div>
@@ -2661,6 +2847,8 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--line-stron
         <ul>
           <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/services/gtm-engineers.html">GTM Engineers</a></li>
+          <li><a href="/services/gtm-team.html">GTM Team</a></li>
           <li><a href="#how">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
