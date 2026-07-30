@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Notes — Appsurd</title>
-<meta name="description" content="Writing from the Appsurd team on building software with AI-native devs, agentic workflows, and shipping fast.">
+<title>Claude Cowork Bet on One Model. We Didn't. — Appsurd</title>
+<meta name="description" content="Claude Cowork is a great agent locked to one model. Viktor and Perplexity Computer route to whichever model is best. Here's why that difference decides who wins the next five years of agentic software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
@@ -23,12 +23,13 @@ body {
   font-size: 17px; line-height: 1.5;
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 .serif { font-family: 'Fraunces', serif; font-style: italic; }
 
-.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
 
 .grid-bg {
   position: fixed; inset: 0; pointer-events: none;
@@ -39,7 +40,7 @@ a { color: inherit; text-decoration: none; }
   mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
 }
 
-/* nav */
+/* nav (same as blog index) */
 .nav {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -48,6 +49,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
 .logo { display: flex; align-items: center; gap: 10px; }
+.logo a { text-decoration: none; }
 .logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
 .logo-mark svg { width: 100%; height: 100%; display: block; }
 .logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
@@ -55,6 +57,7 @@ a { color: inherit; text-decoration: none; }
 .logo-name {
   font-family: 'Space Grotesk', sans-serif; font-weight: 700;
   letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
+  text-decoration: none;
 }
 .logo-by {
   font-family: 'Space Grotesk', sans-serif;
@@ -71,7 +74,7 @@ a { color: inherit; text-decoration: none; }
 }
 .logo-by:hover { opacity: 0.75; }
 .nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
-.nav-links a { transition: color 200ms; }
+.nav-links a { transition: color 200ms; text-decoration: none; }
 .nav-links a:hover, .nav-links a.on { color: var(--fg); }
 .nav-cta { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 880px) { .nav-links { display: none; } }
@@ -80,89 +83,148 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 16px; border-radius: 999px;
   font-size: 13px; font-weight: 500;
   background: var(--accent); color: var(--accent-ink);
-  transition: transform 200ms ease;
+  transition: transform 200ms ease; text-decoration: none;
 }
 .btn:hover { transform: translateY(-1px); }
 
-/* hero */
-.hero {
-  padding: 100px 0 80px;
-  border-bottom: 1px solid var(--line);
+/* back link */
+.back {
+  padding: 36px 0 0;
 }
-.eyebrow {
+.back a {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--fg-dim);
-  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute); text-decoration: none;
+  transition: color 200ms;
+  display: inline-flex; align-items: center; gap: 8px;
 }
-.eyebrow::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 12px var(--accent);
-}
-.hero h1 {
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 500; letter-spacing: -0.04em;
-  line-height: 0.92; margin: 20px 0 0;
-}
-.hero h1 em {
-  font-family: 'Fraunces', serif; font-style: italic;
-  font-weight: 300; color: var(--fg);
-}
-.hero p {
-  margin: 28px 0 0; font-size: 19px;
-  color: var(--fg-dim); max-width: 540px; line-height: 1.5;
-}
+.back a:hover { color: var(--fg); }
+.back .arrow { transition: transform 200ms ease; display: inline-block; }
+.back a:hover .arrow { transform: translateX(-4px); }
 
-/* posts list */
-.posts { padding: 80px 0 140px; }
-.post-link {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-  padding: 36px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-  transition: padding 300ms ease;
-}
-.post-link:hover { padding-left: 8px; }
-.post-link:hover .post-title { color: var(--fg); }
-.post-link:hover .arrow { transform: translateX(6px); }
-@media (max-width: 760px) {
-  .post-link { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+/* article */
+article {
+  padding: 32px 0 80px;
 }
 .post-meta {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--fg-mute);
-  display: flex; flex-direction: column; gap: 6px;
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px;
 }
-.post-meta .date { color: var(--fg-dim); }
-.post-title {
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 500; letter-spacing: -0.025em;
-  margin: 0 0 12px; color: var(--fg-dim);
-  transition: color 200ms;
-  line-height: 1.15;
+.post-meta .sep { opacity: 0.4; }
+article h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500; letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 24px;
 }
-.post-excerpt {
-  color: var(--fg-dim); font-size: 16px;
-  margin: 0 0 18px; max-width: 620px;
-  line-height: 1.5;
+article h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300;
 }
-.post-cta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--fg);
-  display: inline-flex; align-items: center; gap: 8px;
+.lede {
+  font-size: 22px; line-height: 1.5;
+  color: var(--fg-dim);
+  margin: 0 0 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
 }
-.arrow { display: inline-block; transition: transform 200ms ease; }
 
-.empty {
-  padding: 80px 0;
-  text-align: center;
-  color: var(--fg-mute);
+/* prose */
+.prose { font-size: 18px; line-height: 1.7; color: var(--fg); }
+.prose > * + * { margin-top: 1.3em; }
+.prose h2 {
+  font-size: 32px; font-weight: 500; letter-spacing: -0.02em;
+  margin-top: 64px; margin-bottom: 16px; line-height: 1.15;
+}
+.prose h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.015em;
+  margin-top: 40px; margin-bottom: 12px;
+}
+.prose p { color: var(--fg); }
+.prose a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--fg-mute);
+  text-decoration: none;
+  transition: border-color 200ms;
+}
+.prose a:hover { border-bottom-color: var(--fg); }
+.prose strong { font-weight: 600; }
+.prose em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.prose blockquote {
+  margin: 32px 0; padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--fg);
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-size: 24px; line-height: 1.4; color: var(--fg);
+}
+.prose ul, .prose ol { padding-left: 24px; color: var(--fg-dim); }
+.prose li { margin: 8px 0; }
+.prose code {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 0.88em;
+  background: var(--bg-elev); padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.prose pre {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 24px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; border: 0; font-size: inherit; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+
+/* author block */
+.author-block {
+  margin-top: 56px;
+  padding: 28px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; align-items: center; gap: 22px;
+}
+.author-block img {
+  width: 72px; height: 72px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+}
+.author-block .ab-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0 0 6px;
+}
+.author-block .ab-name {
+  font-size: 20px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0; line-height: 1.2;
+}
+.author-block .ab-name a {
+  color: var(--fg); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.author-block .ab-name a:hover { border-bottom-color: var(--fg); }
+.author-block .ab-title {
+  font-size: 14px; color: var(--fg-dim); margin: 4px 0 0;
+}
+
+/* end-of-post cta */
+.endcap {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.endcap h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+.endcap p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0;
 }
 
 /* footer */
@@ -175,6 +237,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.12em; text-transform: uppercase;
 }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a { text-decoration: none; }
 .footer a:hover { color: var(--fg); }
 
 ::selection { background: var(--fg); color: var(--bg); }
@@ -519,75 +582,80 @@ body { padding-top: 72px; }
 
 
 
-<section class="hero">
+<div class="back wrap">
+  <a href="/blog/"><span class="arrow">←</span> All posts</a>
+</div>
+
+<article>
   <div class="wrap">
-    <span class="eyebrow">Notes</span>
-    <h1>Writing on building<br>the <em>absurd</em>.</h1>
-    <p>Notes from the Appsurd team on AI-native engineering, agentic workflows, fast shipping, and the messy reality of building software products in 2026.</p>
+    <div class="post-meta">
+      <span>July 30, 2026</span>
+      <span class="sep">/</span>
+      <span><a href="/team/sardor-akhmedov.html" style="color:var(--fg-dim);text-decoration:none;border-bottom:1px solid var(--line-strong);">Sardor Akhmedov, Founder &amp; CEO</a></span>
+      <span class="sep">/</span>
+      <span>4 min read</span>
+    </div>
+
+    <h1>Claude Cowork Bet on <em>One Model</em>. We Didn't.</h1>
+
+    <p class="lede">Anthropic's new coworker agent is genuinely good — and permanently capped by whatever Claude can do this week. Model-agnostic wrappers like Viktor and Perplexity Computer don't have that ceiling. That gap is the whole game.</p>
+
+    <div class="prose">
+      <p>Anthropic <a href="https://www.anthropic.com/product/claude-cowork" target="_blank" rel="noopener">shipped Claude Cowork</a> in January and spent the first half of the year turning it into a real product — <a href="https://www.cnbc.com/2026/02/24/anthropic-claude-cowork-office-worker.html" target="_blank" rel="noopener">enterprise connectors in February</a>, and <a href="https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/" target="_blank" rel="noopener">mobile and web access this month</a>. It's a genuinely good agent. It reads your files, moves across your apps, and comes back with a finished deliverable instead of a paragraph of advice.</p>
+
+      <p>It also only runs on Claude. That's not a criticism — it's the point of the product. Anthropic builds the model and the wrapper, so of course the wrapper is a showcase for the model. But it means every task Cowork completes is capped by whatever Claude can do <em>today</em>. If a better model ships next quarter from anyone else, Cowork doesn't get better. It waits for Anthropic's next release.</p>
+
+      <h2>The wrapper that doesn't care who wins</h2>
+
+      <p>Compare that to the products built the other way around. <a href="https://viktor.com/for/agencies" target="_blank" rel="noopener">Viktor</a> — the Slack- and Teams-native AI employee that's grown to <a href="https://fortune.com/2026/05/19/viktor-ai-startup-raises-75-million-for-virtual-coworker-exclusive/" target="_blank" rel="noopener">a $450M valuation off a $75M Series A</a> in a matter of months — says it plainly on its own pricing page: <strong>model-agnostic, the right frontier model for each job.</strong> Perplexity Computer is built the same way: it routes a task to whichever model is best suited for it, and swaps that choice out the moment a better one exists.</p>
+
+      <p>Neither company is betting the product on one lab staying ahead forever. They're betting that no lab stays ahead forever — which, if you've watched this market for more than six months, is the safer bet by a wide margin.</p>
+
+      <h2>Models leapfrog. Habits don't.</h2>
+
+      <p>We wrote about this exact dynamic <a href="/blog/the-moat-is-not-the-model.html">a couple months ago</a>, and Cowork's rollout is making the argument for us in real time. The frontier changes hands every few months — a new release from one lab is the best model on the market for a quarter, then it isn't. That's fine if you're a wrapper. It's a structural risk if the wrapper and the model are the same company.</p>
+
+      <ul>
+        <li><strong>Single-model products inherit the model's ceiling.</strong> Cowork is exactly as good as Claude is this week. No better.</li>
+        <li><strong>Model-agnostic products inherit the market's ceiling.</strong> Viktor and Perplexity Computer get better every time <em>any</em> lab ships something stronger — they just route to it.</li>
+        <li><strong>Switching cost compounds in the wrapper's favor.</strong> The team that's already living in your Slack, your files, your workflow doesn't lose you when a model regime changes. They just quietly upgrade the engine underneath you.</li>
+      </ul>
+
+      <blockquote>Anthropic being great at building models is not the same claim as Anthropic being great at building the product you open every morning. Those are two different businesses, and increasingly, two different winners.</blockquote>
+
+      <h2>Why we build this way too</h2>
+
+      <p>We don't ship a single client on a model we can't swap out from under them. Every Appsurd build — including the agents we stand up for clients — is architected so the model is a config value, not a foundation. When a stronger or cheaper model ships, we route to it the same week, and the client never has to know or care that anything changed underneath.</p>
+
+      <p>That's the actual product decision hiding inside "model-agnostic." It's not a marketing line. It's an admission that nobody, including the labs themselves, knows which model will be best in six months — so the only durable move is to build the thing that doesn't have to guess.</p>
+
+      <p>Cowork will keep getting better. So will Claude. That's genuinely good for everyone building on top of it, us included. But the coworker that outlasts this cycle won't be the one wired to a single model — it'll be the one that was never betting on any one model to begin with.</p>
+
+    </div>
+
+    <div class="author-block">
+      <img src="/team/photos/sardor.jpg" alt="Sardor Akhmedov">
+      <div>
+        <p class="ab-eyebrow">Written by</p>
+        <p class="ab-name"><a href="/team/sardor-akhmedov.html">Sardor Akhmedov</a></p>
+        <p class="ab-title">Founder &amp; CEO</p>
+      </div>
+    </div>
+
+    <div class="endcap">
+      <div>
+        <h3>Want a team like ours, building for you?</h3>
+        <p>Fixed monthly · 48-hour turnaround · 30-day money-back guarantee</p>
+      </div>
+      <a href="/#pricing" class="btn">See Pricing →</a>
+    </div>
   </div>
-</section>
-
-<section class="posts">
-  <div class="wrap">
-
-    <!-- POST LIST — newest first. Each entry follows this pattern: -->
-    <a href="/blog/claude-cowork-bet-on-one-model.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">July 30, 2026</span>
-        <span>Sardor Akhmedov, Founder &amp; CEO</span>
-      </div>
-      <div>
-        <h2 class="post-title">Claude Cowork Bet on One Model. We Didn't.</h2>
-        <p class="post-excerpt">Anthropic's new coworker agent is genuinely good — and permanently capped by whatever Claude can do this week. Model-agnostic wrappers like Viktor and Perplexity Computer don't have that ceiling. That gap is the whole game.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/the-moat-is-not-the-model.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 29, 2026</span>
-        <span>Andrew Abbey, Chief Marketing Officer</span>
-      </div>
-      <div>
-        <h2 class="post-title">The Moat Is Not the Model.</h2>
-        <p class="post-excerpt">Being the best frontier lab and the best consumer product are two different games. Why distribution and deeply user-oriented design — not the model — decide who wins the end user, and why model-agnostic wrappers like Perplexity and Manus are built to win it.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/how-to-build-a-specialized-agent.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 29, 2026</span>
-        <span>Sean Weldon, Tech Lead</span>
-      </div>
-      <div>
-        <h2 class="post-title">How to Build Your Own Specialized Agent Like Viktor.</h2>
-        <p class="post-excerpt">A build playbook for shipping a specialized AI agent — with its own inbox, phone number, and Slack seat — modeled on Viktor but going deeper into one money-making function: accounts receivable.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/welcome-to-the-absurd.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 21, 2026</span>
-        <span>Sardor Akhmedov, Founder &amp; CEO</span>
-      </div>
-      <div>
-        <h2 class="post-title">Welcome to the Absurd.</h2>
-        <p class="post-excerpt">A short note on why we built Appsurd, what "absurd" means to us, and what you can expect to find on this page over the coming months.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <!-- Add new posts above this line. Newest post goes at the top. -->
-
-  </div>
-</section>
+</article>
 
 <footer class="footer">
-  <div class="wrap footer-inner">
+  <div class="wrap-wide footer-inner">
     <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
-    <span><a href="/">← Back to home</a></span>
+    <span><a href="/blog/">← All posts</a></span>
   </div>
 </footer>
 
