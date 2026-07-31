@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CJ O&#x27;Brien — Appsurd</title>
-<meta name="description" content="CJ O&#x27;Brien, Chief Growth Officer at Appsurd. Builds the engine that brings the right clients in.">
+<title>Extras Store — Appsurd</title>
+<meta name="description" content="Buy brand books, pitch decks, motion & animation packages, social media kits, app store assets, and one-pagers — built by the Appsurd team, secure checkout via Stripe.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
@@ -23,13 +23,10 @@ body {
   font-size: 17px; line-height: 1.5;
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
-a { color: inherit; }
-.mono { font-family: 'JetBrains Mono', monospace; }
-.serif { font-family: 'Fraunces', serif; font-style: italic; }
-img { filter: grayscale(100%) contrast(1.02); }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
-.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+
 .grid-bg {
   position: fixed; inset: 0; pointer-events: none;
   background-image:
@@ -38,6 +35,8 @@ img { filter: grayscale(100%) contrast(1.02); }
   background-size: 80px 80px; z-index: 0;
   mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
 }
+
+/* nav */
 .nav {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -46,7 +45,6 @@ img { filter: grayscale(100%) contrast(1.02); }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo a { text-decoration: none; }
 .logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
 .logo-mark svg { width: 100%; height: 100%; display: block; }
 .logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
@@ -54,76 +52,153 @@ img { filter: grayscale(100%) contrast(1.02); }
 .logo-name {
   font-family: 'Space Grotesk', sans-serif; font-weight: 700;
   letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
-  text-decoration: none;
 }
 .logo-by {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 9px;
-  letter-spacing: 0.08em; color: var(--accent); background: var(--accent-ink);
-  padding: 2px 6px; border-radius: 3px; transition: opacity 200ms;
-  width: max-content; text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-ink);
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: opacity 200ms;
+  width: max-content;
+  text-decoration: none;
 }
 .logo-by:hover { opacity: 0.75; }
 .nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
-.nav-links a { transition: color 200ms; text-decoration: none; }
+.nav-links a { transition: color 200ms; }
 .nav-links a:hover, .nav-links a.on { color: var(--fg); }
 .nav-cta { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 880px) { .nav-links { display: none; } }
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500;
+  padding: 10px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
   background: var(--accent); color: var(--accent-ink);
-  transition: transform 200ms ease; text-decoration: none;
+  transition: transform 200ms ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.back { padding: 36px 0 0; }
-.back a {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--fg-mute); text-decoration: none;
-  transition: color 200ms; display: inline-flex; align-items: center; gap: 8px;
+
+/* hero */
+.hero { padding: 100px 0 60px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-dim);
+  display: inline-flex; align-items: center; gap: 10px;
 }
-.back a:hover { color: var(--fg); }
-.back .arrow { transition: transform 200ms ease; display: inline-block; }
-.back a:hover .arrow { transform: translateX(-4px); }
+.eyebrow::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 12px var(--accent);
+}
+.hero h1 {
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 500; letter-spacing: -0.04em;
+  line-height: 0.92; margin: 20px 0 0;
+}
+.hero h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300; color: var(--fg);
+}
+.hero p {
+  margin: 28px 0 0; font-size: 19px;
+  color: var(--fg-dim); max-width: 620px; line-height: 1.5;
+}
+
+/* service grid */
+.services { padding: 80px 0 140px; }
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+@media (max-width: 880px) { .svc-grid { grid-template-columns: 1fr; } }
+
+.svc {
+  background: var(--bg);
+  padding: 44px 36px 40px;
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: background 300ms;
+  min-height: 340px;
+}
+.svc:hover { background: var(--bg-elev); }
+.svc:hover .svc-arrow { transform: translateX(8px); }
+.svc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.svc-title {
+  font-size: 32px; font-weight: 500; letter-spacing: -0.025em;
+  margin: 18px 0 12px; line-height: 1.1;
+}
+.svc-title em {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+}
+.svc-desc {
+  font-size: 16px; color: var(--fg-dim); line-height: 1.55;
+  margin: 0 0 24px; max-width: 480px;
+}
+.svc-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-top: auto; padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+}
+.svc-cta {
+  color: var(--fg);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.svc-arrow { display: inline-block; transition: transform 200ms ease; }
+
+.svc-tag {
+  position: absolute; top: 20px; right: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute);
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+/* footer cta */
+.foot-cta {
+  text-align: center; padding: 120px 0;
+  border-top: 1px solid var(--line);
+}
+.foot-cta h2 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500; letter-spacing: -0.035em;
+  line-height: 1; margin: 0 auto; max-width: 16ch;
+}
+.foot-cta h2 em {
+  font-family: 'Fraunces', serif; font-weight: 300; color: var(--fg-dim);
+}
+.foot-cta p { color: var(--fg-dim); margin: 20px 0 32px; font-size: 17px; }
+
+/* footer */
 .footer {
-  border-top: 1px solid var(--line); padding: 40px 0; background: var(--bg-elev);
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute);
-  letter-spacing: 0.12em; text-transform: uppercase; position: relative; z-index: 1;
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  background: var(--bg-elev);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--fg-mute);
+  letter-spacing: 0.12em; text-transform: uppercase;
 }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-.footer a { text-decoration: none; }
 .footer a:hover { color: var(--fg); }
-::selection { background: var(--fg); color: var(--bg); }
 
-.profile { padding: 40px 0 80px; position: relative; z-index: 1; }
-.profile-head { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--line); }
-.profile-photo { width: 200px; height: 200px; border-radius: 18px; overflow: hidden; flex: none; border: 1px solid var(--line-strong); background: var(--card); }
-.profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.profile-id { flex: 1; min-width: 260px; }
-.profile-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px; }
-.profile-id h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 10px; }
-.profile-role { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 24px; color: var(--fg-dim); margin: 0 0 22px; }
-.profile-socials { display: flex; gap: 12px; flex-wrap: wrap; }
-.social-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-dim); text-decoration: none; border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 16px; transition: color 200ms, border-color 200ms; }
-.social-chip:hover { color: var(--fg); border-color: var(--fg); }
-.profile-bio { font-size: 18px; line-height: 1.7; color: var(--fg); max-width: 680px; }
-.profile-bio > * + * { margin-top: 1.3em; }
-.profile-bio em { font-family: 'Fraunces', serif; font-style: italic; }
-.editable-note { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); opacity: 0.55; margin-top: 40px; }
-.posts-by { margin-top: 64px; }
-.posts-by h2 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin: 0 0 20px; }
-.post-by-link { display: block; text-decoration: none; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; background: var(--card); margin-bottom: 12px; transition: border-color 200ms, transform 200ms; }
-.post-by-link:hover { border-color: var(--line-strong); transform: translateY(-2px); }
-.post-by-link .pdate { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
-.post-by-link .ptitle { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin: 8px 0 0; color: var(--fg); }
-.no-posts { color: var(--fg-mute); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
-.team-hero { padding: 64px 0 8px; position: relative; z-index: 1; }
-.team-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 18px; }
-.team-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 18px; }
-.team-hero h1 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
-.team-hero p { font-size: 20px; color: var(--fg-dim); max-width: 620px; margin: 0; line-height: 1.5; }
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 56px 0 90px; position: relative; z-index: 1; }
-@media (max-width: 860px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
+::selection { background: var(--fg); color: var(--bg); }
 
 /* ============================================================
    UNIFIED NAV  (injected by update_appsurd.py)
@@ -237,8 +312,6 @@ img { filter: grayscale(100%) contrast(1.02); }
   transition: transform .15s, opacity .15s;
 }
 .unav-btn:hover { transform:translateY(-1px); opacity:.9; }
-
-body { padding-top: 72px; }
 </style>
 </head>
 <body>
@@ -467,31 +540,98 @@ body { padding-top: 72px; }
 
 
 
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Store</span>
+    <h1>Assets to launch<br><em>faster</em>.</h1>
+    <p>The small, tangible things every founder eventually needs — brand books, pitch decks, motion, and more. Built by the same team behind Appsurd, delivered in days. Secure checkout, powered by Stripe.</p>
+  </div>
+</section>
 
-<div class="back wrap-wide">
-  <a href="/team/"><span class="arrow">←</span> All team</a>
-</div>
-<section class="profile">
-  <div class="wrap-wide">
-    <div class="profile-head">
-      <div class="profile-photo"><img src="/team/photos/cj.jpg" alt="CJ O&#x27;Brien"></div>
-      <div class="profile-id">
-        <div class="profile-eyebrow">Chief Growth Officer</div>
-        <h1>CJ O&#x27;Brien</h1>
-        <p class="profile-role">Builds the engine that brings the right clients in.</p>
-        <div class="profile-socials"><a class="social-chip" href="https://www.linkedin.com/company/bolderapps/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="social-chip" href="mailto:hello@appsurd.co">Email ↗</a></div>
-      </div>
+<section class="services">
+  <div class="wrap">
+    <div class="svc-grid">
+
+      <a href="https://buy.stripe.com/4gM4gA2mU3Aw8A02SR8AE0h" target="_blank" rel="noopener" class="svc">
+        <span class="svc-tag">Most Popular</span>
+        <span class="svc-num">SVC · 01</span>
+        <h2 class="svc-title">Brand Book &amp; <em>Guidelines</em></h2>
+        <p class="svc-desc">A complete brand book — logo system, color palette, typography, voice &amp; tone, and application examples — delivered as a polished, ready-to-share PDF your team and vendors can follow.</p>
+        <div class="svc-price">
+          <span>$1,500 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="https://buy.stripe.com/cNi3cw4v20ok6rS2SR8AE0g" target="_blank" rel="noopener" class="svc">
+        <span class="svc-num">SVC · 02</span>
+        <h2 class="svc-title">Pitch <em>Deck</em></h2>
+        <p class="svc-desc">An investor-ready pitch deck — problem, solution, market, traction, and ask — designed and written to hold up in a fundraise, board meeting, or sales pitch.</p>
+        <div class="svc-price">
+          <span>$2,500 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="https://buy.stripe.com/3cI3cwbXudb66rS9hf8AE0f" target="_blank" rel="noopener" class="svc">
+        <span class="svc-num">SVC · 03</span>
+        <h2 class="svc-title">Motion &amp; <em>Animation</em> Package</h2>
+        <p class="svc-desc">A custom motion package — logo reveal animation, product/app explainer motion graphics, and short-form social cuts — to bring your brand to life across web, ads, and social.</p>
+        <div class="svc-price">
+          <span>$2,000 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="https://buy.stripe.com/3cI5kEbXudb6g2s1ON8AE0j" target="_blank" rel="noopener" class="svc">
+        <span class="svc-num">SVC · 04</span>
+        <h2 class="svc-title">Social Media <em>Content Kit</em></h2>
+        <p class="svc-desc">A 30-post social media kit — on-brand templates, captions, and a ready-to-run content calendar — so you can launch a consistent presence across Instagram, LinkedIn, and X.</p>
+        <div class="svc-price">
+          <span>$900 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="https://buy.stripe.com/dRmfZif9GgniaI8alj8AE0i" target="_blank" rel="noopener" class="svc">
+        <span class="svc-num">SVC · 05</span>
+        <h2 class="svc-title">App Store <em>Asset Kit</em></h2>
+        <p class="svc-desc">A full App Store &amp; Google Play asset kit — screenshots, preview video storyboard, feature graphics, and icon variations — optimized to turn browsers into installs.</p>
+        <div class="svc-price">
+          <span>$750 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="https://buy.stripe.com/3cI5kE1iQ8UQcQgdxv8AE0k" target="_blank" rel="noopener" class="svc">
+        <span class="svc-num">SVC · 06</span>
+        <h2 class="svc-title">One-Pager / <em>Sales Sheet</em></h2>
+        <p class="svc-desc">A single, sharp one-pager or sales sheet — clean, on-brand, and built to send to prospects, investors, or partners in one click.</p>
+        <div class="svc-price">
+          <span>$600 one-time</span>
+          <span class="svc-cta">Buy now <span class="svc-arrow">→</span></span>
+        </div>
+      </a>
+
     </div>
-    <div class="profile-bio"><p>CJ leads growth at Appsurd — the pipeline, the partnerships, and the motion that connects the right founders and operators with the team. He thinks about growth as a system, not a series of campaigns, and cares more about fit than volume.</p><p>He writes here about go-to-market, the economics of productized services, and what actually moves the needle for a young brand built on a seven-year track record.</p></div>
-    <p class="editable-note">// Editable placeholder bio — swap in real copy &amp; social links anytime.</p>
-    <div class="posts-by"><h2>Posts by CJ</h2><p class="no-posts">No posts yet — check back soon.</p></div>
+  </div>
+</section>
+
+<section class="foot-cta">
+  <div class="wrap">
+    <h2>Need something<br><em>custom</em>?</h2>
+    <p>Don't see exactly what you need? Tell us the asset and we'll scope it — most one-off design and content projects ship within a week. Every purchase is backed by our 30-day money-back guarantee.</p>
+    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="mailto:hello@appsurd.co?subject=Custom%20asset%20request" class="btn">Email us →</a>
+      <a href="https://tidycal.com/sardor/30" target="_blank" rel="noopener" class="btn" style="background:transparent;color:var(--fg);border:1px solid var(--line-strong);">Book a call</a>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="wrap-wide footer-inner">
+  <div class="wrap footer-inner">
     <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
-    <span><a href="/team/">← Meet the team</a></span>
+    <span><a href="/">← Back to home</a></span>
   </div>
 </footer>
 
