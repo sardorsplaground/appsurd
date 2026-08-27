@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "who-is-leopold-aschenbrenner",
+    "href": "/blog/who-is-leopold-aschenbrenner.html",
+    "dateISO": "2026-08-03T23:00:00.000Z",
+    "dateText": "August 3, 2026",
+    "authorHtml": "Sardor Akhmedov, Founder &amp; CEO",
+    "titleHtml": "Who Is Leopold Aschenbrenner? The Whole Saga, A to Z.",
+    "excerptHtml": "From a 165-page essay to a $45 billion AI hedge fund to a forced fire sale to Citadel in a single week — the whole story, explained from zero, plus the one lesson about leverage that matters more than being right."
+  },
+  {
+    "slug": "claude-cowork-bet-on-one-model",
+    "href": "/blog/claude-cowork-bet-on-one-model.html",
+    "dateISO": "2026-07-30T22:00:00.000Z",
+    "dateText": "July 30, 2026",
+    "authorHtml": "Sardor Akhmedov, Founder &amp; CEO",
+    "titleHtml": "Claude Cowork Bet on One Model. We Didn't.",
+    "excerptHtml": "Anthropic's new coworker agent is genuinely good — and permanently capped by whatever Claude can do this week. Model-agnostic wrappers like Viktor and Perplexity Computer don't have that ceiling. That gap is the whole game."
+  },
+  {
+    "slug": "the-moat-is-not-the-model",
+    "href": "/blog/the-moat-is-not-the-model.html",
+    "dateISO": "2026-05-29T21:00:00.000Z",
+    "dateText": "May 29, 2026",
+    "authorHtml": "Andrew Abbey, Chief Marketing Officer",
+    "titleHtml": "The Moat Is Not the Model.",
+    "excerptHtml": "Being the best frontier lab and the best consumer product are two different games. Why distribution and deeply user-oriented design — not the model — decide who wins the end user, and why model-agnostic wrappers like Perplexity and Manus are built to win it."
+  },
+  {
+    "slug": "how-to-build-a-specialized-agent",
+    "href": "/blog/how-to-build-a-specialized-agent.html",
+    "dateISO": "2026-05-29T20:00:00.000Z",
+    "dateText": "May 29, 2026",
+    "authorHtml": "Sean Weldon, Tech Lead",
+    "titleHtml": "How to Build Your Own Specialized Agent Like Viktor.",
+    "excerptHtml": "A build playbook for shipping a specialized AI agent — with its own inbox, phone number, and Slack seat — modeled on Viktor but going deeper into one money-making function: accounts receivable."
+  },
+  {
+    "slug": "welcome-to-the-absurd",
+    "href": "/blog/welcome-to-the-absurd.html",
+    "dateISO": "2026-05-21T19:00:00.000Z",
+    "dateText": "May 21, 2026",
+    "authorHtml": "Sardor Akhmedov, Founder &amp; CEO",
+    "titleHtml": "Welcome to the Absurd.",
+    "excerptHtml": "A short note on why we built Appsurd, what \"absurd\" means to us, and what you can expect to find on this page over the coming months."
+  }
+]

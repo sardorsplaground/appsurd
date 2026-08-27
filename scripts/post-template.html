@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Notes — Appsurd</title>
-<meta name="description" content="Writing from the Appsurd team on building software with AI-native devs, agentic workflows, and shipping fast.">
+<title>{{TITLE}} — Appsurd</title>
+<meta name="description" content="{{DESCRIPTION}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&display=swap">
@@ -23,12 +23,10 @@ body {
   font-size: 17px; line-height: 1.5;
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
-a { color: inherit; text-decoration: none; }
-.mono { font-family: 'JetBrains Mono', monospace; }
-.serif { font-family: 'Fraunces', serif; font-style: italic; }
-
-.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+a { color: inherit; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap, .wrap-wide { padding: 0 22px; } }
 
 .grid-bg {
   position: fixed; inset: 0; pointer-events: none;
@@ -38,8 +36,6 @@ a { color: inherit; text-decoration: none; }
   background-size: 80px 80px; z-index: 0;
   mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
 }
-
-/* nav */
 .nav {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -48,6 +44,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
 .logo { display: flex; align-items: center; gap: 10px; }
+.logo a { text-decoration: none; }
 .logo-mark { width: 36px; height: 36px; display: grid; place-items: center; transition: transform 300ms ease; }
 .logo-mark svg { width: 100%; height: 100%; display: block; }
 .logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
@@ -55,23 +52,15 @@ a { color: inherit; text-decoration: none; }
 .logo-name {
   font-family: 'Space Grotesk', sans-serif; font-weight: 700;
   letter-spacing: 0.08em; font-size: 16px; color: var(--fg); text-transform: uppercase;
-}
-.logo-by {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 800;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  background: var(--accent-ink);
-  padding: 2px 6px;
-  border-radius: 3px;
-  transition: opacity 200ms;
-  width: max-content;
   text-decoration: none;
 }
-.logo-by:hover { opacity: 0.75; }
+.logo-by {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px;
+  color: var(--fg-dim); letter-spacing: 0.18em; transition: color 200ms; width: max-content; text-decoration: none;
+}
+.logo-by:hover { color: var(--fg); }
 .nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
-.nav-links a { transition: color 200ms; }
+.nav-links a { transition: color 200ms; text-decoration: none; }
 .nav-links a:hover, .nav-links a.on { color: var(--fg); }
 .nav-cta { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 880px) { .nav-links { display: none; } }
@@ -80,92 +69,111 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 16px; border-radius: 999px;
   font-size: 13px; font-weight: 500;
   background: var(--accent); color: var(--accent-ink);
-  transition: transform 200ms ease;
+  transition: transform 200ms ease; text-decoration: none;
 }
 .btn:hover { transform: translateY(-1px); }
 
-/* hero */
-.hero {
-  padding: 100px 0 80px;
-  border-bottom: 1px solid var(--line);
-}
-.eyebrow {
+.back { padding: 36px 0 0; }
+.back a {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--fg-dim);
-  display: inline-flex; align-items: center; gap: 10px;
-}
-.eyebrow::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 12px var(--accent);
-}
-.hero h1 {
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 500; letter-spacing: -0.04em;
-  line-height: 0.92; margin: 20px 0 0;
-}
-.hero h1 em {
-  font-family: 'Fraunces', serif; font-style: italic;
-  font-weight: 300; color: var(--fg);
-}
-.hero p {
-  margin: 28px 0 0; font-size: 19px;
-  color: var(--fg-dim); max-width: 540px; line-height: 1.5;
-}
-
-/* posts list */
-.posts { padding: 80px 0 140px; }
-.post-link {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-  padding: 36px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-  transition: padding 300ms ease;
-}
-.post-link:hover { padding-left: 8px; }
-.post-link:hover .post-title { color: var(--fg); }
-.post-link:hover .arrow { transform: translateX(6px); }
-@media (max-width: 760px) {
-  .post-link { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
-}
-.post-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--fg-mute);
-  display: flex; flex-direction: column; gap: 6px;
-}
-.post-meta .date { color: var(--fg-dim); }
-.post-title {
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 500; letter-spacing: -0.025em;
-  margin: 0 0 12px; color: var(--fg-dim);
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute); text-decoration: none;
   transition: color 200ms;
-  line-height: 1.15;
-}
-.post-excerpt {
-  color: var(--fg-dim); font-size: 16px;
-  margin: 0 0 18px; max-width: 620px;
-  line-height: 1.5;
-}
-.post-cta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--fg);
   display: inline-flex; align-items: center; gap: 8px;
 }
-.arrow { display: inline-block; transition: transform 200ms ease; }
+.back a:hover { color: var(--fg); }
+.back .arrow { transition: transform 200ms ease; display: inline-block; }
+.back a:hover .arrow { transform: translateX(-4px); }
 
-.empty {
-  padding: 80px 0;
-  text-align: center;
-  color: var(--fg-mute);
+article { padding: 32px 0 80px; }
+.post-meta {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fg-mute);
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.post-meta .sep { opacity: 0.4; }
+article h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500; letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 24px;
+}
+article h1 em {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-weight: 300;
+}
+.lede {
+  font-size: 22px; line-height: 1.5;
+  color: var(--fg-dim);
+  margin: 0 0 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
 }
 
-/* footer */
+.prose { font-size: 18px; line-height: 1.7; color: var(--fg); }
+.prose > * + * { margin-top: 1.3em; }
+.prose h2 {
+  font-size: 32px; font-weight: 500; letter-spacing: -0.02em;
+  margin-top: 64px; margin-bottom: 16px; line-height: 1.15;
+}
+.prose h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.015em;
+  margin-top: 40px; margin-bottom: 12px;
+}
+.prose p { color: var(--fg); }
+.prose a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--fg-mute);
+  text-decoration: none;
+  transition: border-color 200ms;
+}
+.prose a:hover { border-bottom-color: var(--fg); }
+.prose strong { font-weight: 600; }
+.prose em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.prose blockquote {
+  margin: 32px 0; padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--fg);
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-size: 24px; line-height: 1.4; color: var(--fg);
+}
+.prose ul, .prose ol { padding-left: 24px; color: var(--fg-dim); }
+.prose li { margin: 8px 0; }
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bg-elev); padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.prose pre {
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 24px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; border: 0; font-size: inherit; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+
+.endcap {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--line); border-radius: 20px;
+  background: var(--card);
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.endcap h3 {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+.endcap p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute); margin: 0;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   padding: 40px 0;
@@ -175,6 +183,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.12em; text-transform: uppercase;
 }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer a { text-decoration: none; }
 .footer a:hover { color: var(--fg); }
 
 ::selection { background: var(--fg); color: var(--bg); }
@@ -512,98 +521,50 @@ body { padding-top: 72px; }
     <symbol id="appsurd-mark" viewBox="0 0 36 36">
       <rect x="6" y="6" width="28" height="28" rx="6" fill="var(--accent-ink)"/>
       <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--accent)" stroke="var(--accent-ink)" stroke-width="1.5"/>
-      <path d="M7 26 L12.5 8 L17.5 8 L23 26 L19 26 L17.7 21.5 L12.3 21.5 L11 26 Z M13.4 18.2 L16.6 18.2 L15 12 Z" fill="var(--accent-ink)" fill-rule="evenodd"/>
-      <circle cx="25.5" cy="23" r="2" fill="var(--accent-ink)"/>
+      <text x="9" y="24" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="800" font-size="20" fill="var(--accent-ink)" letter-spacing="-1">A</text>
+      <circle cx="24" cy="22" r="2" fill="var(--accent-ink)"/>
     </symbol>
   </defs>
 </svg>
 
 
 
-<section class="hero">
+<div class="back wrap">
+  <a href="/blog/"><span class="arrow">←</span> All posts</a>
+</div>
+
+<article>
   <div class="wrap">
-    <span class="eyebrow">Notes</span>
-    <h1>Writing on building<br>the <em>absurd</em>.</h1>
-    <p>Notes from the Appsurd team on AI-native engineering, agentic workflows, fast shipping, and the messy reality of building software products in 2026.</p>
+    <div class="post-meta">
+      <span>{{DATE}}</span>
+      <span class="sep">/</span>
+      <span>{{AUTHOR}}</span>
+      <span class="sep">/</span>
+      <span>{{READ_TIME}}</span>
+    </div>
+
+    <h1>{{TITLE_HTML}}</h1>
+
+    <p class="lede">{{LEDE}}</p>
+
+    <div class="prose">
+      {{BODY}}
+    </div>
+
+    <div class="endcap">
+      <div>
+        <h3>Want a team like ours, building for you?</h3>
+        <p>Fixed monthly · 48-hour turnaround · pause anytime</p>
+      </div>
+      <a href="/#pricing" class="btn">See Pricing →</a>
+    </div>
   </div>
-</section>
-
-<section class="posts">
-  <div class="wrap">
-
-    <!-- POST LIST — rebuilt by scripts/build-blog.js on every deploy.
-         Do not edit between the markers: write posts in Ghost instead.
-         Pre-Ghost posts are kept via scripts/legacy-posts.json. -->
-    <!-- GHOST:POSTS:START -->
-    <a href="/blog/who-is-leopold-aschenbrenner.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">August 3, 2026</span>
-        <span>Sardor Akhmedov, Founder &amp; CEO</span>
-      </div>
-      <div>
-        <h2 class="post-title">Who Is Leopold Aschenbrenner? The Whole Saga, A to Z.</h2>
-        <p class="post-excerpt">From a 165-page essay to a $45 billion AI hedge fund to a forced fire sale to Citadel in a single week — the whole story, explained from zero, plus the one lesson about leverage that matters more than being right.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/claude-cowork-bet-on-one-model.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">July 30, 2026</span>
-        <span>Sardor Akhmedov, Founder &amp; CEO</span>
-      </div>
-      <div>
-        <h2 class="post-title">Claude Cowork Bet on One Model. We Didn't.</h2>
-        <p class="post-excerpt">Anthropic's new coworker agent is genuinely good — and permanently capped by whatever Claude can do this week. Model-agnostic wrappers like Viktor and Perplexity Computer don't have that ceiling. That gap is the whole game.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/the-moat-is-not-the-model.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 29, 2026</span>
-        <span>Andrew Abbey, Chief Marketing Officer</span>
-      </div>
-      <div>
-        <h2 class="post-title">The Moat Is Not the Model.</h2>
-        <p class="post-excerpt">Being the best frontier lab and the best consumer product are two different games. Why distribution and deeply user-oriented design — not the model — decide who wins the end user, and why model-agnostic wrappers like Perplexity and Manus are built to win it.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/how-to-build-a-specialized-agent.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 29, 2026</span>
-        <span>Sean Weldon, Tech Lead</span>
-      </div>
-      <div>
-        <h2 class="post-title">How to Build Your Own Specialized Agent Like Viktor.</h2>
-        <p class="post-excerpt">A build playbook for shipping a specialized AI agent — with its own inbox, phone number, and Slack seat — modeled on Viktor but going deeper into one money-making function: accounts receivable.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <a href="/blog/welcome-to-the-absurd.html" class="post-link">
-      <div class="post-meta">
-        <span class="date">May 21, 2026</span>
-        <span>Sardor Akhmedov, Founder &amp; CEO</span>
-      </div>
-      <div>
-        <h2 class="post-title">Welcome to the Absurd.</h2>
-        <p class="post-excerpt">A short note on why we built Appsurd, what "absurd" means to us, and what you can expect to find on this page over the coming months.</p>
-        <span class="post-cta">Read post <span class="arrow">→</span></span>
-      </div>
-    </a>
-
-    <!-- GHOST:POSTS:END -->
-
-  </div>
-</section>
+</article>
 
 <footer class="footer">
-  <div class="wrap footer-inner">
+  <div class="wrap-wide footer-inner">
     <span>© 2026 APPSURD · A BOLDER COMPANY · ALL RIGHTS RESERVED</span>
-    <span><a href="/">← Back to home</a></span>
+    <span><a href="/blog/">← All posts</a></span>
   </div>
 </footer>
 
