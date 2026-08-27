@@ -1,0 +1,38 @@
+{
+  "origin": "https://www.appsurd.co",
+  "siteName": "Appsurd",
+  "legalName": "Appsurd",
+  "tagline": "Build the Absurd",
+  "description": "Appsurd is a productized AI-native development squad. One squad, one flat price, software shipped every 48 hours — for startups and enterprises alike.",
+  "email": "hello@appsurd.co",
+  "telephone": null,
+  "streetAddress": null,
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": null,
+  "addressCountry": "US",
+  "foundingDate": "2019",
+  "parentOrganization": "Bolder Apps",
+  "twitterHandle": "@sardorappsurd",
+  "sameAs": [
+    "https://x.com/sardorappsurd"
+  ],
+  "defaultImage": "/assets/og-default.png",
+  "logo": "/assets/og-default.png",
+  "areaServed": [
+    "Miami",
+    "Fort Lauderdale",
+    "Florida",
+    "United States"
+  ],
+  "knowsAbout": [
+    "AI implementation",
+    "AI agent development",
+    "mobile app development",
+    "web application development",
+    "custom software development",
+    "forward deployed engineering",
+    "GTM engineering",
+    "custom GPTs"
+  ]
+}

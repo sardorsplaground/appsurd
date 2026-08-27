@@ -1,0 +1,8 @@
+node_modules/
+.vercel/
+.DS_Store
+
+# Generated at build time by scripts/build-seo.js
+/sitemap.xml
+/robots.txt
+/llms.txt

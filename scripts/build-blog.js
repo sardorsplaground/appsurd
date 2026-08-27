@@ -18,6 +18,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const BLOG = path.join(ROOT, 'blog');
+const CFG = JSON.parse(fs.readFileSync(path.join(__dirname, 'seo-config.json'), 'utf8'));
 const START = '<!-- GHOST:POSTS:START -->';
 const END = '<!-- GHOST:POSTS:END -->';
 
@@ -49,9 +50,54 @@ async function fetchPosts(apiUrl, key) {
   return (await res.json()).posts || [];
 }
 
+// Built as real JS and inserted whole, so values are JSON-escaped rather than
+// HTML-escaped — JSON-LD parsers do not decode HTML entities.
+function jsonLdFor(post, titles, lede) {
+  const url = `${CFG.origin}/blog/${post.slug}.html`;
+  const authorName = post.primary_author?.name || 'Appsurd Team';
+  const graph = [{
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    url,
+    mainEntityOfPage: url,
+    headline: String(post.title || '').slice(0, 110),
+    description: lede.replace(/\s+/g, ' ').trim(),
+    datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
+    author: {
+      '@type': 'Person',
+      name: authorName,
+      jobTitle: titles[authorName] || undefined,
+    },
+    publisher: { '@id': `${CFG.origin}/#organization` },
+    isPartOf: { '@id': `${CFG.origin}/#website` },
+    image: post.feature_image || CFG.origin + CFG.defaultImage,
+    wordCount: post.html ? post.html.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length : undefined,
+    inLanguage: 'en-US',
+  }, {
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${CFG.origin}/` },
+      { '@type': 'ListItem', position: 2, name: 'Notes', item: `${CFG.origin}/blog/` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url },
+    ],
+  }];
+  const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2)
+    .replace(/<\//g, '<\\/');
+  return `<script type="application/ld+json">\n${json}\n</script>`;
+}
+
 function renderPost(template, post, titles) {
   const lede = post.custom_excerpt || post.excerpt || '';
+  const authorName = post.primary_author?.name || 'Appsurd Team';
   return template
+    .replaceAll('{{CANONICAL}}', esc(`${CFG.origin}/blog/${post.slug}.html`))
+    .replaceAll('{{OG_IMAGE}}', esc(post.feature_image || CFG.origin + CFG.defaultImage))
+    .replaceAll('{{ISO_DATE}}', esc(post.published_at))
+    .replaceAll('{{ISO_UPDATED}}', esc(post.updated_at || post.published_at))
+    .replaceAll('{{AUTHOR_NAME}}', esc(authorName))
+    .replaceAll('{{JSONLD}}', jsonLdFor(post, titles, lede))
     .replaceAll('{{TITLE}}', esc(post.title))
     .replaceAll('{{TITLE_HTML}}', esc(post.title))
     .replaceAll('{{DESCRIPTION}}', esc(lede.replace(/\s+/g, ' ').trim()))

@@ -2,6 +2,7 @@
   "name": "appsurd-site",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-blog.js"
+    "build": "node scripts/build-blog.js && node scripts/build-seo.js",
+    "seo": "node scripts/inject-seo.js && node scripts/make-post-template.js"
   }
 }
