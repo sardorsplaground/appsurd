@@ -146,7 +146,9 @@ Sitemap: ${CFG.origin}/sitemap.xml
     `- Website: ${CFG.origin}/`,
     `- Contact: ${CFG.email}`,
     CFG.telephone ? `- Phone: ${CFG.telephone}` : null,
-    `- Based in: ${[CFG.addressLocality, CFG.addressRegion].filter(Boolean).join(', ')}`,
+    `- Based in: ${[CFG.streetAddress, CFG.addressLocality,
+      [CFG.addressRegion, CFG.postalCode].filter(Boolean).join(' ')]
+      .filter(Boolean).join(', ')}`,
     `- Founded: ${CFG.foundingDate}`,
     CFG.parentOrganization ? `- Part of: ${CFG.parentOrganization}` : null,
     `- Sitemap: ${CFG.origin}/sitemap.xml`,

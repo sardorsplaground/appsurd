@@ -28,7 +28,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://www.appsurd.co/#organization",
       "name": "Appsurd",
       "legalName": "Appsurd",
@@ -43,8 +46,10 @@
       "image": "https://www.appsurd.co/assets/og-default.png",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "2125 Biscayne Blvd",
         "addressLocality": "Miami",
         "addressRegion": "FL",
+        "postalCode": "33137",
         "addressCountry": "US"
       },
       "areaServed": [

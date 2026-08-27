@@ -91,8 +91,14 @@ function organization() {
   if (CFG.postalCode) address.postalCode = CFG.postalCode;
   if (CFG.addressCountry) address.addressCountry = CFG.addressCountry;
 
+  // With a real street address the entity qualifies as a LocalBusiness, which
+  // is what local search rewards. Without one, stay a plain Organization.
+  const types = CFG.streetAddress
+    ? ['Organization', 'ProfessionalService']
+    : 'Organization';
+
   const org = {
-    '@type': 'Organization',
+    '@type': types,
     '@id': ORG_ID,
     name: CFG.siteName,
     legalName: CFG.legalName,
