@@ -1,6 +1,8 @@
 node_modules/
 .vercel/
 .DS_Store
+.env
+.env.local
 
 # Generated at build time by scripts/build-seo.js
 /sitemap.xml
