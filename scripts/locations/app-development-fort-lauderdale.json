@@ -1,0 +1,355 @@
+{
+  "slug": "app-development-fort-lauderdale",
+  "city": "Fort Lauderdale",
+  "county": "Broward County",
+  "region": "FL",
+  "group": "Broward &amp; Palm Beach",
+  "linkLabel": "Fort Lauderdale",
+  "title": "App Development in Fort Lauderdale — Marine, Port &amp; SaaS Builds | Appsurd",
+  "metaDescription": "Fort Lauderdale app development from a Miami-based squad that understands marine, charter, port and SaaS software. Real cost ranges, offline-first builds, 48-hour delivery.",
+  "hubBlurb": "The yachting capital, a top-three cruise port and a real enterprise software cluster in one county. Offline-first sync and hardware integration come up here more than anywhere else we work.",
+  "h1": ["App development in", "Fort Lauderdale"],
+  "dek": "We are 30 miles south, on Biscayne Boulevard. What we bring to Fort Lauderdale is not a satellite office — it is a squad that has already solved the problems this city's software actually has: sync that survives leaving cell coverage, fleet and charter operations, and hardware that has to talk to an app.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>30 miles</b> from Las Olas",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "$1.78B",
+      "label": "Economic impact of the 2024 Fort Lauderdale International Boat Show across Florida, supporting over 10,000 full-time jobs and $823.5M in marine product sales during the show.",
+      "source": {
+        "name": "South Florida Business Journal",
+        "url": "https://www.bizjournals.com/southflorida/news/2025/03/13/south-florida-boat-show-generates-billion-plus.html"
+      }
+    },
+    {
+      "value": "111,000",
+      "label": "Marine industry jobs in Broward County alone — 142,000 regionally — behind roughly $9 billion of county economic impact.",
+      "source": {
+        "name": "Greater Fort Lauderdale Alliance",
+        "url": "https://www.gflalliance.org/information-center/marine-industries"
+      }
+    },
+    {
+      "value": "4.7M",
+      "label": "Record cruise guests through Port Everglades in FY2025, part of $48.3 billion in economic activity and 1.167 million TEUs of cargo.",
+      "source": {
+        "name": "Port Everglades",
+        "url": "https://www.porteverglades.net/articles/post/port-everglades-contributes-483-billion-in-economic-impact/"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed, reviewable increment. Not a wireframe — a staging URL you can send to a partner or a lender."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Thirty miles south,", "and honest about it"],
+      "body": [
+        "We do not have an office in Fort Lauderdale. Appsurd works from <strong>2125 Biscayne Blvd in Miami</strong>, and that is the only address we have. If an agency ranking for this search claims a Las Olas suite, ask which floor and ask who sits there — a large share of those addresses are mail forwarding attached to a page that also exists for forty other cities.",
+        "What we do have is proximity that actually functions. Downtown Fort Lauderdale is about 30 miles up I-95 or the Turnpike, which is 35 minutes off-peak and closer to an hour if you insist on leaving at 5pm. Brightline runs Miami to Fort Lauderdale in roughly half an hour, station to station, which is how we usually do it when the meeting is downtown. Kickoffs, architecture arguments and the occasional hard conversation about scope are worth doing in a room, and we come to you for those.",
+        "Day to day, the work is remote and asynchronous, because a 48-hour delivery cadence depends on it. Standing meetings do not make software arrive faster. What matters more than the mileage is that your project has a named engineer in Eastern time who answers at 9am, not overnight from a nine-hour offset.",
+        "The one thing being nearby genuinely buys you in this market is context. We have already argued about NMEA data, dockage schedules, crew rotations and what happens to a sync queue when a vessel is 40 miles offshore. That is not a Fort Lauderdale-flavoured version of a generic pitch; it is the specific thing that makes marine and port software hard, and it is not learnable from a discovery call."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["Broward is not", "a smaller Miami"],
+      "body": [
+        "The most common mistake we see in software sold into Fort Lauderdale is treating it as Miami's overflow market. The two economies overlap at the edges and diverge sharply in the middle, and the divergence is where the budgets are.",
+        "Start with the water, because everything else here is downstream of it. Greater Fort Lauderdale's recreational marine industry carries roughly <a href=\"https://www.gflalliance.org/information-center/marine-industries\" target=\"_blank\" rel=\"noopener nofollow\">$9 billion of economic impact in Broward County and about 111,000 county jobs — 142,000 regionally — with $4 billion in wages that run around 16% above the state average</a>. Roughly 2,000 megayachts of 80 feet or more call on the county each year. This is not a lifestyle sector attached to a real economy; in Broward it is a substantial part of the real economy, with shipyards, brokerages, refit facilities, crew agencies, parts distributors and insurers all built around it.",
+        "The Fort Lauderdale International Boat Show is the annual proof. The 2024 edition generated <a href=\"https://www.bizjournals.com/southflorida/news/2025/03/13/south-florida-boat-show-generates-billion-plus.html\" target=\"_blank\" rel=\"noopener nofollow\">$1.78 billion in economic impact statewide, supported more than 10,000 full-time Florida jobs, moved $823.5 million in marine product sales during the show — $228.9 million of it from Broward County companies — and produced $25.3 million in state and local taxes inside Broward alone</a>, according to an analysis by Thomas J. Murray &amp; Associates reported by the South Florida Business Journal. For a lot of marine businesses here, the show is not a marketing event, it is the fiscal year. Software with a launch date that lands after the last weekend of October has, for practical purposes, missed twelve months.",
+        "Then there is Port Everglades, which is a different business from Miami's port in composition. In FY2025 the port reported <a href=\"https://www.porteverglades.net/articles/post/port-everglades-contributes-483-billion-in-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">roughly $48.3 billion in economic activity, nearly 300,000 jobs statewide, a record 4.7 million cruise guests and record cargo of 1.167 million TEUs</a>. It is also the sole pipeline source of jet fuel for both Fort Lauderdale-Hollywood and Miami International. Cruise, cargo and petroleum sit inside one operation, which means the software briefs coming out of that ecosystem are logistics briefs with a hard safety and compliance edge, not consumer product briefs.",
+        "Aviation is the third leg. Fort Lauderdale-Hollywood International served <a href=\"https://www.broward.org/airport/Business/monthlystatistics\" target=\"_blank\" rel=\"noopener nofollow\">32.2 million passengers in 2025, ranking 20th busiest in the US overall and 14th for international traffic</a> per Airports Council International–North America — with the volume swing across seasons that any system serving it has to absorb.",
+        "And there is genuine enterprise software here, which surprises people who only know Broward as a beach county. <a href=\"https://www.cloud.com/contact-us\" target=\"_blank\" rel=\"noopener nofollow\">Cloud Software Group, the company formed around Citrix and TIBCO, lists its headquarters at 851 W Cypress Creek Road in Fort Lauderdale</a>. That corridor has produced two decades of engineers, product managers and sales leaders, which changes who you are talking to: briefs from Cypress Creek arrive with an architecture opinion already attached, and the useful conversation is about tradeoffs rather than education."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Corridors",
+      "h2": ["Where the work", "comes from"],
+      "sub": "Fort Lauderdale's briefs are unusually easy to place geographically. The corridor tells you most of what the project will be before the call starts.",
+      "hoods": [
+        {
+          "name": "Las Olas &amp; Downtown",
+          "note": "Law firms, wealth managers, title and closing companies, family offices. Document workflow and client portals, almost always integrated with a practice-management or accounting system nobody is willing to replace."
+        },
+        {
+          "name": "17th Street Causeway &amp; Harbor Beach",
+          "note": "Yacht brokerages, charter management, crew agencies, marine insurance. Listing and charter inventory, commission splits, and the fact that the same vessel exists under three different names in three different systems."
+        },
+        {
+          "name": "Marina Mile &amp; the New River",
+          "note": "Shipyards, refit and repair, marine trades, parts distribution. Job-cost tracking, technician time capture on a phone in a hull with no signal, and photo-heavy documentation for warranty and insurance disputes."
+        },
+        {
+          "name": "Uptown &amp; Cypress Creek",
+          "note": "Enterprise software, back-office operations, insurance, corporate services. Technically literate buyers, formal security review, and integration with systems that predate the current CTO."
+        },
+        {
+          "name": "Port Everglades &amp; the airport perimeter",
+          "note": "Cruise services, freight forwarding, provisioning, fuel, ground handling. Scheduling, gate and berth coordination, driver apps, and a very low tolerance for a screen that takes four seconds to load."
+        },
+        {
+          "name": "Flagler Village &amp; FAT Village",
+          "note": "Startups, creative studios, small SaaS teams, coworking. Usually MVPs and investor-facing builds where the constraint is runway and the honest answer is a smaller scope than the one in the deck."
+        },
+        {
+          "name": "Fort Lauderdale Beach &amp; Galt Ocean Mile",
+          "note": "Hotels, restaurants, condo and HOA management, vacation rental operators. Seasonal load, guest messaging, and POS or PMS integration that determines the whole architecture."
+        },
+        {
+          "name": "Sistrunk Boulevard &amp; Progresso",
+          "note": "Small business, community organizations, health and social services, trades. Budget is real and finite, which usually means one workflow done properly beats a platform half-built."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Fort Lauderdale", "budgets actually are"],
+      "sub": "Ordered roughly by how often the brief reaches us from this city, not by which sounds most impressive on a capabilities page.",
+      "cards": [
+        {
+          "h3": "Marine trades, refit &amp; shipyards",
+          "p": "The single most distinctive software market in Broward and the one national agencies consistently misjudge. Work orders, job costing, technician time capture, parts and inventory, warranty photo documentation, subcontractor coordination across a yard. The recurring technical problem is capture in dead zones: a technician inside a steel hull or below the waterline has no signal, so the app has to accept input locally, queue it, and reconcile without duplicating a line item when four people sync at once."
+        },
+        {
+          "h3": "Charter &amp; fleet management",
+          "p": "Charter availability, quoting, contracts and deposits, crew rostering, provisioning lists, maintenance schedules, and owner reporting. The hard part is that a charter is a moving object with a legal contract attached: itineraries change mid-trip, expenses accrue offline, and the owner statement at the end has to reconcile to the penny. Multi-currency and multi-jurisdiction handling shows up faster here than in almost any other vertical."
+        },
+        {
+          "h3": "Marina &amp; dockage operations",
+          "p": "Slip inventory, reservations, transient dockage, metered utilities, fuel, work authorizations, gate and access control. Marinas run on a mix of legacy property software, spreadsheets and radio, and the app's real job is to become the single record of what is in which slip and who owes what. Integration with existing accounting is usually the gating item, not the interface."
+        },
+        {
+          "h3": "Cruise, port &amp; logistics services",
+          "p": "With Port Everglades handling <a href=\"https://www.porteverglades.net/articles/post/port-everglades-contributes-483-billion-in-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">record 4.7 million cruise guests and 1.167 million TEUs in FY2025</a>, the surrounding businesses — provisioning, freight forwarding, ground transport, terminal services — run on tight, dependency-heavy schedules. Driver and warehouse apps, shipment visibility, customs documentation, EDI. These apps run on cheap Android hardware in metal buildings with bad signal, which rules out a lot of fashionable architecture."
+        },
+        {
+          "h3": "Aviation, MRO &amp; travel",
+          "p": "Fixed-base operators, charter aviation, maintenance and repair organizations, ground handling, and travel businesses attached to a top-20 US airport. Inspection checklists, parts traceability, crew and duty scheduling, and audit trails that have to survive a regulator reading them. Offline capture matters on the ramp for the same reason it matters on the water."
+        },
+        {
+          "h3": "Enterprise software &amp; SaaS",
+          "p": "The Cypress Creek cluster around <a href=\"https://www.cloud.com/contact-us\" target=\"_blank\" rel=\"noopener nofollow\">Cloud Software Group's Fort Lauderdale headquarters</a> has produced a real population of product and engineering people, and the companies they start or join buy differently. Briefs arrive as staff augmentation, platform work, or an AI feature inside an existing product — not as \"build us an app.\" We embed in your repo, your CI and your review process rather than running a parallel one."
+        },
+        {
+          "h3": "Hospitality, hotels &amp; events",
+          "p": "Booking, guest messaging, loyalty, staff scheduling, event operations. The engineering problem is peak behaviour: the system has to hold up during boat show week and the winter season, not on an average Tuesday in August. PMS and POS integration usually decides the architecture before design starts."
+        },
+        {
+          "h3": "Real estate, condos &amp; construction",
+          "p": "Broward's condo stock, HOA management, waterfront brokerage, and the construction pipeline behind them. Resident and owner portals, inspection and milestone tracking, reserve and assessment reporting. Since Florida's structural inspection and reserve requirements tightened, documentation and evidence trails have become a first-class feature rather than an afterthought."
+        }
+      ]
+    },
+    {
+      "id": "offline",
+      "eyebrow": "The Fort Lauderdale problem",
+      "h2": ["Software that has to work", "past the sea buoy"],
+      "body": [
+        "Almost every marine brief we take from this city contains the same unstated assumption: the app will have a network connection. It will not. A vessel leaves cell coverage a few miles out, satellite links are metered and slow, a yard technician loses signal inside a hull, and a crew member's phone is on a foreign SIM in a Bahamian anchorage. If the product falls over in any of those situations, it is not a marine product.",
+        "<strong>Offline-first is an architecture, not a feature flag.</strong> It means the device holds a real local database, every write is queued with a durable identity, and the UI never lies about whether something has been saved. It means conflict resolution is a designed behaviour — decided per data type, with a rule you can explain to a captain — rather than last-write-wins because nobody thought about it. It means the sync payload is small enough to move over a satellite link that charges by the megabyte, so you sync deltas and compress media rather than pushing full records and 12-megapixel photos.",
+        "It also means being deliberate about media. Maintenance and warranty work is photo-heavy, and photos are the fastest way to make an offline app unusable. We downsample on device, upload on a metered-connection policy the user controls, and keep the record valid whether or not the image has landed yet — because the alternative is a technician who stops using the app by week three.",
+        "<strong>Hardware and sensor integration</strong> is the other half. NMEA 2000 and NMEA 0183 data off the vessel network, Bluetooth sensors, tank and bilge monitoring, engine telemetry, access control at the dock, handheld scanners in a parts room. Bridging to that hardware is where React Native starts to struggle, and it is the main reason Fort Lauderdale briefs tip toward native Swift or Kotlin more often than our average project does. We will tell you which side of that line you are on during scoping, because getting it wrong is a rewrite rather than a refactor.",
+        "None of this is exotic engineering. It is well-understood work that is simply expensive to retrofit, which is why we treat it as a scoping decision on day one rather than a phase two. A product that syncs cleanly at anchor with two bars is worth more to a fleet than one with a better dashboard."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Fort Lauderdale"],
+      "sub": "Real ranges from real engagements. Every range assumes design, engineering, QA and deployment — not engineering hours alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one platform, real users. The goal is a decision. Worth doing before you commit to a fleet-wide rollout you cannot reverse."
+          ],
+          [
+            "Production mobile app",
+            "$45k – $120k",
+            "3 – 5 months",
+            "iOS and Android, accounts, payments, notifications, an admin surface, store submission handled. The most common brief we get."
+          ],
+          [
+            "Offline-first field or vessel app",
+            "$70k – $200k",
+            "4 – 7 months",
+            "Local database, durable sync queue, designed conflict resolution, media handling on metered connections. The Broward-specific build, and the one most often underquoted elsewhere."
+          ],
+          [
+            "Marine or port operations platform",
+            "$80k – $250k",
+            "4 – 8 months",
+            "Charter, fleet, yard or dockage operations integrated with your accounting and scheduling systems. Where most Fort Lauderdale software budget actually goes."
+          ],
+          [
+            "Hardware / sensor integration",
+            "+$20k – $70k",
+            "adds 3 – 8 weeks",
+            "NMEA, Bluetooth peripherals, telemetry, scanners, access control. Priced separately because it usually pushes at least one platform to native."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval over your own manuals, survey reports and service history, document processing, agent workflows. Usually lands on top of software that already exists."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous product work with shifting priorities. Unlimited requests, pause anytime, no change orders. Less than one senior hire in this market."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Not optional: iOS and Android both ship breaking changes yearly."
+          ]
+        ]
+      },
+      "after": [
+        "Four things move a Fort Lauderdale number more than anything else. <strong>Offline behaviour</strong> — a genuine sync layer with designed conflict resolution is the largest single line item in most marine builds, and it cannot be added later without touching everything. <strong>Hardware</strong> — every physical device in scope adds integration and, more painfully, physical testing time; we need access to the actual equipment, not a datasheet. <strong>Integrations</strong> — yard accounting, marina property systems, PMS, POS and freight EDI cost in proportion to how badly they are documented, and marine software is documented badly. <strong>The show calendar</strong> — a build aimed at the last weekend of October compresses QA into the worst possible window unless you start early, and we would rather tell you in August that the date is unrealistic than in October.",
+        "For context on the alternative: Broward marine industry wages run <a href=\"https://www.gflalliance.org/information-center/marine-industries\" target=\"_blank\" rel=\"noopener nofollow\">roughly 16% above the Florida average per the Greater Fort Lauderdale Alliance</a>, and software engineers command more than that. Add benefits, equipment, recruiting and three to six months of hiring and ramp, and a two-person in-house team is a six-figure quarterly commitment before anything ships. The arithmetic is on the <a href=\"/compare/\">comparison page</a>."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Fort Lauderdale engagement usually starts with a thirty-minute call. If you would rather do it in person, we come up — downtown, the Causeway or a yard on the New River, whichever is easier. We would rather spend the time on the constraint you are actually up against than on a capabilities deck.",
+        "For marine and port work we ask for three things early: one real example of the paperwork the app is meant to replace, one hour with the person who will actually use it on a boat or in a yard, and honest information about where connectivity fails. Those three inputs change scope more than any workshop does.",
+        "Within two business days you get a written scope — build shape, stack, the risks we can see from here, and a cost range. That document is yours whether you hire us or not, and more than one person has used it to brief someone else. That is fine. An accurate scope is worth more to this market than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start. Whether we are the right fit is usually obvious by the end of week one, which is the entire point of running it this way rather than asking you to trust a proposal."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Fort Lauderdale?",
+      "a": [
+        "No, and we will not pretend otherwise. Our only office is 2125 Biscayne Blvd, Miami, FL 33137, and you can reach the team that would do your build at +1-645-444-1069.",
+        "We work with Fort Lauderdale clients regularly and we travel to you — downtown, the 17th Street Causeway, Marina Mile, Cypress Creek. It is about 30 miles, roughly 35 minutes off-peak, or half an hour on Brightline. Kickoffs and hard scoping sessions happen in person; delivery is remote, because that is what a 48-hour cadence requires."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Fort Lauderdale?",
+      "a": [
+        "A validation MVP runs $15k–$35k, a production mobile app $45k–$120k, an offline-first field or vessel app $70k–$200k, and a marine or port operations platform $80k–$250k. Hardware and sensor integration typically adds $20k–$70k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In this city the biggest cost drivers are the sync layer, the number of physical devices in scope, and integrations with yard accounting or marina property systems that were never designed to be integrated with. Full breakdown is in the cost table above."
+      ]
+    },
+    {
+      "q": "Do you actually build software for marine and yachting businesses?",
+      "a": [
+        "Yes, and it is one of the reasons this page exists. Charter and fleet management, yard work orders and job costing, crew coordination, marina and dockage operations, owner reporting, maintenance and warranty documentation.",
+        "The reason we treat it as a specialty rather than a vertical listing is that the engineering constraints are genuinely different: intermittent connectivity, metered satellite bandwidth, hardware on the vessel network, and photo-heavy records captured by people wearing gloves. Generic mobile experience does not transfer cleanly to that."
+      ]
+    },
+    {
+      "q": "What does \"offline-first\" actually mean in practice?",
+      "a": [
+        "It means the app holds a real local database and works fully with no connection: create, edit, complete a job, take photos, sign off. Every write is queued with a durable identity so nothing is lost and nothing is duplicated when several devices reconnect at once, and the interface never shows something as saved when it is only saved locally.",
+        "It also means conflict resolution is a designed decision per data type rather than an accident, and that sync payloads are deltas with compressed media so a satellite link does not become the bottleneck. It is well-understood engineering, but it has to be in the architecture from day one — retrofitting it into a shipped app is close to a rewrite."
+      ]
+    },
+    {
+      "q": "Can you integrate with the systems our yard or marina already runs?",
+      "a": [
+        "Usually. Most of what we see is accounting, property or work-order software with a partial API, a CSV export, or a database somebody will let us read. We scope integration against what actually exists rather than what the vendor's marketing page claims, which is why we ask for credentials or sample exports before quoting.",
+        "When there is genuinely no interface, we will say so and propose the least bad option — a scheduled reconciliation, a controlled double entry at one point in the workflow, or replacing the system if that is honestly cheaper. What we will not do is quote an integration we have not verified is possible."
+      ]
+    },
+    {
+      "q": "Can you handle NMEA, Bluetooth sensors and other hardware?",
+      "a": [
+        "Yes — NMEA 2000 and 0183 data off the vessel network, Bluetooth peripherals, tank and bilge monitoring, engine telemetry, handheld scanners, dock access control. This work is where the React Native bridge starts to strain, so hardware-heavy products often go native Swift or Kotlin on at least one platform.",
+        "We need access to the real equipment during the build. Hardware integration quoted from a datasheet is a guess, and physical testing time is a real part of the schedule rather than a rounding error."
+      ]
+    },
+    {
+      "q": "We're a charter operator. Can you handle bookings, contracts and payments?",
+      "a": [
+        "Yes. Availability and quoting, contracts and deposits, itinerary changes mid-charter, provisioning and expense capture, crew rostering, and owner statements that reconcile at the end of the season.",
+        "The two things we plan for early are multi-currency handling and offline expense capture, because a charter that crosses into the Bahamas or the Caribbean accrues costs where there is no connection and in a currency that is not dollars. Both are cheap to design in and expensive to add afterwards."
+      ]
+    },
+    {
+      "q": "Can you build to a Fort Lauderdale International Boat Show deadline?",
+      "a": [
+        "Often, but the honest answer depends on when you ask. The show generated <a href=\"https://www.bizjournals.com/southflorida/news/2025/03/13/south-florida-boat-show-generates-billion-plus.html\" target=\"_blank\" rel=\"noopener nofollow\">$1.78 billion in statewide economic impact in 2024</a>, so we understand why the date is immovable. Ask us in spring or early summer and a full production build is realistic; ask in mid-October and the responsible answer is a narrower, genuinely demo-ready scope rather than a rushed full release.",
+        "App Store and Play Store review is the risk people forget. Store review is not deterministic, and a rejection in the last week of October is unrecoverable. We build submission buffer into any show-dated schedule and we would rather cut scope than gamble on a review queue."
+      ]
+    },
+    {
+      "q": "Do you work with logistics and port services companies around Port Everglades?",
+      "a": [
+        "Yes. Driver and yard apps, shipment and container visibility, provisioning and delivery scheduling, customs documentation, EDI. Port Everglades handled <a href=\"https://www.porteverglades.net/articles/post/port-everglades-contributes-483-billion-in-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">a record 1.167 million TEUs and 4.7 million cruise guests in FY2025</a>, and the businesses around it run on schedules where a delay propagates immediately.",
+        "The design constraint is the hardware and the environment: cheap Android devices, three OS versions behind, in metal buildings with poor signal, used by people who cannot stop to troubleshoot. That means large touch targets, aggressive offline tolerance, and screens that load in under a second on a bad connection."
+      ]
+    },
+    {
+      "q": "We're a software company in the Cypress Creek corridor. Do you do staff augmentation?",
+      "a": [
+        "Yes, and it is a common brief from that part of the city. Our engineers embed in your repo, your standups and your ticket system, and you keep ownership of architecture and process. It adds throughput without a three-to-six-month hiring cycle.",
+        "It also works well when your team is capable but oversubscribed, and the constraint is delivery capacity rather than direction. If your product direction is still open, the advisory engagement is the better instrument, and we will say so."
+      ]
+    },
+    {
+      "q": "Native or cross-platform for a Fort Lauderdale build?",
+      "a": [
+        "React Native for most business apps — one codebase serving both stores, which roughly halves the maintenance surface over three years and matters more than people expect.",
+        "Native Swift or Kotlin when the product depends on hardware the bridge handles poorly: vessel network data, sustained Bluetooth, background location, heavy on-device processing. Fort Lauderdale briefs tip native more often than our average, because marine and aviation work is hardware work. We make that call during scoping and we explain the tradeoff rather than defaulting to whichever we prefer."
+      ]
+    },
+    {
+      "q": "Can you take over a project someone else started?",
+      "a": [
+        "Often, yes. It is a common brief here, usually after an offshore engagement or a solo contractor stalled, and in marine work usually because the sync layer was never designed and the app fails in the field. We start with a fixed-scope audit and tell you plainly whether it is worth continuing or cheaper to rebuild.",
+        "We will give you that answer even when it makes the engagement smaller. A half-finished codebase your crew will not use is a worse outcome than an honest restart."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": [
+    "Wilton Manors",
+    "Oakland Park",
+    "Dania Beach",
+    "Hollywood",
+    "Plantation",
+    "Pompano Beach",
+    "Sunrise",
+    "Davie"
+  ],
+  "nearby": [
+    "app-development-miami",
+    "app-development-aventura",
+    "app-development-boca-raton",
+    "app-development-west-palm-beach"
+  ]
+}

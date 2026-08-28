@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-blog.js && node scripts/build-seo.js",
-    "seo": "node scripts/inject-seo.js && node scripts/make-post-template.js"
+    "seo": "node scripts/inject-seo.js && node scripts/make-post-template.js",
+    "locations": "node scripts/build-locations.js && node scripts/add-locations-nav.js && node scripts/inject-seo.js"
   }
 }

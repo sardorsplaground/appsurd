@@ -1,0 +1,362 @@
+{
+  "slug": "app-development-west-palm-beach",
+  "city": "West Palm Beach",
+  "county": "Palm Beach County",
+  "region": "FL",
+  "group": "Broward &amp; Palm Beach",
+  "linkLabel": "West Palm Beach",
+  "title": "App Development in West Palm Beach — Investor Portals &amp; AI | Appsurd",
+  "metaDescription": "West Palm Beach app development for financial firms, family offices and real estate developers. LP portals, document-heavy workflows, real cost ranges, 48-hour delivery.",
+  "hubBlurb": "Wall Street South, a real estate boom and the Glades behind it. Most briefs here come from firms with compliance obligations, serious money and no in-house engineering team.",
+  "h1": ["App development in", "West Palm Beach"],
+  "dek": "The most common West Palm Beach brief we get is from a firm managing real money, holding real regulatory obligations, and employing exactly zero engineers. That is a specific problem, and it is not the same problem a Miami startup has.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>70 miles</b> from Clematis Street",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "250+",
+      "label": "Financial services firms that have set up in Palm Beach County since the pandemic, per the Business Development Board — the sector reports over 11,018 people employed at an average salary of $126,340.",
+      "source": {
+        "name": "The Palm Beach Post",
+        "url": "https://www.palmbeachpost.com/story/business/real-estate/2026/05/22/west-palm-edward-jones-wall-street/90195108007/"
+      }
+    },
+    {
+      "value": "$10B+",
+      "label": "Planned Related Ross investment across Palm Beach County, including a $772M construction loan for 10 and 15 CityPlace — the largest construction loan recorded in Florida.",
+      "source": {
+        "name": "Related Ross",
+        "url": "https://www.relatedross.com/press-releases/2025-12-17/related-ross-secures-landmark-772-million-construction-financing-loan-led"
+      }
+    },
+    {
+      "value": "$1.25B",
+      "label": "Market value of agricultural products sold in Palm Beach County in 2022 — first in Florida, and the largest agricultural county east of the Mississippi.",
+      "source": {
+        "name": "USDA 2022 Census of Agriculture",
+        "url": "https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Florida/cp12099.pdf"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed, reviewable increment. Not a wireframe — a staging URL you can send to an investment committee."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Seventy miles south,", "and no Clematis Street office"],
+      "body": [
+        "We do not have an office in West Palm Beach. Appsurd works from <strong>2125 Biscayne Blvd in Miami</strong>, and that is the only address we have. If an agency ranking for this search lists an address on Clematis Street or in one of the new Flagler Drive towers, ask which floor and who sits there — a large share of those are virtual suites attached to a page that also exists for forty other cities. In a market where half your prospective clients run diligence for a living, that is a bad thing to be caught doing.",
+        "The distance is about 70 miles. Brightline runs Miami to West Palm Beach in roughly an hour and ten minutes, station to station, which is genuinely easier than driving I-95 and is how we usually travel. Off-peak by car it is around 75 to 90 minutes; at 5pm on a Friday it can be well over two hours, which is worth knowing before someone schedules an afternoon meeting.",
+        "We come up for the things that are better in person: kickoff, the meeting where an investment committee decides what the portal has to show, and the conversation about what your compliance obligations actually require versus what someone thinks they require. Everything after that is remote and asynchronous, because a 48-hour delivery cadence depends on it. Standing meetings do not make software arrive faster.",
+        "What matters more than the mileage is that your project has a named engineer in Eastern time who answers at 9am, and that the firm you hired is one you can call at a real address. That is a low bar, and a surprising number of vendors selling into this market do not clear it."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["What actually", "moved here"],
+      "body": [
+        "West Palm Beach has changed composition faster over the last six years than any other market we serve, and the change is well documented rather than promotional.",
+        "According to the Palm Beach Post, citing the county's Business Development Board, <a href=\"https://www.palmbeachpost.com/story/business/real-estate/2026/05/22/west-palm-edward-jones-wall-street/90195108007/\" target=\"_blank\" rel=\"noopener nofollow\">more than 250 financial services firms have set up in Palm Beach County since the pandemic, and the county's hedge fund and private equity sector reports more than 11,018 people employed at an average salary of $126,340</a>. The Business Development Board has trademarked \"Wall Street South.\" The named arrivals and expansions include Goldman Sachs, Citadel, BlackRock, Elliott Management, Point72 and Virtu Financial, <a href=\"https://bdb.org/news/palm-beach-county-wall-street-south/\" target=\"_blank\" rel=\"noopener nofollow\">along with Bessemer Trust moving into the One Flagler tower, Baron Funds opening its first South Florida office, and Paulson Capital and the Glazer family office Lancer Capital establishing local presences</a>. Wells Fargo relocated its wealth and investment management headquarters into One Flagler.",
+        "The real estate build-out behind that is on a similar scale. Related Ross announced in December 2025 that it had <a href=\"https://www.relatedross.com/press-releases/2025-12-17/related-ross-secures-landmark-772-million-construction-financing-loan-led\" target=\"_blank\" rel=\"noopener nofollow\">secured $772 million in construction financing for the 10 CityPlace and 15 CityPlace office towers — the largest construction loan ever recorded in Florida — adding nearly one million square feet of office space downtown, against more than $10 billion of planned investment across Palm Beach County and an estimated $1.8 billion in economic impact with 850-plus jobs over five years</a>.",
+        "Here is the part that matters for software, and that most agency pages selling into this market get wrong. <strong>These firms have money and compliance obligations, and almost none of them have engineers.</strong> A fifteen-person family office running $2 billion has an operations lead, a controller, an outsourced IT provider and no software capability whatsoever. A single-strategy fund with forty people has a head of investor relations who builds quarterly reporting in Excel and InDesign. The gap is not a lack of budget or ambition; it is that hiring a developer into a nine-person investment team is organizationally awkward and rarely works.",
+        "That produces a distinctive brief: <strong>document-heavy, permission-heavy, low-user-count, high-consequence software</strong>. A limited partner portal serves 200 people, not 200,000 — but each of those 200 can see only their own capital account, the documents have retention requirements, the numbers have to tie to the administrator's books, and a permissions error is a reportable incident rather than a bug. Nothing about that is technically exotic. All of it punishes carelessness.",
+        "The rest of the economy is not financial services, and it would be dishonest to write the page as though it were. Palm Beach County is the largest agricultural county east of the Mississippi: the <a href=\"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Florida/cp12099.pdf\" target=\"_blank\" rel=\"noopener nofollow\">USDA's 2022 Census of Agriculture recorded $1.25 billion in market value of agricultural products sold, ranking first in the state, with 236,659 acres of sugarcane, 82,758 acres of vegetables and nearly 20,000 acres of rice</a>. Sugarcane alone covers <a href=\"https://discover.pbc.gov/coextension/agriculture/pages/sugarcane.aspx\" target=\"_blank\" rel=\"noopener nofollow\">roughly 440,000 acres across the Everglades Agricultural Area, supporting a Florida sugar industry with over 14,000 employees and more than $2 billion in total economic value</a>, per the county's Cooperative Extension. Add county government and the courthouse complex, a large healthcare sector, marine and hospitality along the Intracoastal, and you have four or five genuinely different software markets inside one metro."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Corridors",
+      "h2": ["Where the work", "comes from"],
+      "sub": "The briefs from these corridors have almost nothing in common with each other, which is the most useful thing to know about this city.",
+      "hoods": [
+        {
+          "name": "Flagler Drive &amp; the waterfront towers",
+          "note": "Funds, family offices, wealth management, private credit. Investor and LP portals, document delivery, capital account reporting. Permissions and audit trails are the hard part, not the interface."
+        },
+        {
+          "name": "Clematis Street &amp; downtown",
+          "note": "Boutique financial firms, professional services, law, brokerage offices, restaurants. Client portals and intake workflow, usually replacing a shared inbox and a folder structure nobody trusts."
+        },
+        {
+          "name": "CityPlace &amp; Rosemary Square",
+          "note": "Newer corporate arrivals, tech and healthcare tenants, coworking. Briefs arrive from teams with a national parent company and a local mandate, which means integration with systems they do not control."
+        },
+        {
+          "name": "Okeechobee Boulevard &amp; the office corridor",
+          "note": "Insurance, title and closing, mid-market services, staffing. Document-heavy workflow, e-signature and closing coordination, and reporting across multiple offices."
+        },
+        {
+          "name": "Northwood &amp; the Historic Districts",
+          "note": "Small business, design studios, contractors, community organizations. Budget is real and finite, so one workflow built properly beats a platform half-built."
+        },
+        {
+          "name": "The courthouse &amp; county government district",
+          "note": "County administration, courts, public agencies and the vendors serving them. Accessibility compliance, procurement, and predictable performance for the whole public rather than users on new phones."
+        },
+        {
+          "name": "Warehouse District &amp; the airport perimeter",
+          "note": "Light industrial, distribution, trades, aviation services. Field and dispatch apps on cheap Android hardware, plus inventory and route work that has to tolerate poor signal."
+        },
+        {
+          "name": "Westward toward Loxahatchee &amp; the Glades",
+          "note": "Agriculture, equestrian, packing and processing, agricultural services. Crop and field records, harvest crew tracking, equipment maintenance — and connectivity that fails hundreds of yards from the road."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the West Palm Beach", "budgets actually are"],
+      "sub": "Ordered roughly by how often the brief reaches us from this city, not by which sounds most impressive.",
+      "cards": [
+        {
+          "h3": "Funds, family offices &amp; private capital",
+          "p": "The defining category, driven by <a href=\"https://www.palmbeachpost.com/story/business/real-estate/2026/05/22/west-palm-edward-jones-wall-street/90195108007/\" target=\"_blank\" rel=\"noopener nofollow\">the 250-plus financial services firms that have arrived in the county since the pandemic</a>. LP and investor portals, capital account and statement delivery, subscription and onboarding workflow, data rooms, quarterly reporting. The recurring technical problem is entity-level permissioning: one human being can be an LP in three vehicles through two trusts, and getting that wrong is a compliance incident rather than a defect."
+        },
+        {
+          "h3": "Real estate development &amp; construction",
+          "p": "With <a href=\"https://www.relatedross.com/press-releases/2025-12-17/related-ross-secures-landmark-772-million-construction-financing-loan-led\" target=\"_blank\" rel=\"noopener nofollow\">nearly a million square feet of new downtown office space under construction and $10 billion of planned county investment</a>, the tooling demand is real: project and draw tracking, budget-versus-actual by cost code, RFI and change order workflow, punch lists, leasing pipelines, investor reporting on individual assets. The hard part is that the source of truth is split between accounting software, a project management tool and a construction manager's spreadsheet."
+        },
+        {
+          "h3": "Wealth management &amp; insurance",
+          "p": "Client and household portals, document delivery, onboarding, advisor and agent tooling, policy servicing. Requirements that shape the architecture: permissioning across households and entities, immutable audit logs, records retention, and controlled document access. These are structural decisions — adding them after launch usually means rewriting the data layer."
+        },
+        {
+          "h3": "Legal, title &amp; closing services",
+          "p": "Client portals, intake automation, matter management, closing coordination, e-signature and document assembly, and increasingly retrieval over document sets. Our work for the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> is the public version of the same problem: accessibility, predictable performance, and zero tolerance for a wrong answer stated confidently."
+        },
+        {
+          "h3": "Healthcare &amp; senior services",
+          "p": "Patient intake and scheduling, care coordination, remote monitoring, family-facing portals, concierge medicine. HIPAA determines the architecture, and accessibility is a commercial requirement rather than a compliance one given the county's demographics. The failure we are most often asked to fix is a portal that works and that patients over 70 cannot use."
+        },
+        {
+          "h3": "Government &amp; public agencies",
+          "p": "County administration, courts and the vendors serving them. Public-facing information services, permit and licensing workflow, case lookup, internal dashboards. Accessibility compliance and procurement are real constraints, and our engagements with the <a href=\"/work/nypd.html\">NYPD</a> and the Supreme Court of Ohio were both run inside environments with no tolerance for improvisation."
+        },
+        {
+          "h3": "Agriculture &amp; the Glades",
+          "p": "The part of this economy nobody writes a landing page about, despite <a href=\"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Florida/cp12099.pdf\" target=\"_blank\" rel=\"noopener nofollow\">$1.25 billion in agricultural products sold in 2022</a>. Field and block records, harvest crew tracking and piece-rate pay, equipment maintenance, food safety and traceability documentation, packinghouse throughput. Connectivity fails in the field, so offline capture is mandatory and the app has to run on a cheap, dusty Android phone."
+        },
+        {
+          "h3": "Marine, hospitality &amp; events",
+          "p": "Charter and marina operations along the Intracoastal, hotels, private clubs, the equestrian season in Wellington, and the Palm Beach International Boat Show. Bookings, membership, guest messaging, event registration and staff scheduling. The engineering problem is seasonality: the system has to hold through the winter season, not on an average Tuesday in August."
+        }
+      ]
+    },
+    {
+      "id": "noengineers",
+      "eyebrow": "The West Palm Beach problem",
+      "h2": ["Building for a firm with", "no engineering team"],
+      "body": [
+        "Most of our West Palm Beach clients have serious regulatory obligations and no technical staff. That combination changes almost every engineering decision, and getting it right is mostly about restraint.",
+        "<strong>Nobody there can operate infrastructure, so we do not build any that needs operating.</strong> Managed platforms, boring dependencies, one database, minimal moving parts. A clever architecture that requires a Kubernetes-literate engineer to keep alive is not an asset to a nine-person investment team — it is a liability that becomes visible eighteen months later when something breaks and there is nobody to call. We optimise for the smallest system that meets the requirement and can be understood by whoever inherits it.",
+        "<strong>Permissioning is the product.</strong> In an LP portal, the interesting engineering is not the dashboard, it is the authorization model: investors, entities, trusts, advisors with view-only rights, an administrator who can see everything, and an auditor who needs to see what everyone else saw. We model that explicitly, test it adversarially, and log every access — because \"the wrong investor could see another investor's capital account\" is the failure mode that ends the engagement and possibly the relationship with the LP.",
+        "<strong>Documents are the workload, not an attachment.</strong> Quarterly letters, K-1s, capital calls, subscription documents, side letters, closing binders. That means versioning, watermarking where required, controlled and expiring access, retention rules, download logging, and search that works across scanned PDFs. It also means the delivery workflow has to be usable by an IR associate on a deadline — if publishing a quarterly package takes an hour and a support ticket, it will be done by email instead and the portal will die quietly.",
+        "<strong>Numbers must tie out.</strong> The portal is not the book of record; the fund administrator is. So we build reconciliation in from the start: import from the administrator, validate against expected totals, and refuse to publish a period that does not balance rather than showing an investor a number that is wrong by $400. Firms are consistently more impressed by a system that blocks a bad publish than by one with a better chart.",
+        "<strong>And AI has to be constrained here or it should not exist.</strong> Retrieval over your own documents — LPAs, side letters, diligence files, policy manuals — is genuinely valuable and is the most requested work we get from this city. But it only ships with citations back to source documents, a measured evaluation set built from your real files, and an explicit refusal behaviour when the answer is not in the corpus. A confidently wrong answer about a side letter provision is worse than no answer, and we would rather ship a narrower feature that is trustworthy."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in West Palm Beach"],
+      "sub": "Real ranges from real engagements. Every range assumes design, engineering, QA and deployment — not engineering hours alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Advisory &amp; architecture engagement",
+            "From $4,995",
+            "2 – 4 weeks",
+            "Fixed scope: what to build, how it should be structured, what it costs, and what your compliance obligations actually require. The right first step when nobody internally owns technology."
+          ],
+          [
+            "Investor / LP portal",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Entity-level permissions, document delivery with access logging, capital account reporting, administrator reconciliation. The defining West Palm Beach build."
+          ],
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one platform, real users. Useful before committing to a platform that will carry regulated data."
+          ],
+          [
+            "Production mobile app",
+            "$45k – $120k",
+            "3 – 5 months",
+            "iOS and Android, accounts, notifications, an admin surface, store submission handled. Often the client-facing surface of a larger platform."
+          ],
+          [
+            "Real estate development platform",
+            "$70k – $220k",
+            "4 – 8 months",
+            "Draw and budget tracking by cost code, change orders, leasing pipeline, asset-level investor reporting, integrated with your accounting system."
+          ],
+          [
+            "Document AI &amp; retrieval",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval with citations over LPAs, side letters, diligence files or policy manuals, plus classification and extraction. Includes an evaluation set built from your real documents."
+          ],
+          [
+            "Offline field app (ag / inspection)",
+            "$60k – $160k",
+            "4 – 7 months",
+            "Local database, durable sync queue, photo capture on metered connections, cheap Android hardware. The Glades and inspection-heavy version of a mobile build."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous product work with shifting priorities. Unlimited requests, pause anytime, no change orders. A fraction of the loaded cost of one hire in this market."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Not optional, and it matters more when you have no internal engineer."
+          ]
+        ]
+      },
+      "after": [
+        "Four things move a West Palm Beach number more than anything else. <strong>The permissioning model</strong> — an LP portal with entities, trusts and advisor access costs materially more than one with a flat user list, and it cannot be simplified later. <strong>Document volume and format</strong> — scanned PDFs, inconsistent naming and twenty years of closing binders cost more to make searchable than a clean folder of native files. <strong>Reconciliation</strong> — every external system whose numbers must tie out, particularly a fund administrator, adds real engineering. <strong>Who owns it afterwards</strong> — if the answer is nobody, we deliberately build something smaller and duller, which is cheaper to build and much cheaper to keep alive.",
+        "On the alternative: the county's hedge fund and private equity sector reports an <a href=\"https://www.palmbeachpost.com/story/business/real-estate/2026/05/22/west-palm-edward-jones-wall-street/90195108007/\" target=\"_blank\" rel=\"noopener nofollow\">average salary of $126,340</a>, and a senior software engineer you would trust with regulated data costs more than that here. Add benefits, equipment, recruiting and three to six months to hire and ramp — and then consider what happens when your only engineer leaves a nine-person firm. The arithmetic, including the cases where hiring is genuinely the better answer, is on the <a href=\"/compare/\">comparison page</a>."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A West Palm Beach engagement usually starts with a thirty-minute call, and an NDA before it if you would prefer. If in person is easier we come up — Flagler Drive, CityPlace, downtown, or out west if the project is agricultural. We would rather spend the time on the constraint you are actually up against than on a capabilities deck.",
+        "For portal and document work we ask for three things early: a redacted sample of the reporting package you send today, a clear statement of who is allowed to see what, and the name of the administrator or system the numbers have to tie to. Those three inputs shape the architecture more than any workshop does.",
+        "Within two business days you get a written scope — build shape, stack, permissions model, the risks we can see from here, and a cost range. It is written to be forwarded to a partner, a CFO or outside counsel, and it is yours whether you hire us or not. Several people have used ours to brief someone else. That is fine; an accurate scope is worth more to this market than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start. Whether we are the right fit is usually obvious by the end of week one, which is the point of running it this way instead of asking you to trust a proposal."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in West Palm Beach?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137, and the number that reaches the team who would do your build is +1-645-444-1069. We are not going to list a Clematis Street suite we do not occupy.",
+        "We work with West Palm Beach clients regularly and we travel to you. It is about 70 miles, roughly an hour and ten minutes on Brightline or 75–90 minutes by car off-peak. Kickoffs and the meetings where an investment committee decides what the product must show happen in person; delivery is remote, because that is what a 48-hour cadence requires."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in West Palm Beach?",
+      "a": [
+        "An advisory and architecture engagement starts at $4,995, a validation MVP runs $15k–$35k, an investor or LP portal $60k–$180k, a production mobile app $45k–$120k, and a real estate development platform $70k–$220k. Document AI and retrieval work runs $25k–$90k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In this market the biggest cost drivers are the complexity of the permissions model, the volume and format of the documents involved, and how many external systems the numbers have to reconcile against. Full breakdown is in the cost table above."
+      ]
+    },
+    {
+      "q": "We're a fund. Can you build an LP or investor portal?",
+      "a": [
+        "Yes — it is the most common brief we get from this city. Entity-level permissions, capital account and statement delivery, document distribution with access logging, subscription and onboarding workflow, data rooms, and reconciliation against your administrator's numbers.",
+        "The engineering that matters is the authorization model, because one human can be an LP across several vehicles through multiple trusts. We model that explicitly and test it adversarially. We also build the publish step so that a period which does not reconcile cannot be released to investors at all."
+      ]
+    },
+    {
+      "q": "We have compliance obligations but nobody technical on staff. Is that a problem?",
+      "a": [
+        "No — it is the normal situation here, and it changes how we build rather than whether we can. We deliberately choose boring, managed infrastructure with few moving parts, because a system that needs a Kubernetes-literate engineer to stay alive is a liability for a firm that does not employ one.",
+        "We also document everything for whoever inherits it, and we will tell you honestly when the right answer is a smaller, duller system than the one you asked about. The most common expensive mistake in this market is a firm with no engineers commissioning an architecture that assumes it has several."
+      ]
+    },
+    {
+      "q": "Can you work within our regulatory requirements?",
+      "a": [
+        "We build to the controls your compliance function specifies — access logging, records retention, immutable audit trails, restricted document access, encryption at rest and in transit, least-privilege administrative access. How we handle client data and credentials is documented on our <a href=\"/security/\">security page</a>.",
+        "To be clear about the boundary: we are software engineers, not your compliance counsel. We will not tell you what SEC rules require of your firm. We will implement what your compliance officer or outside counsel specifies, document it, and support the examination when someone asks how it works."
+      ]
+    },
+    {
+      "q": "Can you build AI features over our documents?",
+      "a": [
+        "Yes, and it is the fastest-growing request from this city — retrieval over LPAs, side letters, diligence files, policy manuals and closing binders, plus classification and extraction. We are an official OpenAI partner and we build this as a product feature rather than a chatbot bolted on at the end.",
+        "It only ships with three things: citations back to the source document and page, an evaluation set built from your real files so accuracy is measured rather than assumed, and an explicit refusal when the answer is not in the corpus. A confidently wrong answer about a side letter provision is worse than no answer. Our <a href=\"/work/stanford-university.html\">Stanford University</a> engagement was built under exactly that constraint."
+      ]
+    },
+    {
+      "q": "Do you build tooling for real estate developers?",
+      "a": [
+        "Yes. Draw requests and budget-versus-actual by cost code, RFI and change order workflow, milestone and inspection tracking, leasing pipelines, and asset-level investor reporting. With <a href=\"https://www.relatedross.com/press-releases/2025-12-17/related-ross-secures-landmark-772-million-construction-financing-loan-led\" target=\"_blank\" rel=\"noopener nofollow\">nearly a million square feet of new downtown office space in construction</a>, this work is not hypothetical here.",
+        "The recurring difficulty is that the source of truth is split between your accounting system, a project management tool and a construction manager's spreadsheet. We decide explicitly which system owns which fact before building anything, because a dashboard that averages three disagreeing sources is worse than no dashboard."
+      ]
+    },
+    {
+      "q": "Do you work with agricultural operations out toward the Glades?",
+      "a": [
+        "Yes. Field and block records, harvest crew tracking and piece-rate pay, equipment maintenance, food safety and traceability documentation, packinghouse throughput. Palm Beach County recorded <a href=\"https://www.nass.usda.gov/Publications/AgCensus/2022/Online_Resources/County_Profiles/Florida/cp12099.pdf\" target=\"_blank\" rel=\"noopener nofollow\">$1.25 billion in agricultural products sold in 2022, first in Florida</a>, so this is a real market rather than a courtesy mention.",
+        "The engineering constraints are the opposite of a downtown portal: connectivity fails in the field, so the app needs a local database and a durable sync queue; hardware is cheap Android phones used with dirty hands; and Spanish and Creole language support is often a day-one requirement rather than a later phase."
+      ]
+    },
+    {
+      "q": "Do you work with county government or public agencies?",
+      "a": [
+        "Yes. Public-facing information services, permit and licensing workflow, case and record lookup, internal dashboards. Accessibility compliance and predictable performance across older devices are hard requirements rather than nice-to-haves.",
+        "Our engagements with the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> and the <a href=\"/work/nypd.html\">NYPD</a> were both run inside formal procurement and security environments. We are comfortable with public-sector process, including the parts that take longer than anyone would like."
+      ]
+    },
+    {
+      "q": "Our data is sensitive. Who at your firm can see it?",
+      "a": [
+        "As few people as the work allows. We prefer to build against synthetic or redacted data wherever it is possible, use least-privilege access on your systems, and remove access when the engagement ends. Named individuals, logged access, no shared credentials.",
+        "We will sign your NDA before the first detailed conversation, and your MSA and confidentiality terms after. If your requirements exceed what a 19-person firm can reasonably attest to, we will say so on the first call rather than after you have spent six weeks in diligence."
+      ]
+    },
+    {
+      "q": "Native, cross-platform or just a web app?",
+      "a": [
+        "For most West Palm Beach briefs the honest answer is a responsive web application. An LP portal used quarterly by 200 investors does not need to be in an app store, and putting it there adds review cycles and maintenance for no benefit.",
+        "React Native when a mobile app is genuinely warranted — client-facing products used weekly, field apps, anything with notifications at its core. Native Swift or Kotlin when the product depends on hardware the bridge handles poorly: sustained camera work for inspections, Bluetooth peripherals, background location. We make the call in scoping and explain the tradeoff."
+      ]
+    },
+    {
+      "q": "Can you take over a project someone else started?",
+      "a": [
+        "Often, yes. It is a common brief here, typically after an offshore engagement stalled or a contractor built something nobody internally can now maintain. We start with a fixed-scope audit and tell you plainly whether it is worth continuing or cheaper to rebuild.",
+        "In portal work we look hardest at the authorization model, because that is where inherited projects most often have a real problem rather than a cosmetic one. We will give you that answer even when it makes the engagement smaller."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": [
+    "Palm Beach",
+    "Palm Beach Gardens",
+    "North Palm Beach",
+    "Riviera Beach",
+    "Lake Worth Beach",
+    "Wellington",
+    "Jupiter",
+    "Belle Glade"
+  ],
+  "nearby": [
+    "app-development-boca-raton",
+    "app-development-fort-lauderdale",
+    "app-development-miami",
+    "app-development-aventura"
+  ]
+}

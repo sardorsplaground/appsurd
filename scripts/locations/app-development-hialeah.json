@@ -1,0 +1,339 @@
+{
+  "slug": "app-development-hialeah",
+  "city": "Hialeah",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Hialeah",
+  "title": "App Development in Hialeah — Spanish-First Software | Appsurd",
+  "metaDescription": "Hialeah app development for manufacturers, distributors, trades and family-owned businesses. Spanish-first builds, honest budgets, shop-floor and inventory tooling. Delivery in 48 hours.",
+  "hubBlurb": "Twelve miles northwest of our office and the sixth largest city in Florida. Manufacturing, food distribution, trades and family businesses — where the software has to work in Spanish and pay for itself.",
+  "h1": ["App development in", "Hialeah"],
+  "dek": "Hialeah is a working city: factories, food distributors, body shops, warehouses and thousands of family-owned businesses run on paper, WhatsApp and one person who knows everything. We build the software that replaces the paper without replacing that person, in Spanish, on a budget that makes sense.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>Hialeah</b> ~12 miles from our office",
+    "<b>Spanish-first</b> builds, not translations",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "91.9%",
+      "label": "Share of Hialeah residents aged 5+ who speak Spanish at home — one of the highest of any city in the United States. Only 7.4% speak only English.",
+      "source": {
+        "name": "Census Reporter (ACS 2020–2024)",
+        "url": "https://censusreporter.org/profiles/16000US1230000-hialeah-fl/"
+      }
+    },
+    {
+      "value": "8.4%",
+      "label": "Share of employed Hialeah residents working in manufacturing — nearly double the 4.5% rate for Miami-Dade County as a whole.",
+      "source": {
+        "name": "Census Reporter (ACS 2020–2024)",
+        "url": "https://censusreporter.org/profiles/16000US1230000-hialeah-fl/"
+      }
+    },
+    {
+      "value": "~$21/sq ft",
+      "label": "Typical Hialeah retail rent, against $40–$50 across Miami-Dade and up to $100 in Wynwood. Lower overhead is why so many businesses start here.",
+      "source": {
+        "name": "Miami Herald",
+        "url": "https://www.miamiherald.com/news/business/article316414686.html"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed increment. Not a slide deck — something on a screen that the person doing the job can react to."
+    }
+  ],
+  "alsoServes": ["Hialeah Gardens", "Miami Lakes", "Medley", "Opa-locka", "Miami Springs", "Palm Springs North"],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Twelve miles", "and one bridge away"],
+      "body": [
+        "We don't have an office in Hialeah. Appsurd works from <strong>2125 Biscayne Blvd</strong> in Miami, and that's the only address we have. Hialeah is about twelve miles northwest — twenty minutes up the 112 and across, more when the Okeechobee corridor is backed up with trucks.",
+        "We say that plainly because a lot of the firms ranking for \"app development Hialeah\" are national operations with a registered agent address and the same page running in dozens of cities. There is a version of this business that never sets foot in the city it's selling to. We'd rather give you the drive time and then show up.",
+        "For the kind of work Hialeah actually needs, showing up is most of the job. You cannot design a production-floor tool from a requirements document. Somebody has to stand next to the machine, watch which numbers get written on the clipboard, notice that the second-shift supervisor does it differently, and find out that the real bottleneck is a fax from a customer. We do that in person, in Spanish if that's the language of the floor, and we don't bill it as discovery theatre.",
+        "After kickoff, delivery is remote and asynchronous — that's what shipping every 48 hours requires. But the walkthroughs, the training and the hard conversations about what the system will and won't do are worth the drive, and we make it."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["A working city,", "and a big one"],
+      "body": [
+        "Hialeah is the <a href=\"https://www.hialeahfl.gov/467/About-Hialeah\" target=\"_blank\" rel=\"noopener nofollow\">sixth largest city in Florida with more than 224,000 residents</a>, packed into roughly twenty square miles. It is also the least accurately described city in South Florida, mostly by people selling to it. It is not a suburb of Miami and it is not a market that wants a cheaper version of a Brickell app. It is an industrial and small-business economy with its own language, its own margins and its own standards for whether something is worth paying for.",
+        "The language fact is the one that changes every product decision. Census figures compiled by <a href=\"https://censusreporter.org/profiles/16000US1230000-hialeah-fl/\" target=\"_blank\" rel=\"noopener nofollow\">Census Reporter</a> show 91.9% of residents aged five and over speak Spanish at home and only 7.4% speak English exclusively. 95.1% of residents are Hispanic and 73.7% are of Cuban origin — about 166,000 people, the largest concentration in the country. Nearly three quarters of residents, 74.5%, are foreign born. The <a href=\"https://www.geoplan.ufl.edu/agol/archived_content/ACS_2023/CENPLACE2023/9387_Hialeah_city.pdf\" target=\"_blank\" rel=\"noopener nofollow\">University of Florida's sociocultural data report for Hialeah</a> adds the operational detail: 59.3% of residents speak English less than \"very well,\" and 36,094 of the city's 77,307 households are Spanish-speaking households with limited English.",
+        "In software terms that is unambiguous. Spanish is not a localization phase. It is the primary language of the product, and English is the second one. An interface, an error message, a training video and a support line that only exist in English will produce a system that staff work around rather than with — and then the vendor blames the users.",
+        "The industrial base is real and measurable. 8.4% of employed Hialeah residents work in manufacturing, nearly double the 4.5% countywide share, alongside 11.3% in construction and 10.9% in transportation and warehousing. That is a city of shops, plants, distributors, fabricators and trades — not a city of offices. On the modern end of that spectrum, industrial developers keep expanding: <a href=\"https://www.connectcre.com/stories/terreno-adds-to-hialeah-industrial-park/\" target=\"_blank\" rel=\"noopener nofollow\">Terreno Realty delivered another 220,000-square-foot building at Countyline Corporate Park in Hialeah</a> as part of an ongoing phase of that campus.",
+        "The economics of a Hialeah project are different too, and pretending otherwise wastes everyone's time. Median household income is $55,594, well below the county's professional corridors, and typical retail rent is <a href=\"https://www.miamiherald.com/news/business/article316414686.html\" target=\"_blank\" rel=\"noopener nofollow\">around $21 per square foot against $40–$50 across Miami-Dade and up to $100 in Wynwood, per the Miami Herald</a> — which also reported that Hialeah entrepreneurs receive an average SBA loan of $331,000 and that the city ranked fourth nationally in a Nextiva study of places to start a small business, built on Census Bureau and SBA data. Lower overhead is a real competitive advantage here, and a software proposal that ignores it is a proposal that doesn't close.",
+        "What that means practically: most good Hialeah projects are small, specific and paid for by a measurable saving. One process, one department, a number you can point at. We will tell you when a $120,000 platform is the wrong instrument, because in this city it usually is."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Districts",
+      "h2": ["Where the work", "comes from"],
+      "sub": "Twenty square miles, and the brief changes a lot between the industrial corridors and the retail streets.",
+      "hoods": [
+        {
+          "name": "Okeechobee Road &amp; the rail corridor",
+          "note": "Trucking, building materials, aggregates, recycling and heavy trades along the rail spur. Yard and gate check-in, weight and delivery tickets, dispatch and equipment maintenance logs, usually replacing carbon-copy pads."
+        },
+        {
+          "name": "Countyline Corporate Park &amp; northwest Hialeah",
+          "note": "Modern big-box distribution near the county line. Warehouse receiving and picking, inventory accuracy, labour tracking and customer-facing stock portals, all on scanner hardware inside buildings where Wi-Fi coverage is uneven."
+        },
+        {
+          "name": "Palm Springs Mile &amp; West 49th Street",
+          "note": "Dense family-owned retail, clinics, insurance agencies, tax preparers, bakeries and services. Small, sharp projects: booking, payments, memberships, digital forms and a website that works properly on an older phone in Spanish."
+        },
+        {
+          "name": "NW 107th Avenue &amp; the Hialeah Gardens edge",
+          "note": "Light manufacturing, food processing and distribution. Production tracking, batch and lot records, quality checks, order picking, and route sheets for delivery drivers who currently work from a printed list."
+        },
+        {
+          "name": "East Hialeah &amp; the Leah Arts District",
+          "note": "Older warehouse blocks near Hialeah Park, with newer mixed-use and creative tenants moving in alongside long-standing shops. Mixed briefs: leasing and property tools, studio and event operations, and small-batch producers outgrowing spreadsheets."
+        },
+        {
+          "name": "Westland Mall &amp; West 68th Street",
+          "note": "Retail plus a substantial medical cluster around the hospital and specialist offices. Patient intake and scheduling, senior-care coordination, pharmacy and transport logistics — with Spanish and large type as functional requirements."
+        },
+        {
+          "name": "Hialeah Drive &amp; the city centre",
+          "note": "City government, professional offices, notaries, contractors and business services. Permitting-adjacent workflows, document collection, client portals and the paperwork chains that currently live in email attachments."
+        },
+        {
+          "name": "Hialeah Park &amp; the Tri-Rail corridor",
+          "note": "Events, hospitality and the transit-oriented parcels around Hialeah Market station. Ticketing, staffing and event operations, plus the seasonal load patterns that come with a venue calendar."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Hialeah", "budgets actually are"],
+      "sub": "Ranked roughly by how often the brief reaches us from a Hialeah address. Almost all of it is an operating business trying to run better, not a startup chasing a round.",
+      "cards": [
+        {
+          "h3": "Light manufacturing &amp; fabrication",
+          "p": "Metal and plastics work, millwork, signage, uniforms and apparel, assembly. The recurring problem is that the production schedule lives on a whiteboard and job status lives in the head of one supervisor, so nobody can answer \"where is that order\" without walking the floor. We build job tracking, work orders, machine and shift logs, and simple scheduling — on devices that survive a shop environment, with Spanish-first labels and few enough taps that they get used mid-shift."
+        },
+        {
+          "h3": "Food production, bakeries &amp; distribution",
+          "p": "Production runs, ingredient and lot traceability, temperature and sanitation logs, order taking from restaurants and markets, and delivery routes. Traceability is the hard requirement: when a supplier or an inspector asks which batch went where, the answer has to come from a record rather than a memory. Photo capture and offline entry matter, because coolers and production rooms are exactly where the signal dies."
+        },
+        {
+          "h3": "Wholesale distribution &amp; trucking",
+          "p": "Inventory, picking, proof of delivery, route sheets, driver settlement and customer reordering. Most of these businesses already have accounting software and nothing else, which means the first build is usually a thin operational layer over QuickBooks or a similar system rather than a replacement for it. Driver adoption decides whether the data is real: if the app is slower than the printed route sheet, it will be filled in at the end of the day from memory."
+        },
+        {
+          "h3": "Auto repair, body shops &amp; parts",
+          "p": "Estimates, work authorisation, parts ordering, photo documentation for insurers, status updates for customers. The technical problem is the photo trail — dozens of images per job that have to attach to the right vehicle and stay findable a year later when a claim gets disputed. Text-message status updates in Spanish do more for customer satisfaction here than any app screen."
+        },
+        {
+          "h3": "Construction trades &amp; building supply",
+          "p": "With 11.3% of employed residents in construction, this is a deep local market. Crew scheduling and time capture, job costing, punch lists, material takeoffs, permit and inspection tracking, and supplier ordering. Time capture is where the money is: an hour of unrecorded labour per crew per day is a large annual number, and it's the easiest thing to fix first."
+        },
+        {
+          "h3": "Family-owned retail &amp; services",
+          "p": "Bakeries, salons, clinics, agencies, cafeterias, party supply, repair shops. These businesses do not need a platform; they need one thing to stop breaking — appointment no-shows, prepaid balances, deliveries, inventory on twelve high-turn items. The right answer is often a $12k–$30k build or a well-configured off-the-shelf tool, and we'll say so rather than scope something larger."
+        },
+        {
+          "h3": "Healthcare, senior care &amp; pharmacy",
+          "p": "Clinics, home health, adult day care, transport and pharmacies serving a largely Spanish-speaking and significantly older patient population. Intake, scheduling, medication and visit records, caregiver coordination, ride logistics. HIPAA shapes the build, and so does the reality that patients and family members will read every screen in Spanish, at a large type size, or not at all."
+        },
+        {
+          "h3": "Import, export &amp; small-batch trade",
+          "p": "Plenty of Hialeah businesses buy and sell across the Caribbean and Latin America without being freight companies. Quoting, purchase orders, container and pallet tracking, landed cost, multi-currency price lists, and customer ordering portals for buyers in other countries. Country-specific tax IDs and address formats break naive validation, so we handle them explicitly."
+        }
+      ]
+    },
+    {
+      "id": "spanish-first",
+      "eyebrow": "The hard part",
+      "h2": ["Spanish-first, and", "honest about budgets"],
+      "body": [
+        "Three assumptions imported from other markets cause most of the failed software projects we're asked to rescue in Hialeah. They're worth naming.",
+        "<strong>\"We'll add Spanish later.\"</strong> In a city where 91.9% of residents speak Spanish at home and 59.3% speak English less than very well, Spanish is the product, not a translation layer. That means copy written natively rather than machine-translated, layouts that survive strings 20–30% longer than English, Spanish error messages and notifications, Spanish training material, and a support path in Spanish. It also means asking which Spanish: the vocabulary a Cuban-American production supervisor uses is not always the vocabulary a translation vendor picks, and getting it wrong reads as foreign in a way that quietly kills adoption.",
+        "<strong>\"They need to modernise their process.\"</strong> Usually the process is fine and the record-keeping is the problem. A distributor running on a paper route sheet and a WhatsApp group has, in effect, a working system with excellent uptime and no data. The job is to keep the workflow and capture the data — not to impose a new operating model on a business with real margins and no slack. We map what people actually do first, including the shortcuts, and we digitise the version that works rather than the version on the org chart.",
+        "<strong>WhatsApp is not the enemy.</strong> It is where your customers place orders, your crews send photos and your suppliers confirm deliveries, and it is not going away because you bought software. The productive move is to meet it: structured intake that accepts a photo and a voice note, notifications that arrive where people already look, and a system of record that captures what was agreed in a chat. Fighting the habit fails. Absorbing it works.",
+        "<strong>And the budget is a design constraint, not an obstacle.</strong> Median household income here is $55,594 and retail rent is roughly half the county average — the businesses in this city compete on cost discipline. A good Hialeah project has a payback you can calculate: hours of admin removed, inventory shrink reduced, unbilled labour captured, no-shows avoided. We scope to that number. If the honest answer is that a $2,000 off-the-shelf tool plus two days of configuration solves it, we will tell you, and we'd rather lose that project than sell a platform against it.",
+        "Finally, plan for the person who knows everything. Almost every operating business here has one — the shop manager, the bookkeeper, the dispatcher — who holds the process in their head. They are the single biggest determinant of whether a rollout works. We involve them from the first walkthrough, and we build tooling that makes them faster rather than tooling that implies they were the problem."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Hialeah"],
+      "sub": "Real ranges from real engagements, including the small ones. Every range assumes design, engineering, QA and deployment — not engineering alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Digitizing one paper process",
+            "$12k – $30k",
+            "3 – 6 weeks",
+            "One form, one workflow, one department — time sheets, delivery receipts, quality checks, intake. The most common project that actually pays for itself here."
+          ],
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "A new product idea tested with real users before you fund the rest. The goal is a decision, not a launch."
+          ],
+          [
+            "Shop-floor or inventory tool",
+            "$30k – $90k",
+            "2 – 4 months",
+            "Job and production tracking, receiving, counts, barcode scanning on cheap Android hardware, offline entry, supervisor dashboards."
+          ],
+          [
+            "Spanish-first customer app or portal",
+            "$35k – $110k",
+            "3 – 5 months",
+            "Ordering, accounts, payments and notifications for your customers, written natively in Spanish with English at parity."
+          ],
+          [
+            "Internal operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Replacing spreadsheets and chat across sales, production, dispatch and billing. Right for a business at real scale, wrong as a first project."
+          ],
+          [
+            "Integration with what you already run",
+            "$8k – $40k per system",
+            "2 – 8 weeks each",
+            "Accounting, e-commerce, EDI to a large customer, payment processing, carrier APIs. Priced per system because their documentation sets the cost."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous work across several small tools with shifting priorities. Unlimited requests, pause anytime, no change orders."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Budget for it: both mobile platforms ship breaking changes yearly."
+          ]
+        ]
+      },
+      "after": [
+        "What moves a Hialeah number most. <strong>Device reality</strong> — supporting one known Android handheld is cheap, supporting a mixed fleet of old personal phones is a testing matrix. <strong>Offline entry</strong> — needed more often than you'd think, in coolers, production rooms and metal buildings, and it changes the data model rather than adding a screen. <strong>Integrations</strong> — each connected system is its own small project. <strong>Spanish and English at parity</strong> — inexpensive when designed in from the start, costly when bolted on.",
+        "What reduces it: cutting the first release to one process and one shift. We would rather ship one working thing in five weeks and let you decide whether to fund the next one than sell a platform that arrives in month eight. If your project is genuinely a one-week fix, an hourly contractor is cheaper than any retainer and we'll tell you that too — the arithmetic is on the <a href=\"/compare/\">comparison page</a>."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Hialeah engagement usually starts with a thirty-minute call in whichever language you prefer, and then a visit. For anything touching a shop, a warehouse or a clinic, we want to watch a shift rather than read about one.",
+        "Within two business days you get a written scope: what we'd build, what it runs on, which systems it touches, what we think it saves, the risks, and a real cost range. That document is yours whether you hire us or not, and you're welcome to take it to another vendor. An accurate scope is worth more to a business in this city than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start. We aim to have the supervisor, driver or front-desk person who will actually use it holding a working version inside two weeks, because their reaction reorders the roadmap more usefully than any planning meeting."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Hialeah?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137, about twelve miles southeast of Hialeah. We work with businesses across Hialeah, Hialeah Gardens and Miami Lakes, and we drive out to them — shop floors, warehouses and back offices included.",
+        "Ask any agency ranking for this search for a street address and who sits there. Several results for this city are national firms with no presence in Miami-Dade at all."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Hialeah?",
+      "a": [
+        "Digitizing a single paper process runs $12k–$30k. A validation MVP is $15k–$35k. A shop-floor or inventory tool runs $30k–$90k, a Spanish-first customer app or portal $35k–$110k, and a full internal operations platform $60k–$180k. Integrations are priced per system at $8k–$40k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "Most businesses here should start at the small end and fund the next piece from what the first one saves. We'd rather scope a $20,000 project that pays back in a year than a $150,000 platform that stalls in month four."
+      ]
+    },
+    {
+      "q": "Can you build the whole thing in Spanish?",
+      "a": [
+        "Yes, Spanish-first, with English at parity rather than the other way round. Copy written natively instead of machine-translated, Spanish error messages and notifications, Spanish training material and documentation, and layouts tested against strings that run 20–30% longer than English.",
+        "That's the correct default here: <a href=\"https://censusreporter.org/profiles/16000US1230000-hialeah-fl/\" target=\"_blank\" rel=\"noopener nofollow\">91.9% of residents speak Spanish at home and only 7.4% speak only English</a>, and the <a href=\"https://www.geoplan.ufl.edu/agol/archived_content/ACS_2023/CENPLACE2023/9387_Hialeah_city.pdf\" target=\"_blank\" rel=\"noopener nofollow\">University of Florida's data report</a> puts the share speaking English less than very well at 59.3%. We'll also check vocabulary with your own staff, because the Spanish a translation vendor picks is not always the Spanish your floor uses."
+      ]
+    },
+    {
+      "q": "Everything we do runs on WhatsApp and paper. Where do we even start?",
+      "a": [
+        "With one process, and with the person who currently holds it together. We walk the workflow, find the point where information gets lost or re-entered, and digitise that single step first — a delivery receipt, a time sheet, a production log, an order intake form.",
+        "We also design around WhatsApp instead of against it. Your customers and crews are already there, so structured intake that accepts photos and voice notes, plus notifications where people actually look, works far better than telling everyone to change habits because you bought software."
+      ]
+    },
+    {
+      "q": "Our budget is small. Is it worth talking to you?",
+      "a": [
+        "Yes, if the problem is specific. A $12k–$30k build that removes ten hours of admin a week or fixes inventory accuracy is a real project, and it's the most common shape of good work we do in this city.",
+        "And if the honest answer is that an off-the-shelf tool plus a couple of days of configuration solves it for a fraction of that, we'll tell you. We'd rather give away that answer than sell a custom build against it — it's how we get the second project."
+      ]
+    },
+    {
+      "q": "Can you build something for the production floor or the warehouse?",
+      "a": [
+        "Yes. Job and production tracking, receiving and putaway, cycle counts, barcode scanning, quality and sanitation logs, shift handover. We target the hardware you actually issue — often a cheap Android handheld or an older scanner — and we ask for one at kickoff instead of testing on a new phone.",
+        "We also assume the network drops. Metal buildings, coolers and production rooms all eat Wi-Fi, so writes queue locally and the app defines exactly what happens when two people count the same thing. That decision gets made at design time, not after an inventory discrepancy."
+      ]
+    },
+    {
+      "q": "Can it work with QuickBooks or the accounting system we already use?",
+      "a": [
+        "Usually yes, and for most Hialeah businesses that's the right architecture: keep accounting where it is and build a thin operational layer that feeds it, rather than replacing a system your bookkeeper and your accountant both know.",
+        "We scope each integration separately because the effort depends entirely on the other side's API. Where there's no usable API, we use scheduled imports and reconciliation, and we're explicit about how fresh the data will be."
+      ]
+    },
+    {
+      "q": "Our staff aren't comfortable with new software. How do you handle that?",
+      "a": [
+        "By designing for them, in their language, and by piloting with one shift or one crew before rolling anything out. Large touch targets, few taps, no login ritual at every step, and a workflow that mirrors what people already do physically.",
+        "We also involve the person who knows everything — the shop manager, the dispatcher, the bookkeeper — from the first walkthrough. If they think the tool makes them faster, adoption follows. If they think it was built to replace them, nothing else you do will matter."
+      ]
+    },
+    {
+      "q": "Can we meet at our facility instead of your office?",
+      "a": [
+        "Yes, and for operations work we'd prefer it. Two hours watching a shift tells us more than a week of calls, and it surfaces the constraints nobody writes down: the printer, the dead zone, the customer who only sends orders by photo.",
+        "Day-to-day delivery stays remote and asynchronous after kickoff, because that's what shipping every 48 hours requires. We're not going to claim standing meetings make software faster."
+      ]
+    },
+    {
+      "q": "Can you take over a project someone else started?",
+      "a": [
+        "Often, yes. It's a common brief here, usually after an offshore engagement or a relative's friend built something that half works. We start with a fixed-scope audit and tell you plainly whether it's worth continuing or cheaper to restart.",
+        "We'll give you that answer even when it makes the engagement smaller. A half-finished system nobody can maintain is worse than an honest rebuild scoped to what the business actually needs."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has been shipping software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "nearby": [
+    "app-development-miami",
+    "app-development-doral",
+    "app-development-miami-beach",
+    "app-development-coral-gables"
+  ]
+}

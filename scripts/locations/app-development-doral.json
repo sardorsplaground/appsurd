@@ -1,0 +1,338 @@
+{
+  "slug": "app-development-doral",
+  "city": "Doral",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Doral",
+  "title": "App Development in Doral — Logistics &amp; Trade Software | Appsurd",
+  "metaDescription": "Doral app development for freight forwarders, warehouses and corporate HQs. Offline-first driver and scanning apps, EDI and customs integrations. Real cost ranges, 48-hour delivery.",
+  "hubBlurb": "Fifteen miles west of our office, and the densest concentration of freight forwarders, warehouses and Latin American trade offices in the country. Most Doral briefs are operations software, not consumer apps.",
+  "h1": ["App development in", "Doral"],
+  "dek": "Doral runs on cargo, customs paperwork and Spanish-language trade. We build the software that replaces the clipboard, the WhatsApp group and the Excel file three people email around — from an office on Biscayne Boulevard, about twenty-five minutes east of NW 36th Street.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>Doral</b> ~15 miles from our office",
+    "<b>Bilingual</b> squad, Spanish at parity",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "3.4M tons",
+      "label": "Record air freight through Miami International Airport in 2025, up 13.2% on 2024 — the cargo that moves through Doral's warehouses and forwarders.",
+      "source": {
+        "name": "Miami International Airport",
+        "url": "https://www.miami-airport.com/home-cargo.asp"
+      }
+    },
+    {
+      "value": "2,600+",
+      "label": "Trade and logistics companies in Doral, alongside more than 250 company headquarters and 100+ multinationals.",
+      "source": {
+        "name": "City of Doral",
+        "url": "https://www.cityofdoral.com/Businesses/Doral-at-a-Glance"
+      }
+    },
+    {
+      "value": "41%",
+      "label": "Share of Doral residents of Venezuelan origin — roughly 32,000 people, and the reason Spanish is the default language of business here.",
+      "source": {
+        "name": "Census Reporter (ACS 2020–2024)",
+        "url": "https://censusreporter.org/profiles/16000US1217935-doral-fl/"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed increment. Not a wireframe — a staging URL your operations manager can open on the warehouse floor."
+    }
+  ],
+  "alsoServes": ["Medley", "Sweetwater", "Fontainebleau", "Airport West", "Virginia Gardens", "Miami Springs"],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Twenty-five minutes", "east of NW 36th Street"],
+      "body": [
+        "We do not have an office in Doral. Appsurd works from <strong>2125 Biscayne Blvd</strong>, in the corridor between Downtown Miami and the Design District, and that is the only address we have. Doral is roughly fifteen miles west — call it twenty-five minutes on the Dolphin outside of rush hour, and considerably more at 5pm, which anyone who commutes NW 36th Street already knows.",
+        "That matters because a lot of the firms ranking for \"app development Doral\" are running a national landing page with a mail-drop address in one of the office parks off NW 87th Avenue. It's a legal way to run a funnel. It is not a team you can get in a room. We would rather tell you the drive time than pretend we're around the corner.",
+        "For logistics and warehouse work, being in the same county is worth more than it sounds. Half of what goes wrong with a warehouse app is physical: the scanner gun someone actually issues to pickers, the dead spot in the middle of a metal building, the printer that only speaks ZPL, the driver who is not going to log in twice. We come to your facility, walk the process with the people doing it, and test on the hardware you own instead of the phone in the engineer's pocket.",
+        "Day-to-day delivery is still remote and asynchronous, because that's what a 48-hour cadence requires. But kickoff, floor walkthroughs and the arguments about how the data model should handle partial shipments are better in person, and we drive out for those."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["A city built on", "freight and paperwork"],
+      "body": [
+        "Doral is not a smaller Miami. It is a specific kind of place: a city of warehouses, showrooms, customs brokers, back-office headquarters and a very large Latin American business community, wrapped around the western edge of Miami International Airport.",
+        "The scale is real. The City of Doral counts <a href=\"https://www.cityofdoral.com/Businesses/Doral-at-a-Glance\" target=\"_blank\" rel=\"noopener nofollow\">more than 2,600 trade and logistics companies, over 250 company headquarters, more than 100 multinationals and over 50 banking and financial institutions</a> inside about fifteen square miles. The FIU-prepared <a href=\"https://www.cityofdoral.com/files/assets/city/v/1/business/economic-development-reports/city-of-doral-economic-analysis-report-2024-update_fiu_05.01.24.pdf\" target=\"_blank\" rel=\"noopener nofollow\">City of Doral Economic Analysis Report</a> put the city at 4,626 business establishments employing 51,329 people, with wholesale trade the single largest sector at 8,612 workers and transportation and warehousing second at 6,500.",
+        "The airport next door is the engine. MIA handled <a href=\"https://www.miami-airport.com/home-cargo.asp\" target=\"_blank\" rel=\"noopener nofollow\">a record 3.4 million tons of freight in 2025, up 13.2% year over year, against $89 billion in origin-and-destination trade value</a>, and 85% of that freight was international. When a forwarder in Doral tells you a system outage costs them money by the hour, they are not being dramatic.",
+        "The workforce composition follows. Census figures compiled by <a href=\"https://censusreporter.org/profiles/16000US1217935-doral-fl/\" target=\"_blank\" rel=\"noopener nofollow\">Census Reporter</a> show 11.5% of employed Doral residents working in transportation and warehousing against 8.4% countywide, and 6.6% in wholesale trade against 2.9% countywide. Seventy percent of residents are foreign born.",
+        "<strong>And the language of business is Spanish.</strong> About 41% of Doral residents are of Venezuelan origin — some 32,000 people — and 87.5% of residents speak Spanish at home, per the same ACS data. The City's own profile puts Spanish at 89%. Practically, that means a warehouse app with an English-only interface will be used badly, and an internal tool whose error messages only make sense in English will generate support calls instead of solving them.",
+        "The corporate layer is the part outsiders miss. Doral is where a long list of large employers keep their offices — the City lists Carnival, Perry Ellis International, Univision, Brink's, Hellmann Worldwide Logistics, Amadeus North America, AerSale, Badia Spices and Leon Medical Centers among them — and <a href=\"https://www.southcom.mil/Newcomers/Directions-to-SOUTHCOM/\" target=\"_blank\" rel=\"noopener nofollow\">U.S. Southern Command is headquartered at 9301 NW 33rd St in Doral</a>. One caveat worth stating plainly, because vendors keep getting it wrong: Carnival Corporation has been in Doral since the 1980s but <a href=\"https://www.carnivalcorp.com/carnival-corporation-breaks-ground-on-state-of-the-art-global-headquarters/\" target=\"_blank\" rel=\"noopener nofollow\">broke ground on a new global headquarters campus at 887 Carnival Place in the Waterford Business District</a>, which <a href=\"https://www.wlrn.org/business/2025-05-05/carnival-cruise-miami-new-headquarters\" target=\"_blank\" rel=\"noopener nofollow\">WLRN reported is expected to be complete in 2028</a>. Doral's tenant list moves."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Districts",
+      "h2": ["Where the work", "comes from"],
+      "sub": "Doral reads as one grid of office parks from the highway. On the ground the brief changes noticeably depending on which corridor it comes from.",
+      "hoods": [
+        {
+          "name": "NW 36th Street &amp; the cargo corridor",
+          "note": "Freight forwarders, customs brokers, ground handlers, perishables. Work here is documentation and status: house and master bills, ACE/AMS filings, temperature logs, and shipment visibility that a client in Bogotá can check without calling anyone."
+        },
+        {
+          "name": "Beacon Lakes &amp; west Doral industrial parks",
+          "note": "Big-box distribution and 3PL space out toward the Everglades edge. Warehouse management, receiving, cycle counts, labour tracking — all of it on scanner hardware inside tilt-wall buildings where Wi-Fi coverage is a floor plan problem, not an IT preference."
+        },
+        {
+          "name": "Downtown Doral",
+          "note": "Mixed-use offices and residential around NW 53rd Street. Corporate back-office briefs: approval workflows, vendor onboarding, internal reporting, and the dashboards a regional director shows a parent company in another country."
+        },
+        {
+          "name": "The tile &amp; building products district",
+          "note": "Doral bills itself as the country's #1 tile district, and the surrounding showrooms move stone, cabinetry, fixtures and finishes. Catalogue data, lot and dye-lot tracking, quoting tools, contractor portals, and images that have to be colour-accurate."
+        },
+        {
+          "name": "NW 87th Avenue office spine",
+          "note": "Banking, insurance, professional services and Latin American regional offices. Integration work over systems nobody will replace, plus the compliance and audit-trail requirements that come with money moving across borders."
+        },
+        {
+          "name": "Doral Golf / hotel row",
+          "note": "Resorts, conference and event business, and the food service around it. Group booking, event operations, staff scheduling, and demand that swings hard around the trade-show calendar."
+        },
+        {
+          "name": "Medley &amp; the Okeechobee corridor",
+          "note": "Heavier industry just north: aggregates, recycling, truck yards, cold storage. Yard management, gate check-in, driver dispatch and weight tickets, usually replacing carbon-copy forms."
+        },
+        {
+          "name": "County government campus",
+          "note": "Miami-Dade police and fire-rescue facilities sit in Doral. Public-sector adjacent work with formal procurement, accessibility requirements and no tolerance for improvisation — the same shape as our <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> engagement."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Doral", "budgets actually are"],
+      "sub": "Ranked roughly by how often the brief reaches us from a Doral zip code. Almost none of it is a consumer app.",
+      "cards": [
+        {
+          "h3": "Freight forwarding &amp; customs brokerage",
+          "p": "The defining Doral industry and our most common brief here. Shipment files, house and master bills of lading, customs filings, arrival notices, document packs a client can download without emailing an agent. The recurring technical problem is that the source of truth is split across a forwarding system, a shared mailbox and a spreadsheet, so the first job is usually reconciliation rather than new features. Anything customer-facing also needs to be bilingual, because the shipper is frequently in Latin America."
+        },
+        {
+          "h3": "Warehousing, 3PL &amp; distribution",
+          "p": "Receiving, putaway, picking, cycle counts, labour productivity, client-facing inventory portals. The hard part is not the interface, it's the hardware and the building: cheap Android scanner guns two or three OS versions behind, dead zones in the middle of racking, gloves, cold rooms and a network that drops. We build these offline-first with a local queue and explicit conflict handling, because a picker cannot stop working while the app waits for signal."
+        },
+        {
+          "h3": "Import/export &amp; LatAm wholesale trade",
+          "p": "Doral is where goods are bought for a continent. Quoting, purchase orders, container consolidation, landed-cost calculation, multi-currency price lists and B2B ordering portals for buyers in a dozen countries. Tax IDs, phone formats and address rules vary by country, and pretending otherwise produces a validation layer that rejects real customers."
+        },
+        {
+          "h3": "Trucking, drayage &amp; last mile",
+          "p": "Driver apps, dispatch, proof of delivery, ELD-adjacent workflows, yard and gate check-in. Driver adoption is the whole project: if the app takes more taps than the paper it replaced, it will be filled in at the end of the shift from memory, and your data is fiction. We design for one-handed use, large targets, photo capture and signature, and we test with drivers before we ship."
+        },
+        {
+          "h3": "Aviation, aerospace &amp; MRO",
+          "p": "Doral's employer list includes aviation names like AerSale, KLX and B/E Aerospace, and the parts trade around MIA is substantial. Serialised inventory, traceability and certification documents, repair orders, quoting against AOG deadlines. Traceability requirements mean the audit trail is a product requirement, not a logging preference."
+        },
+        {
+          "h3": "Corporate HQ &amp; shared services",
+          "p": "With 250-plus headquarters in the city, a lot of the work is internal: approval chains, vendor and contractor onboarding, expense and commission workflows, and reporting that rolls a Latin American region up to a parent company somewhere else. These projects live or die on integration with the ERP already in place, and on whether the reporting numbers match finance's numbers exactly."
+        },
+        {
+          "h3": "Building products, tile &amp; construction supply",
+          "p": "Showroom and distribution businesses with deep catalogues and physical inventory. Product data management, quote-to-order, contractor and designer portals, sample and job tracking. Image fidelity and stock accuracy carry the experience — a beautiful catalogue app that shows an item as available when it isn't creates more work than it saves."
+        },
+        {
+          "h3": "Spanish-language media, marketing &amp; healthcare",
+          "p": "Univision and Telefutura keep operations in Doral, and clinics like Leon Medical Centers serve a largely Spanish-speaking patient base. Content workflow, scheduling, patient intake and portals — with Spanish written natively rather than translated, and with HIPAA shaping the build wherever patient data is involved."
+        }
+      ]
+    },
+    {
+      "id": "warehouse",
+      "eyebrow": "The hard part",
+      "h2": ["Engineering for", "the warehouse floor"],
+      "body": [
+        "Most software failures we're asked to fix in Doral are not design failures. They are physics and hardware failures, and they show up in a predictable order.",
+        "<strong>The device is not your phone.</strong> The realistic target is a $180 Android handheld or a rugged scanner running an old OS, sometimes with a hardware scan trigger and a keyboard-wedge barcode driver, sometimes with a Bluetooth sled. That constrains the stack: no assumptions about modern browser APIs, no fifteen-megabyte JavaScript bundle, no camera-only scanning when a laser trigger is what the picker's hand already knows. We test on the actual model you issue, and we ask for one at kickoff.",
+        "<strong>The signal will drop.</strong> Tilt-wall construction, steel racking, cold rooms and freight elevators all eat Wi-Fi. Offline-first is not a feature to add later — it changes the data model. Writes get queued locally, every record needs an identity generated on the device, and someone has to decide what happens when two people count the same bin. We make that decision explicit at design time and write it into the spec, because the alternative is silent data loss discovered at inventory.",
+        "<strong>The paperwork is the product.</strong> In freight, the app usually exists to produce a document: a bill of lading, an arrival notice, a delivery receipt, a customs pack. That means label printers, PDF generation, page-perfect layouts, and EDI where trading partners require it. EDI in particular is a discipline rather than a feature — the standard is only half the work and the partner's interpretation of it is the other half, which is why we scope integration per partner instead of quoting \"EDI\" as one line.",
+        "<strong>The user did not ask for this.</strong> Drivers, pickers and dock staff are usually the last people consulted and the first people blamed. We build for them: Spanish-first interfaces, big targets, few taps, no scroll-to-find, and a workflow that mirrors what they already do physically. If the app is slower than the clipboard, it loses, and every metric you were going to report on becomes worthless."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Doral"],
+      "sub": "Real ranges from real engagements, not a calculator built to capture your email. Every range includes design, engineering, QA and deployment — not engineering alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one warehouse, one customer. Best used to prove that staff will actually use it before you fund the platform."
+          ],
+          [
+            "Driver or warehouse app",
+            "$40k – $110k",
+            "2 – 4 months",
+            "Android-first, offline queue, barcode scanning, photo and signature capture, admin surface. The most common Doral brief we get."
+          ],
+          [
+            "Client-facing shipment visibility portal",
+            "$55k – $150k",
+            "3 – 5 months",
+            "Tracking, documents, notifications and bilingual accounts for shippers and consignees, on top of the system you already run."
+          ],
+          [
+            "Internal operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Replacing spreadsheets and WhatsApp across receiving, dispatch, billing and reporting for an operating business. Where most Doral budget goes."
+          ],
+          [
+            "Integration &amp; EDI work",
+            "$15k – $60k per system",
+            "3 – 10 weeks each",
+            "Forwarding or WMS systems, ERP, carrier APIs, EDI 214/315/856 and partner-specific variants. Priced per system because the cost is set by their documentation, not ours."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Document extraction from commercial invoices and packing lists, retrieval over tariff and procedure documents, exception triage. Usually lands on top of software that already exists."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous work with shifting priorities across several small tools. Unlimited requests, pause anytime, no change orders."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Android fleet fragmentation makes this less optional here than elsewhere."
+          ]
+        ]
+      },
+      "after": [
+        "Four things move a Doral number more than anything else. <strong>Hardware</strong> — supporting one known scanner model is cheap; supporting a mixed fleet of four generations of device is a testing matrix and a real line item. <strong>Offline behaviour</strong> — genuine offline-first with conflict resolution typically adds 20–35% over an online-only build, and it is the wrong thing to defer. <strong>Trading-partner integrations</strong> — each EDI partner or carrier API is its own small project, priced separately for a reason. <strong>Spanish at parity</strong> — cheap when designed in, expensive when retrofitted.",
+        "One thing that reduces the number: shrinking scope to a single facility and a single shift before rolling out. We would rather ship one working process to one building in six weeks than a platform to five buildings in eight months. See the <a href=\"/compare/\">comparison page</a> for how this stacks up against hiring, and <a href=\"/services/\">services</a> for the three engagement shapes."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Doral engagement usually starts with a thirty-minute call and, if the work touches a facility, a visit. We want to watch a receiving shift or ride along on a route rather than read a requirements document about one.",
+        "Within two business days you get a written scope: the build shape, the stack, the hardware assumptions, the integrations we can see, the risks, and a cost range. That document is yours whether you hire us or not. Several people have used ours to brief someone else, which is fine — an accurate scope is worth more to this corridor than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start. For warehouse and driver work we aim to put something in a real user's hands inside the first two weeks, because their reaction is the only requirements document that has ever been reliable."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Doral?",
+      "a": [
+        "No. We are based at 2125 Biscayne Blvd, Miami, FL 33137 — about fifteen miles east of Doral — and it is the only office we have. We work with clients across Doral, Medley and Airport West and we drive out to them, including to warehouse floors and dock offices.",
+        "Ask any agency ranking for this search for a street address and who sits there. A surprising number of Doral \"offices\" are mail drops attached to a national landing page."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Doral?",
+      "a": [
+        "A validation MVP runs $15k–$35k. A driver or warehouse app with scanning and offline support is typically $40k–$110k. A client-facing shipment visibility portal runs $55k–$150k, and a full internal operations platform $60k–$180k. Integration and EDI work is priced per system, usually $15k–$60k each. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In Doral the three biggest cost drivers are the device fleet you need to support, whether the app must work with no signal, and how many trading-partner integrations are in scope. The full table is above."
+      ]
+    },
+    {
+      "q": "Can you build for the scanner guns and cheap Android handhelds we already own?",
+      "a": [
+        "Yes, and we ask for one of your actual units at kickoff. We target the hardware you issue rather than the newest phone on the market, including keyboard-wedge scanners, hardware trigger buttons, Bluetooth sleds and older Android versions.",
+        "If your fleet is mixed across several generations, tell us up front. Supporting four device generations is a real testing cost, and it is much cheaper to plan for than to discover during rollout."
+      ]
+    },
+    {
+      "q": "Our warehouse has dead spots. Will the app work without signal?",
+      "a": [
+        "That's a design decision we make at the start, not a patch later. Offline-first means writes queue locally, records get identities generated on the device, and the app defines exactly what happens when two people touch the same bin or shipment.",
+        "Expect it to add roughly 20–35% over an online-only build. It is worth it: an app that fails silently in the racking aisle produces bad inventory data, which costs more than the engineering did."
+      ]
+    },
+    {
+      "q": "Can you integrate with our forwarding system, WMS or ERP?",
+      "a": [
+        "Usually yes. We have built against forwarding and warehouse platforms, carrier APIs, accounting systems and homegrown databases that someone's cousin wrote in Access in 2009. The work is proportional to how well the system is documented and how willing the vendor is to give you API access.",
+        "We scope integrations per system rather than bundling them, because a well-documented REST API and a nightly flat-file drop over SFTP are not the same project even when they move the same data."
+      ]
+    },
+    {
+      "q": "Do you handle EDI with our trading partners?",
+      "a": [
+        "Yes — commonly 214, 315, 856 and 990 style flows, plus whatever variant a specific partner insists on. We treat each partner as its own scoped piece of work, because the standard is only half the job and the partner's interpretation is the other half.",
+        "If you only have two or three partners, a direct integration is often cheaper than a VAN subscription. If you have thirty, it usually isn't. We'll tell you which situation you're in before you commit."
+      ]
+    },
+    {
+      "q": "Do you build in Spanish as well as English?",
+      "a": [
+        "Yes, at parity rather than as a translation layer. Copy gets written twice, layouts are tested against Spanish strings that run 20–30% longer, dates and currency follow the locale, and notifications and error messages arrive in the user's language.",
+        "In Doral this is not optional. Around 87.5% of residents speak Spanish at home according to <a href=\"https://censusreporter.org/profiles/16000US1217935-doral-fl/\" target=\"_blank\" rel=\"noopener nofollow\">ACS data compiled by Census Reporter</a>, and about 41% of the city is of Venezuelan origin. An English-only internal tool will be used badly and blamed on the staff."
+      ]
+    },
+    {
+      "q": "Our drivers hate new software. How do you handle adoption?",
+      "a": [
+        "By designing for them first and testing with them before launch. That means one-handed use, large touch targets, as few taps as the paper form took, photo and signature capture that works in sunlight, and no login ritual at every stop.",
+        "We also recommend piloting on one route or one shift rather than the whole fleet. If the drivers on that route stop asking for the clipboard, you have a rollout. If they don't, you've learned it for the cost of a pilot instead of a platform."
+      ]
+    },
+    {
+      "q": "Can you come to our facility near the airport?",
+      "a": [
+        "Yes, and for operations work we'd rather. Watching a receiving shift or a dispatch morning tells us more in two hours than a week of requirements calls, and it surfaces the constraints nobody writes down — the printer, the dead zone, the two people who quietly do it differently.",
+        "Day-to-day delivery stays remote and asynchronous, because that's what shipping every 48 hours requires. We're not going to claim standing meetings make software faster."
+      ]
+    },
+    {
+      "q": "Can you take over a build that stalled?",
+      "a": [
+        "Often, yes. It's a common brief in this corridor, usually after an offshore engagement or a solo contractor lost momentum. We start with a fixed-scope audit and tell you plainly whether it's worth continuing or cheaper to restart.",
+        "We'll give you that answer even when it makes the engagement smaller. A half-finished warehouse app you can't hire against is a worse outcome than an honest rebuild."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has shipped software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "nearby": [
+    "app-development-miami",
+    "app-development-hialeah",
+    "app-development-coral-gables",
+    "app-development-brickell"
+  ]
+}

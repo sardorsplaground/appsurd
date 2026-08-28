@@ -1,0 +1,325 @@
+{
+  "slug": "app-development-miami",
+  "city": "Miami",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Miami",
+  "title": "App Development in Miami — AI-Native Product Squad | Appsurd",
+  "metaDescription": "Miami app development from a team actually based on Biscayne Boulevard. Real cost ranges, 48-hour delivery, bilingual squad. Built for ACS, Kia, Stanford and NYPD.",
+  "hubBlurb": "Our home market. One squad on Biscayne Boulevard, working Eastern time, building for Brickell fintechs, hospitality groups and the LatAm corridor.",
+  "h1": ["App development in", "Miami"],
+  "dek": "We are not a national agency with a Miami landing page. Appsurd is one squad at 2125 Biscayne Blvd, shipping production software every 48 hours for teams that can walk to our office — and for the ones that will only ever meet us on Zoom.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>Since</b> 2019",
+    "<b>25+</b> brands &amp; orgs",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "$4.13B",
+      "label": "Venture capital raised by South Florida startups across 376 deals in 2025 — up 49% on 2024, and 71% of all Florida VC dollars.",
+      "source": {
+        "name": "eMerge Americas Insights Report",
+        "url": "https://info.emergeamericas.org/hubfs/26-220-01%20eMA%20Insights%20Report_LOW%20RES.pdf"
+      }
+    },
+    {
+      "value": "2,000+",
+      "label": "Startups in Miami, supporting roughly 90,000 jobs — with six active unicorns in the region.",
+      "source": {
+        "name": "Miami-Dade Beacon Council",
+        "url": "https://www.beaconcouncil.com/technology/"
+      }
+    },
+    {
+      "value": "$95,000",
+      "label": "Average salary in Miami's tech sector — the number your in-house build gets benchmarked against, before benefits and overhead.",
+      "source": {
+        "name": "Miami-Dade Beacon Council",
+        "url": "https://www.beaconcouncil.com/technology/"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed, reviewable increment. Not a wireframe — a staging URL you can forward to your board."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["One address,", "not forty-four"],
+      "body": [
+        "Search \"app development Miami\" and most of what you'll find are national firms running the same page in forty different cities, each with a coworking address and a city name swapped into the headline. It's a legitimate way to run a marketing funnel. It is not the same thing as being in Miami.",
+        "Appsurd operates from <strong>2125 Biscayne Blvd</strong>, in the corridor between Downtown and the Design District. That's the only address we have. When a client in Brickell wants to sit in a room and argue about a data model, that happens in person, usually the same week. When a founder in Wynwood needs someone in the building for an investor demo, we're twelve minutes away.",
+        "The practical difference isn't sentiment, it's latency. We work Eastern time, which means a question asked at 9am is answered at 9am — not overnight, and not at the end of a nine-hour offset. Over a three-month build, that difference compounds into weeks.",
+        "We are also honest about the other half: most of our clients are not in Miami, and the work is remote-first by design. The reason the local piece matters is that <strong>somebody on your project is accountable in your time zone and reachable at a real address</strong>. That is a low bar that a surprising number of agencies do not clear."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["Why Miami builds", "differently"],
+      "body": [
+        "Miami's software market doesn't look like Austin's or Seattle's, and building here as though it does is the most common expensive mistake we see.",
+        "The capital is real. South Florida startups raised <strong>$4.13 billion across 376 deals in 2025</strong>, a 49% jump on the year before, taking 71% of all venture dollars in Florida, with an average deal size of $11 million, <a href=\"https://info.emergeamericas.org/hubfs/26-220-01%20eMA%20Insights%20Report_LOW%20RES.pdf\" target=\"_blank\" rel=\"noopener nofollow\">according to the eMerge Americas Insights Report</a>. The Miami-Dade Beacon Council counts <a href=\"https://www.beaconcouncil.com/technology/\" target=\"_blank\" rel=\"noopener nofollow\">more than 2,000 startups supporting roughly 90,000 jobs and six active unicorns</a> in the region.",
+        "But the composition is unusual in three ways that change how you should build.",
+        "<strong>It's a services and trade economy first, tech second.</strong> The largest software budgets in this city sit inside real estate, hospitality, marine, logistics, healthcare and legal firms — not inside software companies. That means most Miami app projects are internal tools, operations platforms and customer portals for established businesses, and they are judged on whether they replace a spreadsheet and a WhatsApp group, not on whether they look like a Bay Area consumer app.",
+        "<strong>It's bilingual and cross-border by default.</strong> A product launched here frequently needs Spanish at parity with English on day one, Latin American payment rails, and content that reads as native rather than machine-translated. Retrofitting that after launch costs several times what building for it costs.",
+        "<strong>Hiring is expensive and competitive.</strong> The average Miami tech salary is <a href=\"https://www.beaconcouncil.com/technology/\" target=\"_blank\" rel=\"noopener nofollow\">around $95,000</a>, and that's an average, not what a senior mobile engineer costs. Add benefits, equipment, recruiter fees and the three-to-six months it takes to hire and ramp, and a two-person in-house team is a six-figure quarterly commitment before a single feature ships."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Neighborhoods",
+      "h2": ["Who we build for,", "block by block"],
+      "sub": "Miami is not one market. The brief changes noticeably depending on which part of the city it comes from.",
+      "hoods": [
+        {
+          "name": "Brickell",
+          "note": "Fintech, private banking, crypto, LatAm treasury. Compliance and audit trails are usually the hard part, not the interface. Expect security review to be a project phase in its own right."
+        },
+        {
+          "name": "Wynwood &amp; the Design District",
+          "note": "Consumer brands, creative agencies, hospitality concepts, marketplaces. Design bar is unusually high and the deadline is normally tied to a launch event, so the schedule genuinely cannot move."
+        },
+        {
+          "name": "Downtown &amp; Edgewater",
+          "note": "Professional services, legal, healthcare admin, property management. Almost always integration work: the app is the friendly surface over a system nobody wants to replace."
+        },
+        {
+          "name": "Coral Gables",
+          "note": "Established firms, family offices, multinational Latin American HQs. Procurement is formal, decisions are slow, and the winning proposal is the one with the clearest maintenance story."
+        },
+        {
+          "name": "Coconut Grove &amp; Key Biscayne",
+          "note": "Marine, yachting, private clubs, members-only services. Offline-first behaviour matters more than anyone expects — connectivity on the water is not a rounding error."
+        },
+        {
+          "name": "Doral &amp; Medley",
+          "note": "Logistics, freight forwarding, import/export, trade. Barcode scanning, driver apps, customs paperwork and the reality that warehouse phones are three OS versions behind."
+        },
+        {
+          "name": "Little Havana &amp; Allapattah",
+          "note": "Small business, food, community services. Spanish-first, budget-real, and usually better served by a tight MVP than by a platform."
+        },
+        {
+          "name": "Miami Beach &amp; South Beach",
+          "note": "Hotels, restaurants, nightlife, events. Seasonal traffic spikes are the engineering problem — the system has to survive Art Basel and Formula 1 weekend, not an average Tuesday."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Miami", "budgets actually are"],
+      "sub": "Ranked roughly by how often the brief lands in our inbox, not by which sounds most impressive.",
+      "cards": [
+        {
+          "h3": "Real estate &amp; property tech",
+          "p": "Miami's defining industry, and the most consistent source of software work. Broker portals, HOA and condo management, tenant and resident apps, showing and inspection tooling, construction progress tracking. The recurring technical problem is MLS and property-data integration, where the data is messy, licensed, and rate-limited."
+        },
+        {
+          "h3": "Hospitality, restaurants &amp; events",
+          "p": "Booking, ordering, loyalty, guest messaging, staff scheduling. The differentiator here is peak-load behaviour and POS integration — a reservation system that degrades gracefully at 8pm on a Saturday in season is worth more than one with a nicer interface."
+        },
+        {
+          "h3": "Fintech, crypto &amp; payments",
+          "p": "Brickell's specialty and the most regulated work we do. KYC and AML flows, cross-border payments, custody interfaces, LatAm remittance rails. We plan for security review, penetration testing and audit logging from the architecture stage, because bolting them on afterwards means rewriting."
+        },
+        {
+          "h3": "Marine &amp; yachting",
+          "p": "A genuinely Miami vertical that almost no national agency thinks about. Charter booking, fleet and maintenance management, crew coordination, marina operations. Offline-first sync is mandatory, not a nice-to-have, because the vessel leaves cell coverage and the app still has to work."
+        },
+        {
+          "h3": "Logistics, freight &amp; trade",
+          "p": "Miami is the LatAm trade gateway, and Doral runs on it. Driver and warehouse apps, shipment visibility, customs documentation, EDI. The apps have to run on cheap Android hardware in a metal building with bad signal, which rules out a lot of fashionable architecture."
+        },
+        {
+          "h3": "Healthcare &amp; wellness",
+          "p": "Patient intake and scheduling, telehealth, remote monitoring, clinic operations, concierge medicine. HIPAA shapes the whole build — data handling, logging, vendor selection, even which analytics tools are allowed near the app."
+        },
+        {
+          "h3": "Legal &amp; professional services",
+          "p": "Client portals, intake automation, document workflow, matter management, and increasingly retrieval over document sets. Our work for the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> is the public version of this problem: accessibility, predictable performance and zero tolerance for a wrong answer stated confidently."
+        },
+        {
+          "h3": "Nonprofits &amp; institutions",
+          "p": "Donor engagement, program management, volunteer coordination, grant reporting. We built the donor engagement platform for the <a href=\"/work/american-cancer-society.html\">American Cancer Society</a>, where the constraint was institutional trust rather than feature count."
+        }
+      ]
+    },
+    {
+      "id": "bilingual",
+      "eyebrow": "Bilingual by default",
+      "h2": ["Building for the", "LatAm corridor"],
+      "body": [
+        "Roughly a third of Miami startups are founded by Latino entrepreneurs, <a href=\"https://www.beaconcouncil.com/technology/\" target=\"_blank\" rel=\"noopener nofollow\">per the Beacon Council</a>, and a large share of the region's commercial activity runs through Latin America. If you build here, bilingual is a starting condition, not a phase two.",
+        "The mistake is treating it as translation. Real parity means <strong>the copy is written twice, not translated once</strong>; that layouts survive Spanish strings running 20–30% longer than English; that dates, currency and address formats switch with the locale; that push notifications and transactional email arrive in the user's language; and that support content, App Store listings and screenshots exist in both.",
+        "There's a technical tail too. Latin American payment methods — Pix in Brazil, SPEI in Mexico, local card networks and cash-voucher rails — behave differently from a US card charge, with different failure modes and settlement times. Phone number and tax ID validation vary by country. So does what \"a valid address\" means.",
+        "We build this in from the schema up, because the cost of retrofitting localization into a shipped product is routinely several times the cost of designing for it. Half our squad works bilingually, which is less a selling point than a requirement for doing this properly."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Miami"],
+      "sub": "Real ranges from real engagements, not a calculator designed to capture your email address. Every range assumes design, engineering, QA and deployment — not engineering alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One core workflow, one platform, real users. The goal is a decision, not a product. Most Miami founders should start here and most want to skip it."
+          ],
+          [
+            "Production mobile app",
+            "$45k – $120k",
+            "3 – 5 months",
+            "iOS and Android, accounts, payments, notifications, an admin surface, store submission handled. The most common brief we get."
+          ],
+          [
+            "Internal operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Replacing spreadsheets and WhatsApp for a real operating business, integrated with the systems you already run. Where most Miami software budget actually goes."
+          ],
+          [
+            "Regulated build (fintech / health)",
+            "$120k – $400k+",
+            "5 – 12 months",
+            "KYC/AML or HIPAA, audit logging, penetration testing, formal security review. The compliance work is a real fraction of the cost, and pretending otherwise is how these projects fail."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval over your own content, agent workflows, document processing. Priced separately because it usually lands on top of software that already exists."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous product work with shifting priorities. Unlimited requests, pause anytime, no change orders. Cheaper than one senior hire in this market."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Not optional: iOS and Android both ship breaking changes yearly."
+          ]
+        ]
+      },
+      "after": [
+        "Three things that move a Miami number more than anything else. <strong>Integrations</strong> — every third-party system, especially MLS, POS and legacy ERPs, adds cost proportional to how badly it's documented. <strong>Compliance</strong> — HIPAA or financial regulation can add 30–50% to a build, and it is not a line item you can defer. <strong>Bilingual parity</strong> — cheap if designed in, expensive if added later.",
+        "For comparison: a single senior developer in this market costs roughly <a href=\"https://www.beaconcouncil.com/technology/\" target=\"_blank\" rel=\"noopener nofollow\">$95,000 a year on the Beacon Council's average</a> and materially more at senior level, before benefits, equipment and recruiting. That is the arithmetic on the <a href=\"/compare/\">comparison page</a>, and it's the reason the retainer exists."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Miami engagement usually starts with a thirty-minute call, in person if you're nearby and on Zoom if you're not. We'd rather spend it on the constraint you're actually up against than on a capabilities deck.",
+        "Within two business days you get a written scope: the shape of the build, the stack, the risks we can see from here, and a cost range. That document is yours whether you hire us or not, and several people have used it to brief someone else. That's fine — an accurate scope is worth more to this city than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You'll have the repo, the staging URL and access to everything from the start. Whether we're the right fit is usually obvious by the end of week one, which is the entire point of running it that way instead of asking you to trust a proposal."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are you actually based in Miami?",
+      "a": [
+        "Yes — 2125 Biscayne Blvd, Miami, FL 33137, and it's the only office we have. You can call +1-645-444-1069 and reach the team that would do your build.",
+        "It's a fair question to ask any agency ranking for this search, and the answer is often a virtual address in a coworking space serving forty other city pages. Ask for the street address and ask who sits there."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Miami?",
+      "a": [
+        "A validation MVP runs $15k–$35k, a production mobile app $45k–$120k, an internal operations platform $60k–$180k, and a regulated fintech or healthcare build $120k–$400k and up. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "The three factors that move those numbers most are integrations with systems you already run, compliance requirements, and whether bilingual parity is designed in from the start or bolted on later. Full breakdown is in the cost table above."
+      ]
+    },
+    {
+      "q": "Do you build in Spanish as well as English?",
+      "a": [
+        "Yes, and at parity rather than as a translation layer. Copy gets written twice, layouts are tested against longer Spanish strings, locale-specific dates, currency and validation are handled, and store listings ship in both languages.",
+        "We also handle Latin American payment rails where the product needs them, which behave differently from US card processing in ways that matter for failure handling and settlement."
+      ]
+    },
+    {
+      "q": "How fast can you start, and how fast will I see something?",
+      "a": [
+        "Kickoff is typically within a week of a signed scope, and your first deployed, reviewable increment lands inside 48 hours of kickoff. After that, new work ships every two days.",
+        "Compare that to hiring: three to six months to find and ramp a senior engineer in this market, assuming the search succeeds first time."
+      ]
+    },
+    {
+      "q": "Can we meet in person?",
+      "a": [
+        "Yes. Clients in Brickell, Wynwood, Coral Gables and the Beach regularly come to Biscayne Boulevard, or we come to you. Kickoffs and hard architecture arguments are better in a room.",
+        "Day-to-day delivery is still remote and asynchronous, because that's what a 48-hour cadence requires. We're not going to pretend standing meetings make software faster."
+      ]
+    },
+    {
+      "q": "Do you work with clients outside Miami?",
+      "a": [
+        "Most of our clients are outside Miami — across the US and internationally, all remote-first. The location pages exist because local context genuinely changes a brief, not because we bill by zip code.",
+        "We also cover the rest of South Florida: <a href=\"/locations/\">see all locations</a>."
+      ]
+    },
+    {
+      "q": "Native or cross-platform for a Miami launch?",
+      "a": [
+        "React Native for most business apps — one codebase serving both stores, which halves the maintenance surface and matters more than people expect over three years.",
+        "Native Swift or Kotlin when the product depends on hardware the bridge handles poorly: sustained camera work, Bluetooth peripherals, background location, or heavy on-device processing. Marine and logistics briefs in this region tip native more often than average because of offline sync and hardware integration."
+      ]
+    },
+    {
+      "q": "What about App Store and Play Store submission?",
+      "a": [
+        "We handle it, including store listings, screenshots, privacy declarations, and the review back-and-forth. Both stores reject builds for reasons that have nothing to do with code quality, and knowing the current rules saves weeks.",
+        "For bilingual products we submit localized listings in both languages, since store search is per-locale."
+      ]
+    },
+    {
+      "q": "Can you take over a project someone else started?",
+      "a": [
+        "Often, yes — it's a common brief here, usually after an offshore engagement or a solo contractor stalled. We start with a fixed-scope audit of the existing codebase and tell you plainly whether it's worth continuing or cheaper to rebuild.",
+        "We'll give you that answer even when it's the one that makes the engagement smaller. A half-finished codebase you can't hire against is a worse outcome than an honest restart."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has shipped software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "nearby": [
+    "app-development-brickell",
+    "app-development-miami-beach",
+    "app-development-coral-gables",
+    "app-development-doral",
+    "app-development-aventura",
+    "app-development-fort-lauderdale"
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "slug": "app-development-brickell",
+  "city": "Brickell",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Brickell",
+  "title": "App Development in Brickell — Fintech &amp; Regulated Builds | Appsurd",
+  "metaDescription": "Brickell app development for banks, funds, fintechs and law firms. KYC/AML flows, audit logging, security review as a project phase. Real cost ranges. Ten minutes up Biscayne Boulevard.",
+  "hubBlurb": "Miami's financial district, and the most regulated work we do. Compliance, audit trails and security review are the project, not a footnote at the end of it.",
+  "h1": ["App development in", "Brickell"],
+  "dek": "Brickell projects are rarely blocked by the interface. They are blocked by KYC, by an audit requirement nobody scoped, or by a security review that arrives three weeks before launch. We build financial and professional-services software with those constraints designed in from the schema up.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>10 min</b> up Biscayne Blvd",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "60+",
+      "label": "International banks operating in Brickell and Miami — the largest concentration of international banking in the US outside New York, per the county's economic development organization.",
+      "source": {
+        "name": "Miami-Dade Beacon Council",
+        "url": "https://www.beaconcouncil.com/finance/"
+      }
+    },
+    {
+      "value": "$241,539",
+      "label": "Average earnings per job in Downtown Miami's finance and insurance sector in 2023 — the highest-paid industry downtown, across 12,314 jobs.",
+      "source": {
+        "name": "Miami DDA demographic study, April 2025",
+        "url": "https://www.miamidda.com/files/assets/miamidda/v/1/business-development/documents/data-amp-research/research-amp-reports/downtown-miami-demographic-study-findings_april-2025.pdf"
+      }
+    },
+    {
+      "value": "8.5M sq ft",
+      "label": "Existing office space in the Brickell Financial District, with another 766,000 sq ft under construction or proposed.",
+      "source": {
+        "name": "Miami DDA demographic study, April 2025",
+        "url": "https://www.miamidda.com/files/assets/miamidda/v/1/business-development/documents/data-amp-research/research-amp-reports/downtown-miami-demographic-study-findings_april-2025.pdf"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed increment — on infrastructure and access controls your security team can review from day one."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["A short drive north", "on Biscayne"],
+      "body": [
+        "First, an honest clarification that most agency pages skip: <strong>Brickell is a district of the City of Miami, not a separate municipality</strong>. It has its own skyline, its own commercial character and its own hiring market, which is why it deserves its own page — but if you are looking for a Brickell-registered company, that is not a meaningful category.",
+        "Appsurd works from <strong>2125 Biscayne Blvd</strong>, in the corridor between Downtown and the Design District. That is a short drive north of you on Biscayne Boulevard — roughly ten to fifteen minutes from Brickell Avenue outside rush hour, and reachable on the Metromover and Metrorail if driving into the Edgewater corridor is not appealing. It is our only office, and there is no second address on Brickell Key.",
+        "In practice we are in Brickell buildings often, because the work demands it. Financial and legal clients frequently cannot share production data outside their own environment, so discovery happens on site, in a room, with a compliance officer present. Security questionnaires get worked through face to face far faster than over email. Those are afternoon trips for us rather than a flight and a hotel.",
+        "The rest of the engagement is remote-first and asynchronous, because that is what a 48-hour delivery cadence requires. What proximity buys you is that the people accountable for your build work full US business hours in Eastern time, can be in your lobby the same week, and can be reached at a real street address — a lower bar than it sounds, and one that a surprising number of firms ranking for this search do not clear."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["Why Brickell software", "is a compliance problem first"],
+      "body": [
+        "Brickell has a genuine claim to being the financial centre of the Americas' southern half, and the density of regulated institutions in a few dozen blocks is what makes building here different from building in Miami generally.",
+        "The Miami-Dade Beacon Council counts <strong>more than 60 international banks operating in Brickell and Miami, the largest concentration of international banking in the United States outside New York</strong>, alongside a finance and insurance sector employing over 150,000 people, contributing roughly <strong>$27.7 billion in annual economic output</strong>, and more than <strong>500 fintech companies</strong> in the region, <a href=\"https://www.beaconcouncil.com/finance/\" target=\"_blank\" rel=\"noopener nofollow\">on its finance industry page</a>. Citadel's relocation of its headquarters to Brickell is the most visible instance of a broader migration of asset managers and funds into these towers.",
+        "The wage data tells you what kind of software gets bought here. In Downtown Miami — the ZIP codes covering Brickell, the CBD and the Arts &amp; Entertainment District — <strong>finance and insurance accounted for 12,314 jobs at average earnings of $241,539, the highest-paid industry downtown</strong>, with professional, scientific and technical services the largest by headcount at 20,350 jobs, <a href=\"https://www.miamidda.com/files/assets/miamidda/v/1/business-development/documents/data-amp-research/research-amp-reports/downtown-miami-demographic-study-findings_april-2025.pdf\" target=\"_blank\" rel=\"noopener nofollow\">according to the Miami Downtown Development Authority's April 2025 demographic study</a>. The same study puts average earnings per downtown job at <strong>$103,000 against $83,000 countywide</strong>. When an hour of your staff's time is worth that much, internal tooling that saves ten minutes a day pays for itself quickly — which is why so much Brickell work is unglamorous internal software rather than consumer product.",
+        "The footprint is still growing: the DDA study records <strong>8.5 million square feet of existing office space in the Brickell Financial District plus another 766,000 square feet under construction or proposed</strong>, and identifies Brickell as the downtown subdistrict with the largest absolute population growth.",
+        "Two structural facts shape almost every brief we take here. The first is <strong>cross-border exposure</strong>: a meaningful share of Brickell's banking, private wealth and treasury business is Latin American, so products routinely touch multiple jurisdictions, multiple currencies, sanctions screening and beneficial-ownership questions that a domestic-only build never encounters. The second is that <strong>the buyer is not the approver</strong>. The head of a business line commissions the project; information security, compliance, legal and often an external auditor decide whether it ships. A build that ignores that governance chain does not fail at launch — it fails at review, later and more expensively.",
+        "The practical consequence: in Brickell we treat security review, audit logging and evidence production as scheduled phases with named owners, not as hardening tasks in the last sprint. It is the single largest difference between a regulated build that lands on time and one that does not."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Corridors",
+      "h2": ["Who we build for,", "tower by tower"],
+      "sub": "Brickell is compact enough to walk end to end and segmented enough that the brief changes noticeably by corridor.",
+      "hoods": [
+        {
+          "name": "Brickell Avenue &amp; the banking spine",
+          "note": "International and private banks, correspondent banking, trade finance. Work is client onboarding, KYC and document collection, treasury dashboards and reporting — nearly always integrating with a core banking system that cannot be modified, only read."
+        },
+        {
+          "name": "Brickell Key",
+          "note": "Funds, family offices, private wealth and the residential tower economy around them. Investor portals, statement and capital-call workflows, document rooms. Access control and confidentiality requirements are stricter than the feature list suggests."
+        },
+        {
+          "name": "Brickell City Centre &amp; the retail core",
+          "note": "Fintech and crypto offices above, retail and restaurants below. Consumer-facing product work with real regulatory exposure: payments, wallets, card programmes, and the sponsor-bank relationship that governs what you are allowed to launch."
+        },
+        {
+          "name": "Mary Brickell Village &amp; SW 10th Street",
+          "note": "Professional services, boutique firms, agencies and startups in smaller floorplates. Budgets are more modest, decisions are faster, and the winning scope is a tight product with one integration rather than a platform."
+        },
+        {
+          "name": "The legal corridor along Brickell &amp; SE 8th",
+          "note": "Law firms and their client-facing systems. Matter intake, conflict checks, secure document exchange, e-signature and billing integration, plus retrieval over document sets where a confidently wrong answer is unacceptable."
+        },
+        {
+          "name": "West Brickell &amp; the Miami River edge",
+          "note": "Insurance, accounting, title and real estate services, plus trade-adjacent businesses along the river. Document-heavy workflows, third-party data feeds and integrations with software written a long time ago."
+        },
+        {
+          "name": "Brickell's residential towers",
+          "note": "Condo associations and building operators at unusual density. Resident and amenity apps, access and package logging, board document access, and Florida's structural reserve and milestone inspection record-keeping."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Brickell", "budgets actually are"],
+      "sub": "Ranked roughly by how often the brief reaches us, not by which sounds most impressive on a slide.",
+      "cards": [
+        {
+          "h3": "Banking &amp; correspondent banking",
+          "p": "The district's defining industry and the most governance-heavy work we do. Client onboarding portals, document collection, KYC refresh cycles, transaction monitoring interfaces, treasury and reporting dashboards. The recurring technical problem is that the system of record is a core banking platform you may only read from, via batch files or a narrow API, on the bank's schedule. Everything user-facing therefore has to be designed for eventual consistency and for a data freshness guarantee you can state out loud to an auditor."
+        },
+        {
+          "h3": "Private wealth, family offices &amp; funds",
+          "p": "Investor portals, statement delivery, capital calls and distributions, document rooms, onboarding and suitability workflows. The hard part is entitlements: who can see which entity, which fund, which document, and how that is proven after the fact. We model permissions as data with an audit trail rather than as UI logic, because the question that eventually gets asked is not what a screen showed but who accessed what, when."
+        },
+        {
+          "h3": "Fintech, payments &amp; card programmes",
+          "p": "Wallets, transfers, cross-border payouts, card issuing, lending and underwriting flows. The constraint is rarely the code — it is the sponsor bank or processor relationship, which dictates what you can launch, what disclosures appear where, and how disputes and chargebacks must be handled. We build to those requirements from the first sprint and keep a change log that a partner-bank review can read, because retrofitting audit evidence is a rewrite."
+        },
+        {
+          "h3": "LatAm treasury &amp; cross-border operations",
+          "p": "Multi-country cash visibility, FX exposure, intercompany transfers, local tax-ID and beneficiary validation, sanctions and PEP screening. Each additional country is not a translation task; it is a distinct set of identifiers, formats, settlement behaviours and reporting obligations. We scope country-by-country and sequence rollouts, rather than pretending a single generic integration will cover the region."
+        },
+        {
+          "h3": "Digital assets &amp; crypto",
+          "p": "Custody and wallet interfaces, on- and off-ramp flows, transaction monitoring and blockchain analytics integration, reporting for tax and compliance. This work carries the highest key-management and operational-security burden of anything we build: signing flows, approval thresholds, hardware boundaries and incident procedures are the architecture, not a security appendix. If a client wants speed over that rigour, we are the wrong choice and we will say so early."
+        },
+        {
+          "h3": "Law firms &amp; legal operations",
+          "p": "Client and matter portals, intake and conflict checks, secure document exchange, e-signature, time and billing integration, and increasingly retrieval over case and contract sets. Firms judge these builds on confidentiality boundaries and on defensibility. Our work for the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> is the public version of the same problem: accessibility, predictable performance and zero tolerance for a wrong answer delivered confidently."
+        },
+        {
+          "h3": "Insurance, title &amp; risk services",
+          "p": "Quoting and submission workflows, policy and claim document handling, underwriting support tools, title and closing coordination. The work is document-shaped: extraction, classification, routing and exception handling, where the value is in reducing manual review without ever silently discarding an edge case. Human-in-the-loop review paths are part of the design, not a fallback."
+        },
+        {
+          "h3": "Luxury condo towers &amp; residential operations",
+          "p": "Brickell's residential density is a real software market on its own. Resident and amenity booking, access control and package logging, valet and visitor management, board and document portals, plus the reserve-study and milestone-inspection documentation Florida buildings now have to keep current. These systems compete with a WhatsApp group and a binder, so adoption by the on-site manager is the only success metric that matters."
+        }
+      ]
+    },
+    {
+      "id": "compliance",
+      "eyebrow": "Regulated builds",
+      "h2": ["Security review as", "a real project phase"],
+      "body": [
+        "The most common way a Brickell project goes wrong is scheduling. The build is planned as design, engineering, QA, launch — and then information security, compliance and possibly an external auditor arrive at the end with requirements that touch the data model. At that point the choice is a delay or a rewrite.",
+        "We plan it the other way round. Before the first sprint we establish who has to approve the release, what evidence they will ask for, and which data cannot leave which environment. That produces concrete architectural constraints early: where personal and financial data lives, what is logged and what is deliberately not logged, how long records are retained, which vendors are permitted anywhere near the system, and whether analytics tooling can touch authenticated pages at all.",
+        "<strong>Audit logging is designed, not added.</strong> An append-only record of who did what, to which record, when, and on whose authority — including read access for sensitive entities — is a schema decision. Bolting it on later means backfilling history that does not exist, which is the moment a project loses a quarter.",
+        "<strong>KYC and AML flows are treated as state machines, not forms.</strong> Real onboarding has document expiry, re-verification triggers, sanctions and PEP hits, manual review queues, appeal paths and jurisdiction-specific requirements. Modelling it as a wizard with a few uploads is the mistake that shows up six months in, when the compliance team asks for a case history the system never recorded.",
+        "<strong>Access control gets modelled as data.</strong> Entitlements by entity, role, geography and document class, with separation of duties and approval thresholds where money moves. Roles hard-coded in the front end cannot be audited and cannot be changed without a release.",
+        "<strong>Third-party review is scheduled.</strong> Penetration testing, vendor security questionnaires, SOC 2 evidence requests from your customers, and the remediation window afterwards all take calendar time. We put them on the plan with dates. On regulated builds, this layer of work is commonly 30–50% of total effort — if a proposal you are comparing does not show it, the number is not comparable to ours.",
+        "One caveat stated plainly: we are engineers, not your compliance counsel or your auditor. We build to the requirements your compliance function and regulators set, we make evidence production straightforward, and we tell you when a request we are given looks like it will not satisfy the reviewer. We do not sign off on regulatory adequacy, and any agency that offers to should worry you."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Brickell"],
+      "sub": "Real ranges from real engagements. Each includes design, engineering, QA and deployment — and, where relevant, the compliance work that other quotes leave out.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP (unregulated)",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, internal or pilot users, no live customer money or personal financial data. Genuinely rare in Brickell, but the right start when it fits."
+          ],
+          [
+            "Client or investor portal",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Onboarding, document exchange, statements, entitlements and audit trail, integrated with your system of record. The most common Brickell brief we get."
+          ],
+          [
+            "Internal operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Replacing spreadsheets and email for a real operating function, integrated with what you already run. Pays back fast at downtown salary levels."
+          ],
+          [
+            "Regulated fintech build",
+            "$120k – $400k+",
+            "5 – 12 months",
+            "KYC/AML state machines, transaction monitoring, sponsor-bank or processor requirements, audit logging, penetration testing, formal security review."
+          ],
+          [
+            "Digital asset / custody interface",
+            "$150k – $450k+",
+            "6 – 12 months",
+            "Key management, approval thresholds, signing flows, monitoring and analytics integration. Priced highest because the operational security burden is highest."
+          ],
+          [
+            "Cross-border / multi-country rollout",
+            "+$25k – $80k per country",
+            "4 – 10 weeks per market",
+            "Local identifiers, payment rails, validation, language and reporting for each additional jurisdiction. Costed per country because that is how the work behaves."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval over your own documents, extraction and classification, agent workflows with human review. In regulated settings, expect an extra cycle for data-handling review."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous product work with shifting priorities. Unlimited requests, pause anytime, no change orders. Materially cheaper than one senior hire at Brickell comp."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store updates, dependency and security patches, monitoring, small changes, plus evidence upkeep for annual reviews."
+          ]
+        ]
+      },
+      "after": [
+        "What moves a Brickell number, in order of impact. <strong>Regulatory scope</strong> — KYC/AML, sponsor-bank requirements, audit logging and third-party testing commonly add 30–50% to a build, and none of it can be deferred to phase two. <strong>Integration with the system of record</strong> — reading a core banking platform, a fund administrator's files or a practice management system costs in proportion to how badly it is documented, and access approval alone can take weeks. <strong>Number of jurisdictions</strong> — each country is its own set of identifiers, rails and reports. <strong>Number of approvers</strong> — a project with security, compliance, legal and an external auditor in the chain moves at the speed of the slowest review, which is a schedule cost more than an engineering one.",
+        "For context on the alternative: average earnings per job in Downtown Miami's finance and insurance sector were <a href=\"https://www.miamidda.com/files/assets/miamidda/v/1/business-development/documents/data-amp-research/research-amp-reports/downtown-miami-demographic-study-findings_april-2025.pdf\" target=\"_blank\" rel=\"noopener nofollow\">$241,539 in 2023 per the Miami DDA</a>, and senior engineers competing with those employers price accordingly, before benefits, equipment and recruiting. That arithmetic is on the <a href=\"/compare/\">comparison page</a>, and it is why the retainer exists."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Brickell engagement starts with a thirty-minute call, in your building if that is easier — we are ten minutes up Biscayne. If the work is regulated, we ask early who has to approve the release and what evidence they will want, because that answer shapes the architecture more than the feature list does.",
+        "Within two business days you get a written scope: the build shape, the stack, the integrations and access approvals on the critical path, the compliance work we can already see, the risks, and a cost range. The document is yours whether you hire us or not. Several people have used ours to brief someone else, which is fine — an accurate scope is worth more to this district than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours, on infrastructure your security team can inspect from the start. NDAs get signed before the scoping call, not after. Whether we are the right fit is usually obvious by the end of week one, which is the entire point of running it this way instead of asking you to trust a proposal."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Brickell?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137 — a short drive north of Brickell on Biscayne Boulevard, about ten to fifteen minutes outside rush hour. We work with Brickell clients constantly and we come to your building for kickoffs, discovery on restricted data, and security questionnaire sessions.",
+        "It is also worth saying that Brickell is a district of the City of Miami rather than its own municipality, so there is no such thing as a Brickell-incorporated agency. If a firm claims a Brickell office, ask for the floor and who sits on it."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Brickell?",
+      "a": [
+        "A client or investor portal runs $60k–$180k. An internal operations platform is $60k–$180k. A regulated fintech build with KYC/AML, audit logging and third-party testing is $120k–$400k and up, and a digital-asset or custody interface starts higher, at $150k–$450k+. An unregulated validation MVP is $15k–$35k, and each additional country in a cross-border rollout adds roughly $25k–$80k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In this district the compliance and integration layers, not the interface, drive the number. Regulatory work commonly accounts for 30–50% of a regulated build, so a quote that does not show it separately is not comparable to ours."
+      ]
+    },
+    {
+      "q": "Have you built KYC and AML flows before?",
+      "a": [
+        "Yes, and we model them as state machines rather than forms: document capture and expiry, re-verification triggers, sanctions and PEP screening, manual review queues, escalation and appeal paths, and jurisdiction-specific requirements. Every state transition is recorded with who authorised it.",
+        "We integrate with the identity, screening and monitoring vendors you or your sponsor bank have already approved rather than pushing our own preference, because vendor selection in this space is a compliance decision, not an engineering one."
+      ]
+    },
+    {
+      "q": "How do you handle audit logging and evidence requests?",
+      "a": [
+        "As a schema decision made before the first sprint. An append-only log of who did what, to which record, when and under whose authority — including read access to sensitive entities — plus retention rules agreed with your compliance function and an export path a reviewer can actually use.",
+        "The reason we insist on doing this first is that audit history cannot be backfilled. Adding logging after launch gives you evidence starting from the day you added it, which is precisely the gap a reviewer will find."
+      ]
+    },
+    {
+      "q": "Can you work inside our security and vendor review process?",
+      "a": [
+        "Yes, and we plan for it on the schedule with dates rather than treating it as a surprise. That covers vendor security questionnaires, access provisioning through your process, penetration testing windows, remediation cycles, and the SOC 2 or diligence evidence your own customers ask you for.",
+        "We also work within data-residency and environment constraints — including engagements where production data never leaves your environment and we develop against synthetic or masked datasets. That slows some things down and we would rather price it honestly than discover it mid-build. How we handle client data and access is documented on our <a href=\"/security/\">security page</a>."
+      ]
+    },
+    {
+      "q": "We're a fund or family office. Can you build an investor portal?",
+      "a": [
+        "Yes, and the difficulty is almost always entitlements rather than screens: which investor sees which entity, fund, vehicle and document class, how that is proven afterwards, and how statement or capital-call distribution is controlled and evidenced.",
+        "We model permissions as auditable data rather than front-end logic, and integrate with the fund administrator's files or systems as the source of truth rather than duplicating positions. Duplicated position data is how portals end up disagreeing with statements."
+      ]
+    },
+    {
+      "q": "Do you work with crypto and digital asset companies?",
+      "a": [
+        "Yes, with a clear boundary. We build custody and wallet interfaces, on- and off-ramp flows, monitoring and analytics integrations, and reporting — with key management, approval thresholds and signing boundaries treated as the core architecture rather than a security appendix.",
+        "We are the wrong choice for a team that wants to ship a token or a live money-movement product in a few weeks without that rigour, and we will decline that work rather than take it. If your timeline depends on skipping operational security, another vendor will suit you better."
+      ]
+    },
+    {
+      "q": "Can you integrate with our core banking or practice management system?",
+      "a": [
+        "Usually, and we start by finding out precisely what access exists: a documented API, a batch file drop, a partner programme with an approval queue, or a middleware layer somebody built years ago. What your contract and vendor permit determines the design.",
+        "We also plan around the freshness the integration can actually deliver, and state it in the product rather than implying data is live when it updates overnight. On regulated systems, being explicit about data currency is both an engineering and an audit requirement."
+      ]
+    },
+    {
+      "q": "Can you build for multiple Latin American markets at once?",
+      "a": [
+        "We can, but we normally advise sequencing. Each country brings its own tax and national identifiers, payment and settlement rails, beneficiary validation rules, document expectations, language nuance and reporting obligations. A single generic integration that claims to cover the region usually fails on the second market.",
+        "Our approach is to build the first market properly with country-specific behaviour isolated behind clean boundaries, then add markets one at a time — roughly $25k–$80k each depending on the rails and reporting involved."
+      ]
+    },
+    {
+      "q": "Is AI safe to use in a regulated Brickell product?",
+      "a": [
+        "In some places, with constraints. Retrieval over your own documents, extraction and classification, and drafting assistance with human review are all defensible when the data-handling boundary is explicit, the model provider and region are approved by your compliance function, prompts and outputs are logged, and no automated decision affecting a customer is made without a person in the loop.",
+        "Where we push back is on using a model as the final authority in a flow that has a regulatory consequence — that is the pattern that turns a useful feature into an audit finding."
+      ]
+    },
+    {
+      "q": "Do you build in Spanish and Portuguese as well as English?",
+      "a": [
+        "Yes, at parity rather than as a translation layer, which matters here because so much Brickell business is cross-border. Copy is written rather than machine-translated, layouts are tested against longer strings, and dates, currency, tax-ID and address validation switch with the locale.",
+        "Compliance-relevant text — disclosures, consents, terms — gets reviewed by your counsel in each language rather than translated by us and hoped for. That is a review step we schedule rather than assume."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has shipped production software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": ["Brickell Key", "Downtown Miami", "Mary Brickell Village", "Coconut Grove", "Edgewater"],
+  "nearby": [
+    "app-development-miami",
+    "app-development-coral-gables",
+    "app-development-miami-beach",
+    "app-development-doral"
+  ]
+}

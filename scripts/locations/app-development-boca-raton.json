@@ -1,0 +1,361 @@
+{
+  "slug": "app-development-boca-raton",
+  "city": "Boca Raton",
+  "county": "Palm Beach County",
+  "region": "FL",
+  "group": "Broward &amp; Palm Beach",
+  "linkLabel": "Boca Raton",
+  "title": "App Development in Boca Raton — Enterprise Integration &amp; AI | Appsurd",
+  "metaDescription": "Boca Raton app development for corporate HQs, financial services, insurance and healthcare. Security review, legacy integration, real cost ranges, 48-hour delivery cadence.",
+  "hubBlurb": "Corporate headquarters, insurance, wealth management and a university research park. The briefs here arrive with a procurement process attached and a twenty-year-old system to integrate with.",
+  "h1": ["App development in", "Boca Raton"],
+  "dek": "Boca Raton is not a startup market pretending to be a corporate one. It is a corporate market with a university research park attached, and the software work reflects that: security questionnaires, legacy integration, and products that have to work for a 34-year-old analyst and a 74-year-old client on the same day.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>45 miles</b> from Mizner Park",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "$610M",
+      "label": "Annual economic impact of the Research Park at Florida Atlantic across Palm Beach and Broward counties in 2025, from just over 49 companies on campus.",
+      "source": {
+        "name": "Business Development Board of Palm Beach County",
+        "url": "https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/"
+      }
+    },
+    {
+      "value": "$115,768",
+      "label": "Average annual salary at Research Park at Florida Atlantic ventures — the local benchmark your in-house build gets compared against, before benefits and overhead.",
+      "source": {
+        "name": "Business Development Board of Palm Beach County",
+        "url": "https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/"
+      }
+    },
+    {
+      "value": "1,505",
+      "label": "Jobs supported by Research Park ventures in 2025, producing $174 million in labor earnings — a small, dense, technically literate buying market.",
+      "source": {
+        "name": "Business Development Board of Palm Beach County",
+        "url": "https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed, reviewable increment. Not a wireframe — a staging URL you can put in front of a steering committee."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Forty-five miles south,", "and no Boca office"],
+      "body": [
+        "We do not have an office in Boca Raton. Appsurd works from <strong>2125 Biscayne Blvd in Miami</strong>, and that is the only address we have. If an agency ranking for this search lists a Yamato Road or Glades Road suite, ask which floor and who sits there — a large share of those are registered-agent or mail-forwarding addresses attached to a page that also exists for forty other cities. In a market where procurement asks for a W-9, a certificate of insurance and a security questionnaire, that kind of thing tends to surface eventually anyway.",
+        "The distance is about 45 miles, which is 50 minutes up I-95 outside rush hour and closer to 90 in it. Tri-Rail runs to Boca Raton station near the FAU campus, and Brightline stops in Boca Raton downtown, which is how we usually travel when the meeting is at Mizner Park or on Federal Highway. Kickoffs, security reviews and the meetings where three departments have to agree on one definition of \"customer\" are worth doing in person, and we come to you for them.",
+        "Everything after that is remote and asynchronous, which is not a compromise — it is what makes a 48-hour delivery cadence possible. What matters more than mileage is that your project has a named engineer working Eastern time who answers at 9am rather than overnight from a nine-hour offset. Over a six-month enterprise build, that difference compounds into weeks of calendar time.",
+        "We are also honest about fit. Boca Raton has a lot of buyers who need a vendor that can pass a formal vendor-risk review, sign a real MSA, and produce documentation for an internal auditor. We can do all of that. If what you need instead is a firm with twelve years of SOC 2 Type II history, a dedicated compliance department and a named account manager who golfs, we are the wrong shape and we will say so on the first call."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["A headquarters town,", "not a startup town"],
+      "body": [
+        "Boca Raton's software market is defined by a fact that is easy to verify and easy to underestimate: a lot of real companies are actually headquartered here, and their internal systems are old.",
+        "<a href=\"https://s201.q4cdn.com/833622905/files/doc_financials/2024/q4/ADT-Inc-10-K-12-31-2024.pdf\" target=\"_blank\" rel=\"noopener nofollow\">ADT Inc. lists its principal executive offices at 1501 Yamato Road, Boca Raton, in its annual report on Form 10-K</a>. <a href=\"https://news.theodpcorp.com/news-releases/news-release-details/odp-corporation-completes-sale-and-partial-leaseback-its\" target=\"_blank\" rel=\"noopener nofollow\">The ODP Corporation — the parent of Office Depot and OfficeMax — confirmed in 2023 that its headquarters remain in Boca Raton</a> after selling and partially leasing back the corporate campus. <a href=\"https://ir.celsiusholdingsinc.com/governance/executive-management/default.aspx\" target=\"_blank\" rel=\"noopener nofollow\">Celsius Holdings lists its corporate address at 2381 NW Executive Center Drive, Boca Raton</a>. The city also hosts the National Council on Compensation Insurance, Florida Atlantic University and a Baptist Health hospital campus, along with a long tail of insurance, staffing, healthcare services and wealth management firms that are large enough to have a procurement process and small enough that nobody there wants to own a build.",
+        "That composition produces a specific kind of brief. The dominant Boca Raton project is not a consumer app — it is <strong>a replacement for an internal system that has been in production since before the current management team arrived</strong>. A commission platform in Access. A claims intake process in email and Excel. A field service workflow in a tool the vendor stopped supporting. The technical problem is almost never the interface; it is data migration, integration, and getting agreement from three departments about what the data actually means.",
+        "The second defining feature is the university and its research park. The <a href=\"https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">Research Park at Florida Atlantic reported $610 million in annual economic impact across Palm Beach and Broward counties in 2025, from just over 49 companies, supporting 1,505 jobs, $174 million in labor earnings and an average salary of $115,768</a> — spread across aviation, AI, healthcare, life sciences, software and cybersecurity. It is not a large cluster by headcount, but it is dense and technically literate, and the buyers who come from it argue about architecture rather than asking what an API is. The park was established in 1985, and the Boca Raton Innovation Campus down the road is <a href=\"https://bdb.org/news/palm-beach-county-wall-street-south/\" target=\"_blank\" rel=\"noopener nofollow\">the building where the IBM PC was designed</a> — a useful reminder that the corporate-tech history here predates the current wave of arrivals by four decades.",
+        "The third feature is demographic, and it changes product decisions more than anything on this page. Boca Raton's customer base is genuinely mixed-age, and a meaningful share of it is affluent and older. A wealth management client portal, a healthcare scheduling app or a senior living platform here has to work for someone using an iPad at 200% text size, in bright light, with imperfect fine motor control — while also satisfying a 34-year-old advisor who wants it to feel current. Most design systems optimise for one of those users and quietly fail the other.",
+        "Finally, procurement is slow and formal, and pretending otherwise wastes everyone's quarter. Expect a vendor-risk questionnaire, a security review, an insurance certificate request, legal redlines on the MSA, and a decision that involves at least one person who has never been in the room. The winning proposal in this market is rarely the cheapest or the flashiest; it is the one with the clearest answer to \"who maintains this in three years, and what happens if you disappear.\""
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Corridors",
+      "h2": ["Where the work", "comes from"],
+      "sub": "Boca Raton is small and legible. The corridor a brief comes from tells you most of what the project will be.",
+      "hoods": [
+        {
+          "name": "Yamato Road &amp; the Park at Broken Sound",
+          "note": "Corporate headquarters, insurance and back-office operations. Almost always integration work: the app is a usable surface over a system of record nobody is willing to touch. Security review is its own project phase."
+        },
+        {
+          "name": "FAU campus &amp; the Research Park",
+          "note": "Research ventures, AI and cybersecurity companies, second-stage startups in the Global Ventures incubator. Technically literate buyers, small budgets at the incubator end, and real appetite for retrieval and agent work."
+        },
+        {
+          "name": "Boca Raton Innovation Campus (BRIC)",
+          "note": "Mid-market tenants across technology, healthcare services and business services in the old IBM complex. Typically internal tools and platform modernization for companies with 50–500 staff and no engineering team."
+        },
+        {
+          "name": "Glades Road &amp; Town Center",
+          "note": "Professional services, medical practices, retail operators, franchise groups. Scheduling, intake, multi-location reporting, and a persistent request to consolidate four systems into one dashboard."
+        },
+        {
+          "name": "Mizner Park &amp; Downtown",
+          "note": "Wealth management, family offices, law firms, boutique financial firms. Client portals and document workflow, where the hard requirements are audit trails, permissions and a mixed-age user base."
+        },
+        {
+          "name": "Federal Highway &amp; the Boca Resort area",
+          "note": "Hospitality, private clubs, luxury retail, events. Membership and guest experience products, integrated with property and club management systems that were built for desktop use."
+        },
+        {
+          "name": "Camino Real &amp; the hospital district",
+          "note": "Healthcare, specialty clinics, senior care and the services around them. HIPAA shapes the whole build — data handling, logging, vendor selection, even which analytics are allowed near the app."
+        },
+        {
+          "name": "West Boca &amp; the 441 corridor",
+          "note": "Distribution, light industrial, trades, home services, larger medical offices. Field and dispatch apps on cheap Android hardware, plus route and inventory work that has to survive poor signal."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Boca Raton", "budgets actually are"],
+      "sub": "Ordered roughly by how often the brief reaches us from this city, not by which sounds most impressive.",
+      "cards": [
+        {
+          "h3": "Corporate IT &amp; internal platforms",
+          "p": "The single largest category here, driven by the concentration of headquarters and mid-market operations. Commission and incentive systems, vendor and partner portals, approval workflows, field operations, reporting layers over a warehouse. The recurring technical problem is that the system of record is old, undocumented, and load-bearing — so the work is careful integration and data reconciliation, and the riskiest phase is migration, not development."
+        },
+        {
+          "h3": "Financial services &amp; wealth management",
+          "p": "Client and household portals, statement and document delivery, onboarding, advisor tooling, reporting. The hard requirements are permissioning across households and entities, immutable audit trails, and records retention that satisfies a compliance officer. Plan for security review and penetration testing from the architecture stage; bolting them on afterwards means rewriting."
+        },
+        {
+          "h3": "Insurance &amp; claims",
+          "p": "Boca Raton has genuine insurance depth, including the National Council on Compensation Insurance. Claims intake, adjuster field apps with photo evidence, policy servicing portals, agent tooling, document classification. Retrieval and document processing over policy and claim files is the most requested AI work we see in this vertical, and the accuracy bar is set by a regulator rather than a product manager."
+        },
+        {
+          "h3": "Healthcare &amp; senior care",
+          "p": "Patient intake and scheduling, care coordination, remote monitoring, family-facing portals for senior living and home care. HIPAA determines architecture, and accessibility is not optional given who the users are. The recurring failure we are asked to fix is a portal that technically works and that patients over 70 cannot use, which shows up as call volume rather than as a bug report."
+        },
+        {
+          "h3": "University-adjacent research &amp; deep tech",
+          "p": "Ventures out of the <a href=\"https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">Research Park at Florida Atlantic</a> in AI, cybersecurity, life sciences and aviation. These teams have deep domain expertise and no product surface, so the work is turning a working model or prototype into something a customer can buy: interfaces, evaluation harnesses, deployment and the unglamorous reliability work. Our <a href=\"/work/stanford-university.html\">Stanford University</a> engagement is the closest public analogue."
+        },
+        {
+          "h3": "Legal &amp; professional services",
+          "p": "Client portals, intake automation, matter and document workflow, billing integration, and increasingly retrieval over document sets. Our work for the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> is the public version of this problem: accessibility, predictable performance, and zero tolerance for a wrong answer stated confidently."
+        },
+        {
+          "h3": "Education &amp; training",
+          "p": "With a university of FAU's size in the city, learning platforms, credentialing, cohort management and corporate training tooling are recurring briefs. The constraints are accessibility compliance, single sign-on against institutional identity systems, and content workflows owned by people who are not technical."
+        },
+        {
+          "h3": "Hospitality, clubs &amp; membership",
+          "p": "Private clubs, resorts, HOAs and membership organizations. Bookings, dues and billing, member directories, event registration, access control. The integration surface is club and property management software built for desktop use, and the design constraint is the same mixed-age user base that shapes everything else here."
+        }
+      ]
+    },
+    {
+      "id": "enterprise",
+      "eyebrow": "The Boca Raton problem",
+      "h2": ["Replacing a system", "that cannot go down"],
+      "body": [
+        "Most Boca Raton engagements are not greenfield. They are replacements, and the thing being replaced is still running the business. That changes the engineering approach in ways that matter more than any technology choice.",
+        "<strong>The old system defines the data model whether you like it or not.</strong> Twenty years of accumulated exceptions live in it — the customer record with three addresses, the status code that means two different things depending on the year, the field that was repurposed in 2014 and never renamed. We start by reading the data rather than the documentation, because the documentation describes the intended system and the data describes the actual one. That audit routinely changes scope in week one, which is much cheaper than changing it in month four.",
+        "<strong>Cutover is the risky part, not the build.</strong> We plan for parallel running: the new system operates alongside the old one on real data, with reconciliation reports that prove the numbers match before anyone is asked to switch. That takes longer and costs more than a hard cutover, and it is the difference between a migration and an incident. Where a big-bang switch is genuinely necessary, we say so explicitly and plan a rollback rather than hoping.",
+        "<strong>Security and procurement review are project phases with dates.</strong> In this market a vendor-risk questionnaire, penetration test, insurance certificate and legal redline are normal, and pretending they are administrative overhead is how enterprise timelines slip by a quarter. We schedule them, we answer them in our own name, and we document architecture decisions as we go so the answers exist before the questions arrive. Our engagements with the <a href=\"/work/nypd.html\">NYPD</a> and the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> were both run inside procurement and security environments with no tolerance for improvisation.",
+        "<strong>Adoption is the deliverable, not the launch.</strong> A replacement platform that the operations team quietly works around is a failure regardless of how well it is engineered. We build for the actual users — including the ones who liked the old system — with training documentation, a phased rollout, and a route for people to report what broke. Our <a href=\"/work/kia.html\">Kia</a> dealer operations portal was a good test of this: staff with no patience for software are the honest measure of whether an interface works under time pressure.",
+        "<strong>And design for the full age range.</strong> Larger default type, real contrast ratios, generous touch targets, no critical action hidden behind a hover, no interaction that depends on precise dragging, and full compatibility with system text scaling. This is standard accessibility practice, but in Boca Raton it has commercial consequences rather than compliance ones — it decides whether the portal reduces support calls or generates them."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Boca Raton"],
+      "sub": "Real ranges from real engagements. Every range assumes design, engineering, QA and deployment — not engineering hours alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Discovery &amp; systems audit",
+            "From $4,995",
+            "2 – 4 weeks",
+            "Read the existing data and systems, produce an architecture, a migration plan and a real number. The right first step for almost every replacement project in this city."
+          ],
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one platform, real users. Useful before committing to a company-wide rollout you cannot reverse."
+          ],
+          [
+            "Production mobile app",
+            "$45k – $120k",
+            "3 – 5 months",
+            "iOS and Android, accounts, notifications, an admin surface, store submission handled. Often the member, client or field-staff surface of a larger platform."
+          ],
+          [
+            "Internal platform replacement",
+            "$90k – $280k",
+            "5 – 9 months",
+            "Replacing a load-bearing legacy system, with data migration, parallel running and reconciliation. The defining Boca Raton engagement and the largest budget line."
+          ],
+          [
+            "Enterprise integration layer",
+            "+$25k – $90k",
+            "adds 4 – 10 weeks",
+            "ERP, CRM, policy admin, warehouse or claims systems. Priced separately because cost tracks how badly the target system is documented, not how much data moves."
+          ],
+          [
+            "Regulated build (finance / health)",
+            "$120k – $400k+",
+            "5 – 12 months",
+            "HIPAA or financial regulation, audit logging, penetration testing, formal vendor-risk review. The compliance work is a real fraction of the cost, and pretending otherwise is how these projects fail."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval over your own policies, claims, contracts or manuals, document classification, agent workflows. Usually lands on top of software that already exists."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous product work with shifting priorities. Unlimited requests, pause anytime, no change orders. Less than half the loaded cost of one senior hire here."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store policy updates, dependency and security patches, monitoring, small changes. Not optional: iOS and Android both ship breaking changes yearly."
+          ]
+        ]
+      },
+      "after": [
+        "Four things move a Boca Raton number more than anything else. <strong>The age and documentation of the system you are replacing</strong> — this is the largest single variable, and it is why we quote after reading your data rather than before. <strong>Compliance</strong> — HIPAA or financial regulation routinely adds 30–50% to a build, and it is not a line item you can defer. <strong>Procurement and security review</strong> — a questionnaire, a penetration test and a legal redline add calendar time rather than engineering time, but they add it to your schedule all the same. <strong>Number of internal stakeholders</strong> — every additional department that must approve the data model adds weeks, and the cheapest way to manage it is to name one decision-maker before kickoff.",
+        "On the build-versus-hire arithmetic: <a href=\"https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">average salaries at Research Park at Florida Atlantic ventures run $115,768</a>, and that is an average across roles rather than what a senior engineer costs. Add benefits, equipment, recruiting fees and three to six months to hire and ramp, and a two-person in-house team is a six-figure quarterly commitment before a feature ships. The full comparison is on the <a href=\"/compare/\">comparison page</a>, including the cases where hiring in-house is genuinely the better answer."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Boca Raton engagement usually starts with a thirty-minute call. If it is easier in person, we come up — Mizner Park, Yamato Road, the FAU campus, wherever your team actually sits. We would rather spend the time on the constraint you are up against than on a capabilities deck.",
+        "For a replacement project we ask for three things early: read-only access to the existing data or a representative export, one hour with the person who uses the current system most, and a clear answer on who signs off. Those three inputs shape scope more than any workshop does, and the third one is the most common reason enterprise projects stall.",
+        "Within two business days you get a written scope — build shape, stack, migration approach, the risks we can see from here, and a cost range. It is written to be forwarded to a CFO or an internal auditor, and it is yours whether you hire us or not. Several people have used ours to brief someone else. That is fine; an accurate scope is worth more to this market than a signed bad one.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start, and we start the security questionnaire in parallel rather than waiting for it to block us. Whether we are the right fit is usually obvious by the end of week one, which is the point of running it this way instead of asking you to trust a proposal."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Boca Raton?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137, and the number to reach the team that would do your build is +1-645-444-1069. We are not going to list a Glades Road suite we do not occupy.",
+        "We work with Boca Raton clients regularly and we travel to you — about 45 miles, roughly 50 minutes off-peak, or a Brightline ride to Boca Raton station. Kickoffs, security reviews and stakeholder alignment meetings happen in person; day-to-day delivery is remote, because that is what a 48-hour cadence requires."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Boca Raton?",
+      "a": [
+        "A discovery and systems audit starts at $4,995, a validation MVP runs $15k–$35k, a production mobile app $45k–$120k, an internal platform replacement $90k–$280k, and a regulated finance or healthcare build $120k–$400k and up. Enterprise integration typically adds $25k–$90k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In this market the dominant cost driver is the age and documentation quality of the system you are replacing, followed by compliance requirements and the number of internal stakeholders who have to approve the data model. Full breakdown is in the cost table above."
+      ]
+    },
+    {
+      "q": "Can you pass our vendor security review?",
+      "a": [
+        "Yes, and we treat it as a scheduled project phase rather than paperwork. We complete vendor-risk questionnaires in our own name, provide architecture and data-flow documentation, support penetration testing, and work to least-privilege access on your systems. How we handle client data and credentials is documented on our <a href=\"/security/\">security page</a>.",
+        "One honest caveat: we are a 19-person firm, not an enterprise vendor with a decade of audit history. If your procurement policy requires a specific certification we do not hold, we will tell you on the first call rather than after you have spent six weeks on the process."
+      ]
+    },
+    {
+      "q": "We need to replace an internal system that is still running. How do you handle that?",
+      "a": [
+        "We start by reading the data rather than the documentation, because the documentation describes the intended system and the data describes the real one. That audit typically surfaces the exceptions and repurposed fields that would otherwise appear as surprises in month four.",
+        "Then we plan for parallel running: the new system operates alongside the old one on live data with reconciliation reports that prove the numbers match before anyone switches. It costs more than a hard cutover and it is the difference between a migration and an incident. Where a big-bang switch is genuinely necessary, we say so and plan a rollback."
+      ]
+    },
+    {
+      "q": "Will you sign our MSA and work with our legal and procurement process?",
+      "a": [
+        "Yes. NDA first, then your MSA with redlines if needed, insurance certificates, and whatever supplier onboarding portal your team uses. We would rather move through it properly than push a shorter agreement of our own.",
+        "We will also give you a realistic calendar estimate for that process, which most vendors do not. In our experience a formal Boca Raton procurement cycle adds three to eight weeks before kickoff, and planning for it is better than being surprised by it."
+      ]
+    },
+    {
+      "q": "A lot of our users are older. Can you design for that without making it look dated?",
+      "a": [
+        "Yes, and it is one of the genuinely distinctive requirements in this market. Larger default type that respects system text scaling, real contrast ratios, generous touch targets, no critical action behind a hover state, no interaction that depends on precise dragging, and clear error recovery rather than clever microcopy.",
+        "None of that requires a dated visual style — it requires deciding early that a 74-year-old client and a 34-year-old advisor are both primary users. Products that treat accessibility as a compliance checkbox tend to fail this test, and the failure shows up as support call volume rather than as a bug report."
+      ]
+    },
+    {
+      "q": "Do you work with wealth management and financial services firms here?",
+      "a": [
+        "Yes. Client and household portals, statement and document delivery, onboarding, advisor tooling and reporting are recurring briefs from the downtown and Mizner Park corridor.",
+        "The requirements we plan for from the architecture stage are permissioning across households and legal entities, immutable audit trails, records retention, and controlled document access. Those are structural decisions — adding them to a shipped product usually means rewriting the data layer."
+      ]
+    },
+    {
+      "q": "Can you build AI features on top of our documents and policies?",
+      "a": [
+        "Yes — retrieval over your own policy files, claims, contracts, manuals or clinical documentation, plus document classification and extraction, and agent workflows for repetitive review tasks. We are an official OpenAI partner and we build this as a product feature rather than a chatbot bolted onto a finished app.",
+        "The part we insist on is evaluation. In insurance, healthcare or legal contexts a confidently wrong answer is worse than no answer, so we build a test set from your real documents and measure against it before anything reaches users. Our <a href=\"/work/stanford-university.html\">Stanford University</a> engagement was built under exactly that constraint."
+      ]
+    },
+    {
+      "q": "We're a company in the Research Park at Florida Atlantic. Is a squad the right fit for us?",
+      "a": [
+        "Often, yes. Research Park ventures typically have deep domain expertise and no product surface, and the work is turning a validated model or prototype into something a customer can buy — interfaces, deployment, reliability, evaluation harnesses. The retainer suits that because priorities shift week to week.",
+        "If you are pre-funding and pre-revenue, be candid about budget and we will tell you whether a fixed-scope advisory engagement or a narrow MVP is the better use of the money. Sometimes the right answer is to do less than you are asking for."
+      ]
+    },
+    {
+      "q": "How does this compare to hiring an internal developer?",
+      "a": [
+        "<a href=\"https://pbcedu.org/the-research-park-at-florida-atlantic-drives-610-million-in-annual-economic-impact/\" target=\"_blank\" rel=\"noopener nofollow\">Average salaries at Research Park at Florida Atlantic ventures run $115,768</a>, and senior engineers cost meaningfully more. Add benefits, equipment, recruiting and three to six months to hire and ramp, and one hire is a large commitment that delivers nothing in the first quarter.",
+        "The honest counterpoint: if you have a stable five-year roadmap and can retain people, in-house wins on cost eventually. The reason to use a squad is speed, breadth of skill and optionality, not price alone. We put the arithmetic on the <a href=\"/compare/\">comparison page</a> rather than hiding it."
+      ]
+    },
+    {
+      "q": "Native or cross-platform for a Boca Raton build?",
+      "a": [
+        "React Native for most business apps — one codebase serving both stores, which roughly halves the maintenance surface over three years. For internal and client-facing enterprise tools, that is almost always the right call, and a responsive web app is sometimes better still.",
+        "Native Swift or Kotlin when the product depends on hardware the bridge handles poorly: sustained camera work for claims or inspection photography, Bluetooth medical peripherals, background location for field staff. We make the call during scoping and explain the tradeoff rather than defaulting to whichever we prefer."
+      ]
+    },
+    {
+      "q": "Can you take over a project someone else started?",
+      "a": [
+        "Often, yes. It is a common brief here, usually after an offshore engagement stalled or an internal build lost its only developer. We start with a fixed-scope audit of the existing codebase and tell you plainly whether it is worth continuing or cheaper to rebuild.",
+        "We will give you that answer even when it makes the engagement smaller. A half-finished platform your team cannot maintain or hire against is a worse position than an honest restart."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": [
+    "Delray Beach",
+    "Highland Beach",
+    "Deerfield Beach",
+    "Coconut Creek",
+    "Parkland",
+    "Boynton Beach",
+    "Coral Springs"
+  ],
+  "nearby": [
+    "app-development-west-palm-beach",
+    "app-development-fort-lauderdale",
+    "app-development-aventura",
+    "app-development-miami"
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "slug": "app-development-miami-beach",
+  "city": "Miami Beach",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Miami Beach",
+  "title": "App Development in Miami Beach — Hospitality &amp; Events Software | Appsurd",
+  "metaDescription": "Miami Beach app development for hotels, restaurants, events and short-term rentals. Built for peak season load and POS/PMS integration. Real cost ranges. Twenty minutes over the causeway.",
+  "hubBlurb": "Hotels, restaurants, nightlife, conventions and short-term rentals. The engineering problem here is season: the system has to hold up during Art Basel week, not on an average Tuesday.",
+  "h1": ["App development in", "Miami Beach"],
+  "dek": "Miami Beach software fails in a specific way: it works all summer and then falls over the first week of December. We build hospitality, events and rental products for a market where demand is violently seasonal and every system you own already talks to a POS or a PMS.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>20 min</b> over the causeway",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "21,606",
+      "label": "Hotel rooms in Miami Beach — roughly 32% of the entire Miami metro inventory of 66,366 rooms, in a city of about seven square miles.",
+      "source": {
+        "name": "City of Miami Beach economic &amp; tourism overview",
+        "url": "https://www.miamibeachfl.gov/wp-content/uploads/2023/07/Miami-Beach-Econ-Tourism-Oveview-v22.pdf"
+      }
+    },
+    {
+      "value": "537,000",
+      "label": "Guests across 143 events and 12,000+ exhibitors at the Miami Beach Convention Center in FY 2025. Every one of those events is somebody's software deadline.",
+      "source": {
+        "name": "Miami Beach Convention Center",
+        "url": "https://www.miamibeachconvention.com/center-info/press/mbcc-wraps-milestone-year-2025"
+      }
+    },
+    {
+      "value": "21%",
+      "label": "Share of Miami Beach hospitality inventory that is short-term rental rather than hotel — the highest in its competitive set, ahead of Miami, Fort Lauderdale, Nashville and San Diego.",
+      "source": {
+        "name": "City of Miami Beach economic &amp; tourism overview",
+        "url": "https://www.miamibeachfl.gov/wp-content/uploads/2023/07/Miami-Beach-Econ-Tourism-Oveview-v22.pdf"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed, reviewable increment. Not a mockup — a staging URL you can send to your GM."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Twenty minutes", "over the causeway"],
+      "body": [
+        "We do not have an office in Miami Beach, and we are not going to invent one. Appsurd works from <strong>2125 Biscayne Blvd</strong> on the mainland, in the corridor between Downtown and the Design District. From our door to Lincoln Road is the Julia Tuttle Causeway and about twenty minutes, or roughly twice that if you try it at 6pm on a Friday in season, which we have learned not to do.",
+        "That matters more here than in most markets, because Miami Beach work is physical. Testing a guest app means standing in the lobby while the front desk checks someone in; testing an ordering flow means being at the host stand during a Saturday turn. We can do those visits in an afternoon and be back at our own desks the same day, which is not true of an agency flying someone in.",
+        "The honest tradeoff: parking on the Beach is bad, and we will suggest doing routine reviews on Zoom rather than burning ninety minutes of your day and ours on a status meeting. In-person time is worth spending on kickoff, on observing real operations, and on the argument about the data model. Not on standups.",
+        "The rest of the engagement is remote-first and asynchronous, because that is what a 48-hour delivery cadence actually requires. What being nearby buys you is that <strong>somebody accountable for your project can be in your building this week</strong>, and that questions asked at 9am get answered at 9am, in Eastern time, by a named person at a real address."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["A seven-square-mile city", "with a metro-sized hospitality base"],
+      "body": [
+        "Miami Beach is not a smaller version of Miami. It is a barrier island whose economy is concentrated in leisure to a degree that shows up clearly in the data, and that concentration determines what software has to survive here.",
+        "Start with the inventory. The city holds <strong>21,606 hotel rooms — about 32% of the entire Miami metro total of 66,366</strong>, <a href=\"https://www.miamibeachfl.gov/wp-content/uploads/2023/07/Miami-Beach-Econ-Tourism-Oveview-v22.pdf\" target=\"_blank\" rel=\"noopener nofollow\">per the City of Miami Beach's own economic and tourism overview</a>. The same report describes the service industry as the city's largest employer and notes that Miami Beach's tourism employment share runs roughly 50% higher than the City of Miami's. When people say the Beach is a tourism economy, that is the specific number behind it.",
+        "Short-term rentals are a bigger structural piece here than in neighbouring markets. The city counted <strong>5,852 active short-term rentals in March 2023 at an average daily rate of $257 and 72% occupancy</strong>, and put STRs at <strong>21% of total hospitality rooms — the highest share in its competitive set</strong>, ahead of Miami, Fort Lauderdale, New Orleans, Nashville, San Diego and Tampa, <a href=\"https://www.miamibeachfl.gov/wp-content/uploads/2023/07/Miami-Beach-Econ-Tourism-Oveview-v22.pdf\" target=\"_blank\" rel=\"noopener nofollow\">in the same overview</a>. If you build property or guest software here, the rental operator is a real customer segment, not an edge case.",
+        "Then there is the events layer, which is what makes the load curve so ugly. The Miami Beach Convention Center hosted <strong>143 events with more than 537,000 guests and over 12,000 exhibitors in fiscal 2025</strong>, across medical, fintech, sports, arts and corporate verticals, <a href=\"https://www.miamibeachconvention.com/center-info/press/mbcc-wraps-milestone-year-2025\" target=\"_blank\" rel=\"noopener nofollow\">according to the Convention Center</a>. Art Basel Miami Beach alone drew <strong>more than 80,000 attendees across 283 galleries from 43 countries</strong> in its 2025 edition, <a href=\"https://www.artbasel.com/stories/art-basel-miami-beach-closes-year-on-a-high-note?lang=en\" target=\"_blank\" rel=\"noopener nofollow\">per Art Basel</a>. Add the Miami International Boat Show, Miami Swim Week, New Year's, spring break, and the hotel demand that spills across the bay during Formula 1 weekend — the race itself is at Hard Rock Stadium in Miami Gardens, not on the Beach, but the rooms and restaurants here fill regardless.",
+        "Zooming out, the county's tourism economy supported <strong>more than 216,000 jobs, about 10% of all Miami-Dade employment, on $22.7 billion of visitor spending in 2025</strong>, <a href=\"https://www.miamiandbeaches.com/press-and-media/miami-press-releases/gmcvb-reports-strong-tourism\" target=\"_blank\" rel=\"noopener nofollow\">reports the Greater Miami Convention &amp; Visitors Bureau</a>. Miami Beach is the densest expression of it. The practical consequence for a build: your traffic is not a smooth line with a modest weekend bump. It is a flat plain with a handful of cliffs. Architecture that is perfectly adequate in August is the reason your ordering system times out during Basel week, and the cost of finding that out in December is measured in covers and refunds, not in error logs."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Districts",
+      "h2": ["The brief changes", "by the block"],
+      "sub": "South Beach and North Beach are effectively different markets with different budgets, different operators and different technical constraints.",
+      "hoods": [
+        {
+          "name": "South Beach &amp; Ocean Drive",
+          "note": "Restaurants, bars, clubs and the highest-turnover hospitality operations in the county. Briefs are ordering, reservations, table management, waitlists and guest messaging, and the whole thing lives or dies on POS integration and peak-hour behaviour."
+        },
+        {
+          "name": "Lincoln Road &amp; the retail spine",
+          "note": "Retail, quick-service food, fitness studios and flagship brand locations. Usually loyalty, mobile ordering, foot-traffic analytics and staff scheduling — plus the reality that a store associate's phone is the actual hardware target."
+        },
+        {
+          "name": "Convention Center District &amp; City Center",
+          "note": "Events, trade shows, exhibitor services and the vendor ecosystem around them. Badge scanning, lead capture, exhibitor portals and schedules that have to work offline in a hall where 12,000 exhibitors are all on the same network."
+        },
+        {
+          "name": "Collins Avenue hotel corridor",
+          "note": "Resorts and branded hotels from mid-Collins up. Guest apps, mobile key, in-room ordering, spa and cabana booking, housekeeping and engineering ticketing — all of it constrained by whatever PMS the property runs and what its brand standards permit."
+        },
+        {
+          "name": "Sunset Harbour &amp; West Avenue",
+          "note": "Wellness, med-spa, boutique fitness, marine services and small operators with real revenue and no IT department. The right answer is normally a tight product that replaces three subscriptions, not a platform."
+        },
+        {
+          "name": "Mid-Beach &amp; Faena District",
+          "note": "Luxury resorts, private clubs, residences and cultural venues. Expectations on interface quality and discretion are high, membership and access rules are unusually fiddly, and guest data handling gets scrutinised."
+        },
+        {
+          "name": "North Beach &amp; Normandy Isle",
+          "note": "Neighbourhood restaurants, small apartment buildings, condo associations and family businesses. Spanish-first more often than not, budget-real, and better served by an MVP with a clear payback than a two-year roadmap."
+        },
+        {
+          "name": "Alton Road &amp; the causeway corridor",
+          "note": "Property management, rental operators and building services. Field work: unit turnover, cleaning and inspection routes, maintenance photos, and syncing against whichever channel manager the owner already uses."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where Miami Beach", "software budgets sit"],
+      "sub": "Almost none of this is venture-funded product work. It is operating businesses buying software to survive their own busy season.",
+      "cards": [
+        {
+          "h3": "Hotels &amp; resorts",
+          "p": "The largest single category, and the one where integration dominates scope. Guest apps, mobile check-in and key, in-room dining, spa and cabana booking, housekeeping and maintenance dispatch, group and event coordination. The recurring technical problem is the property management system: rates, availability and folio data live in a PMS with a partner API that is often rate-limited, batch-oriented and unforgiving, and any guest-facing feature is only as reliable as that link. We design for stale-data tolerance and idempotent writes from the start, because a double-posted charge on a folio is a front-desk conversation, not a bug ticket."
+        },
+        {
+          "h3": "Restaurants, bars &amp; nightlife",
+          "p": "Reservations and waitlists, mobile and QR ordering, table management, tips and tip pooling, loyalty, private-event booking. The differentiator is behaviour at the peak: a system that degrades gracefully at 9pm on a Saturday in season is worth more than one with a nicer interface. POS integration is the hard part — Toast, Square, Lightspeed and the older terminals still on the Beach each model checks, modifiers and voids differently, and menu changes made on the terminal have to appear in the app without someone re-entering them."
+        },
+        {
+          "h3": "Events, conventions &amp; production",
+          "p": "Registration, badge and access control, exhibitor and sponsor portals, session scheduling, on-site staff coordination, lead capture. Two constraints define these builds: the date genuinely cannot move, and network conditions in a packed hall are worse than anyone plans for. That pushes us to offline-first clients with local queues and conflict resolution, and to load testing against a realistic spike rather than an average."
+        },
+        {
+          "h3": "Short-term rentals &amp; property operations",
+          "p": "Owner and guest portals, turnover and cleaning scheduling, inspection and damage documentation, access codes, pricing and channel sync, compliance record-keeping. The Beach's rental rules are strict and location-specific — the city defines a short-term rental as less than six months and one day, prohibits it outright in all single-family homes and in many multi-family buildings, and requires the Business Tax Receipt and Resort Tax certificate numbers to be displayed in <em>every</em> advertisement, <a href=\"https://www.miamibeachfl.gov/business/vacation-short-term-rentals/\" target=\"_blank\" rel=\"noopener nofollow\">per the city</a>. Software that touches listings has to treat those fields as required data, not optional metadata."
+        },
+        {
+          "h3": "Wellness, med-spa &amp; fitness",
+          "p": "One of the fastest-moving categories on the Beach and the one clients most often underestimate legally. Booking and memberships, intake forms, packages and class credits, practitioner scheduling, before-and-after imagery, retail attachment. The moment a med-spa collects clinical intake or stores treatment photos, you are in HIPAA territory, which changes hosting, logging, analytics tooling and vendor selection. Deciding that at the architecture stage is cheap; discovering it during a compliance review is not."
+        },
+        {
+          "h3": "Retail, fashion &amp; brand activations",
+          "p": "Lincoln Road and Collins retail, plus the pop-up and activation economy that arrives with Swim Week, Basel and every major convention. Work looks like clienteling apps, appointment booking, inventory visibility across a handful of doors, and event microsites that have to launch on a fixed date and then handle a very short, very sharp traffic burst. Short-lived products still need real hosting decisions, because the failure is public."
+        },
+        {
+          "h3": "Cruise-adjacent tourism, tours &amp; charters",
+          "p": "PortMiami is across the bay and its passengers sleep, eat and book excursions here. Excursion and tour booking, boat and jet-ski rental, waivers and liability capture, capacity and manifest management, multilingual confirmations. The scheduling logic is harder than it looks: ship arrival and departure windows drive availability, weather cancellations cascade across a day's bookings, and refunds have to be handled without a human touching every reservation."
+        },
+        {
+          "h3": "Condo associations &amp; residential buildings",
+          "p": "A quieter but very consistent source of work on a barrier island of towers. Resident portals, amenity and elevator reservations, package and valet logging, violation tracking, board document access, and — since Florida's post-Surfside structural reserve and milestone inspection regime — inspection and reserve documentation that has to be produced on demand. Buildings run on paper and email; the software that wins is the one the on-site manager will actually use."
+        }
+      ]
+    },
+    {
+      "id": "season",
+      "eyebrow": "Peak load",
+      "h2": ["Building for", "the first week of December"],
+      "body": [
+        "Most engineering advice about scale assumes growth: traffic rises over quarters and you keep ahead of it. Miami Beach does not work that way. Demand here is event-shaped. A property can run at comfortable occupancy for months and then hit near-capacity for a single week, and the software has to be sized for the week.",
+        "The events are known in advance, which is the good news. Basel week in early December, the Boat Show, Swim Week, New Year's, spring break, the convention calendar, and the weekend the Grand Prix pulls the region's rooms. We treat those dates as engineering milestones on the project plan and load test against them specifically, using traffic multiples the operator has seen before rather than a number we invented.",
+        "In practice that means a few unglamorous decisions. <strong>Read paths get cached aggressively and write paths get queued</strong>, so a burst of orders does not become a burst of database contention. <strong>Third-party calls get circuit breakers and cached fallbacks</strong>, because your PMS or POS vendor's API is the component most likely to slow down at exactly the moment you need it. <strong>Anything user-facing degrades to a working subset</strong> rather than an error screen — a menu that shows without live inventory beats a page that will not load. And <strong>the queue is monitored, with alerting to a human who is awake</strong>, since peaks on the Beach happen at 10pm, not at 10am.",
+        "The other half of the problem is the trough. Staff turnover is high in seasonal hospitality, so a tool that needs a week of training will not survive the shoulder season, when the person you trained is gone. We optimise for a new hire being useful in ten minutes, which usually means fewer features and blunter interfaces than a client initially asks for. It also means being honest about what should not be built: plenty of Beach operators come to us wanting a branded consumer app when what they need is a better integration between two systems they already pay for and a staff-facing tool on a tablet."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Miami Beach"],
+      "sub": "Real ranges from real engagements. Every range includes design, engineering, QA and deployment — not engineering alone.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one platform, real guests or staff using it. Good for testing an idea before season, so you learn in a slow month instead of a peak one."
+          ],
+          [
+            "Guest-facing hospitality app",
+            "$55k – $150k",
+            "3 – 6 months",
+            "iOS and Android, accounts, payments, notifications, staff admin, plus a live PMS or booking-engine integration. The integration is usually a third of the work."
+          ],
+          [
+            "Restaurant ordering &amp; reservations",
+            "$45k – $120k",
+            "3 – 5 months",
+            "Ordering, waitlist, table management, loyalty, POS integration and peak-load testing. Priced higher than a generic app of the same size because the POS side is where the surprises live."
+          ],
+          [
+            "Event or convention platform",
+            "$60k – $200k",
+            "3 – 6 months",
+            "Registration, badges and access, exhibitor portal, sessions, offline-capable on-site apps. The date is fixed, which changes how we sequence everything."
+          ],
+          [
+            "Rental / property operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Turnover and cleaning workflows, inspections, access, owner reporting, channel and compliance data. Where most Beach property-management budget actually goes."
+          ],
+          [
+            "Regulated build (med-spa / clinical)",
+            "$120k – $400k+",
+            "5 – 12 months",
+            "HIPAA-scoped data handling, audit logging, penetration testing, formal security review. The compliance work is a real fraction of the cost."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Multilingual guest messaging, review and feedback summarisation, retrieval over your own operating documents, document processing. Sits on top of software that already exists."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous work with shifting priorities — the right shape for an operator whose needs change between season and shoulder. Unlimited requests, pause anytime."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store updates, dependency and security patches, monitoring, small changes. On the Beach, add pre-season load checks before each major event window."
+          ]
+        ]
+      },
+      "after": [
+        "Four things move a Miami Beach number more than the feature list. <strong>POS and PMS integration</strong> — the vendor's API quality, partner-programme rules and certification timeline are usually the largest single variable, and none of them are under your control. <strong>Peak-load engineering</strong> — designing and testing for a December spike rather than an August average is real work, and skipping it is the most expensive saving available to you. <strong>Compliance</strong> — HIPAA for anything clinical, plus the city's short-term rental requirements if you touch listings. <strong>Multilingual guest content</strong> — Spanish and Portuguese at parity is cheap when designed in and expensive when retrofitted.",
+        "Two things that reduce cost: launching in the shoulder season, when your staff have time to be trained and a rough week does not cost you a full house; and starting from the integration rather than the interface, because a project that cannot read live availability is not shippable no matter how good the screens look. Compare against hiring on our <a href=\"/compare/\">comparison page</a>."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Miami Beach engagement usually starts with a thirty-minute call and, if it is an operations product, a visit to watch the actual work happen — a check-in rush, a Saturday turn, a load-in. Half an hour on site tends to change the scope more than a week of requirements documents.",
+        "Within two business days you get a written scope: the build shape, the stack, the integrations we will need credentials for, the risks we can see from here, and a cost range. If a vendor API or partner-programme approval is on the critical path, it is named in that document with a realistic timeline, because that is the thing most likely to slip.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours. You get the repo, the staging URL and access to everything from the start. If your season starts in ten weeks, we sequence the work so the load-critical paths are built and tested first and the nice-to-haves land after the peak — not the other way around."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Miami Beach?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137, on the mainland — about twenty minutes from Lincoln Road over the Julia Tuttle Causeway. We work with Miami Beach clients constantly and we come to you.",
+        "We would rather say that plainly than list a mail-drop address on Washington Avenue. If an agency claims a Beach office, ask which floor and who sits there."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Miami Beach?",
+      "a": [
+        "A validation MVP runs $15k–$35k. A guest-facing hospitality app with a live PMS integration is $55k–$150k. Restaurant ordering and reservations with POS integration is $45k–$120k. An event or convention platform is $60k–$200k, a rental and property operations platform $60k–$180k, and a HIPAA-scoped clinical or med-spa build $120k–$400k and up. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "On the Beach specifically, the two biggest cost drivers are the quality of the POS or PMS API you have to integrate with and whether the system has to be engineered for peak-week load. Both are decided at the architecture stage, which is why we scope them before quoting rather than after."
+      ]
+    },
+    {
+      "q": "Can you integrate with our PMS or POS?",
+      "a": [
+        "Usually yes, and the answer depends on the specific vendor and your contract with them rather than on us. Some hotel systems have a documented partner API with a certification process and a queue; some have a partner programme that must approve the integration before you can read live data. Restaurant platforms vary just as much in how they model checks, modifiers, voids and tips.",
+        "We start by confirming what your contract actually entitles you to and what the API can do, before writing product code. That order matters: we have seen builds designed around data the vendor was never going to expose, and rescoping late is far more expensive than checking early."
+      ]
+    },
+    {
+      "q": "Will the app hold up during Art Basel or the Boat Show?",
+      "a": [
+        "That is the design target, and we treat named event weeks as engineering milestones rather than as an afterthought. Read paths get cached, writes get queued, third-party calls get circuit breakers and cached fallbacks, and every user-facing surface has a degraded mode that still works when a dependency is slow.",
+        "We load test against multiples of the traffic you have actually seen in past peaks, using your numbers rather than a generic benchmark. If your infrastructure budget will not support the peak you are describing, we will tell you that before the build rather than during it."
+      ]
+    },
+    {
+      "q": "We're a hotel. Should we build a guest app at all?",
+      "a": [
+        "Sometimes no, and it is worth deciding honestly. If your brand already provides a guest app and mobile key, a second app you have to convince guests to download for a three-night stay tends to underperform, and a well-built mobile web experience plus messaging often beats it.",
+        "Where a custom build does earn its cost is in operations — housekeeping and engineering dispatch, group and event coordination, F&amp;B ordering across outlets — and in amenity experiences your brand system does not cover. We will say which side of that line we think you are on during the scoping call."
+      ]
+    },
+    {
+      "q": "Can you build software for short-term rental operations here?",
+      "a": [
+        "Yes, and it needs to be built against Miami Beach's actual rules, which are stricter than most of Florida. The city defines vacation or short-term rentals as less than six months and one day, prohibits them in all single-family homes and in many multi-family buildings by zoning district, and requires the City-issued Business Tax Receipt number and Resort Tax certificate number to be displayed in every advertisement or listing, <a href=\"https://www.miamibeachfl.gov/business/vacation-short-term-rentals/\" target=\"_blank\" rel=\"noopener nofollow\">per the city's own guidance</a>.",
+        "Practically, that means listing records need those identifiers as required fields with validation, address-level eligibility has to be checkable rather than assumed, and the audit trail matters. We build the compliance data in as structure, not as a text note. We are engineers, not your attorney — confirm your specific property's status with the city or with counsel."
+      ]
+    },
+    {
+      "q": "Do you handle resort tax and payment complexity?",
+      "a": [
+        "We handle the software side, and it is more than a tax rate. Miami Beach imposes a resort tax on lodging and on food and beverage sales under Chapter 102 of the City Code, <a href=\"https://www.miamibeachfl.gov/wp-content/uploads/2022/09/RESORT-TAX-REGISTRATION-FRONT-2.pdf\" target=\"_blank\" rel=\"noopener nofollow\">as set out on the city's resort tax registration form</a>, which means lodging and F&amp;B revenue have to be recorded distinctly and reportably in whatever system you build.",
+        "We wire that into the data model and reporting so your finance team can reconcile, and we integrate with the tax and payment providers you already use rather than reimplementing calculation logic ourselves. Filing and rates are between you and your accountant."
+      ]
+    },
+    {
+      "q": "Do your apps work in Spanish and Portuguese?",
+      "a": [
+        "Yes, at parity rather than as a translation layer, and on the Beach it is a commercial requirement rather than a nicety. The county's leading international visitor markets include Colombia, Brazil, Mexico and Argentina alongside the UK and Canada, <a href=\"https://www.miamiandbeaches.com/press-and-media/miami-press-releases/gmcvb-reports-strong-tourism\" target=\"_blank\" rel=\"noopener nofollow\">according to the Greater Miami Convention &amp; Visitors Bureau</a>.",
+        "In practice: copy is written rather than machine-translated, layouts are tested against longer Spanish and Portuguese strings, dates and currency switch with locale, and confirmations and push notifications arrive in the guest's language. Staff-facing tools get the same treatment, since much of the hospitality workforce here works bilingually."
+      ]
+    },
+    {
+      "q": "How fast can you start if my season is coming?",
+      "a": [
+        "Kickoff is typically within a week of a signed scope, and the first deployed increment lands inside 48 hours of kickoff, with new work every two days after that. If a peak week is close, we sequence the load-critical and integration paths first so the risky parts are tested well before the date.",
+        "If there genuinely is not enough runway to build safely before your peak, we will say so and propose either a narrower scope that can be hardened in time or a launch after the season. Shipping something fragile into Basel week is worse than shipping nothing."
+      ]
+    },
+    {
+      "q": "Can you take over a Miami Beach project someone else started?",
+      "a": [
+        "Often, yes — it is a common brief here, usually a hospitality build that stalled at the integration layer or a seasonal app that fell over during a peak. We start with a fixed-scope audit of the existing code and tell you plainly whether it is worth continuing or cheaper to restart, even when that answer makes the engagement smaller."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has shipped production software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": ["South Beach", "Mid-Beach", "North Beach", "Surfside", "Bal Harbour", "Sunny Isles Beach"],
+  "nearby": [
+    "app-development-miami",
+    "app-development-brickell",
+    "app-development-aventura",
+    "app-development-fort-lauderdale"
+  ]
+}

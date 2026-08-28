@@ -1,0 +1,348 @@
+{
+  "slug": "app-development-coral-gables",
+  "city": "Coral Gables",
+  "county": "Miami-Dade County",
+  "region": "FL",
+  "group": "Miami-Dade",
+  "linkLabel": "Coral Gables",
+  "title": "App Development in Coral Gables — Enterprise &amp; LatAm HQ Builds | Appsurd",
+  "metaDescription": "Coral Gables app development for Latin American regional headquarters, healthcare, law and accounting firms. Formal procurement, legacy integration, multi-country rollouts. Real cost ranges.",
+  "hubBlurb": "More than 100 multinational corporations and regional headquarters, many of them running Latin America from a few square miles. Formal procurement, long decision cycles, legacy systems.",
+  "h1": ["App development in", "Coral Gables"],
+  "dek": "Coral Gables buys software the way large companies buy anything: through procurement, with an incumbent system nobody is allowed to switch off, and on a timeline set by a committee. We build for that reality instead of pretending a two-week pilot will get signed on Friday.",
+  "trustBar": [
+    "<b>Based at</b> 2125 Biscayne Blvd, Miami",
+    "<b>20 min</b> down Biscayne &amp; US-1",
+    "<b>Since</b> 2019",
+    "<b>Official</b> OpenAI partner",
+    "<b>First delivery</b> in 48 hours",
+    "<b>Squad</b> 19 builders"
+  ],
+  "stats": [
+    {
+      "value": "100+",
+      "label": "Multinational corporations and regional headquarters in Coral Gables — with more than a third of the city's multinational firms Spanish-owned, and around 17 consular and trade offices.",
+      "source": {
+        "name": "Coral Gables Chamber of Commerce — City Beautiful Business Guide",
+        "url": "https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf"
+      }
+    },
+    {
+      "value": "77,637",
+      "label": "People working in Coral Gables against a local labor force of about 24,000 — roughly 50,000 of them commuting in daily before the pandemic.",
+      "source": {
+        "name": "Coral Gables Chamber of Commerce — City Beautiful Business Guide",
+        "url": "https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf"
+      }
+    },
+    {
+      "value": "11.5M sq ft",
+      "label": "Office and commercial space in a city of roughly 50,000 residents, hosting more than 10,000 businesses.",
+      "source": {
+        "name": "City of Coral Gables",
+        "url": "https://www.coralgables.com/news/unlocking-coral-gables-business-potential"
+      }
+    },
+    {
+      "value": "48 hrs",
+      "label": "From kickoff to your first deployed increment — useful when procurement took four months and the deadline did not move."
+    }
+  ],
+  "sections": [
+    {
+      "id": "local",
+      "eyebrow": "Actually here",
+      "h2": ["Twenty minutes", "down the boulevard"],
+      "body": [
+        "We are not a Coral Gables firm and we are not going to claim a Ponce de Leon address we do not hold. Appsurd works from <strong>2125 Biscayne Blvd</strong>, in the corridor between Downtown Miami and the Design District. From our door to Miracle Mile is about twenty minutes down Biscayne and US-1 outside peak, or the Metrorail to Douglas Road if the drive is unappealing.",
+        "For Gables clients the visits that matter are usually the formal ones, and we plan for them. A vendor evaluation meeting with legal and IT in the room. A workshop with the department heads whose process the software is about to change. A presentation to a committee that will decide in three weeks. Those happen in person, on your floor, and we will bring the person who is actually going to build the thing rather than a salesperson.",
+        "We are also candid about how the rest of it works. Day-to-day delivery is remote-first and asynchronous, because that is what a 48-hour cadence requires, and we will not pretend a standing on-site presence makes software arrive faster. What proximity genuinely provides is that <strong>an accountable person can be in your building this week</strong>, works full US business hours in Eastern time, and can be reached at a real street address.",
+        "One more thing worth saying to this particular market: much of what ranks for \"app development Coral Gables\" is a national firm running the same page in forty cities with a coworking address attached. That is a legitimate marketing funnel and it is not the same as being twenty minutes away. Ask any shortlisted vendor for a street address and the name of the engineer who will be on your project."
+      ]
+    },
+    {
+      "id": "market",
+      "eyebrow": "The market",
+      "h2": ["A small city that runs", "Latin America"],
+      "body": [
+        "Coral Gables is unusual in a way that is easy to miss from a distance: a city of roughly 50,000 residents that hosts an outsized corporate base, much of it regional headquarters for Latin America. George Merrick advertised it as a gateway to Latin America in 1925, and the concentration that resulted is real and measurable.",
+        "The Coral Gables Chamber of Commerce counts <strong>more than 100 multinational corporations and regional headquarters</strong> in the city — describing more than 120 multinational firms in total, with <strong>more than a third of them Spanish-owned</strong> and roughly <strong>17 consular and trade offices</strong> operating locally, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">in its City Beautiful Business Guide</a>. The city's own economic development material notes that a significant proportion of its multinational community runs Latin American headquarters from here, naming Bank of America, Del Monte, FIFA, Diageo and Apple among companies with a presence, alongside <strong>more than 10,000 businesses and 11.5 million square feet of commercial space</strong>, <a href=\"https://www.coralgables.com/news/unlocking-coral-gables-business-potential\" target=\"_blank\" rel=\"noopener nofollow\">per the City of Coral Gables</a>. The chamber's employer list makes the pattern concrete: Bacardi USA, Del Monte, HBO Latin America, Millicom, Diageo and Quirch Foods all appear with staff on the ground.",
+        "The daytime economy is far larger than the resident one. Around <strong>77,637 people work in Coral Gables against a local labor force of about 24,122</strong>, with roughly <strong>50,000 commuting in daily</strong> pre-pandemic, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">on the chamber's figures</a>. Professional, scientific and technical services is the largest industry at 13,614 jobs across 2,440 companies, followed by hotels and restaurants, healthcare, banking and finance, education and real estate.",
+        "Institutions anchor the rest. The <strong>University of Miami is the city's largest employer at 4,895 people</strong>, with Baptist Health's corporate office at 2,485, Doctors Hospital at 2,184, Amerant Bank at 918 and Bayview Asset Management at 788, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">again per the chamber guide</a>. The university itself enrolls <strong>more than 19,000 students and reports over $492 million a year in research and sponsored program expenditures</strong>, <a href=\"https://welcome.miami.edu/about-um/index.html\" target=\"_blank\" rel=\"noopener nofollow\">according to the University of Miami</a>.",
+        "There is also a long tail that gets forgotten in the headquarters story: <strong>90% of companies operating in Coral Gables employ fewer than ten people</strong>, and roughly three-quarters employ four or fewer, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">on the chamber's numbers</a>. Small law, accounting, advisory and family-office practices sit in the same buildings as the multinationals, and they buy software very differently.",
+        "For a build, this market composition produces three consistent constraints. <strong>Procurement is formal</strong> — vendor forms, legal review, insurance certificates, security questionnaires, sometimes a competitive process. <strong>Decisions are slow and multi-party</strong>, and the winning proposal is usually the one with the clearest maintenance and handover story rather than the lowest price. And <strong>the system of record is old</strong>: a regional ERP instance, a practice management system, a hospital platform, a decades-old distribution application. The app is almost always the friendly surface over something nobody is permitted to replace."
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "eyebrow": "Corridors",
+      "h2": ["Where the work", "comes from"],
+      "sub": "The Gables is small, but a brief from Alhambra Circle and a brief from Miracle Mile have almost nothing in common.",
+      "hoods": [
+        {
+          "name": "Alhambra Circle &amp; Ponce de Leon",
+          "note": "The regional headquarters spine. Multi-country reporting, distributor and dealer portals, intercompany workflow, and integrations with an ERP instance managed from another continent. Procurement is formal and the rollout is per country."
+        },
+        {
+          "name": "Miracle Mile &amp; Giralda Plaza",
+          "note": "Established independent retail and more than 100 restaurants. Reservations, ordering, loyalty, appointment booking and clienteling for owners with no IT function. The right scope is small, fast and replaces two or three subscriptions."
+        },
+        {
+          "name": "Downtown Gables &amp; the BID",
+          "note": "Law firms, accounting practices, insurance and advisory offices in mid-rise floorplates. Client portals, intake, document workflow, billing integration and retrieval over document sets."
+        },
+        {
+          "name": "University of Miami &amp; South Dixie",
+          "note": "Research administration, student and alumni experience, lab and clinical operations, plus the startup output of the campus ecosystem. Institutional review and accessibility requirements are real project constraints."
+        },
+        {
+          "name": "The medical corridor around Doctors Hospital",
+          "note": "Healthcare providers, specialty practices and the Baptist Health corporate presence. Patient intake and scheduling, referral coordination, remote monitoring — with HIPAA shaping hosting, logging and vendor selection from the first sprint."
+        },
+        {
+          "name": "Coral Way &amp; the residential core",
+          "note": "Family offices, wealth advisors, private practices and household-name local businesses run from converted houses. Small, discreet builds where confidentiality matters more than feature count."
+        },
+        {
+          "name": "The Plaza Coral Gables &amp; newer Class A towers",
+          "note": "Recent corporate arrivals and expansion offices in newer space. Usually a workplace or operations tool for a team that has budget, a global IT standard to comply with, and a deadline tied to a fiscal year."
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "eyebrow": "Industries",
+      "h2": ["Where the Coral Gables", "budgets actually are"],
+      "sub": "Ranked roughly by how often the brief reaches us. Very little of it is consumer product; most of it is enterprise operations.",
+      "cards": [
+        {
+          "h3": "Latin American regional headquarters",
+          "p": "The city's signature category. Distributor and dealer portals, field sales tools, multi-country reporting, order and pricing workflows, intercompany approvals. The recurring technical problem is that the ERP is a global instance you get read access to on someone else's schedule, and each country's data conventions differ inside the same system. We design around a fixed integration contract and roll out market by market, because a single big-bang launch across six countries is how these programmes fail."
+        },
+        {
+          "h3": "Healthcare &amp; provider operations",
+          "p": "Doctors Hospital, Baptist Health's corporate presence, specialty practices and the university's clinical footprint make healthcare a steady source of work. Patient intake and scheduling, referral and care coordination, remote monitoring, clinic operations. HIPAA shapes the entire build — data handling, audit logging, vendor selection, even which analytics tools may touch an authenticated page. We scope that at the architecture stage, since retrofitting it is a rewrite."
+        },
+        {
+          "h3": "Law firms &amp; professional services",
+          "p": "Client and matter portals, intake and conflict checking, secure document exchange, e-signature, time and billing integration, and increasingly retrieval over contract and case sets. The systems these firms already run are non-negotiable, so integration quality decides the project. Our work for the <a href=\"/work/supreme-court-ohio.html\">Supreme Court of Ohio</a> is the public-sector version of the same brief: accessibility, predictable performance and no tolerance for a confidently wrong answer."
+        },
+        {
+          "h3": "Accounting, audit &amp; advisory",
+          "p": "Client data collection, engagement and workpaper workflow, document classification and extraction, deadline and filing trackers. The work is seasonal and document-shaped: the value is in cutting manual review time without ever silently dropping an exception, which means human-in-the-loop review paths are part of the design rather than a fallback."
+        },
+        {
+          "h3": "Family offices &amp; wealth management",
+          "p": "Consolidated reporting, document rooms, entity and entitlement management, onboarding and suitability workflow. The difficulty is permissions — which principal sees which entity and document class, and how that is proven later. We model entitlements as auditable data rather than front-end logic, and take the fund administrator or custodian as the source of truth instead of duplicating positions."
+        },
+        {
+          "h3": "Higher education &amp; research administration",
+          "p": "The University of Miami and its ecosystem generate grant and research administration tooling, student and alumni experience, lab operations and AI-native learning products. Institutional review, accessibility compliance and data governance are real gates. We built an AI-native learning platform for <a href=\"/work/stanford-university.html\">Stanford University</a>, where the operating constraint was that a confidently wrong answer is worse than no answer."
+        },
+        {
+          "h3": "Commercial real estate &amp; property management",
+          "p": "With 11.5 million square feet of commercial space and a heavy office base, leasing, tenant experience, building operations and maintenance workflows are constant. Work looks like tenant portals, amenity and access management, work-order dispatch, and reporting for owners who want one view across a portfolio held in several entities."
+        },
+        {
+          "h3": "Established retail, restaurants &amp; hospitality",
+          "p": "Miracle Mile and Giralda Plaza retail plus more than 100 restaurants and the city's hotels. Reservations, ordering, loyalty, appointment booking, staff scheduling, and POS integration that has to work with whatever terminal is already on the counter. Budgets here are smaller and the sensible answer is usually a tight product with a clear payback rather than a platform."
+        }
+      ]
+    },
+    {
+      "id": "enterprise",
+      "eyebrow": "Enterprise reality",
+      "h2": ["Procurement, legacy systems", "and multi-country rollouts"],
+      "body": [
+        "Most agency pages describe a build as if the only variables were features and headcount. In Coral Gables the schedule is usually set by three things that have nothing to do with engineering, and pretending otherwise is how these projects disappoint.",
+        "<strong>Procurement takes as long as it takes.</strong> Vendor registration, legal and insurance review, a security questionnaire, a data processing agreement, sometimes a competitive process with a scoring matrix, and an approval chain that includes a global IT function in another time zone. We treat that as a workstream with dates in the plan and someone on our side owning the paperwork. It is also why the retainer's cancel-anytime terms help here: they are easier to get through legal than a twelve-month fixed contract.",
+        "<strong>Decisions are made by committees that value continuity.</strong> The evaluator's real question is not whether you can build it — several vendors can — but who maintains it in three years, what happens if the agency disappears, and whether the internal team can take it over. So our proposals lead with the handover and maintenance story: repository ownership from the first commit, documentation written as we go, a live handover if you want your own team to run it, and a maintenance retainer if you do not. Code and docs are yours regardless.",
+        "<strong>The system of record predates the project.</strong> A regional ERP instance, a practice management system, a hospital platform, a distribution application written before mobile existed. Sometimes the integration path is a documented API; more often it is a nightly file drop, a middleware layer someone built years ago, or a read-only replica. We establish what access genuinely exists before designing screens, and we state the data-freshness guarantee in the product rather than implying live data that updates overnight.",
+        "<strong>Multi-country rollouts are sequential, not simultaneous.</strong> For a regional headquarters running six or eight markets, each country brings its own tax identifiers, invoice and document requirements, payment and settlement behaviour, language nuance and local approval habits. We build the first market properly with country-specific behaviour isolated behind clean boundaries, then add markets one at a time — typically several weeks and $25k–$80k each depending on the rails and reporting involved. A single generic integration claiming to cover the region tends to fail on the second country.",
+        "Where we are the wrong choice: if your parent company mandates a specific technology stack or an approved-vendor list we are not on, or if the requirement is to configure and administer an enterprise suite you have already licensed, a specialist implementation partner will serve you better than we will. We would rather say that in the first call than lose a quarter of everyone's time to a competitive process we should not be in."
+      ]
+    },
+    {
+      "id": "pricing",
+      "eyebrow": "Cost",
+      "h2": ["What app development", "costs in Coral Gables"],
+      "sub": "Real ranges from real engagements, including design, engineering, QA and deployment. Enterprise ranges assume procurement and integration work, because in this city they always exist.",
+      "table": {
+        "head": ["What you're building", "Typical range", "Time to launch", "When this is the right scope"],
+        "rows": [
+          [
+            "Validation MVP",
+            "$15k – $35k",
+            "4 – 8 weeks",
+            "One workflow, one platform, real users. Common for the city's small professional practices; rare inside a multinational, where the smallest viable unit is bigger."
+          ],
+          [
+            "Client portal for a firm",
+            "$50k – $150k",
+            "3 – 5 months",
+            "Intake, secure document exchange, status visibility, billing integration. The most frequent brief from Gables law, accounting and advisory practices."
+          ],
+          [
+            "Internal operations platform",
+            "$60k – $180k",
+            "3 – 6 months",
+            "Replacing spreadsheets and email inside a real operating function, integrated with the system of record. Where most Coral Gables budget actually lands."
+          ],
+          [
+            "Enterprise build for a regional HQ",
+            "$120k – $400k+",
+            "6 – 12 months",
+            "Distributor or field tooling, multi-country data, ERP integration, formal security review and a phased country rollout. Procurement time sits on top of this."
+          ],
+          [
+            "Additional country in a rollout",
+            "+$25k – $80k each",
+            "4 – 10 weeks each",
+            "Local identifiers, invoicing and document rules, payment behaviour, language and reporting. Priced per market because that is how the work behaves."
+          ],
+          [
+            "Regulated build (healthcare)",
+            "$120k – $400k+",
+            "5 – 12 months",
+            "HIPAA-scoped data handling, audit logging, penetration testing, institutional security review. The compliance work is a genuine fraction of the cost."
+          ],
+          [
+            "AI feature inside an existing product",
+            "$25k – $90k",
+            "4 – 10 weeks",
+            "Retrieval over your own documents, extraction and classification, drafting assistance with human review. In enterprise settings, add a cycle for data-handling approval."
+          ],
+          [
+            "Productized squad (retainer)",
+            "From $4,995/mo",
+            "First delivery in 48 hrs",
+            "Continuous work with shifting priorities, no change orders, pause anytime. The cancel-anytime terms usually clear legal faster than a long fixed contract."
+          ],
+          [
+            "Ongoing maintenance",
+            "$1.5k – $6k/mo",
+            "—",
+            "OS and store updates, dependency and security patches, monitoring, small changes. Committees care about this line more than any other, and they are right to."
+          ]
+        ]
+      },
+      "after": [
+        "What moves a Coral Gables number, in rough order of impact. <strong>Legacy integration</strong> — cost scales with how badly the incumbent system is documented and how long access approval takes, and that approval is often the longest single item on the plan. <strong>Number of countries</strong> — each market is its own set of identifiers, rules and reports, so scope grows per market rather than per feature. <strong>Number of approvers</strong> — security, legal, a global IT function and sometimes a parent-company committee means the project moves at the speed of the slowest review, which is a schedule cost more than an engineering one. <strong>Compliance</strong> — HIPAA or institutional review can add 30–50% to a build and cannot be deferred.",
+        "One local comparison worth having: professional, scientific and technical services is the city's largest industry at 13,614 jobs, and median household income runs around $101,000 with average household income far above that, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">per the chamber's business guide</a>. You are hiring against those employers, at those salaries, with a three-to-six month search. That arithmetic is on the <a href=\"/compare/\">comparison page</a>, and it is why the retainer exists."
+      ]
+    },
+    "engagement",
+    "process",
+    "stack",
+    "differ",
+    "proof",
+    {
+      "id": "start",
+      "eyebrow": "Getting started",
+      "h2": ["What the first", "two weeks look like"],
+      "body": [
+        "A Coral Gables engagement usually starts with a thirty-minute call, and we are happy to do it on your floor — we are twenty minutes up US-1. We ask three things early: which system is the source of truth, who has to approve the release, and what the actual deadline is tied to. Those answers shape the plan more than the feature list does.",
+        "Within two business days you get a written scope: build shape, stack, the integrations and access approvals on the critical path, the compliance work we can already see, the risks, and a cost range. It is written to be forwarded to procurement, legal and IT rather than to impress a founder. The document is yours whether you hire us or not, and several people have used ours to run a competitive process — that is fine.",
+        "If you go ahead, kickoff is day one and the first deployed increment lands inside 48 hours, with the repo and staging under your ownership from the start. When procurement has already consumed four months and the fiscal deadline has not moved, that cadence is the entire value proposition. NDAs get signed before the scoping call, not after."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you have an office in Coral Gables?",
+      "a": [
+        "No. Our only office is 2125 Biscayne Blvd, Miami, FL 33137 — about twenty minutes from Miracle Mile via Biscayne and US-1, or the Metrorail to Douglas Road. We work with Coral Gables clients regularly and we travel to you for evaluations, workshops and committee presentations.",
+        "We would rather state that than list a Ponce de Leon coworking address. If a shortlisted vendor claims a Gables office, ask for the floor and the name of the engineer who will be on your project."
+      ]
+    },
+    {
+      "q": "How much does it cost to build an app in Coral Gables?",
+      "a": [
+        "A client portal for a firm runs $50k–$150k. An internal operations platform is $60k–$180k. An enterprise build for a regional headquarters, with ERP integration, formal security review and a phased country rollout, is $120k–$400k and up, with each additional country adding roughly $25k–$80k. A HIPAA-scoped healthcare build is $120k–$400k+, and a small validation MVP is $15k–$35k. Our productized squad starts at $4,995/mo with unlimited requests.",
+        "In this city the schedule and the number are usually driven by legacy integration, the number of countries in scope, and the number of approvers — not by the feature list. We scope those explicitly before quoting so the range you get holds up in front of a committee."
+      ]
+    },
+    {
+      "q": "We're the Latin American headquarters of a global company. Can you work inside our IT standards?",
+      "a": [
+        "Usually yes. That normally means building within an approved cloud tenancy, meeting the parent company's security baseline, using your identity provider for single sign-on, and passing a vendor security questionnaire before any access is granted. We plan that as a workstream with dates rather than treating it as an afterthought.",
+        "If your parent mandates a specific stack we do not work in, or requires an approved-vendor list we are not on, we will tell you in the first call. Losing a quarter to a process we cannot win serves neither of us."
+      ]
+    },
+    {
+      "q": "How do you handle formal procurement and vendor onboarding?",
+      "a": [
+        "We do the paperwork, and we assign an owner on our side so it does not stall waiting on us: vendor registration, insurance certificates, W-9s, security questionnaires, data processing agreements and whatever your legal team needs. We are used to competitive processes with a scoring matrix and we answer them properly rather than sending a brochure.",
+        "One practical advantage: because the retainer has no lock-in term and no exit fee, it is frequently easier to get approved than a twelve-month fixed contract. Legal review tends to be shorter when there is less to negotiate."
+      ]
+    },
+    {
+      "q": "Can you integrate with our ERP or practice management system?",
+      "a": [
+        "Usually, and the first job is establishing what access actually exists — a documented API, a nightly file drop, a middleware layer somebody built years ago, or a read-only replica. What your contract and your global IT function permit determines the design, so we confirm it before drawing screens.",
+        "We also state the data-freshness guarantee in the product itself rather than implying that overnight data is live. Being explicit about currency avoids the most common complaint we hear about integrations built by someone else."
+      ]
+    },
+    {
+      "q": "Can you roll out across several Latin American markets?",
+      "a": [
+        "Yes, sequentially. Each country brings its own tax and national identifiers, invoicing and document requirements, payment and settlement behaviour, language nuance and local approval habits. We build the first market properly with country-specific behaviour isolated behind clean boundaries, then add markets one at a time.",
+        "Expect roughly four to ten weeks and $25k–$80k per additional market, depending on rails and reporting. We will push back on a simultaneous six-country launch, because that is the pattern that produces a programme nobody can support."
+      ]
+    },
+    {
+      "q": "How long do Coral Gables projects actually take, start to finish?",
+      "a": [
+        "The engineering timeline is the one in the cost table — three to six months for most operations platforms, six to twelve for an enterprise build. What people underestimate is the time before kickoff: procurement, legal review, security approval and access provisioning routinely add one to four months in this market.",
+        "We front-load those items in the plan, name the ones on the critical path, and start on work that does not depend on them. It is also why a 48-hour first delivery matters here: the calendar you have lost to process is not recoverable, so the build itself has to not waste any."
+      ]
+    },
+    {
+      "q": "Do you build in Spanish and Portuguese as well as English?",
+      "a": [
+        "Yes, at parity rather than as a translation layer, which is close to mandatory in a city where more than a third of multinational firms are Spanish-owned, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">per the chamber's business guide</a>. Copy gets written rather than machine-translated, layouts are tested against longer strings, and dates, currency, tax-ID and address validation switch with the locale.",
+        "For anything contractual or compliance-relevant — disclosures, consents, terms — your counsel reviews each language rather than trusting our translation. We schedule that step instead of assuming it."
+      ]
+    },
+    {
+      "q": "We're a small firm on Miracle Mile, not a multinational. Are we too small for you?",
+      "a": [
+        "No, and that describes most companies here: 90% of businesses operating in Coral Gables employ fewer than ten people, <a href=\"https://coralgableschamber.org/wp-content/uploads/2022/09/City-Beautiful-Business-GuideR2022_compressed.pdf\" target=\"_blank\" rel=\"noopener nofollow\">on the chamber's numbers</a>. The advice is different, though: smaller firms are usually better served by a tight product that replaces two or three subscriptions than by a platform.",
+        "If your problem is genuinely a one-week fix, a flat monthly squad is the wrong instrument and an hourly contractor is cheaper. We will say that on the first call rather than sell you a retainer you do not need."
+      ]
+    },
+    {
+      "q": "Can you handle HIPAA for a healthcare client here?",
+      "a": [
+        "Yes, and it has to be decided at the architecture stage rather than added later. That covers where protected health information lives, what is logged and deliberately not logged, retention, business associate agreements, which vendors and analytics tools are permitted anywhere near authenticated pages, and penetration testing before launch.",
+        "With hospital or health-system clients there is normally an institutional security review on top, which takes calendar time. We schedule it with dates. We are engineers rather than your compliance counsel: we build to the requirements your privacy office sets and make evidence production straightforward."
+      ]
+    },
+    {
+      "q": "Who maintains the software after launch?",
+      "a": [
+        "Whichever answer you prefer, and being clear about which is happening matters more than the choice. If your team takes it over, we do a live handover and write the documentation for it. If we keep it, that runs on a maintenance retainer of $1.5k–$6k/mo covering OS and store updates, dependency and security patches, monitoring and small changes.",
+        "This is the question Coral Gables evaluation committees weight most heavily, and rightly. The repository is yours from the first commit, documentation is written as we go, and there is no component we keep hostage if you leave."
+      ]
+    },
+    {
+      "q": "What's the deal with Bolder Apps?",
+      "a": [
+        "Appsurd is the productized AI-native squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has shipped production software since 2019 across 25+ brands and organizations. Same people, different commercial shape.",
+        "Bolder Apps, Synergy Labs and Ever Tech Solutions are sister companies under the same ownership. We disclose that rather than presenting them as unaffiliated alternatives, which matters in a competitive process — see our <a href=\"/about/\">about page</a>."
+      ]
+    },
+    "who-owns-code",
+    "cancel",
+    "who-writes-code",
+    "maintenance",
+    "nda"
+  ],
+  "alsoServes": ["South Miami", "Coconut Grove", "Pinecrest", "Westchester", "Key Biscayne"],
+  "nearby": [
+    "app-development-miami",
+    "app-development-brickell",
+    "app-development-doral",
+    "app-development-miami-beach"
+  ]
+}

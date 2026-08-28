@@ -1,0 +1,267 @@
+{
+  "_comment": "Shared section templates for /locations/ pages. Referenced by key from a city file's `sections` array, optionally with per-city overrides. {{CITY}}, {{COUNTY}} and {{REGION}} are interpolated. Keep this file the MINORITY of any page — the hard rule is at least 40% genuinely city-specific content, so every city file must carry its own market context, neighborhoods, industries, pricing notes, proof and most of its FAQs.",
+
+  "sections": {
+    "engagement": {
+      "id": "engagement",
+      "eyebrow": "How we work",
+      "h2": ["Three shapes,", "one squad"],
+      "sub": "Most {{CITY}} teams come to us in one of three situations. The engagement model follows the situation, not a rate card.",
+      "cards": [
+        {
+          "h3": "You need a product built",
+          "p": [
+            "The productized squad: engineers, designers, a PM and QA on a flat monthly fee, unlimited requests, first delivery inside 48 hours of kickoff. From $4,995/mo, pause or cancel anytime.",
+            "Best when you have a roadmap and no team, or a team that is already at capacity."
+          ]
+        },
+        {
+          "h3": "You need more hands on an existing team",
+          "p": [
+            "Staff augmentation: our engineers embed in your repo, your standups, your Jira. You keep ownership of architecture and process; we add throughput without a 3–6 month hiring cycle.",
+            "Best when the product direction is settled and the constraint is delivery capacity."
+          ]
+        },
+        {
+          "h3": "You need to know what to build",
+          "p": [
+            "Advisory and AI implementation: a fixed-scope audit that ends in an architecture, a build plan and a real number — not a slide deck. From $4,995.",
+            "Best when the decision is still open and an expensive wrong turn is the actual risk."
+          ]
+        }
+      ],
+      "after": [
+        "All three are covered by a 30-day money-back guarantee, with no lock-in contract and no exit fee. If it isn't working, you leave. See <a href=\"/services/\">all services</a> or the <a href=\"/compare/\">side-by-side comparison</a> against hiring in-house."
+      ]
+    },
+
+    "process": {
+      "id": "process",
+      "eyebrow": "Process",
+      "h2": ["From kickoff to", "production"],
+      "sub": "The same sequence whether you're in {{CITY}} or three time zones away. The timelines are the ones we actually hold ourselves to.",
+      "steps": [
+        {
+          "h3": "Scoping call",
+          "p": "Thirty minutes. We map the problem, the constraint you're actually up against, and whether we're the right shape for it. If we're not, we say so — we'd rather refer you out than run a bad engagement.",
+          "when": "Day 0 · 30 minutes"
+        },
+        {
+          "h3": "Written scope and range",
+          "p": "You get the build shape, the stack, the risks we can see, and a real cost range in writing. No pressure to sign, and the document is yours whether you hire us or not.",
+          "when": "Within 2 business days"
+        },
+        {
+          "h3": "Kickoff and environment setup",
+          "p": "Repo, CI, staging, error tracking and analytics stood up on day one. You get access to everything from the start — there is no black box and no \"we'll show you at the end.\"",
+          "when": "Day 1"
+        },
+        {
+          "h3": "First shipped increment",
+          "p": "Something real and reviewable inside 48 hours of kickoff. Not a wireframe — deployed, clickable work on a staging URL you can send to a stakeholder.",
+          "when": "Within 48 hours"
+        },
+        {
+          "h3": "48-hour delivery cadence",
+          "p": "New work lands every two days for the length of the engagement, each increment reviewable on staging. Priorities can change between any two deliveries; that's the point of the cadence.",
+          "when": "Ongoing"
+        },
+        {
+          "h3": "Launch and handover",
+          "p": "App Store and Play Store submission handled, monitoring wired up, documentation written for whoever maintains it next. If that's your team, we do a live handover; if it's us, we move to a maintenance retainer.",
+          "when": "At release"
+        }
+      ]
+    },
+
+    "stack": {
+      "id": "stack",
+      "eyebrow": "Stack",
+      "h2": ["What we build", "with, and why"],
+      "sub": "Deliberately boring choices at the infrastructure layer, aggressive ones at the AI layer. Boring infrastructure is what lets a small team maintain a large surface area.",
+      "table": {
+        "head": ["Layer", "What we use", "Why this and not something else"],
+        "rows": [
+          [
+            "Mobile",
+            "React Native (Expo), Swift / SwiftUI, Kotlin",
+            "React Native when one codebase should serve both stores — most business apps. Native when the product depends on the camera, Bluetooth, background location, or hardware the bridge handles badly."
+          ],
+          [
+            "Web",
+            "Next.js, React, TypeScript, Tailwind",
+            "Server rendering matters for anything that needs to be found in search, and TypeScript catches at compile time the class of bug that otherwise shows up in a store review."
+          ],
+          [
+            "Backend",
+            "Node / TypeScript, Python for ML paths, Postgres",
+            "One language across client and server means one team can own the whole feature. Postgres because relational data is still relational, and because it will outlive whatever is fashionable this year."
+          ],
+          [
+            "Infrastructure",
+            "Vercel, AWS, Supabase, Cloudflare",
+            "Managed platforms until scale genuinely demands otherwise. Paying for infrastructure you can't operate is a slower failure than paying for one you can."
+          ],
+          [
+            "AI layer",
+            "OpenAI, Anthropic, embeddings + retrieval, agent orchestration",
+            "As an official OpenAI partner we build retrieval and agent workflows as first-class product features, not a chatbot bolted onto a finished app."
+          ],
+          [
+            "Delivery",
+            "GitHub, CI on every commit, staging per branch, Sentry",
+            "Every increment is deployed and reviewable, which is the only way a 48-hour cadence stays honest instead of becoming a demo."
+          ]
+        ]
+      },
+      "after": [
+        "The full picture, including how we evaluate a new tool before it touches client work, is on the <a href=\"/stack/\">stack page</a>. How we handle client data and access is documented on the <a href=\"/security/\">security page</a>."
+      ]
+    },
+
+    "differ": {
+      "id": "differ",
+      "eyebrow": "How we differ",
+      "h2": ["Against the", "usual options"],
+      "sub": "The honest version. There are situations in each of these columns where the other option is the right call, and we'll tell you when we think you're in one.",
+      "table": {
+        "head": ["", "Appsurd", "Local dev shop", "Offshore agency", "Hiring in-house"],
+        "rows": [
+          [
+            "Time to first shipped work",
+            "48 hours from kickoff",
+            "2–6 weeks after contract",
+            "3–8 weeks including onboarding",
+            "3–6 months to hire and ramp"
+          ],
+          [
+            "Cost model",
+            "Flat monthly, unlimited requests",
+            "Hourly or fixed-bid per change",
+            "Low hourly, billed by headcount",
+            "Salary, benefits, equity, overhead"
+          ],
+          [
+            "Team you get",
+            "Engineers, design, PM, QA in one squad",
+            "Usually engineers only",
+            "Assigned pool, rotates",
+            "Whoever you can hire and keep"
+          ],
+          [
+            "Overlap with your working day",
+            "Full US business hours, {{CITY}} time",
+            "Local hours",
+            "Partial, often a 9–12 hour offset",
+            "Full"
+          ],
+          [
+            "Changing direction mid-build",
+            "Between any two deliveries, no change order",
+            "Change order and re-quote",
+            "Change order, often a re-scope",
+            "Free, but capacity-bound"
+          ],
+          [
+            "Exit",
+            "Cancel anytime, code and docs are yours",
+            "Contract term, sometimes an exit fee",
+            "Notice period, IP terms vary",
+            "Severance and lost knowledge"
+          ]
+        ]
+      },
+      "after": [
+        "Two things worth saying plainly. If your build is genuinely a one-week fix, a flat monthly squad is the wrong instrument and an hourly contractor is cheaper. And if you have a stable roadmap five years out, hiring in-house wins on cost eventually — the reason to use us is speed and optionality, not price alone. We put the arithmetic on the <a href=\"/compare/\">comparison page</a> rather than hiding it."
+      ]
+    },
+
+    "proof": {
+      "id": "proof",
+      "eyebrow": "Track record",
+      "h2": ["Work that", "shipped"],
+      "sub": "Public, named engagements — the kind you can verify rather than take on faith. Every one of these went to production.",
+      "cards": [
+        {
+          "h3": "American Cancer Society",
+          "p": [
+            "A donor engagement platform for one of the largest health nonprofits in the country, where the constraint was trust: donation flows, accessibility and data handling all had to hold up to institutional review.",
+            "<a href=\"/work/american-cancer-society.html\">Read the case study →</a>"
+          ]
+        },
+        {
+          "h3": "Kia",
+          "p": [
+            "A dealer operations portal used by staff who have no patience for software — which makes it a good test of whether an interface actually works under time pressure.",
+            "<a href=\"/work/kia.html\">Read the case study →</a>"
+          ]
+        },
+        {
+          "h3": "Stanford University",
+          "p": [
+            "An AI-native learning platform built with retrieval over institutional content, in an environment where a confidently wrong answer is worse than no answer.",
+            "<a href=\"/work/stanford-university.html\">Read the case study →</a>"
+          ]
+        },
+        {
+          "h3": "Supreme Court of Ohio",
+          "p": [
+            "A public legal portal, which means accessibility compliance and predictable performance for the whole public, not just users on new phones.",
+            "<a href=\"/work/supreme-court-ohio.html\">Read the case study →</a>"
+          ]
+        },
+        {
+          "h3": "NYPD",
+          "p": [
+            "An operations dashboard where the requirement was uptime and clarity under load, in a procurement and security environment with no tolerance for improvisation.",
+            "<a href=\"/work/nypd.html\">Read the case study →</a>"
+          ]
+        },
+        {
+          "h3": "Since 2019",
+          "p": [
+            "Appsurd is the productized squad built by <a href=\"https://bolderapps.com\" target=\"_blank\" rel=\"noopener\">Bolder Apps</a>, our parent company, which has been shipping production software since 2019 across 25+ brands and organizations.",
+            "<a href=\"/work/\">See all work →</a> · <a href=\"/team/\">Meet the 19 builders →</a>"
+          ]
+        }
+      ]
+    }
+  },
+
+  "faqs": {
+    "who-owns-code": {
+      "q": "Who owns the code and the IP?",
+      "a": [
+        "You do, in full, from the first commit. The repository is yours, hosted under your organization where you prefer it, and you have admin access from day one.",
+        "There is no clause that keeps a component library or a framework we wrote hostage. If you cancel, you keep everything, including the documentation and the deployment configuration."
+      ]
+    },
+    "cancel": {
+      "q": "What happens if I cancel?",
+      "a": [
+        "You keep the code, the repos, the credentials and the docs. There is no exit fee, no notice period and no clawback of work already delivered.",
+        "There is also a 30-day money-back guarantee at the start, which exists because the honest way to prove a 48-hour cadence is to run it, not to describe it in a pitch."
+      ]
+    },
+    "who-writes-code": {
+      "q": "Is the work done by AI or by people?",
+      "a": [
+        "By people, using AI tooling deliberately and reviewing everything before it merges. Nothing reaches your repo without a named engineer accountable for it.",
+        "The reason we talk about it at all is throughput: agentic tooling is why a small squad can hold a 48-hour cadence. It is not a substitute for engineering judgment, and we don't pretend it is."
+      ]
+    },
+    "maintenance": {
+      "q": "Do you maintain the app after launch?",
+      "a": [
+        "Yes, on a maintenance retainer — OS updates, store policy changes, dependency and security patches, and monitoring. Mobile apps are not finished at launch; iOS and Android both ship yearly changes that break things.",
+        "If you'd rather your own team took it over, we do a live handover and write the documentation for it. Either answer is fine; being unclear about which one is happening is not."
+      ]
+    },
+    "nda": {
+      "q": "Will you sign an NDA before we talk details?",
+      "a": [
+        "Yes. Send yours and we'll sign it, or we'll send ours. Either way it happens before the scoping call, not after."
+      ]
+    }
+  }
+}
