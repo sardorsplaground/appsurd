@@ -323,6 +323,12 @@ function buildBlock({ urlPath, title, description, rel }) {
     START,
     `<link rel="canonical" href="${esc(pageUrl)}">`,
     '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">',
+    // Search Console ownership is currently held by a DNS TXT record. This tag is
+    // a second, independent verification method on the home page, so losing or
+    // rotating the DNS record doesn't silently drop the property.
+    ...(urlPath === '/' && CFG.googleSiteVerification
+      ? [`<meta name="google-site-verification" content="${esc(CFG.googleSiteVerification)}">`]
+      : []),
     `<meta property="og:type" content="${isArticle ? 'article' : 'website'}">`,
     `<meta property="og:site_name" content="${esc(CFG.siteName)}">`,
     '<meta property="og:locale" content="en_US">',
